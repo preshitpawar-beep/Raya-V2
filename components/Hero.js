@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
-    <section className="min-h-[70vh] flex items-center justify-center px-6 bg-white">
-      <div className="max-w-4xl w-full text-center bg-primary/30 rounded-3xl p-12 md:p-16">
+    <section className="min-h-[70vh] flex items-center justify-center px-6 bg-[#F7F8FA]">
+      <div className="max-w-4xl w-full text-center px-4">
         
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-dark">
           Custom Branded Promotional Products
@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="/products"
-            className="bg-white px-8 py-3 rounded-lg font-semibold border hover:bg-gray-50 transition"
+            className="bg-white px-8 py-3 rounded-lg font-semibold border border-gray-200 hover:bg-gray-50 transition"
           >
             View Products
           </a>
