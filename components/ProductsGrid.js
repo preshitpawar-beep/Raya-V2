@@ -42,29 +42,33 @@ export default function ProductsGrid() {
         {Array.from({ length: 9 }).map((_, i) => (
           <div
             key={i}
-            className="border rounded-xl p-6 shadow-sm bg-white"
+            className="border rounded-2xl p-5 md:p-6 shadow-sm bg-white"
           >
-            <div className="h-40 bg-gray-100 rounded mb-4 flex items-center justify-center text-sm text-gray-500">
+            {/* IMAGE */}
+            <div className="h-44 md:h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center text-sm text-gray-500">
               Product Image
             </div>
 
-            <h3 className="font-semibold mb-2">
+            {/* TITLE */}
+            <h3 className="text-base font-semibold mb-3">
               Sample Product {i + 1}
             </h3>
 
-            <div className="flex items-center gap-3 mb-4">
+            {/* QUANTITY */}
+            <div className="flex items-center gap-3 mb-5">
               <input
                 type="number"
                 min="1"
                 defaultValue="1"
-                className="w-20 border rounded px-2 py-1"
+                className="w-24 border rounded-lg px-3 py-2 text-base"
               />
               <span className="text-sm">Qty</span>
             </div>
 
+            {/* CTA */}
             <a
               href="/quote"
-              className="block text-center bg-dark text-white py-3 rounded-lg font-semibold hover:opacity-90"
+              className="block text-center bg-dark text-white py-3.5 rounded-xl font-semibold text-base hover:opacity-90"
             >
               Get Quote
             </a>
