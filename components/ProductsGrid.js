@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function ProductsGrid() {
   const categories = [
+    "All",
     "Pen",
     "Notebook",
     "Notepad",
@@ -16,33 +17,34 @@ export default function ProductsGrid() {
 
   return (
     <div>
-      {/* Filters */}
-      <div className="flex flex-wrap gap-4 mb-8">
-        <button
-          onClick={() => setActive("All")}
-          className="px-4 py-2 bg-primary rounded"
-        >
-          All
-        </button>
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActive(cat)}
-            className="px-4 py-2 bg-gray-100 rounded"
-          >
-            {cat}
-          </button>
-        ))}
+      {/* FILTERS */}
+      <div className="mb-8">
+        <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActive(cat)}
+              className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium border transition
+                ${
+                  active === cat
+                    ? "bg-dark text-white border-dark"
+                    : "bg-white text-gray-700 border-gray-200"
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Products */}
-      <div className="grid md:grid-cols-3 gap-8">
+      {/* PRODUCTS GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {Array.from({ length: 9 }).map((_, i) => (
           <div
             key={i}
-            className="border rounded-xl p-6 shadow-sm"
+            className="border rounded-xl p-6 shadow-sm bg-white"
           >
-            <div className="h-40 bg-gray-100 rounded mb-4 flex items-center justify-center">
+            <div className="h-40 bg-gray-100 rounded mb-4 flex items-center justify-center text-sm text-gray-500">
               Product Image
             </div>
 
@@ -62,7 +64,7 @@ export default function ProductsGrid() {
 
             <a
               href="/quote"
-              className="block text-center bg-primary py-2 rounded font-semibold"
+              className="block text-center bg-dark text-white py-3 rounded-lg font-semibold hover:opacity-90"
             >
               Get Quote
             </a>
