@@ -46,7 +46,7 @@ export default function HeroSlider() {
   }, [index]);
 
   return (
-    <section className="min-h-[70vh] bg-[#F7F8FA] flex items-center">
+    <section className="py-16 md:py-24 bg-[#F7F8FA]">
       <div className="max-w-7xl mx-auto px-6 w-full">
 
         <AnimatePresence mode="wait">
