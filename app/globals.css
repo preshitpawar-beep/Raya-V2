@@ -12,3 +12,18 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+/* Mobile-friendly base tweaks */
+@media (max-width: 768px) {
+  h1 {
+    line-height: 1.2;
+  }
+
+  h2 {
+    line-height: 1.25;
+  }
+
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
