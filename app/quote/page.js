@@ -45,6 +45,21 @@ export default function Quote() {
           className="space-y-5 bg-white rounded-2xl p-6 md:p-8 shadow-sm"
           onSubmit={(e) => {
             e.preventDefault();
+
+            const form = e.target;
+            const name = form[0].value;
+            const email = form[1].value;
+            const company = form[2].value;
+            const message = form[3].value;
+
+            const mailtoLink = `mailto:preshit555@gmail.com?subject=Quote Request from ${name}&body=
+            Name: ${name}%0D%0A
+            Email: ${email}%0D%0A
+            Company: ${company}%0D%0A%0D%0A
+            Message:%0D%0A${message}`;
+
+            window.location.href = mailtoLink;
+
             setSubmitted(true);
           }}
         >
