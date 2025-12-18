@@ -1,4 +1,5 @@
 import HeroSlider from "../components/HeroSlider";
+import TrustIntro from "../components/TrustIntro";
 import Slider from "../components/Slider";
 import FeaturedProducts from "../components/FeaturedProducts";
 import Categories from "../components/Categories";
