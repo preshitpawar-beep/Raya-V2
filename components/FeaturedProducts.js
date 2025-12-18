@@ -30,7 +30,7 @@ export default function FeaturedProducts() {
             Featured Products
           </h2>
 
-          <div className="flex gap-2">
+          <div className="hidden sm:flex gap-2">
             <button
               onClick={() => scroll("left")}
               className="border rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100"
@@ -54,7 +54,7 @@ export default function FeaturedProducts() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="min-w-[260px] border rounded-xl p-5 flex-shrink-0 hover:shadow-md transition"
+              className="min-w-[80%] sm:min-w-[260px] border rounded-xl p-5 flex-shrink-0 hover:shadow-md transition"
             >
               {/* Image placeholder */}
               <div className="h-40 bg-gray-100 rounded-lg mb-4 flex items-center justify-center text-sm text-gray-500">
@@ -65,7 +65,7 @@ export default function FeaturedProducts() {
                 {product.name}
               </h3>
 
-              <p className="text-sm text-gray-500 mb-2">
+              <p className="text-sm text-gray-500 mb-3">
                 ★★★★★ 5/5
               </p>
 
@@ -75,7 +75,7 @@ export default function FeaturedProducts() {
 
               <a
                 href="/products"
-                className="block text-center bg-dark text-white py-2 rounded-lg font-semibold hover:opacity-90"
+                className="block text-center bg-dark text-white py-3 rounded-lg font-semibold hover:opacity-90"
               >
                 View Product
               </a>
