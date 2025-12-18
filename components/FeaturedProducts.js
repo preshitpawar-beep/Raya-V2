@@ -1,48 +1,83 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
+
+const products = [
+  { id: 1, name: "Branded Pen", price: "£0.60" },
+  { id: 2, name: "Custom Notebook", price: "£2.40" },
+  { id: 3, name: "Eco Travel Mug", price: "£3.10" },
+  { id: 4, name: "Canvas Tote Bag", price: "£1.95" },
+  { id: 5, name: "Metal Key Ring", price: "£0.85" },
+  { id: 6, name: "Desk Notepad", price: "£1.20" },
+];
 
 export default function FeaturedProducts() {
-  const products = Array.from({ length: 6 });
+  const sliderRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (!sliderRef.current) return;
+    const amount = direction === "left" ? -300 : 300;
+    sliderRef.current.scrollBy({ left: amount, behavior: "smooth" });
+  };
 
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Featured Products
-        </h2>
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Header */}
+        <div className="flex items-center justify-between mb-10">
+          <h2 className="text-3xl font-bold">
+            Featured Products
+          </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {products.map((_, i) => (
-            <div
-              key={i}
-              className="border rounded-xl p-6 shadow-sm hover:shadow-md transition"
+          <div className="flex gap-2">
+            <button
+              onClick={() => scroll("left")}
+              className="border rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100"
             >
-              <div className="h-40 bg-gray-100 rounded mb-4 flex items-center justify-center">
+              ←
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="border rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100"
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+        {/* Slider */}
+        <div
+          ref={sliderRef}
+          className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar"
+        >
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="min-w-[260px] border rounded-xl p-5 flex-shrink-0 hover:shadow-md transition"
+            >
+              {/* Image placeholder */}
+              <div className="h-40 bg-gray-100 rounded-lg mb-4 flex items-center justify-center text-sm text-gray-500">
                 Product Image
               </div>
 
-              <h3 className="font-semibold mb-2">
-                Sample Product {i + 1}
+              <h3 className="font-semibold mb-1">
+                {product.name}
               </h3>
 
-              <p className="text-sm mb-4">From £X</p>
+              <p className="text-sm text-gray-500 mb-2">
+                ★★★★★ 5/5
+              </p>
 
-              <div className="flex items-center gap-3 mb-4">
-                <input
-                  type="number"
-                  min="1"
-                  defaultValue="1"
-                  className="w-20 border rounded px-2 py-1"
-                />
-                <span className="text-sm">Quantity</span>
-              </div>
+              <p className="text-sm font-medium mb-4">
+                as low as {product.price}
+              </p>
 
               <a
-                href="/quote"
-                className="block text-center bg-primary py-2 rounded font-semibold"
+                href="/products"
+                className="block text-center bg-dark text-white py-2 rounded-lg font-semibold hover:opacity-90"
               >
-                Get a Quote
+                View Product
               </a>
             </div>
           ))}
