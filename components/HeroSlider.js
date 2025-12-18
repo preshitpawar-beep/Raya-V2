@@ -82,15 +82,17 @@ export default function HeroSlider() {
             </div>
 
             {/* Image */}
-            <div className="flex justify-center">
-              <Image
-                src={slides[index].image}
-                alt={slides[index].title}
-                width={520}
-                height={420}
-                priority
-              />
-            </div>
+           <div className="flex justify-center">
+             <div className="bg-[#F1F3F6] rounded-3xl p-6 md:p-8">
+               <Image
+                 src={slides[index].image}
+                 alt={slides[index].title}
+                 width={520}
+                 height={420}
+                 priority
+               />
+             </div>
+           </div>
           </motion.div>
         </AnimatePresence>
 
