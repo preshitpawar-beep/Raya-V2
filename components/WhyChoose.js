@@ -46,7 +46,7 @@ export default function WhyChoose() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm">
+          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h3 className="font-semibold mb-2">
               UK-based service
             </h3>
