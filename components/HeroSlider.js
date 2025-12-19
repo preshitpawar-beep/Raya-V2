@@ -40,7 +40,7 @@ export default function HeroSlider() {
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 4000);
+    }, 5000);
 
     return () => clearTimeout(timeoutRef.current);
   }, [index]);
