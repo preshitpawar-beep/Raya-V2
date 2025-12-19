@@ -1,6 +1,6 @@
 export default function WhyChoose() {
   return (
-    <section className="bg-secondary/40">
+    <section className="bg-secondary">
       <div className="max-w-6xl mx-auto px-6 py-14 md:py-20">
         
         {/* Heading */}
