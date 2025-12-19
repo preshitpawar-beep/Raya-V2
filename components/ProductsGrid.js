@@ -97,12 +97,21 @@ function ProductCard() {
       </div>
 
       {/* CTA */}
-      <a
-        href="/quote"
-        className="block text-center bg-dark text-white py-2.5 rounded-lg text-sm font-medium hover:opacity-90"
-      >
-        Get quote
-      </a>
+     <button
+      onClick={() => {
+       localStorage.setItem(
+         "quoteItem",
+         JSON.stringify({
+           product: "Sample Product",
+           quantity: qty,
+         })
+       );
+       window.location.href = "/quote";
+     }}
+     className="w-full bg-dark text-white py-2.5 rounded-lg text-sm font-medium hover:opacity-90"
+     >
+     Get quote
+    </button>
     </div>
   );
 }
