@@ -1,10 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Quote() {
   const [submitted, setSubmitted] = useState(false);
+  const [message, setMessage] = useState("");
 
+  /* ----------------------------------------
+     Load selected product + quantity
+  ---------------------------------------- */
+  useEffect(() => {
+    const savedItem = localStorage.getItem("quoteItem");
+
+    if (savedItem) {
+      const { product, quantity } = JSON.parse(savedItem);
+      setMessage(
+        `Product: ${product}\nQuantity: ${quantity}\n\nAdditional requirements:`
+      );
+    }
+  }, []);
+
+  /* ----------------------------------------
+     Success state
+  ---------------------------------------- */
   if (submitted) {
     return (
       <main className="bg-[#F7F8FA] min-h-[70vh] flex items-center justify-center px-6">
@@ -25,10 +43,13 @@ export default function Quote() {
     );
   }
 
+  /* ----------------------------------------
+     Quote form
+  ---------------------------------------- */
   return (
     <main className="bg-[#F7F8FA]">
       <div className="max-w-xl mx-auto px-6 py-12 md:py-20">
-        
+
         {/* Guided Intro */}
         <div className="mb-8">
           <h1 className="text-2xl md:text-3xl font-bold mb-3">
@@ -50,13 +71,12 @@ export default function Quote() {
             const name = form[0].value;
             const email = form[1].value;
             const company = form[2].value;
-            const message = form[3].value;
 
             const mailtoLink = `mailto:preshit555@gmail.com?subject=Quote Request from ${name}&body=
-            Name: ${name}%0D%0A
-            Email: ${email}%0D%0A
-            Company: ${company}%0D%0A%0D%0A
-            Message:%0D%0A${message}`;
+Name: ${name}%0D%0A
+Email: ${email}%0D%0A
+Company: ${company}%0D%0A%0D%0A
+Message:%0D%0A${message}`;
 
             window.location.href = mailtoLink;
 
@@ -101,8 +121,9 @@ export default function Quote() {
               Message
             </label>
             <textarea
-              className="w-full p-3 border rounded-lg min-h-[120px]"
-              placeholder="Tell us about products, quantities, or deadlines"
+              className="w-full p-3 border rounded-lg min-h-[140px]"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
 
