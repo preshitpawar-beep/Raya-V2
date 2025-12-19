@@ -13,6 +13,12 @@ const slides = [
     image: "/hero/hero-slide-products.png",
   },
   {
+    title: "Based in the South West, Delivering Across the UK",
+    subtitle:
+      "Proudly serving Tiverton and businesses nationwide",
+    image: "/hero/hero-slide-uk.png",
+  },
+  {
     title: "Corporate Gifts That Represent Your Brand",
     subtitle:
       "Thoughtfully designed merchandise for teams & clients",
@@ -23,12 +29,6 @@ const slides = [
     subtitle:
       "Sustainable products made with quality materials",
     image: "/hero/hero-slide-eco.png",
-  },
-  {
-    title: "Based in the South West, Delivering Across the UK",
-    subtitle:
-      "Proudly serving Tiverton and businesses nationwide",
-    image: "/hero/hero-slide-uk.png",
   },
 ];
 
