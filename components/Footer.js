@@ -22,21 +22,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Quick links</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="hover:underline">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="hover:underline">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link href="/quote" className="hover:underline">
-                  Get a Quote
-                </Link>
-              </li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/products">Products</Link></li>
+              <li><Link href="/quote">Get a Quote</Link></li>
             </ul>
           </div>
 
@@ -45,10 +33,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-3">Contact</h4>
             <p className="text-sm text-gray-700">
               Email:{" "}
-              <a
-                href="mailto:preshit555@gmail.com"
-                className="underline"
-              >
+              <a href="mailto:preshit555@gmail.com" className="underline">
                 preshit555@gmail.com
               </a>
             </p>
@@ -56,9 +41,17 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom */}
-        <div className="mt-10 pt-6 border-t text-sm text-gray-600 text-center">
-          © {new Date().getFullYear()} Raya. All rights reserved.
+        {/* Legal */}
+        <div className="mt-10 pt-6 border-t text-sm text-gray-600 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p>© {new Date().getFullYear()} Raya. All rights reserved.</p>
+          <div className="flex gap-4">
+            <Link href="/privacy-policy" className="hover:underline">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:underline">
+              Terms & Conditions
+            </Link>
+          </div>
         </div>
 
       </div>
