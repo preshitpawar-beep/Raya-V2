@@ -56,7 +56,7 @@ function ProductCard() {
   const decrease = () => setQty((prev) => (prev > 50 ? prev - 50 : prev));
 
   return (
-    <div className="border rounded-xl p-4 md:p-6 bg-white shadow-sm">
+    <div className="rounded-xl p-4 md:p-6 bg-white shadow-sm border border-gray-100">
       
       {/* IMAGE */}
       <div className="h-32 md:h-40 bg-gray-100 rounded-lg mb-3 flex items-center justify-center text-xs text-gray-500">
