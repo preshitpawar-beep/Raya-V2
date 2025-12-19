@@ -33,8 +33,8 @@ export default function Footer() {
             <h4 className="font-semibold mb-3">Contact</h4>
             <p className="text-sm text-gray-700">
               Email:{" "}
-              <a href="mailto:preshit555@gmail.com" className="underline">
-                preshit555@gmail.com
+              <a href="mailto:xyz@gmail.com" className="underline">
+                xyz@gmail.com
               </a>
             </p>
           </div>
