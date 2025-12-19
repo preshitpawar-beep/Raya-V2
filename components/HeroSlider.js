@@ -55,7 +55,7 @@ export default function HeroSlider() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
           >
             {/* TEXT */}
