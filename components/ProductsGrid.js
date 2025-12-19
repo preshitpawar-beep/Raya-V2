@@ -38,11 +38,11 @@ export default function ProductsGrid() {
       </div>
 
       {/* PRODUCTS GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
         {Array.from({ length: 9 }).map((_, i) => (
           <div
             key={i}
-            className="border rounded-2xl p-5 md:p-6 shadow-sm bg-white"
+            className="border rounded-xl p-4 md:p-6 shadow-sm bg-white"
           >
             {/* IMAGE */}
             <div className="h-44 md:h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center text-sm text-gray-500">
