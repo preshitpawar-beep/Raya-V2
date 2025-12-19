@@ -18,7 +18,7 @@ export default function Terms() {
 
       <p className="mb-4">
         If you have any questions regarding these terms, please contact us at
-        preshit555@gmail.com.
+        xyz@gmail.com.
       </p>
     </main>
   );
