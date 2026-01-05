@@ -6,7 +6,7 @@ export default function WhyChoose() {
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-3">
-            Why choose Raya
+            Why choose Legacy Imprint SW
           </h2>
           <p className="text-gray-700">
             A straightforward approach to branded promotional products
