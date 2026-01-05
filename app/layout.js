@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Raya | Branded Promotional Products UK",
+  title: "Legacy Imprint SW | Branded Promotional Products UK",
   description: "Custom branded promotional products for UK businesses.",
 };
 
