@@ -13,7 +13,7 @@ export default function Terms() {
       </p>
 
       <p className="mb-4">
-        Raya reserves the right to update product information and pricing at any time.
+        Legacy Imprint SW reserves the right to update product information and pricing at any time.
       </p>
 
       <p className="mb-4">
