@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
       <h1 className="text-2xl font-bold mb-6">Privacy Policy</h1>
 
       <p className="mb-4">
-        Raya respects your privacy and is committed to protecting your personal data.
+        Legacy Imprint SW respects your privacy and is committed to protecting your personal data.
       </p>
 
       <p className="mb-4">
