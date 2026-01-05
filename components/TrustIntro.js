@@ -4,7 +4,7 @@ export default function TrustIntro() {
       <div className="max-w-3xl mx-auto px-6 py-10 md:py-14 text-center">
         <p className="text-lg text-gray-700 leading-relaxed">
           <strong className="text-dark">
-            Raya is a UK-based promotional products business, helping companies
+            Legacy Imprint SW is a UK-based promotional products business, helping companies
             create practical, well-designed branded merchandise.
           </strong>
           <br />
