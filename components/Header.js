@@ -16,8 +16,8 @@ export default function Header() {
           <Image
             src="/raya-logo.png"
             alt="Raya logo"
-            width={260}
-            height={120}
+            width={280}
+            height={150}
             priority
           />
         </Link>
