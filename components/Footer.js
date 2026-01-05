@@ -9,7 +9,7 @@ export default function Footer() {
           
           {/* Brand */}
           <div>
-            <h3 className="font-semibold mb-2">Raya</h3>
+            <h3 className="font-semibold mb-2">Legacy Imprint SW</h3>
             <p className="text-sm text-gray-700">
               Branded promotional products for UK businesses.
             </p>
