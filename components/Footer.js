@@ -43,7 +43,7 @@ export default function Footer() {
 
         {/* Legal */}
         <div className="mt-10 pt-6 border-t text-sm text-gray-600 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p>© {new Date().getFullYear()} Raya. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Legacy Imprint SW. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:underline">
               Privacy Policy
