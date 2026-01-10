@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { products } from "@/data/products";
+import { products } from "./productsData";
 
 export default function ProductsGrid() {
   const categories = ["All","Pen","Notebook","Key Ring","Combo Sets","Bags"];
