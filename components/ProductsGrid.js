@@ -1,117 +1,60 @@
 "use client";
-
 import { useState } from "react";
+import { products } from "@/data/products";
 
 export default function ProductsGrid() {
-  const categories = [
-    "All",
-    "Pen",
-    "Notebook",
-    "Notepad",
-    "Coaster",
-    "Key Ring",
-    "Bags",
-  ];
+  const categories = ["All","Pen","Notebook","Key Ring","Combo Sets","Bags"];
+  const [active,setActive]=useState("All");
 
-  const [active, setActive] = useState("All");
+  const filtered = active === "All" ? products : products.filter(p=>p.category===active);
 
   return (
     <div>
-      {/* FILTERS */}
       <div className="mb-6">
         <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium border transition
-                ${
-                  active === cat
-                    ? "bg-dark text-white border-dark"
-                    : "bg-white text-gray-700 border-gray-200"
-                }`}
-            >
+          {categories.map(cat=>(
+            <button key={cat} onClick={()=>setActive(cat)}
+              className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium border transition ${active===cat?"bg-dark text-white border-dark":"bg-white text-gray-700 border-gray-200"}`}>
               {cat}
             </button>
           ))}
         </div>
       </div>
 
-      {/* PRODUCTS GRID */}
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-        {Array.from({ length: 9 }).map((_, i) => (
-          <ProductCard key={i} />
-        ))}
+        {filtered.map(p=>(<ProductCard key={p.id} product={p}/>))}
       </div>
     </div>
   );
 }
 
-/* ---------------- PRODUCT CARD ---------------- */
-
-function ProductCard() {
-  const [qty, setQty] = useState(50);
-
-  const increase = () => setQty((prev) => prev + 50);
-  const decrease = () => setQty((prev) => (prev > 50 ? prev - 50 : prev));
+function ProductCard({product}) {
+  const [qty,setQty]=useState(50);
+  const increase=()=>setQty(q=>q+10);
+  const decrease=()=>setQty(q=>q>50?q-10:q);
 
   return (
     <div className="rounded-xl p-4 md:p-6 bg-white shadow-sm border border-gray-100">
-      
-      {/* IMAGE */}
-      <div className="h-32 md:h-40 bg-gray-100 rounded-lg mb-3 flex items-center justify-center text-xs text-gray-500">
-        Product Image
-      </div>
+      <img src={product.image} alt={product.name} className="h-32 md:h-40 w-full object-contain bg-gray-100 rounded-lg mb-3"/>
+      <h3 className="text-sm md:text-base font-semibold mb-1 leading-snug">{product.name}</h3>
+      <p className="text-xs text-gray-600 mb-1">From £{product.price.toFixed(2)} per unit</p>
+      <p className="text-[10px] text-gray-400 mb-3">Products are subject to availability</p>
 
-      {/* TITLE */}
-      <h3 className="text-sm md:text-base font-semibold mb-1 leading-snug">
-        Sample Product
-      </h3>
-
-      {/* PRICE (placeholder for now) */}
-      <p className="text-xs text-gray-600 mb-3">
-        From £X per unit
-      </p>
-
-      {/* QUANTITY STEPPER */}
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs text-gray-600">Qty</span>
-
         <div className="flex items-center border rounded-lg overflow-hidden">
-          <button
-            onClick={decrease}
-            className="px-3 py-1 text-sm"
-          >
-            –
-          </button>
-          <span className="px-3 text-sm font-medium">
-            {qty}
-          </span>
-          <button
-            onClick={increase}
-            className="px-3 py-1 text-sm"
-          >
-            +
-          </button>
+          <button onClick={decrease} className="px-3 py-1 text-sm">–</button>
+          <span className="px-3 text-sm font-medium">{qty}</span>
+          <button onClick={increase} className="px-3 py-1 text-sm">+</button>
         </div>
       </div>
 
-      {/* CTA */}
-     <button
-      onClick={() => {
-       localStorage.setItem(
-         "quoteItem",
-         JSON.stringify({
-           product: "Sample Product",
-           quantity: qty,
-         })
-       );
-       window.location.href = "/quote";
-     }}
-     className="w-full bg-dark text-white py-2.5 rounded-lg text-sm font-medium hover:opacity-90"
-     >
-     Get quote
-    </button>
+      <button onClick={()=>{
+        localStorage.setItem("quoteItem",JSON.stringify({id:product.id,product:product.name,quantity:qty,price:product.price}));
+        window.location.href="/quote";
+      }} className="w-full bg-dark text-white py-2.5 rounded-lg text-sm font-medium hover:opacity-90">
+        Get quote
+      </button>
     </div>
   );
 }
