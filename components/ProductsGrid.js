@@ -59,7 +59,7 @@ function ProductCard({ product }) {
     <div className="rounded-xl p-4 md:p-6 bg-white shadow-sm border border-gray-100 flex flex-col">
       
       {/* IMAGE (PORTRAIT FRIENDLY) */}
-      <div className="w-full bg-gray-50 rounded-lg mb-4 flex items-center justify-center p-4">
+      <div className="w-full rounded-lg mb-4 flex items-center justify-center p-4">
   <img
     src={`/products/${product.id}.jpg`}
     alt={product.name}
