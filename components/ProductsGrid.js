@@ -8,7 +8,6 @@ const CATEGORIES = ["All", "Pen", "Notebook", "Key Ring", "Combo Sets", "Bags"];
 export default function ProductsGrid() {
   const [active, setActive] = useState("All");
 
-  // Filtered products (memoized so React doesn't keep rebuilding DOM nodes)
   const filteredProducts = useMemo(() => {
     if (active === "All") return products;
     return products.filter((p) => p.category === active);
@@ -36,11 +35,11 @@ export default function ProductsGrid() {
         </div>
       </div>
 
-      {/* GRID */}
+      {/* PRODUCTS GRID */}
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-        {filteredProducts.map((product) => (
+        {filteredProducts.map((product, index) => (
           <ProductCard
-            key={`${product.category}__${product.id}`}   // 🔥 GUARANTEED UNIQUE
+            key={`${product.category}-${product.id || "X"}-${index}`}   // 🔥 BULLETPROOF KEY
             product={product}
           />
         ))}
@@ -91,13 +90,9 @@ function ProductCard({ product }) {
         <span className="text-xs text-gray-600">Qty</span>
 
         <div className="flex items-center border rounded-lg overflow-hidden">
-          <button onClick={decrease} className="px-3 py-1 text-sm">
-            –
-          </button>
+          <button onClick={decrease} className="px-3 py-1 text-sm">–</button>
           <span className="px-3 text-sm font-medium">{qty}</span>
-          <button onClick={increase} className="px-3 py-1 text-sm">
-            +
-          </button>
+          <button onClick={increase} className="px-3 py-1 text-sm">+</button>
         </div>
       </div>
 
