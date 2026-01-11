@@ -693,11 +693,11 @@ export const products = [
     "image": "/products/MP84.png"
   },
   {
-    "id": "MP85",
-    "name": "MP85 - Amigos 2",
+    "id": "MP86",
+    "name": "MP86 - Amigos 3",
     "category": "Pen",
     "price": 1.68,
-    "image": "/products/MP85.png"
+    "image": "/products/MP86.png"
   },
   {
     "id": "MP86",
