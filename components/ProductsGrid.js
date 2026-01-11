@@ -22,12 +22,11 @@ export default function ProductsGrid() {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium border transition
-                ${
-                  active === cat
-                    ? "bg-dark text-white border-dark"
-                    : "bg-white text-gray-700 border-gray-200"
-                }`}
+              className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium border transition ${
+                active === cat
+                  ? "bg-dark text-white border-dark"
+                  : "bg-white text-gray-700 border-gray-200"
+              }`}
             >
               {cat}
             </button>
@@ -39,7 +38,7 @@ export default function ProductsGrid() {
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
         {filteredProducts.map((product, index) => (
           <ProductCard
-            key={`${product.category}-${product.id || "X"}-${index}`}   // 🔥 BULLETPROOF KEY
+            key={`${product.category}-${product.id || "X"}-${index}`}
             product={product}
           />
         ))}
@@ -58,15 +57,14 @@ function ProductCard({ product }) {
 
   return (
     <div className="rounded-xl p-4 md:p-6 bg-white shadow-sm border border-gray-100 flex flex-col">
-      
       {/* IMAGE */}
       <div className="h-32 md:h-40 bg-gray-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
         <img
-          src={product.image}
+          src={`/products/${product.id}.jpeg`}
           alt={product.name}
           className="h-full w-full object-contain"
           onError={(e) => {
-            e.currentTarget.src = "/placeholder.png";
+            e.currentTarget.src = "/placeholder.jpeg";
           }}
         />
       </div>
@@ -88,11 +86,14 @@ function ProductCard({ product }) {
       {/* QTY */}
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs text-gray-600">Qty</span>
-
         <div className="flex items-center border rounded-lg overflow-hidden">
-          <button onClick={decrease} className="px-3 py-1 text-sm">–</button>
+          <button onClick={decrease} className="px-3 py-1 text-sm">
+            –
+          </button>
           <span className="px-3 text-sm font-medium">{qty}</span>
-          <button onClick={increase} className="px-3 py-1 text-sm">+</button>
+          <button onClick={increase} className="px-3 py-1 text-sm">
+            +
+          </button>
         </div>
       </div>
 
