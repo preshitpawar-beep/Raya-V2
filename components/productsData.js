@@ -959,13 +959,6 @@ export const products = [
     "image": "/products/KC13.png"
   },
   {
-    "id": "\u2014",
-    "name": "\u2014 - Keychain Box (Extra Charges)",
-    "category": "Key Ring",
-    "price": 0.56,
-    "image": "/products/\u2014.png"
-  },
-  {
     "id": "D138",
     "name": "D138 - Elastic Black Notebook | 192 Pages | Non Dated | A5 Size",
     "category": "Notebook",
