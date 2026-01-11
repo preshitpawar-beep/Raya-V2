@@ -59,16 +59,16 @@ function ProductCard({ product }) {
     <div className="rounded-xl p-4 md:p-6 bg-white shadow-sm border border-gray-100 flex flex-col">
       
       {/* IMAGE (PORTRAIT FRIENDLY) */}
-      <div className="relative w-full aspect-[3/5] bg-gray-50 rounded-lg mb-4 overflow-hidden">
-        <img
-          src={`/products/${product.id}.jpg`}
-          alt={product.name}
-          className="absolute inset-0 w-full h-full object-contain p-3"
-          onError={(e) => {
-            e.currentTarget.src = "/placeholder.jpg";
-          }}
-        />
-      </div>
+      <div className="w-full bg-gray-50 rounded-lg mb-4 flex items-center justify-center p-4">
+  <img
+    src={`/products/${product.id}.jpeg`}
+    alt={product.name}
+    className="max-h-[260px] w-auto object-contain"
+    onError={(e) => {
+      e.currentTarget.src = "/placeholder.jpeg";
+    }}
+  />
+</div>
 
       {/* TITLE */}
       <h3 className="text-sm md:text-base font-semibold mb-1 leading-snug">
