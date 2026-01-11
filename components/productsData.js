@@ -1484,20 +1484,6 @@ export const products = [
     "image": "/products/Sr 252.png"
   },
   {
-    "id": "Sr 253",
-    "name": "Sr 253 - Gift Set \u2013 Corporate Executive \u2013 3-in-1 (Pen + Keychain + Card Holder)",
-    "category": "Combo Sets",
-    "price": 5.04,
-    "image": "/products/Sr 253.png"
-  },
-  {
-    "id": "Item Code",
-    "name": "Item Code - Product Name (Combo Contents)",
-    "category": "Combo Sets",
-    "price": 0,
-    "image": "/products/Item Code.png"
-  },
-  {
     "id": "Sr 159",
     "name": "Sr 159 - Gift Set \u2013 Black Elastic \u2013 4-in-1 (A5 Diary + Pen + Keychain + Card Holder)",
     "category": "Combo Sets",
@@ -1531,20 +1517,6 @@ export const products = [
     "category": "Combo Sets",
     "price": 15.87,
     "image": "/products/Sr 231.png"
-  },
-  {
-    "id": "Sr 292",
-    "name": "Sr 292 - Gift Set \u2013 Diary Executive \u2013 4-in-1 (A5 Diary + Pen + Keychain + Card Holder)",
-    "category": "Combo Sets",
-    "price": 15.87,
-    "image": "/products/Sr 292.png"
-  },
-  {
-    "id": "Sr 293",
-    "name": "Sr 293 - Gift Set \u2013 Diary Executive \u2013 4-in-1 (A5 Diary + Pen + Keychain + Card Holder)",
-    "category": "Combo Sets",
-    "price": 15.87,
-    "image": "/products/Sr 293.png"
   },
   {
     "id": "Sr 298",
