@@ -799,206 +799,31 @@ export const products = [
   },
   {
     "id": "MP119",
-    "name": "MP119 - \u2014",
+    "name": "MP119 - MP126",
     "category": "Pen",
     "price": 1.49,
     "image": "/products/MP119.png"
   },
   {
-    "id": "MP120",
-    "name": "MP120 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP120.png"
-  },
-  {
-    "id": "MP121",
-    "name": "MP121 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP121.png"
-  },
-  {
-    "id": "MP122",
-    "name": "MP122 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP122.png"
-  },
-  {
-    "id": "MP123",
-    "name": "MP123 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP123.png"
-  },
-  {
-    "id": "MP124",
-    "name": "MP124 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP124.png"
-  },
-  {
-    "id": "MP125",
-    "name": "MP125 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP125.png"
-  },
-  {
-    "id": "MP126",
-    "name": "MP126 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP126.png"
-  },
-  {
     "id": "MP127",
-    "name": "MP127 - \u2014",
+    "name": "MP127 - MP132",
     "category": "Pen",
     "price": 1.49,
     "image": "/products/MP127.png"
   },
   {
-    "id": "MP128",
-    "name": "MP128 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP128.png"
-  },
-  {
-    "id": "MP129",
-    "name": "MP129 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP129.png"
-  },
-  {
-    "id": "MP130",
-    "name": "MP130 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP130.png"
-  },
-  {
-    "id": "MP131",
-    "name": "MP131 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP131.png"
-  },
-  {
-    "id": "MP132",
-    "name": "MP132 - \u2014",
-    "category": "Pen",
-    "price": 1.49,
-    "image": "/products/MP132.png"
-  },
-  {
     "id": "MP133",
-    "name": "MP133 - \u2014",
+    "name": "MP133 - MP139",
     "category": "Pen",
     "price": 0.82,
     "image": "/products/MP133.png"
   },
   {
-    "id": "MP134",
-    "name": "MP134 - \u2014",
-    "category": "Pen",
-    "price": 0.82,
-    "image": "/products/MP134.png"
-  },
-  {
-    "id": "MP135",
-    "name": "MP135 - \u2014",
-    "category": "Pen",
-    "price": 0.82,
-    "image": "/products/MP135.png"
-  },
-  {
-    "id": "MP136",
-    "name": "MP136 - \u2014",
-    "category": "Pen",
-    "price": 0.82,
-    "image": "/products/MP136.png"
-  },
-  {
-    "id": "MP137",
-    "name": "MP137 - \u2014",
-    "category": "Pen",
-    "price": 0.82,
-    "image": "/products/MP137.png"
-  },
-  {
-    "id": "MP138",
-    "name": "MP138 - \u2014",
-    "category": "Pen",
-    "price": 0.82,
-    "image": "/products/MP138.png"
-  },
-  {
-    "id": "MP139",
-    "name": "MP139 - \u2014",
-    "category": "Pen",
-    "price": 0.82,
-    "image": "/products/MP139.png"
-  },
-  {
     "id": "MP140",
-    "name": "MP140 - \u2014",
+    "name": "MP140 - MP146",
     "category": "Pen",
     "price": 1.68,
     "image": "/products/MP140.png"
-  },
-  {
-    "id": "MP141",
-    "name": "MP141 - \u2014",
-    "category": "Pen",
-    "price": 1.68,
-    "image": "/products/MP141.png"
-  },
-  {
-    "id": "MP142",
-    "name": "MP142 - \u2014",
-    "category": "Pen",
-    "price": 1.68,
-    "image": "/products/MP142.png"
-  },
-  {
-    "id": "MP143",
-    "name": "MP143 - \u2014",
-    "category": "Pen",
-    "price": 1.68,
-    "image": "/products/MP143.png"
-  },
-  {
-    "id": "MP144",
-    "name": "MP144 - \u2014",
-    "category": "Pen",
-    "price": 1.68,
-    "image": "/products/MP144.png"
-  },
-  {
-    "id": "MP145",
-    "name": "MP145 - \u2014",
-    "category": "Pen",
-    "price": 1.68,
-    "image": "/products/MP145.png"
-  },
-  {
-    "id": "MP146",
-    "name": "MP146 - \u2014",
-    "category": "Pen",
-    "price": 1.68,
-    "image": "/products/MP146.png"
-  },
-  {
-    "id": "Item Code",
-    "name": "Item Code - Product Name / Box Type",
-    "category": "Pen",
-    "price": 0,
-    "image": "/products/Item Code.png"
   },
   {
     "id": "B3",
