@@ -60,11 +60,11 @@ function ProductCard({ product }) {
       {/* IMAGE */}
       <div className="h-32 md:h-40 bg-gray-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
         <img
-          src={`/products/${product.id}.jpeg`}
+          src={`/products/${product.id}.jpg`}
           alt={product.name}
           className="h-full w-full object-contain"
           onError={(e) => {
-            e.currentTarget.src = "/placeholder.jpeg";
+            e.currentTarget.src = "/placeholder.jpg";
           }}
         />
       </div>
