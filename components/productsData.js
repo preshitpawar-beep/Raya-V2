@@ -364,13 +364,6 @@ export const products = [
     "image": "/products/P78.png"
   },
   {
-    "id": "Item Code",
-    "name": "Item Code - Product Name",
-    "category": "Pen",
-    "price": 0,
-    "image": "/products/Item Code.png"
-  },
-  {
     "id": "MP01",
     "name": "MP01 - Escort",
     "category": "Pen",
@@ -973,13 +966,6 @@ export const products = [
     "image": "/products/KC13.png"
   },
   {
-    "id": "Item Code",
-    "name": "Item Code - Product Name / Description",
-    "category": "Key Ring",
-    "price": 0,
-    "image": "/products/Item Code.png"
-  },
-  {
     "id": "\u2014",
     "name": "\u2014 - Keychain Box (Extra Charges)",
     "category": "Key Ring",
@@ -1468,13 +1454,6 @@ export const products = [
     "category": "Combo Sets",
     "price": 10.27,
     "image": "/products/Sr 305.png"
-  },
-  {
-    "id": "Item Code",
-    "name": "Item Code - Product Name (Combo Contents)",
-    "category": "Combo Sets",
-    "price": 0,
-    "image": "/products/Item Code.png"
   },
   {
     "id": "Sr 125",
