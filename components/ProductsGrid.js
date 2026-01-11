@@ -22,7 +22,7 @@ export default function ProductsGrid() {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-        {filtered.map(p=>(<ProductCard key={p.id} product={p}/>))}
+        {filtered.map(p=>(<ProductCard key={`${p.category}-${p.id}`} product={p} />))}
       </div>
     </div>
   );
