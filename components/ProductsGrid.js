@@ -57,14 +57,15 @@ function ProductCard({ product }) {
 
   return (
     <div className="rounded-xl p-4 md:p-6 bg-white shadow-sm border border-gray-100 flex flex-col">
-      {/* IMAGE */}
-      <div className="h-32 md:h-40 bg-gray-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
+      
+      {/* IMAGE (PORTRAIT FRIENDLY) */}
+      <div className="relative w-full aspect-[3/5] bg-gray-50 rounded-lg mb-4 overflow-hidden">
         <img
-          src={`/products/${product.id}.jpg`}
+          src={`/products/${product.id}.jpeg`}
           alt={product.name}
-          className="h-full w-full object-contain"
+          className="absolute inset-0 w-full h-full object-contain p-3"
           onError={(e) => {
-            e.currentTarget.src = "/placeholder.jpg";
+            e.currentTarget.src = "/placeholder.jpeg";
           }}
         />
       </div>
@@ -87,13 +88,9 @@ function ProductCard({ product }) {
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs text-gray-600">Qty</span>
         <div className="flex items-center border rounded-lg overflow-hidden">
-          <button onClick={decrease} className="px-3 py-1 text-sm">
-            –
-          </button>
+          <button onClick={decrease} className="px-3 py-1 text-sm">–</button>
           <span className="px-3 text-sm font-medium">{qty}</span>
-          <button onClick={increase} className="px-3 py-1 text-sm">
-            +
-          </button>
+          <button onClick={increase} className="px-3 py-1 text-sm">+</button>
         </div>
       </div>
 
