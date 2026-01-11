@@ -1148,20 +1148,6 @@ export const products = [
     "image": "/products/D202.png"
   },
   {
-    "id": "D206",
-    "name": "D206 - Green Divine Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.91,
-    "image": "/products/D206.png"
-  },
-  {
-    "id": "D207",
-    "name": "D207 - Blue Divine Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.91,
-    "image": "/products/D207.png"
-  },
-  {
     "id": "D208",
     "name": "D208 - Zenith Notebook | 192 Pages | Non Dated | A5 Size",
     "category": "Notebook",
