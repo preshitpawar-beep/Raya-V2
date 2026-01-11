@@ -61,11 +61,11 @@ function ProductCard({ product }) {
       {/* IMAGE (PORTRAIT FRIENDLY) */}
       <div className="w-full bg-gray-50 rounded-lg mb-4 flex items-center justify-center p-4">
   <img
-    src={`/products/${product.id}.jpeg`}
+    src={`/products/${product.id}.jpg`}
     alt={product.name}
     className="max-h-[260px] w-auto object-contain"
     onError={(e) => {
-      e.currentTarget.src = "/placeholder.jpeg";
+      e.currentTarget.src = "/placeholder.jpg";
     }}
   />
 </div>
