@@ -518,13 +518,6 @@ export const products = [
     "image": "/products/MP32.png"
   },
   {
-    "id": "MP35",
-    "name": "MP35 - Black Cross Ball Pen",
-    "category": "Pen",
-    "price": 0.93,
-    "image": "/products/MP35.png"
-  },
-  {
     "id": "MP41",
     "name": "MP41 - Parker Roller",
     "category": "Pen",
