@@ -7,6 +7,7 @@ import { products } from "./productsData";
 
 const CATEGORIES = ["All", "Pen", "Notebook", "Key Ring", "Combo Sets", "Bags"];
 const COLORS = ["black", "blue", "red", "white", "grey", "gold", "brown", "green"];
+const MATERIALS = ["plastic", "metal", "jute", "cotton", "paper", "leather"];
 
 const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
 
@@ -105,6 +106,15 @@ export default function ProductsGrid() {
     return result;
   }, [filters]);
 
+  const toggle = (key, value) => {
+    setFilters((f) => ({
+      ...f,
+      [key]: f[key].includes(value)
+        ? f[key].filter((x) => x !== value)
+        : [...f[key], value],
+    }));
+  };
+
   return (
     <div>
       {/* SEARCH + SORT */}
@@ -131,20 +141,98 @@ export default function ProductsGrid() {
       </div>
 
       {/* CATEGORY */}
-      <div className="flex gap-2 mb-6 overflow-x-auto">
+      <div className="flex gap-2 mb-4 overflow-x-auto">
         {CATEGORIES.map((c) => (
           <button
             key={c}
             onClick={() => setFilters({ ...filters, category: c })}
-            className={`px-4 py-2 rounded-full transition ${
-              filters.category === c
-                ? "bg-dark text-white"
-                : "bg-white border"
+            className={`px-4 py-2 rounded-full ${
+              filters.category === c ? "bg-dark text-white" : "border"
             }`}
           >
             {c}
           </button>
         ))}
+      </div>
+
+      {/* FILTER UI */}
+      <div className="mb-8 space-y-4">
+        {/* Colors */}
+        <div className="flex flex-wrap gap-2">
+          {COLORS.map((c) => (
+            <button
+              key={c}
+              onClick={() => toggle("colors", c)}
+              className={`px-3 py-1 rounded-full text-sm border ${
+                filters.colors.includes(c) ? "bg-dark text-white" : ""
+              }`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+
+        {/* Materials */}
+        <div className="flex flex-wrap gap-2">
+          {MATERIALS.map((m) => (
+            <button
+              key={m}
+              onClick={() => toggle("materials", m)}
+              className={`px-3 py-1 rounded-full text-sm border ${
+                filters.materials.includes(m) ? "bg-dark text-white" : ""
+              }`}
+            >
+              {m}
+            </button>
+          ))}
+        </div>
+
+        {/* Eco & Popular */}
+        <div className="flex gap-3">
+          <button
+            onClick={() =>
+              setFilters({ ...filters, ecoOnly: !filters.ecoOnly })
+            }
+            className={`px-3 py-1 rounded-full ${
+              filters.ecoOnly ? "bg-green-600 text-white" : "border"
+            }`}
+          >
+            🌱 Eco
+          </button>
+
+          <button
+            onClick={() =>
+              setFilters({
+                ...filters,
+                popularOnly: !filters.popularOnly,
+              })
+            }
+            className={`px-3 py-1 rounded-full ${
+              filters.popularOnly ? "bg-yellow-500 text-white" : "border"
+            }`}
+          >
+            ⭐ Popular
+          </button>
+        </div>
+
+        {/* Combo Set Types */}
+        {filters.category === "Combo Sets" && (
+          <div className="flex gap-2">
+            {["2-in-1", "3-in-1", "4-in-1"].map((t) => (
+              <button
+                key={t}
+                onClick={() => toggle("setTypes", t)}
+                className={`px-3 py-1 rounded-full border ${
+                  filters.setTypes.includes(t)
+                    ? "bg-dark text-white"
+                    : ""
+                }`}
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* GRID */}
