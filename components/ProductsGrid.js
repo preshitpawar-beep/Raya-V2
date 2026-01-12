@@ -149,8 +149,11 @@ export default function ProductsGrid() {
 
       {/* GRID */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-        {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {filteredProducts.map((product, index) => (
+          <ProductCard
+            key={`${product.category}-${product.id}-${product.name}-${index}`}
+            product={product}
+          />
         ))}
       </div>
     </div>
@@ -167,18 +170,25 @@ function ProductCard({ product }) {
   const decrease = () => setQty((q) => (q > minQty ? q - 10 : q));
 
   return (
-    <div className="rounded-xl p-4 bg-white shadow hover:shadow-xl transition flex flex-col">
+    <div className="rounded-xl p-4 md:p-6 bg-white shadow-sm border border-gray-100 flex flex-col hover:shadow-xl transition">
       {isEco(product) && (
         <span className="text-green-600 text-xs mb-1">🌱 Eco Friendly</span>
       )}
 
-      <img
-        src={`/products/${product.id}.jpg`}
-        className="h-48 object-contain my-3"
-        onError={(e) => (e.currentTarget.src = "/placeholder.jpg")}
-      />
+      <div className="w-full rounded-lg mb-4 flex items-center justify-center p-4">
+        <img
+          src={`/products/${product.id}.jpg`}
+          alt={product.name}
+          className="max-h-[260px] w-auto object-contain"
+          onError={(e) => {
+            e.currentTarget.src = "/placeholder.jpg";
+          }}
+        />
+      </div>
 
-      <h3 className="text-sm font-semibold">{product.name}</h3>
+      <h3 className="text-sm md:text-base font-semibold mb-1 leading-snug">
+        {product.name}
+      </h3>
 
       <p className="text-xs text-gray-600">
         From £{product.price.toFixed(2)} per unit
@@ -188,14 +198,17 @@ function ProductCard({ product }) {
         Includes 1-colour logo imprint
       </p>
 
-      <p className="text-[11px] text-gray-400 mb-2">
-        Min order: {minQty} units
+      <p className="text-[11px] text-gray-400 mb-3">
+        Products are subject to availability
       </p>
 
-      <div className="flex justify-between items-center mb-3">
-        <button onClick={decrease}>–</button>
-        <span>{qty}</span>
-        <button onClick={increase}>+</button>
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-xs text-gray-600">Qty</span>
+        <div className="flex items-center border rounded-lg overflow-hidden">
+          <button onClick={decrease} className="px-3 py-1 text-sm">–</button>
+          <span className="px-3 text-sm font-medium">{qty}</span>
+          <button onClick={increase} className="px-3 py-1 text-sm">+</button>
+        </div>
       </div>
 
       <button
@@ -212,7 +225,7 @@ function ProductCard({ product }) {
           );
           window.location.href = "/quote";
         }}
-        className="mt-auto bg-dark text-white py-2 rounded-lg"
+        className="mt-auto w-full bg-dark text-white py-2.5 rounded-lg text-sm font-medium hover:opacity-90"
       >
         Get quote
       </button>
