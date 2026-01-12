@@ -64,7 +64,7 @@ export default function HeroSlider() {
         </AnimatePresence>
 
         {/* soft fade into white */}
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-white/90" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/40 to-white/80" />
       </div>
 
       {/* CONTENT */}
