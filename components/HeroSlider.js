@@ -40,73 +40,75 @@ export default function HeroSlider() {
   }, [index]);
 
   return (
-    <section className="relative w-full bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[80vh] items-center gap-10">
-          
-          {/* LEFT – TEXT */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="max-w-xl"
-            >
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight text-dark mb-6">
-                {slides[index].title}
-              </h1>
+    <section className="relative w-full h-[85vh] min-h-[520px] overflow-hidden bg-white">
+      
+      {/* BACKGROUND IMAGE */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={slides[index].image}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.02 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={slides[index].image}
+            alt={slides[index].title}
+            fill
+            priority
+            className="object-cover"
+          />
+        </motion.div>
+      </AnimatePresence>
 
-              <p className="text-lg md:text-xl text-gray-600 mb-10">
-                {slides[index].subtitle}
-              </p>
+      {/* DARK OVERLAY (keeps text readable) */}
+      <div className="absolute inset-0 bg-black/45" />
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/products"
-                  className="bg-dark text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition text-center"
-                >
-                  View Products
-                </Link>
+      {/* EDGE FADE INTO WHITE (premium blending) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-white" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent" />
 
-                <Link
-                  href="/quote"
-                  className="border border-gray-300 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition text-center"
-                >
-                  Get a Quote
-                </Link>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+      {/* CONTENT */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="max-w-xl"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white mb-6">
+              {slides[index].title}
+            </h1>
 
-          {/* RIGHT – IMAGE */}
-          <div className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={slides[index].image}
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative w-full h-full"
+            <p className="text-lg md:text-xl text-white/90 mb-10">
+              {slides[index].subtitle}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/products"
+                className="bg-white text-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-center"
               >
-                <Image
-                  src={slides[index].image}
-                  alt={slides[index].title}
-                  fill
-                  priority
-                  className="object-contain"
-                />
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                View Products
+              </Link>
 
-        </div>
+              <Link
+                href="/quote"
+                className="border border-white/60 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition text-center"
+              >
+                Get a Quote
+              </Link>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* DOTS */}
-      <div className="flex justify-center gap-3 pb-8">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -115,7 +117,7 @@ export default function HeroSlider() {
               setIndex(i);
             }}
             className={`w-3 h-3 rounded-full transition ${
-              i === index ? "bg-dark" : "bg-gray-300"
+              i === index ? "bg-white" : "bg-white/40"
             }`}
           />
         ))}
