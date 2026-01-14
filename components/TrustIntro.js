@@ -4,14 +4,14 @@ export default function TrustIntro() {
 
       {/* ================= ACT 1 — IMMERSIVE TRUST SCENE ================= */}
       <div className="relative h-[70vh] min-h-[520px] w-full overflow-hidden">
-        {/* Background */}
+        {/* Background image */}
         <img
-          src="/trust/lifestyle-scene.png"
-          alt="Branded promotional products lifestyle"
+          src="/trust/lifestyle-scene.jpg"
+          alt="Promotional products lifestyle scene"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        {/* Overlay */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/55" />
 
         {/* Content */}
@@ -40,65 +40,85 @@ export default function TrustIntro() {
         </div>
       </div>
 
-      {/* ================= ACT 2 — TIGHT PRODUCT GALLERY ================= */}
+      {/* ================= ACT 2 — 3 COLUMN PRODUCT GRID ================= */}
       <div className="bg-[#F7F6F3] py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-          {[
-            {
-              img: "/trust/product-pen.png",
-              title: "Premium pens, finished with intent",
-              desc: "Subtle colour, balanced weight, and clean branding that feels considered.",
-            },
-            {
-              img: "/trust/product-notebook.png",
-              title: "Notebooks designed for everyday use",
-              desc: "Made to be used daily — not stored away or thrown out.",
-            },
-            {
-              img: "/trust/product-tote.png",
-              title: "Totes built for real work",
-              desc: "Durable, practical, and naturally aligned with modern brands.",
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="group relative overflow-hidden rounded-2xl bg-white shadow-sm"
-            >
-              {/* Image */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            {/* PEN */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white shadow-sm">
               <img
-                src={item.img}
-                alt={item.title}
+                src="/trust/product-pen.png"
+                alt="Premium branded pen"
                 className="
                   w-full
-                  h-[340px] sm:h-[380px] md:h-[320px]
+                  h-[300px] sm:h-[340px]
                   object-contain
                   transition-transform duration-700 ease-out
-                  group-hover:scale-[1.03]
+                  group-hover:scale-[1.04]
                 "
               />
-
-              {/* Overlay (desktop only) */}
-              <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-
-              {/* Text */}
-              <div
-                className="
-                  md:absolute md:bottom-0 md:left-0 md:right-0
-                  p-5 md:p-7
-                  text-dark md:text-[#F5F5F3]
-                "
-              >
-                <p className="text-lg md:text-xl font-medium leading-snug">
-                  {item.title}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-lg font-medium text-white">
+                  Premium pens
                 </p>
-                <p className="mt-2 text-sm md:text-base opacity-80 max-w-md">
-                  {item.desc}
+                <p className="mt-1 text-sm text-white/85 leading-snug">
+                  Balanced weight, refined finish, and subtle branding.
                 </p>
               </div>
             </div>
-          ))}
 
+            {/* NOTEBOOK */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white shadow-sm">
+              <img
+                src="/trust/product-notebook.png"
+                alt="Branded notebook"
+                className="
+                  w-full
+                  h-[300px] sm:h-[340px]
+                  object-contain
+                  transition-transform duration-700 ease-out
+                  group-hover:scale-[1.04]
+                "
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-lg font-medium text-white">
+                  Everyday notebooks
+                </p>
+                <p className="mt-1 text-sm text-white/85 leading-snug">
+                  Designed to be used daily, not stored or discarded.
+                </p>
+              </div>
+            </div>
+
+            {/* TOTE */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white shadow-sm">
+              <img
+                src="/trust/product-tote.png"
+                alt="Branded tote bag"
+                className="
+                  w-full
+                  h-[300px] sm:h-[340px]
+                  object-contain
+                  transition-transform duration-700 ease-out
+                  group-hover:scale-[1.04]
+                "
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-lg font-medium text-white">
+                  Practical tote bags
+                </p>
+                <p className="mt-1 text-sm text-white/85 leading-snug">
+                  Durable, functional, and naturally brand-aligned.
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
