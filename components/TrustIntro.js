@@ -7,7 +7,7 @@ export default function TrustIntro() {
         
         {/* Background image */}
         <img
-          src="/trust/lifestyle-scene.jpg"
+          src="/trust/lifestyle-scene.png"
           alt="Branded merchandise in a professional workspace"
           className="absolute inset-0 h-full w-full object-cover"
         />
