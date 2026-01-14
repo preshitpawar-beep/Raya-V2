@@ -6,7 +6,7 @@ export default function TrustIntro() {
       <div className="relative h-[70vh] min-h-[520px] w-full overflow-hidden">
         {/* Background image */}
         <img
-          src="/trust/lifestyle-scene.jpg"
+          src="/trust/lifestyle-scene.png"
           alt="Promotional products lifestyle scene"
           className="absolute inset-0 h-full w-full object-cover"
         />
