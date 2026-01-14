@@ -41,70 +41,58 @@ export default function TrustIntro() {
         </div>
       </div>
 
-      {/* ================= ACT 2 — PRODUCT AS OBJECT ================= */}
-      <div className="bg-[#F7F6F3] py-28">
-        <div className="max-w-7xl mx-auto px-6 space-y-40">
+{/* ================= ACT 2 — TIGHT PRODUCT GALLERY ================= */}
+<div className="bg-[#F7F6F3] py-20 md:py-24">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-16">
 
-          {/* Product 1 */}
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            <div>
-              <img
-                src="/trust/product-pen.png"
-                alt="Branded pen"
-                className="w-full max-w-xl mx-auto drop-shadow-[0_30px_40px_rgba(0,0,0,0.15)]"
-              />
-            </div>
-            <div className="max-w-md">
-              <p className="text-2xl font-medium text-dark">
-                Designed to represent your brand properly.
-              </p>
-              <p className="mt-4 text-gray-600">
-                Practical, considered, and built for daily use — not disposable impressions.
-              </p>
-            </div>
-          </div>
+    {/* Product Card */}
+    {[
+      {
+        img: "/trust/product-pen.png",
+        title: "Premium pens, finished with intent",
+        desc: "Subtle colours, balanced weight, and clean branding that feels considered.",
+      },
+      {
+        img: "/trust/product-notebook.png",
+        title: "Everyday notebooks, confirming quality",
+        desc: "Designed to be used daily — not stored, not discarded.",
+      },
+      {
+        img: "/trust/product-tote.png",
+        title: "Totes built for real use",
+        desc: "Practical, durable, and naturally aligned with modern brands.",
+      },
+    ].map((item, i) => (
+      <div
+        key={i}
+        className="relative overflow-hidden rounded-2xl bg-white shadow-sm group"
+      >
+        {/* Image */}
+        <img
+          src={item.img}
+          alt={item.title}
+          className="w-full h-[420px] md:h-[360px] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        />
 
-          {/* Product 2 */}
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            <div className="order-2 md:order-1 max-w-md">
-              <p className="text-2xl font-medium text-dark">
-                Made for consistency, not shortcuts.
-              </p>
-              <p className="mt-4 text-gray-600">
-                Clean branding, dependable quality, and products that feel intentional.
-              </p>
-            </div>
-            <div className="order-1 md:order-2">
-              <img
-                src="/trust/product-notebook.png"
-                alt="Branded notebook"
-                className="w-full max-w-xl mx-auto drop-shadow-[0_30px_40px_rgba(0,0,0,0.15)]"
-              />
-            </div>
-          </div>
+        {/* Overlay (desktop only) */}
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-          {/* Product 3 */}
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            <div>
-              <img
-                src="/trust/product-tote.png"
-                alt="Branded tote bag"
-                className="w-full max-w-xl mx-auto drop-shadow-[0_30px_40px_rgba(0,0,0,0.15)]"
-              />
-            </div>
-            <div className="max-w-md">
-              <p className="text-2xl font-medium text-dark">
-                Practical objects with a clear purpose.
-              </p>
-              <p className="mt-4 text-gray-600">
-                Merchandise that fits naturally into real working environments.
-              </p>
-            </div>
-          </div>
-
+        {/* Text */}
+        <div className="
+          md:absolute md:bottom-0 md:left-0 md:right-0
+          p-6 md:p-8
+          text-dark md:text-[#F5F5F3]
+        ">
+          <p className="text-xl md:text-2xl font-medium leading-snug">
+            {item.title}
+          </p>
+          <p className="mt-2 text-sm md:text-base opacity-80 max-w-md">
+            {item.desc}
+          </p>
         </div>
       </div>
+    ))}
 
-    </section>
-  );
-}
+  </div>
+</div>
+
