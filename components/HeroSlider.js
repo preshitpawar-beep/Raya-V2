@@ -43,7 +43,7 @@ export default function HeroSlider() {
   }, [index]);
 
   return (
-    <section className="relative w-full bg-white overflow-hidden">
+    <section className="relative w-full overflow-hidden">
 
       {/* ================= MOBILE HERO ================= */}
       <div className="md:hidden relative h-[70vh]">
@@ -69,105 +69,97 @@ export default function HeroSlider() {
 
         <div className="relative z-10 h-full flex items-end">
           <div className="p-6 w-full">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
+            <h1 className="text-3xl font-bold text-white mb-3 leading-tight">
+              {slides[index].title}
+            </h1>
+            <p className="text-base text-white/90 mb-5">
+              {slides[index].subtitle}
+            </p>
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/products"
+                className="bg-white text-dark px-6 py-3 rounded-lg font-semibold text-center"
               >
-                <h1 className="text-3xl font-bold text-white mb-3 leading-tight">
-                  {slides[index].title}
-                </h1>
-
-                <p className="text-base text-white/90 mb-5">
-                  {slides[index].subtitle}
-                </p>
-
-                <div className="flex flex-col gap-3">
-                  <Link
-                    href="/products"
-                    className="bg-white text-dark px-6 py-3 rounded-lg font-semibold text-center"
-                  >
-                    View Products
-                  </Link>
-
-                  <Link
-                    href="/quote"
-                    className="border border-white/60 text-white px-6 py-3 rounded-lg font-semibold text-center"
-                  >
-                    Get a Quote
-                  </Link>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                View Products
+              </Link>
+              <Link
+                href="/quote"
+                className="border border-white/60 text-white px-6 py-3 rounded-lg font-semibold text-center"
+              >
+                Get a Quote
+              </Link>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ================= DESKTOP HERO ================= */}
+      {/* ================= DESKTOP HERO WITH COLOUR PANEL ================= */}
       <div className="hidden md:block">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 min-h-[65vh] items-center gap-10">
+        <div className="grid grid-cols-2 min-h-[65vh]">
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
-                className="max-w-xl"
-              >
-                <h1 className="text-5xl font-bold leading-tight text-dark mb-5">
-                  {slides[index].title}
-                </h1>
+          {/* LEFT – COLOURED TEXT PANEL */}
+          <div className="relative flex items-center">
+            {/* Background tint */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F7F6F3] to-[#EFEDE8]" />
 
-                <p className="text-lg text-gray-600 mb-8">
-                  {slides[index].subtitle}
-                </p>
-
-                <div className="flex gap-4">
-                  <Link
-                    href="/products"
-                    className="bg-dark text-white px-8 py-3 rounded-lg font-semibold"
-                  >
-                    View Products
-                  </Link>
-
-                  <Link
-                    href="/quote"
-                    className="border border-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50"
-                  >
-                    Get a Quote
-                  </Link>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            <div className="relative w-full h-[65vh]">
+            <div className="relative z-10 max-w-xl px-12">
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={slides[index].image}
-                  initial={{ opacity: 0, x: 32 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -32 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="relative w-full h-full"
+                  key={index}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -16 }}
+                  transition={{ duration: 0.45, ease: "easeOut" }}
                 >
-                  <Image
-                    src={slides[index].image}
-                    alt={slides[index].title}
-                    fill
-                    priority
-                    className="object-contain"
-                  />
+                  <h1 className="text-5xl font-bold leading-tight text-dark mb-5">
+                    {slides[index].title}
+                  </h1>
+
+                  <p className="text-lg text-gray-600 mb-8">
+                    {slides[index].subtitle}
+                  </p>
+
+                  <div className="flex gap-4">
+                    <Link
+                      href="/products"
+                      className="bg-dark text-white px-8 py-3 rounded-lg font-semibold"
+                    >
+                      View Products
+                    </Link>
+                    <Link
+                      href="/quote"
+                      className="border border-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-white"
+                    >
+                      Get a Quote
+                    </Link>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
-
           </div>
+
+          {/* RIGHT – IMAGE */}
+          <div className="relative">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={slides[index].image}
+                initial={{ opacity: 0, x: 32 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -32 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="relative w-full h-full"
+              >
+                <Image
+                  src={slides[index].image}
+                  alt={slides[index].title}
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
         </div>
       </div>
 
