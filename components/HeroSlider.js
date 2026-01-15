@@ -30,9 +30,7 @@ const slides = [
 
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
-
-  // ✅ FIX: Node-safe, browser-safe timeout type
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timeoutRef = useRef(null); // ✅ JS-safe
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
@@ -40,14 +38,16 @@ export default function HeroSlider() {
     }, 5000);
 
     return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, [index]);
 
   return (
     <section className="relative w-full bg-white overflow-hidden">
 
-      {/* ================= MOBILE HERO (IMAGE + OVERLAY TEXT) ================= */}
+      {/* ================= MOBILE HERO ================= */}
       <div className="md:hidden relative h-[85vh]">
         <AnimatePresence mode="wait">
           <motion.div
@@ -65,13 +65,10 @@ export default function HeroSlider() {
               priority
               className="object-contain"
             />
-
-            {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           </motion.div>
         </AnimatePresence>
 
-        {/* Overlay text */}
         <div className="relative z-10 h-full flex items-end">
           <div className="p-6 w-full">
             <AnimatePresence mode="wait">
@@ -82,7 +79,7 @@ export default function HeroSlider() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <h1 className="text-3xl font-bold text-white leading-tight mb-4">
+                <h1 className="text-3xl font-bold text-white mb-4 leading-tight">
                   {slides[index].title}
                 </h1>
 
@@ -111,12 +108,11 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* ================= DESKTOP HERO (UNCHANGED) ================= */}
+      {/* ================= DESKTOP HERO ================= */}
       <div className="hidden md:block">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 min-h-[80vh] items-center gap-10">
 
-            {/* LEFT – TEXT */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -137,14 +133,14 @@ export default function HeroSlider() {
                 <div className="flex gap-4">
                   <Link
                     href="/products"
-                    className="bg-dark text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition"
+                    className="bg-dark text-white px-8 py-4 rounded-lg font-semibold"
                   >
                     View Products
                   </Link>
 
                   <Link
                     href="/quote"
-                    className="border border-gray-300 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition"
+                    className="border border-gray-300 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50"
                   >
                     Get a Quote
                   </Link>
@@ -152,8 +148,7 @@ export default function HeroSlider() {
               </motion.div>
             </AnimatePresence>
 
-            {/* RIGHT – IMAGE */}
-            <div className="relative w-full h-[80vh] flex items-center justify-center">
+            <div className="relative w-full h-[80vh]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={slides[index].image}
@@ -184,15 +179,18 @@ export default function HeroSlider() {
           <button
             key={i}
             onClick={() => {
-              if (timeoutRef.current) clearTimeout(timeoutRef.current);
+              if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+              }
               setIndex(i);
             }}
-            className={`w-3 h-3 rounded-full transition ${
+            className={`w-3 h-3 rounded-full ${
               i === index ? "bg-dark" : "bg-gray-300"
             }`}
           />
         ))}
       </div>
+
     </section>
   );
 }
