@@ -46,7 +46,7 @@ export default function HeroSlider() {
     <section className="relative w-full overflow-hidden">
 
       {/* ================= MOBILE HERO ================= */}
-      <div className="md:hidden relative h-[70vh]">
+      <div className="md:hidden relative h-[62vh]">
         <AnimatePresence mode="wait">
           <motion.div
             key={slides[index].image}
@@ -91,24 +91,40 @@ export default function HeroSlider() {
             </div>
           </div>
         </div>
+
+        {/* DOTS – ABSOLUTE (NO GAP) */}
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                setIndex(i);
+              }}
+              className={`w-3 h-3 rounded-full transition ${
+                i === index ? "bg-white" : "bg-white/40"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* ================= DESKTOP HERO ================= */}
       <div className="hidden md:block">
-        <div className="grid grid-cols-2 min-h-[62vh]">
+        <div className="grid grid-cols-[3fr_2fr] min-h-[58vh]">
 
-          {/* LEFT – COLOURED PANEL (TEXT CENTRED PROPERLY) */}
+          {/* LEFT – TEXT (60%) */}
           <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-br from-[#F7F6F3] to-[#EFEDE8]" />
 
-            <div className="relative z-10 w-full max-w-lg px-10">
+            <div className="relative z-10 w-full max-w-xl px-12">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 14 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -14 }}
-                  transition={{ duration: 0.45, ease: "easeOut" }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
                 >
                   <h1 className="text-5xl font-bold leading-tight text-dark mb-5">
                     {slides[index].title}
@@ -137,18 +153,18 @@ export default function HeroSlider() {
             </div>
           </div>
 
-          {/* RIGHT – IMAGE (REDUCED VISUAL WEIGHT) */}
+          {/* RIGHT – IMAGE (40%) */}
           <div className="relative flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={slides[index].image}
-                initial={{ opacity: 0, x: 28 }}
+                initial={{ opacity: 0, x: 24 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -28 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                exit={{ opacity: 0, x: -24 }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
                 className="relative w-full h-full flex items-center justify-center"
               >
-                <div className="relative w-[85%] h-[85%]">
+                <div className="relative w-[80%] h-[80%]">
                   <Image
                     src={slides[index].image}
                     alt={slides[index].title}
@@ -162,22 +178,22 @@ export default function HeroSlider() {
           </div>
 
         </div>
-      </div>
 
-      {/* ================= DOTS (NO GAP BELOW) ================= */}
-      <div className="flex justify-center gap-3">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => {
-              if (timeoutRef.current) clearTimeout(timeoutRef.current);
-              setIndex(i);
-            }}
-            className={`w-3 h-3 rounded-full transition ${
-              i === index ? "bg-dark" : "bg-gray-300"
-            }`}
-          />
-        ))}
+        {/* DOTS – ABSOLUTE (NO GAP) */}
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                setIndex(i);
+              }}
+              className={`w-3 h-3 rounded-full transition ${
+                i === index ? "bg-dark" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
     </section>
