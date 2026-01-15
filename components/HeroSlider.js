@@ -46,7 +46,7 @@ export default function HeroSlider() {
     <section className="relative w-full overflow-hidden">
 
       {/* ================= MOBILE HERO (UNCHANGED) ================= */}
-      <div className="md:hidden relative h-[58vh]">
+      <div className="md:hidden relative h-[60vh]">
         <AnimatePresence mode="wait">
           <motion.div
             key={slides[index].image}
@@ -109,11 +109,11 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* ================= DESKTOP HERO (UPDATED) ================= */}
+      {/* ================= DESKTOP HERO (60 / 40) ================= */}
       <div className="hidden md:block relative">
-        <div className="grid grid-cols-[7fr_3fr] min-h-[48vh]">
+        <div className="grid grid-cols-[3fr_2fr] min-h-[48vh]">
 
-          {/* LEFT – TEXT (70%) */}
+          {/* LEFT – TEXT (60%) */}
           <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-br from-[#F6F5F2] to-[#EEECE6]" />
 
@@ -153,7 +153,7 @@ export default function HeroSlider() {
             </div>
           </div>
 
-          {/* RIGHT – IMAGE (30%, REDUCED SCALE) */}
+          {/* RIGHT – IMAGE (40%) */}
           <div className="relative flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
@@ -164,7 +164,7 @@ export default function HeroSlider() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 className="relative w-full h-full flex items-center justify-center"
               >
-                <div className="relative w-[75%] h-[75%]">
+                <div className="relative w-[80%] h-[80%]">
                   <Image
                     src={slides[index].image}
                     alt={slides[index].title}
