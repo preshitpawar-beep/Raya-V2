@@ -30,7 +30,9 @@ const slides = [
 
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // ✅ FIX: Node-safe, browser-safe timeout type
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
@@ -45,7 +47,7 @@ export default function HeroSlider() {
   return (
     <section className="relative w-full bg-white overflow-hidden">
 
-      {/* MOBILE HERO (IMAGE + OVERLAY TEXT) */}
+      {/* ================= MOBILE HERO (IMAGE + OVERLAY TEXT) ================= */}
       <div className="md:hidden relative h-[85vh]">
         <AnimatePresence mode="wait">
           <motion.div
@@ -109,7 +111,7 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* DESKTOP HERO (UNCHANGED STRUCTURE) */}
+      {/* ================= DESKTOP HERO (UNCHANGED) ================= */}
       <div className="hidden md:block">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 min-h-[80vh] items-center gap-10">
@@ -176,7 +178,7 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* DOTS */}
+      {/* ================= DOTS ================= */}
       <div className="flex justify-center gap-3 pb-8">
         {slides.map((_, i) => (
           <button
