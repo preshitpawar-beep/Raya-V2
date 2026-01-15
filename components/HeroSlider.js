@@ -30,7 +30,7 @@ const slides = [
 
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
-  const timeoutRef = useRef(null); // ✅ JS-safe
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
@@ -38,9 +38,7 @@ export default function HeroSlider() {
     }, 5000);
 
     return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, [index]);
 
@@ -48,7 +46,7 @@ export default function HeroSlider() {
     <section className="relative w-full bg-white overflow-hidden">
 
       {/* ================= MOBILE HERO ================= */}
-      <div className="md:hidden relative h-[85vh]">
+      <div className="md:hidden relative h-[70vh]">
         <AnimatePresence mode="wait">
           <motion.div
             key={slides[index].image}
@@ -74,30 +72,30 @@ export default function HeroSlider() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
               >
-                <h1 className="text-3xl font-bold text-white mb-4 leading-tight">
+                <h1 className="text-3xl font-bold text-white mb-3 leading-tight">
                   {slides[index].title}
                 </h1>
 
-                <p className="text-base text-white/90 mb-6">
+                <p className="text-base text-white/90 mb-5">
                   {slides[index].subtitle}
                 </p>
 
                 <div className="flex flex-col gap-3">
                   <Link
                     href="/products"
-                    className="bg-white text-dark px-6 py-4 rounded-lg font-semibold text-center"
+                    className="bg-white text-dark px-6 py-3 rounded-lg font-semibold text-center"
                   >
                     View Products
                   </Link>
 
                   <Link
                     href="/quote"
-                    className="border border-white/60 text-white px-6 py-4 rounded-lg font-semibold text-center"
+                    className="border border-white/60 text-white px-6 py-3 rounded-lg font-semibold text-center"
                   >
                     Get a Quote
                   </Link>
@@ -111,36 +109,36 @@ export default function HeroSlider() {
       {/* ================= DESKTOP HERO ================= */}
       <div className="hidden md:block">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 min-h-[80vh] items-center gap-10">
+          <div className="grid grid-cols-2 min-h-[65vh] items-center gap-10">
 
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
                 className="max-w-xl"
               >
-                <h1 className="text-6xl font-bold leading-tight text-dark mb-6">
+                <h1 className="text-5xl font-bold leading-tight text-dark mb-5">
                   {slides[index].title}
                 </h1>
 
-                <p className="text-xl text-gray-600 mb-10">
+                <p className="text-lg text-gray-600 mb-8">
                   {slides[index].subtitle}
                 </p>
 
                 <div className="flex gap-4">
                   <Link
                     href="/products"
-                    className="bg-dark text-white px-8 py-4 rounded-lg font-semibold"
+                    className="bg-dark text-white px-8 py-3 rounded-lg font-semibold"
                   >
                     View Products
                   </Link>
 
                   <Link
                     href="/quote"
-                    className="border border-gray-300 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50"
+                    className="border border-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50"
                   >
                     Get a Quote
                   </Link>
@@ -148,14 +146,14 @@ export default function HeroSlider() {
               </motion.div>
             </AnimatePresence>
 
-            <div className="relative w-full h-[80vh]">
+            <div className="relative w-full h-[65vh]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={slides[index].image}
-                  initial={{ opacity: 0, x: 40 }}
+                  initial={{ opacity: 0, x: 32 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -40 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  exit={{ opacity: 0, x: -32 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   className="relative w-full h-full"
                 >
                   <Image
@@ -174,17 +172,15 @@ export default function HeroSlider() {
       </div>
 
       {/* ================= DOTS ================= */}
-      <div className="flex justify-center gap-3 pb-8">
+      <div className="flex justify-center gap-3 pb-4">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => {
-              if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-              }
+              if (timeoutRef.current) clearTimeout(timeoutRef.current);
               setIndex(i);
             }}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-3 h-3 rounded-full transition ${
               i === index ? "bg-dark" : "bg-gray-300"
             }`}
           />
