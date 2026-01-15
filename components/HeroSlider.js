@@ -45,15 +45,15 @@ export default function HeroSlider() {
   return (
     <section className="relative w-full overflow-hidden">
 
-      {/* ================= MOBILE HERO ================= */}
-      <div className="md:hidden relative h-[62vh]">
+      {/* ================= MOBILE HERO (UNCHANGED) ================= */}
+      <div className="md:hidden relative h-[58vh]">
         <AnimatePresence mode="wait">
           <motion.div
             key={slides[index].image}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             className="absolute inset-0"
           >
             <Image
@@ -68,23 +68,23 @@ export default function HeroSlider() {
         </AnimatePresence>
 
         <div className="relative z-10 h-full flex items-end">
-          <div className="p-6 w-full">
-            <h1 className="text-3xl font-bold text-white mb-3 leading-tight">
+          <div className="p-5 w-full">
+            <h1 className="text-3xl font-bold text-white mb-2 leading-tight">
               {slides[index].title}
             </h1>
-            <p className="text-base text-white/90 mb-5">
+            <p className="text-sm text-white/90 mb-4">
               {slides[index].subtitle}
             </p>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
               <Link
                 href="/products"
-                className="bg-white text-dark px-6 py-3 rounded-lg font-semibold text-center"
+                className="bg-white text-dark px-5 py-3 rounded-lg font-semibold text-center"
               >
                 View Products
               </Link>
               <Link
                 href="/quote"
-                className="border border-white/60 text-white px-6 py-3 rounded-lg font-semibold text-center"
+                className="border border-white/60 text-white px-5 py-3 rounded-lg font-semibold text-center"
               >
                 Get a Quote
               </Link>
@@ -92,8 +92,8 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        {/* DOTS – ABSOLUTE (NO GAP) */}
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
+        {/* Mobile dots */}
+        <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-3 z-20">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -101,7 +101,7 @@ export default function HeroSlider() {
                 if (timeoutRef.current) clearTimeout(timeoutRef.current);
                 setIndex(i);
               }}
-              className={`w-3 h-3 rounded-full transition ${
+              className={`w-2.5 h-2.5 rounded-full ${
                 i === index ? "bg-white" : "bg-white/40"
               }`}
             />
@@ -109,28 +109,28 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* ================= DESKTOP HERO ================= */}
-      <div className="hidden md:block">
-        <div className="grid grid-cols-[3fr_2fr] min-h-[58vh]">
+      {/* ================= DESKTOP HERO (UPDATED) ================= */}
+      <div className="hidden md:block relative">
+        <div className="grid grid-cols-[7fr_3fr] min-h-[48vh]">
 
-          {/* LEFT – TEXT (60%) */}
+          {/* LEFT – TEXT (70%) */}
           <div className="relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#F7F6F3] to-[#EFEDE8]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F6F5F2] to-[#EEECE6]" />
 
-            <div className="relative z-10 w-full max-w-xl px-12">
+            <div className="relative z-10 w-full max-w-2xl px-14">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 12 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
                 >
-                  <h1 className="text-5xl font-bold leading-tight text-dark mb-5">
+                  <h1 className="text-5xl font-bold leading-tight text-dark mb-4">
                     {slides[index].title}
                   </h1>
 
-                  <p className="text-lg text-gray-600 mb-7">
+                  <p className="text-lg text-gray-600 mb-6">
                     {slides[index].subtitle}
                   </p>
 
@@ -153,18 +153,18 @@ export default function HeroSlider() {
             </div>
           </div>
 
-          {/* RIGHT – IMAGE (40%) */}
+          {/* RIGHT – IMAGE (30%, REDUCED SCALE) */}
           <div className="relative flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={slides[index].image}
-                initial={{ opacity: 0, x: 24 }}
+                initial={{ opacity: 0, x: 16 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -24 }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
+                exit={{ opacity: 0, x: -16 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
                 className="relative w-full h-full flex items-center justify-center"
               >
-                <div className="relative w-[80%] h-[80%]">
+                <div className="relative w-[75%] h-[75%]">
                   <Image
                     src={slides[index].image}
                     alt={slides[index].title}
@@ -179,8 +179,8 @@ export default function HeroSlider() {
 
         </div>
 
-        {/* DOTS – ABSOLUTE (NO GAP) */}
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
+        {/* Desktop dots – absolute, no gap */}
+        <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-3 z-20">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -188,7 +188,7 @@ export default function HeroSlider() {
                 if (timeoutRef.current) clearTimeout(timeoutRef.current);
                 setIndex(i);
               }}
-              className={`w-3 h-3 rounded-full transition ${
+              className={`w-3 h-3 rounded-full ${
                 i === index ? "bg-dark" : "bg-gray-300"
               }`}
             />
