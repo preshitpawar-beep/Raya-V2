@@ -93,29 +93,28 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* ================= DESKTOP HERO WITH COLOUR PANEL ================= */}
+      {/* ================= DESKTOP HERO ================= */}
       <div className="hidden md:block">
-        <div className="grid grid-cols-2 min-h-[65vh]">
+        <div className="grid grid-cols-2 min-h-[62vh]">
 
-          {/* LEFT – COLOURED TEXT PANEL */}
-          <div className="relative flex items-center">
-            {/* Background tint */}
+          {/* LEFT – COLOURED PANEL (TEXT CENTRED PROPERLY) */}
+          <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-br from-[#F7F6F3] to-[#EFEDE8]" />
 
-            <div className="relative z-10 max-w-xl px-12">
+            <div className="relative z-10 w-full max-w-lg px-10">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 16 }}
+                  initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -16 }}
+                  exit={{ opacity: 0, y: -14 }}
                   transition={{ duration: 0.45, ease: "easeOut" }}
                 >
                   <h1 className="text-5xl font-bold leading-tight text-dark mb-5">
                     {slides[index].title}
                   </h1>
 
-                  <p className="text-lg text-gray-600 mb-8">
+                  <p className="text-lg text-gray-600 mb-7">
                     {slides[index].subtitle}
                   </p>
 
@@ -138,24 +137,26 @@ export default function HeroSlider() {
             </div>
           </div>
 
-          {/* RIGHT – IMAGE */}
-          <div className="relative">
+          {/* RIGHT – IMAGE (REDUCED VISUAL WEIGHT) */}
+          <div className="relative flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={slides[index].image}
-                initial={{ opacity: 0, x: 32 }}
+                initial={{ opacity: 0, x: 28 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -32 }}
+                exit={{ opacity: 0, x: -28 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="relative w-full h-full"
+                className="relative w-full h-full flex items-center justify-center"
               >
-                <Image
-                  src={slides[index].image}
-                  alt={slides[index].title}
-                  fill
-                  priority
-                  className="object-contain"
-                />
+                <div className="relative w-[85%] h-[85%]">
+                  <Image
+                    src={slides[index].image}
+                    alt={slides[index].title}
+                    fill
+                    priority
+                    className="object-contain"
+                  />
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -163,8 +164,8 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* ================= DOTS ================= */}
-      <div className="flex justify-center gap-3 pb-4">
+      {/* ================= DOTS (NO GAP BELOW) ================= */}
+      <div className="flex justify-center gap-3">
         {slides.map((_, i) => (
           <button
             key={i}
