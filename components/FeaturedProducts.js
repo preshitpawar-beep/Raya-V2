@@ -4,14 +4,70 @@ import { useRef } from "react";
 import Link from "next/link";
 import { products } from "./productsData";
 
-/* ---------- CURATED PREMIUM SELECTION ---------- */
-const featuredProducts = products
-  .filter((p) => {
-    if (p.category === "Pen") return p.price >= 1.5;
-    if (["Combo Sets", "Bags", "Key Ring"].includes(p.category)) return true;
-    return false;
-  })
-  .slice(0, 10);
+/* ---------- CURATED FEATURED SELECTION ---------- */
+
+// Helpers
+const byPriceDesc = (a, b) => b.price - a.price;
+
+// 1️⃣ Premium metal pens
+const premiumPens = products
+  .filter(
+    (p) =>
+      p.category === "Pen" &&
+      p.price >= 2.5 // premium threshold
+  )
+  .sort(byPriceDesc)
+  .slice(0, 2);
+
+// 2️⃣ Good plastic pen
+const plasticPen = products
+  .filter(
+    (p) =>
+      p.category === "Pen" &&
+      p.price >= 1 && // decent plastic
+      p.price < 2.5
+  )
+  .sort(byPriceDesc)
+  .slice(0, 1);
+
+// 3️⃣ Notebooks (often under combo sets or notebook category)
+const notebooks = products
+  .filter(
+    (p) =>
+      p.category === "Notebook" ||
+      (p.category === "Combo Sets" &&
+        p.name.toLowerCase().includes("notebook"))
+  )
+  .sort(byPriceDesc)
+  .slice(0, 2);
+
+// 4️⃣ Keyrings
+const keyrings = products
+  .filter((p) => p.category === "Key Ring")
+  .sort(byPriceDesc)
+  .slice(0, 2);
+
+// 5️⃣ Combo gift sets
+const comboSets = products
+  .filter((p) => p.category === "Combo Sets")
+  .sort(byPriceDesc)
+  .slice(0, 3);
+
+// 6️⃣ Bags
+const bags = products
+  .filter((p) => p.category === "Bags")
+  .sort(byPriceDesc)
+  .slice(0, 2);
+
+// 🔗 Merge curated list
+const featuredProducts = [
+  ...premiumPens,
+  ...plasticPen,
+  ...notebooks,
+  ...keyrings,
+  ...comboSets,
+  ...bags,
+];
 
 export default function FeaturedProducts() {
   const sliderRef = useRef(null);
@@ -38,10 +94,10 @@ export default function FeaturedProducts() {
           </h2>
         </div>
 
-        {/* ===== SLIDER WRAPPER ===== */}
+        {/* ===== SLIDER ===== */}
         <div className="relative">
 
-          {/* LEFT ARROW — DESKTOP ONLY */}
+          {/* LEFT ARROW (DESKTOP) */}
           <button
             onClick={() => scroll("left")}
             className="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-white border shadow hover:shadow-md transition"
@@ -49,7 +105,6 @@ export default function FeaturedProducts() {
             ←
           </button>
 
-          {/* SLIDER */}
           <div
             ref={sliderRef}
             className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"
@@ -59,7 +114,7 @@ export default function FeaturedProducts() {
             ))}
           </div>
 
-          {/* RIGHT ARROW — DESKTOP ONLY */}
+          {/* RIGHT ARROW (DESKTOP) */}
           <button
             onClick={() => scroll("right")}
             className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-white border shadow hover:shadow-md transition"
