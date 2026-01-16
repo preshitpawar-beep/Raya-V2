@@ -4,58 +4,55 @@ import { useRef } from "react";
 import Link from "next/link";
 import { products } from "./productsData";
 
-/* ---------- CURATED FEATURED SELECTION ---------- */
+/* ---------- BALANCED FEATURED SELECTION ---------- */
 
+const byPriceAsc = (a, b) => a.price - b.price;
 const byPriceDesc = (a, b) => b.price - a.price;
 
-// Premium metal pens
-const premiumPens = products
+// 1️⃣ One premium metal pen
+const premiumPen = products
   .filter((p) => p.category === "Pen" && p.price >= 2.5)
-  .sort(byPriceDesc)
-  .slice(0, 2);
-
-// Good plastic pen
-const plasticPen = products
-  .filter((p) => p.category === "Pen" && p.price >= 1 && p.price < 2.5)
   .sort(byPriceDesc)
   .slice(0, 1);
 
-// Notebooks
-const notebooks = products
+// 2️⃣ Good plastic pens (2)
+const plasticPens = products
+  .filter((p) => p.category === "Pen" && p.price >= 0.8 && p.price < 2.5)
+  .sort(byPriceAsc)
+  .slice(0, 2);
+
+// 3️⃣ Notebook
+const notebook = products
   .filter(
     (p) =>
       p.category === "Notebook" ||
       (p.category === "Combo Sets" &&
         p.name.toLowerCase().includes("notebook"))
   )
-  .sort(byPriceDesc)
-  .slice(0, 2);
+  .slice(0, 1);
 
-// Keyrings
-const keyrings = products
+// 4️⃣ Keyring
+const keyring = products
   .filter((p) => p.category === "Key Ring")
-  .sort(byPriceDesc)
-  .slice(0, 2);
+  .slice(0, 1);
 
-// Combo gift sets
+// 5️⃣ Combo gift sets (2)
 const comboSets = products
   .filter((p) => p.category === "Combo Sets")
-  .sort(byPriceDesc)
-  .slice(0, 3);
-
-// Bags
-const bags = products
-  .filter((p) => p.category === "Bags")
-  .sort(byPriceDesc)
   .slice(0, 2);
 
+// 6️⃣ Bag
+const bag = products
+  .filter((p) => p.category === "Bags")
+  .slice(0, 1);
+
 const featuredProducts = [
-  ...premiumPens,
-  ...plasticPen,
-  ...notebooks,
-  ...keyrings,
+  ...premiumPen,
+  ...plasticPens,
+  ...notebook,
+  ...keyring,
   ...comboSets,
-  ...bags,
+  ...bag,
 ];
 
 export default function FeaturedProducts() {
@@ -79,7 +76,7 @@ export default function FeaturedProducts() {
             Featured products
           </p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight text-dark">
-            A curated selection businesses choose with confidence.
+            A curated mix of popular, practical branded products.
           </h2>
         </div>
 
@@ -117,16 +114,6 @@ export default function FeaturedProducts() {
           </button>
         </div>
 
-        {/* ===== VIEW ALL ===== */}
-        <div className="mt-8">
-          <Link
-            href="/products"
-            className="inline-block border border-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition"
-          >
-            View all products
-          </Link>
-        </div>
-
       </div>
     </section>
   );
@@ -137,7 +124,7 @@ export default function FeaturedProducts() {
 function FeaturedCard({ product }) {
   return (
     <Link
-      href="/products"
+      href="/quote"
       className="
         snap-start
         min-w-[200px] max-w-[200px]
@@ -153,7 +140,7 @@ function FeaturedCard({ product }) {
         flex-col
       "
     >
-      {/* IMAGE SLOT — FIXED HEIGHT */}
+      {/* IMAGE SLOT */}
       <div className="h-[150px] md:h-[180px] flex items-center justify-center">
         <img
           src={`/products/${product.id}.jpg`}
@@ -169,13 +156,17 @@ function FeaturedCard({ product }) {
           {product.name}
         </h3>
 
-        <p className="text-xs text-gray-600 mb-4">
+        <p className="text-xs text-gray-700 mb-1">
           From £{product.price.toFixed(2)} per unit
         </p>
 
-        {/* BUTTON LOCKED TO BOTTOM */}
+        <p className="text-[11px] text-gray-500 mb-4">
+          Prices include 1 colour print
+        </p>
+
+        {/* CTA */}
         <span className="mt-auto inline-block bg-dark text-white py-2 px-4 rounded-lg text-sm font-semibold text-center">
-          View product
+          Get a quote
         </span>
       </div>
     </Link>
