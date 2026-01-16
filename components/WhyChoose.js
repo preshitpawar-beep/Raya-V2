@@ -1,63 +1,70 @@
 export default function WhyChoose() {
   return (
-    <section className="bg-secondary/40">
-      <div className="max-w-6xl mx-auto px-6 py-14 md:py-20">
-        
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-dark">
-            Why choose Legacy Imprint SW
-          </h2>
-          <p className="text-gray-700">
-            A straightforward approach to branded promotional products
-          </p>
-        </div>
+    <section className="relative overflow-hidden">
+      
+      {/* Soft background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F4F3EF] via-[#EFEDE8] to-[#E9E7E1]" />
 
-        {/* Benefits */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          
-          {[
-            {
-              title: "Sensible pricing",
-              text:
-                "Premium-quality products offered at competitive, transparent prices, without unnecessary extras.",
-            },
-            {
-              title: "Personalised branding",
-              text:
-                "Custom branding options designed to suit your business and represent your brand clearly.",
-            },
-            {
-              title: "Low-risk ordering",
-              text:
-                "No obligation quotes and flexible quantities, so you can order with confidence.",
-            },
-            {
-              title: "UK-based service",
-              text:
-                "Based in Tiverton, supporting businesses across the UK with reliable service.",
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition"
-            >
-              <div className="flex items-start gap-3 mb-2">
-                {/* Brand cue */}
-                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary" />
-                
-                <h3 className="font-semibold text-dark">
-                  {item.title}
-                </h3>
-              </div>
+      <div className="relative max-w-7xl mx-auto px-6 py-20">
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+          {/* LEFT — BRAND STATEMENT */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-medium text-dark leading-tight">
+              A calmer, more considered way
+              <br />
+              to create branded merchandise.
+            </h2>
+
+            <p className="mt-6 text-lg text-gray-700 leading-relaxed max-w-xl">
+              We believe promotional products should feel purposeful — not rushed,
+              overcomplicated, or disposable.
+            </p>
+
+            <p className="mt-4 text-gray-700 leading-relaxed max-w-xl">
+              Our role is to guide you through the process with clarity, helping
+              you choose products that represent your business properly and
+              stand up to everyday use.
+            </p>
+          </div>
+
+          {/* RIGHT — PRINCIPLES */}
+          <div className="space-y-6">
+
+            <div className="bg-white/70 backdrop-blur rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-dark mb-2">
+                Clarity over complexity
+              </h3>
               <p className="text-gray-700 text-sm leading-relaxed">
-                {item.text}
+                We keep things straightforward — clear options, honest guidance,
+                and no unnecessary layers.
               </p>
             </div>
-          ))}
 
+            <div className="bg-white/70 backdrop-blur rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-dark mb-2">
+                Quality you can stand behind
+              </h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Products are selected for how they feel, perform, and last —
+                not just how they look in a catalogue.
+              </p>
+            </div>
+
+            <div className="bg-white/70 backdrop-blur rounded-2xl p-6">
+              <h3 className="text-lg font-semibold text-dark mb-2">
+                A personal, considered process
+              </h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Every enquiry is handled thoughtfully, with attention to detail
+                and an understanding of your brand’s context.
+              </p>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
   );
