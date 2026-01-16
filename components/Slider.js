@@ -35,7 +35,7 @@ export default function Slider() {
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
-            duration: 35,
+            duration: 20,
             ease: "linear",
           }}
           whileHover={{ animationPlayState: "paused" }}
