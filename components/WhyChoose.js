@@ -1,11 +1,7 @@
 export default function WhyChoose() {
   return (
-    <section className="relative overflow-hidden">
-      
-      {/* Soft background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#F4F3EF] via-[#EFEDE8] to-[#E9E7E1]" />
-
-      <div className="relative max-w-7xl mx-auto px-6 py-20">
+    <section className="bg-white">
+      <div className="max-w-7xl mx-auto px-6 py-20">
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
@@ -32,7 +28,7 @@ export default function WhyChoose() {
           {/* RIGHT — PRINCIPLES */}
           <div className="space-y-6">
 
-            <div className="bg-white/70 backdrop-blur rounded-2xl p-6">
+            <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-dark mb-2">
                 Clarity over complexity
               </h3>
@@ -42,7 +38,7 @@ export default function WhyChoose() {
               </p>
             </div>
 
-            <div className="bg-white/70 backdrop-blur rounded-2xl p-6">
+            <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-dark mb-2">
                 Quality you can stand behind
               </h3>
@@ -52,7 +48,7 @@ export default function WhyChoose() {
               </p>
             </div>
 
-            <div className="bg-white/70 backdrop-blur rounded-2xl p-6">
+            <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-dark mb-2">
                 A personal, considered process
               </h3>
