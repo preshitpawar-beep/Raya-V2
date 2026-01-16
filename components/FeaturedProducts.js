@@ -64,7 +64,7 @@ export default function FeaturedProducts() {
   const scroll = (direction) => {
     if (!sliderRef.current) return;
     sliderRef.current.scrollBy({
-      left: direction === "left" ? -320 : 320,
+      left: direction === "left" ? -300 : 300,
       behavior: "smooth",
     });
   };
@@ -83,12 +83,12 @@ export default function FeaturedProducts() {
           </h2>
         </div>
 
-        {/* ===== SLIDER WRAPPER ===== */}
+        {/* ===== SLIDER ===== */}
         <div className="relative">
 
           {/* MOBILE EDGE FADES */}
-          <div className="md:hidden pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="md:hidden pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="md:hidden pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="md:hidden pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
 
           {/* LEFT ARROW (DESKTOP) */}
           <button
@@ -101,7 +101,7 @@ export default function FeaturedProducts() {
           {/* SLIDER */}
           <div
             ref={sliderRef}
-            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"
+            className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"
           >
             {featuredProducts.map((product) => (
               <FeaturedCard key={product.id} product={product} />
@@ -140,7 +140,7 @@ function FeaturedCard({ product }) {
       href="/products"
       className="
         snap-start
-        min-w-[220px] max-w-[220px]
+        min-w-[200px] max-w-[200px]
         md:min-w-[260px] md:max-w-[260px]
         rounded-xl
         bg-white
@@ -149,16 +149,22 @@ function FeaturedCard({ product }) {
         hover:shadow-lg
         transition
         flex-shrink-0
+        flex
+        flex-col
       "
     >
-      <img
-        src={`/products/${product.id}.jpg`}
-        alt={product.name}
-        className="h-48 object-contain my-4 mx-auto"
-        onError={(e) => (e.currentTarget.src = product.image)}
-      />
+      {/* IMAGE SLOT — FIXED HEIGHT */}
+      <div className="h-[150px] md:h-[180px] flex items-center justify-center">
+        <img
+          src={`/products/${product.id}.jpg`}
+          alt={product.name}
+          className="max-h-full object-contain"
+          onError={(e) => (e.currentTarget.src = product.image)}
+        />
+      </div>
 
-      <div className="px-4 pb-5">
+      {/* CONTENT */}
+      <div className="px-4 pb-4 flex flex-col flex-1">
         <h3 className="text-sm font-semibold leading-snug mb-1">
           {product.name}
         </h3>
@@ -167,7 +173,8 @@ function FeaturedCard({ product }) {
           From £{product.price.toFixed(2)} per unit
         </p>
 
-        <span className="inline-block bg-dark text-white py-2 px-4 rounded-lg text-sm font-semibold">
+        {/* BUTTON LOCKED TO BOTTOM */}
+        <span className="mt-auto inline-block bg-dark text-white py-2 px-4 rounded-lg text-sm font-semibold text-center">
           View product
         </span>
       </div>
