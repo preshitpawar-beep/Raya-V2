@@ -68,7 +68,11 @@ export default function ProductsGrid() {
   const filteredProducts = useMemo(() => {
     let result = products.filter((p) => {
       if (filters.category !== "All" && p.category !== filters.category) return false;
-      if (filters.search && !p.name.toLowerCase().includes(filters.search.toLowerCase())) return false;
+      if (filters.search) {
+  const term = filters.search.toLowerCase();
+  const haystack = `${p.name} ${p.category}`.toLowerCase();
+  if (!haystack.includes(term)) return false;
+}
 
       if (filters.colors.length) {
         const c = getColor(p);
