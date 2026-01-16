@@ -8,6 +8,7 @@ export default function Products({ searchParams }) {
           Products
         </h1>
 
+        {/* ✅ PASS searchParams DOWN */}
         <ProductsGrid searchParams={searchParams} />
       </div>
     </main>
