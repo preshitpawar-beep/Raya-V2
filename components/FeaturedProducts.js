@@ -9,19 +9,19 @@ import { products } from "./productsData";
 const byPriceAsc = (a, b) => a.price - b.price;
 const byPriceDesc = (a, b) => b.price - a.price;
 
-// 1️⃣ One premium metal pen
+// 1 premium pen
 const premiumPen = products
   .filter((p) => p.category === "Pen" && p.price >= 2.5)
   .sort(byPriceDesc)
   .slice(0, 1);
 
-// 2️⃣ Good plastic pens (2)
+// 2 good plastic pens
 const plasticPens = products
   .filter((p) => p.category === "Pen" && p.price >= 0.8 && p.price < 2.5)
   .sort(byPriceAsc)
   .slice(0, 2);
 
-// 3️⃣ Notebook
+// 1 notebook
 const notebook = products
   .filter(
     (p) =>
@@ -31,17 +31,17 @@ const notebook = products
   )
   .slice(0, 1);
 
-// 4️⃣ Keyring
+// 1 keyring
 const keyring = products
   .filter((p) => p.category === "Key Ring")
   .slice(0, 1);
 
-// 5️⃣ Combo gift sets (2)
+// 2 combo sets
 const comboSets = products
   .filter((p) => p.category === "Combo Sets")
   .slice(0, 2);
 
-// 6️⃣ Bag
+// 1 bag
 const bag = products
   .filter((p) => p.category === "Bags")
   .slice(0, 1);
@@ -61,7 +61,7 @@ export default function FeaturedProducts() {
   const scroll = (direction) => {
     if (!sliderRef.current) return;
     sliderRef.current.scrollBy({
-      left: direction === "left" ? -300 : 300,
+      left: direction === "left" ? -260 : 260,
       behavior: "smooth",
     });
   };
@@ -95,10 +95,15 @@ export default function FeaturedProducts() {
             ←
           </button>
 
-          {/* SLIDER */}
+          {/* SLIDER TRACK */}
           <div
             ref={sliderRef}
-            className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"
+            className="
+              flex gap-5 overflow-x-auto pb-6
+              snap-x snap-mandatory
+              scrollbar-hide
+              scroll-smooth
+            "
           >
             {featuredProducts.map((product) => (
               <FeaturedCard key={product.id} product={product} />
@@ -112,6 +117,16 @@ export default function FeaturedProducts() {
           >
             →
           </button>
+        </div>
+
+        {/* ===== VIEW ALL PRODUCTS ===== */}
+        <div className="mt-10">
+          <Link
+            href="/products"
+            className="inline-block border border-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition"
+          >
+            View all products
+          </Link>
         </div>
 
       </div>
