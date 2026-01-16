@@ -2,38 +2,65 @@
 
 import { motion } from "framer-motion";
 
+const items = [
+  {
+    icon: "🖼️",
+    title: "Free visual proof before you order",
+    text: "See how your logo will look on the product before production.",
+  },
+  {
+    icon: "🎨",
+    title: "Design & colour guidance",
+    text: "We help you choose colours and finishes that suit your brand.",
+  },
+  {
+    icon: "🤝",
+    title: "Real people, real support",
+    text: "Speak directly with someone who understands your requirements.",
+  },
+  {
+    icon: "£",
+    title: "Clear pricing",
+    text: "Transparent pricing with print included where possible.",
+  },
+];
+
 export default function Slider() {
   return (
-    <section className="py-16 bg-secondary">
-      <div className="max-w-6xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold mb-4">
-            Explore Our Product Categories
-          </h2>
-          <p className="text-lg mb-8">
-            Branded merchandise designed for your business
-          </p>
+    <section className="bg-[#F3F2EE] py-6 overflow-hidden">
+      <div className="relative w-full">
 
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              "Pens & Stationery",
-              "Notebooks & Notepads",
-              "Bags & Accessories",
-              "Corporate Gifting",
-            ].map((item) => (
-              <div
-                key={item}
-                className="bg-white p-6 rounded-lg shadow-sm font-semibold"
-              >
-                {item}
+        <motion.div
+          className="flex gap-12 whitespace-nowrap"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 35,
+            ease: "linear",
+          }}
+          whileHover={{ animationPlayState: "paused" }}
+        >
+          {[...items, ...items].map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-4 px-6"
+            >
+              <span className="text-2xl">{item.icon}</span>
+
+              <div className="text-left">
+                <p className="text-sm font-medium text-dark">
+                  {item.title}
+                </p>
+                <p className="text-xs text-gray-600">
+                  {item.text}
+                </p>
               </div>
-            ))}
-          </div>
+
+              <span className="mx-6 h-6 w-px bg-gray-300" />
+            </div>
+          ))}
         </motion.div>
+
       </div>
     </section>
   );
