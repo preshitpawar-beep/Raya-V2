@@ -70,10 +70,11 @@ export default function FeaturedProducts() {
   };
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white pt-0 pb-16">
+      {/* ⬆️ TOP PADDING REMOVED — THIS FIXES THE GAP */}
       <div className="max-w-7xl mx-auto px-14">
 
-        {/* ===== HEADER ===== */}
+        {/* ===== HEADER (ALIGNED WITH HERO TEXT) ===== */}
         <div className="mb-8 max-w-2xl">
           <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">
             Featured products
