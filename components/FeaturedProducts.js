@@ -6,31 +6,21 @@ import { products } from "./productsData";
 
 /* ---------- CURATED FEATURED SELECTION ---------- */
 
-// Helpers
 const byPriceDesc = (a, b) => b.price - a.price;
 
-// 1️⃣ Premium metal pens
+// Premium metal pens
 const premiumPens = products
-  .filter(
-    (p) =>
-      p.category === "Pen" &&
-      p.price >= 2.5 // premium threshold
-  )
+  .filter((p) => p.category === "Pen" && p.price >= 2.5)
   .sort(byPriceDesc)
   .slice(0, 2);
 
-// 2️⃣ Good plastic pen
+// Good plastic pen
 const plasticPen = products
-  .filter(
-    (p) =>
-      p.category === "Pen" &&
-      p.price >= 1 && // decent plastic
-      p.price < 2.5
-  )
+  .filter((p) => p.category === "Pen" && p.price >= 1 && p.price < 2.5)
   .sort(byPriceDesc)
   .slice(0, 1);
 
-// 3️⃣ Notebooks (often under combo sets or notebook category)
+// Notebooks
 const notebooks = products
   .filter(
     (p) =>
@@ -41,25 +31,24 @@ const notebooks = products
   .sort(byPriceDesc)
   .slice(0, 2);
 
-// 4️⃣ Keyrings
+// Keyrings
 const keyrings = products
   .filter((p) => p.category === "Key Ring")
   .sort(byPriceDesc)
   .slice(0, 2);
 
-// 5️⃣ Combo gift sets
+// Combo gift sets
 const comboSets = products
   .filter((p) => p.category === "Combo Sets")
   .sort(byPriceDesc)
   .slice(0, 3);
 
-// 6️⃣ Bags
+// Bags
 const bags = products
   .filter((p) => p.category === "Bags")
   .sort(byPriceDesc)
   .slice(0, 2);
 
-// 🔗 Merge curated list
 const featuredProducts = [
   ...premiumPens,
   ...plasticPen,
@@ -94,17 +83,22 @@ export default function FeaturedProducts() {
           </h2>
         </div>
 
-        {/* ===== SLIDER ===== */}
+        {/* ===== SLIDER WRAPPER ===== */}
         <div className="relative">
+
+          {/* MOBILE EDGE FADES */}
+          <div className="md:hidden pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="md:hidden pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent z-10" />
 
           {/* LEFT ARROW (DESKTOP) */}
           <button
             onClick={() => scroll("left")}
-            className="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-white border shadow hover:shadow-md transition"
+            className="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white border shadow hover:shadow-md transition"
           >
             ←
           </button>
 
+          {/* SLIDER */}
           <div
             ref={sliderRef}
             className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"
@@ -117,7 +111,7 @@ export default function FeaturedProducts() {
           {/* RIGHT ARROW (DESKTOP) */}
           <button
             onClick={() => scroll("right")}
-            className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-white border shadow hover:shadow-md transition"
+            className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white border shadow hover:shadow-md transition"
           >
             →
           </button>
@@ -144,7 +138,18 @@ function FeaturedCard({ product }) {
   return (
     <Link
       href="/products"
-      className="snap-start min-w-[260px] max-w-[260px] rounded-xl bg-white border shadow-sm hover:shadow-lg transition flex-shrink-0"
+      className="
+        snap-start
+        min-w-[220px] max-w-[220px]
+        md:min-w-[260px] md:max-w-[260px]
+        rounded-xl
+        bg-white
+        border
+        shadow-sm
+        hover:shadow-lg
+        transition
+        flex-shrink-0
+      "
     >
       <img
         src={`/products/${product.id}.jpg`}
