@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const items = [
   {
@@ -26,19 +27,25 @@ const items = [
 ];
 
 export default function Slider() {
+  const [duration, setDuration] = useState(16);
+
+  useEffect(() => {
+    // Detect mobile viewport
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    setDuration(isMobile ? 9 : 16);
+  }, []);
+
   return (
     <section className="bg-[#F3F2EE] py-6 overflow-hidden">
       <div className="relative w-full">
-
         <motion.div
           className="flex gap-12 whitespace-nowrap"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
-            duration: 16,
+            duration,
             ease: "linear",
           }}
-          whileHover={{ animationPlayState: "paused" }}
         >
           {[...items, ...items].map((item, index) => (
             <div
@@ -60,7 +67,6 @@ export default function Slider() {
             </div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
