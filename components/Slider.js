@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const items = [
   {
@@ -27,20 +27,27 @@ const items = [
 ];
 
 export default function Slider() {
-  const [duration, setDuration] = useState(16);
+  const trackRef = useRef(null);
+  const [distance, setDistance] = useState(0);
+  const [duration, setDuration] = useState(12);
 
   useEffect(() => {
-    // Detect mobile viewport
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    setDuration(isMobile ? 9 : 16);
+    if (!trackRef.current) return;
+
+    const trackWidth = trackRef.current.scrollWidth / 2;
+    setDistance(trackWidth);
+
+    const isMobile = window.innerWidth < 768;
+    setDuration(isMobile ? 8 : 14);
   }, []);
 
   return (
     <section className="bg-[#F3F2EE] py-6 overflow-hidden">
       <div className="relative w-full">
         <motion.div
+          ref={trackRef}
           className="flex gap-12 whitespace-nowrap"
-          animate={{ x: ["0%", "-50%"] }}
+          animate={{ x: [0, -distance] }}
           transition={{
             repeat: Infinity,
             duration,
