@@ -38,7 +38,7 @@ export default function Slider() {
     setDistance(trackWidth);
 
     const isMobile = window.innerWidth < 768;
-    setDuration(isMobile ? 8 : 14);
+    setDuration(isMobile ? 15 : 20);
   }, []);
 
   return (
