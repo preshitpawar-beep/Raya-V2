@@ -176,7 +176,7 @@ function FeaturedCard({ product }) {
         </p>
 
         <p className="text-[11px] text-gray-500 mb-4">
-          Prices include 1 colour print
+          Prices includes 1‑colour branding
         </p>
 
         {/* CTA */}
