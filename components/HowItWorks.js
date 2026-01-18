@@ -1,44 +1,73 @@
 export default function HowItWorks() {
   const steps = [
     {
-      title: "Choose products",
-      desc: "Browse our range of branded promotional products.",
+      step: "01",
+      title: "Browse or skip straight to a quote",
+      desc:
+        "Explore our catalogue and select products, or head directly to the quote page if you already know what you need.",
     },
     {
-      title: "Select quantity",
-      desc: "Adjust quantities based on your business needs.",
+      step: "02",
+      title: "Tell us the product & quantity",
+      desc:
+        "Choose your quantity on the product page, or simply share the product code and quantity on the quote form.",
     },
     {
-      title: "Get a quote",
-      desc: "Submit your request and we’ll get back to you quickly.",
+      step: "03",
+      title: "We review & come back to you",
+      desc:
+        "We’ll check availability, pricing, and branding options, and respond with a clear quote within one working day.",
     },
   ];
 
   return (
     <section className="py-20 bg-[#F7F8FA]">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-12">
-          How it works
-        </h2>
+      <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
+        {/* Heading */}
+        <div className="max-w-2xl mb-14">
+          <h2 className="text-2xl md:text-3xl font-bold text-dark mb-4">
+            How it works
+          </h2>
+          <p className="text-gray-700">
+            A simple, no-pressure process designed to save you time and avoid unnecessary back and forth.
+          </p>
+        </div>
+
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          {steps.map((step) => (
             <div
-              key={index}
-              className="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+              key={step.step}
+              className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm"
             >
-              <div className="text-2xl font-bold mb-4">
-                {index + 1}
+              <div className="mb-6">
+                <span className="text-sm font-semibold text-primary tracking-wide">
+                  {step.step}
+                </span>
               </div>
-              <h3 className="font-semibold mb-2">
+
+              <h3 className="text-lg font-semibold text-dark mb-3">
                 {step.title}
               </h3>
-              <p className="text-sm text-gray-700">
+
+              <p className="text-sm text-gray-700 leading-relaxed">
                 {step.desc}
               </p>
             </div>
           ))}
         </div>
+
+        {/* Reassurance strip */}
+        <div className="mt-12 rounded-2xl bg-white border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p className="text-sm text-gray-700">
+            No obligation, no hidden costs — just clear pricing and honest guidance.
+          </p>
+          <p className="text-sm font-medium text-dark">
+            Typical response time: <span className="font-semibold">within 1 working day</span>
+          </p>
+        </div>
+
       </div>
     </section>
   );
