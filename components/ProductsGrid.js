@@ -301,19 +301,24 @@ function ProductCard({ product }) {
     <div className="rounded-xl p-4 bg-white border shadow-sm flex flex-col">
       <img
         src={`/products/${product.id}.jpg`}
-        className="h-48 object-contain my-3"
+        className="h-48 object-contain my-4"
         onError={(e) => (e.currentTarget.src = "/placeholder.jpg")}
       />
 
-      <h3 className="text-sm font-semibold">{product.name}</h3>
+      <div className="space-y-1">
+        <h3 className="text-sm font-semibold">{product.name}</h3>
 
-      <p className="text-xs text-gray-600">
-        From £{product.price.toFixed(2)} per unit
-      </p>
+        <p className="text-xs text-gray-600">
+          From £{product.price.toFixed(2)} per unit
+        </p>
 
-      <p className="text-[11px] text-gray-500">
-        Includes 1-colour logo imprint
-      </p>
+        <p className="text-[11px] text-gray-500">
+          Includes 1-colour logo imprint
+        </p>
+      </div>
+
+      {/* Spacer ensures consistent gap before button */}
+      <div className="h-4" />
 
       <button
         onClick={() => {
@@ -329,10 +334,11 @@ function ProductCard({ product }) {
           );
           window.location.href = "/quote";
         }}
-        className="mt-auto bg-dark text-white py-2 rounded-lg"
+        className="mt-auto bg-dark text-white py-2.5 rounded-lg"
       >
         Get quote
       </button>
     </div>
   );
 }
+
