@@ -64,12 +64,12 @@ export default function TrustIntro() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="snap-start min-w-[260px] h-[200px] relative rounded-2xl overflow-hidden bg-white"
+                className="snap-start min-w-[260px] h-[200px] relative rounded-2xl overflow-hidden bg-[#EFEDE8]"
               >
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover p-6"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/25 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-4">
@@ -88,12 +88,12 @@ export default function TrustIntro() {
           <div className="hidden md:grid grid-cols-3 gap-6">
 
             {/* LARGE PEN TILE */}
-            <div className="relative col-span-2 rounded-2xl overflow-hidden bg-white">
-              <div className="h-[360px] flex items-center justify-center">
+            <div className="relative col-span-2 rounded-2xl overflow-hidden bg-[#EFEDE8]">
+              <div className="relative h-[360px]">
                 <img
                   src="/trust/product-pen.png"
                   alt="Premium branded pen"
-                  className="max-h-full object-contain"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
@@ -116,12 +116,12 @@ export default function TrustIntro() {
             </div>
 
             {/* NOTEBOOK */}
-            <div className="relative rounded-2xl overflow-hidden bg-white">
-              <div className="h-[300px] flex items-center justify-center">
+            <div className="relative rounded-2xl overflow-hidden bg-[#EFEDE8]">
+              <div className="relative h-[300px]">
                 <img
                   src="/trust/product-notebook.png"
                   alt="Branded notebook"
-                  className="max-h-full object-contain"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
@@ -136,12 +136,12 @@ export default function TrustIntro() {
             </div>
 
             {/* TOTE */}
-            <div className="relative col-span-2 rounded-2xl overflow-hidden bg-white">
-              <div className="h-[340px] flex items-center justify-center">
+            <div className="relative col-span-2 rounded-2xl overflow-hidden bg-[#EFEDE8]">
+              <div className="relative h-[340px]">
                 <img
                   src="/trust/product-tote.png"
                   alt="Branded tote bag"
-                  className="max-h-full object-contain"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
