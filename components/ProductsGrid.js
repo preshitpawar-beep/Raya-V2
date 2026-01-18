@@ -313,7 +313,7 @@ function ProductCard({ product }) {
         </p>
 
         <p className="text-[11px] text-gray-500">
-          Includes 1-colour logo imprint
+          Prices includes 1‑colour branding
         </p>
       </div>
 
