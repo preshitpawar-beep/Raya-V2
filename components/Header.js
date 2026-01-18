@@ -8,8 +8,8 @@ import Link from "next/link";
 const SUGGESTIONS = [
   "Plastic pen",
   "Metal pen",
-  "Notebooks",
-  "Key rings",
+  "Notebook",
+  "Key ring",
   "Bags",
   "Red pen",
   "Blue notebook",
