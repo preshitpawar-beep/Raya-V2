@@ -21,7 +21,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="py-20 bg-[#F7F8FA]">
+    <section className="py-20 bg-[#F5F3EE]">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
@@ -39,10 +39,11 @@ export default function HowItWorks() {
           {steps.map((step) => (
             <div
               key={step.step}
-              className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm"
+              className="bg-white rounded-2xl p-8 border border-black/5 shadow-sm"
             >
+              {/* Step number */}
               <div className="mb-6">
-                <span className="text-sm font-semibold text-primary tracking-wide">
+                <span className="text-3xl font-semibold tracking-tight text-[#8C8A82]">
                   {step.step}
                 </span>
               </div>
@@ -59,12 +60,13 @@ export default function HowItWorks() {
         </div>
 
         {/* Reassurance strip */}
-        <div className="mt-12 rounded-2xl bg-white border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="mt-12 rounded-2xl bg-white border border-black/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <p className="text-sm text-gray-700">
             No obligation, no hidden costs — just clear pricing and honest guidance.
           </p>
           <p className="text-sm font-medium text-dark">
-            Typical response time: <span className="font-semibold">within 1 working day</span>
+            Typical response time:{" "}
+            <span className="font-semibold">within 1 working day</span>
           </p>
         </div>
 
