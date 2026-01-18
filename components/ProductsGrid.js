@@ -74,6 +74,8 @@ export default function ProductsGrid({ initialSearch = "" }) {
     sort: "featured",
   });
 
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
   /* 🔗 SMART SEARCH → FILTERS */
   useEffect(() => {
     if (!initialSearch) return;
@@ -160,91 +162,133 @@ export default function ProductsGrid({ initialSearch = "" }) {
     }));
   };
 
-  return (
-    <div className="grid grid-cols-12 gap-8">
+  /* ---------------- FILTER UI (REUSED) ---------------- */
 
-      {/* LEFT FILTER SIDEBAR */}
-      <div className="col-span-12 md:col-span-3">
-        <div className="sticky top-24 space-y-6 bg-white p-5 rounded-xl border shadow-sm">
+  const FiltersUI = (
+    <div className="space-y-6">
 
-          <input
-            placeholder="Search products…"
-            className="w-full px-4 py-2 rounded-lg border"
-            value={filters.search}
-            onChange={(e) =>
-              setFilters({ ...filters, search: e.target.value })
-            }
-          />
+      <input
+        placeholder="Search products…"
+        className="w-full px-4 py-2 rounded-lg border"
+        value={filters.search}
+        onChange={(e) =>
+          setFilters({ ...filters, search: e.target.value })
+        }
+      />
 
-          {/* Category */}
-          <div>
-            <h4 className="text-sm font-semibold mb-2">Category</h4>
-            <div className="flex flex-wrap gap-2">
-              {CATEGORIES.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => setFilters({ ...filters, category: c })}
-                  className={`px-3 py-1 rounded-full text-sm border ${
-                    filters.category === c ? "bg-dark text-white" : ""
-                  }`}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Colours */}
-          <div>
-            <h4 className="text-sm font-semibold mb-2">Colour</h4>
-            <div className="flex flex-wrap gap-2">
-              {COLORS.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => toggle("colors", c)}
-                  className={`px-3 py-1 rounded-full text-sm border ${
-                    filters.colors.includes(c) ? "bg-dark text-white" : ""
-                  }`}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Material */}
-          <div>
-            <h4 className="text-sm font-semibold mb-2">Material</h4>
-            <div className="flex flex-wrap gap-2">
-              {MATERIALS.map((m) => (
-                <button
-                  key={m}
-                  onClick={() => toggle("materials", m)}
-                  className={`px-3 py-1 rounded-full text-sm border ${
-                    filters.materials.includes(m) ? "bg-dark text-white" : ""
-                  }`}
-                >
-                  {m}
-                </button>
-              ))}
-            </div>
-          </div>
-
+      <div>
+        <h4 className="text-sm font-semibold mb-2">Category</h4>
+        <div className="flex flex-wrap gap-2">
+          {CATEGORIES.map((c) => (
+            <button
+              key={c}
+              onClick={() => setFilters({ ...filters, category: c })}
+              className={`px-3 py-1 rounded-full text-sm border ${
+                filters.category === c ? "bg-dark text-white" : ""
+              }`}
+            >
+              {c}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* RIGHT PRODUCT GRID */}
-      <div className="col-span-12 md:col-span-9">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {filteredProducts.map((product, index) => (
-            <ProductCard
-              key={`${product.category}-${product.id}-${index}`}
-              product={product}
-            />
+      <div>
+        <h4 className="text-sm font-semibold mb-2">Colour</h4>
+        <div className="flex flex-wrap gap-2">
+          {COLORS.map((c) => (
+            <button
+              key={c}
+              onClick={() => toggle("colors", c)}
+              className={`px-3 py-1 rounded-full text-sm border ${
+                filters.colors.includes(c) ? "bg-dark text-white" : ""
+              }`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h4 className="text-sm font-semibold mb-2">Material</h4>
+        <div className="flex flex-wrap gap-2">
+          {MATERIALS.map((m) => (
+            <button
+              key={m}
+              onClick={() => toggle("materials", m)}
+              className={`px-3 py-1 rounded-full text-sm border ${
+                filters.materials.includes(m) ? "bg-dark text-white" : ""
+              }`}
+            >
+              {m}
+            </button>
           ))}
         </div>
       </div>
     </div>
+  );
+
+  return (
+    <>
+      {/* MOBILE FILTER BUTTON */}
+      <div className="md:hidden mb-6">
+        <button
+          onClick={() => setMobileFiltersOpen(true)}
+          className="w-full border rounded-lg px-4 py-3 text-sm font-medium"
+        >
+          Filters
+        </button>
+      </div>
+
+      <div className="grid grid-cols-12 gap-8">
+
+        {/* DESKTOP SIDEBAR */}
+        <div className="hidden md:block md:col-span-3">
+          <div className="sticky top-24 bg-white p-5 rounded-xl border shadow-sm">
+            {FiltersUI}
+          </div>
+        </div>
+
+        {/* PRODUCT GRID */}
+        <div className="col-span-12 md:col-span-9">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {filteredProducts.map((product, index) => (
+              <ProductCard
+                key={`${product.category}-${product.id}-${index}`}
+                product={product}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE FILTER DRAWER */}
+      {mobileFiltersOpen && (
+        <div className="fixed inset-0 z-50 bg-black/40">
+          <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl p-6 max-h-[85vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="font-semibold text-lg">Filters</h3>
+              <button
+                onClick={() => setMobileFiltersOpen(false)}
+                className="text-sm"
+              >
+                Close
+              </button>
+            </div>
+
+            {FiltersUI}
+
+            <button
+              onClick={() => setMobileFiltersOpen(false)}
+              className="mt-6 w-full bg-dark text-white py-3 rounded-lg"
+            >
+              Apply filters
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
