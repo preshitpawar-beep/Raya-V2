@@ -74,13 +74,45 @@ export default function ProductsGrid({ initialSearch = "" }) {
     sort: "featured",
   });
 
-  /* 🔗 INITIAL SEARCH FROM HEADER */
+  /* 🔗 SMART SEARCH → FILTERS */
   useEffect(() => {
     if (!initialSearch) return;
 
+    const words = initialSearch.toLowerCase().split(" ").filter(Boolean);
+
+    let category = "All";
+    let materials = [];
+    let colors = [];
+    let remainingWords = [];
+
+    words.forEach((word) => {
+      const matchedCategory = CATEGORIES.find(
+        (c) => c.toLowerCase() === word
+      );
+      if (matchedCategory) {
+        category = matchedCategory;
+        return;
+      }
+
+      if (MATERIALS.includes(word)) {
+        materials.push(word);
+        return;
+      }
+
+      if (COLORS.includes(word)) {
+        colors.push(word);
+        return;
+      }
+
+      remainingWords.push(word);
+    });
+
     setFilters((f) => ({
       ...f,
-      search: initialSearch,
+      category,
+      materials,
+      colors,
+      search: remainingWords.join(" "),
     }));
   }, [initialSearch]);
 
@@ -116,10 +148,6 @@ export default function ProductsGrid({ initialSearch = "" }) {
       return true;
     });
 
-    if (filters.sort === "price") result.sort((a, b) => a.price - b.price);
-    if (filters.sort === "premium") result.sort((a, b) => b.price - a.price);
-    if (filters.sort === "eco") result.sort((a, b) => isEco(b) - isEco(a));
-
     return result;
   }, [filters]);
 
@@ -139,7 +167,6 @@ export default function ProductsGrid({ initialSearch = "" }) {
       <div className="col-span-12 md:col-span-3">
         <div className="sticky top-24 space-y-6 bg-white p-5 rounded-xl border shadow-sm">
 
-          {/* Search */}
           <input
             placeholder="Search products…"
             className="w-full px-4 py-2 rounded-lg border"
@@ -225,7 +252,6 @@ export default function ProductsGrid({ initialSearch = "" }) {
 
 function ProductCard({ product }) {
   const minQty = MOQ[product.category] || 10;
-  const [qty, setQty] = useState(minQty);
 
   return (
     <div className="rounded-xl p-4 bg-white border shadow-sm flex flex-col">
@@ -252,7 +278,7 @@ function ProductCard({ product }) {
             JSON.stringify({
               id: product.id,
               product: product.name,
-              quantity: qty,
+              quantity: minQty,
               price: product.price,
               category: product.category,
             })
