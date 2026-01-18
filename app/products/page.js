@@ -1,6 +1,8 @@
 import ProductsGrid from "../../components/ProductsGrid";
 
 export default function Products({ searchParams }) {
+  const search = searchParams?.search || "";
+
   return (
     <main className="bg-[#F7F8FA]">
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
@@ -8,8 +10,7 @@ export default function Products({ searchParams }) {
           Products
         </h1>
 
-        {/* ✅ PASS searchParams DOWN */}
-        <ProductsGrid searchParams={searchParams} />
+        <ProductsGrid initialSearch={search} />
       </div>
     </main>
   );
