@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { products } from "./productsData";
 
 /* ---------------- CONFIG ---------------- */
@@ -10,7 +10,17 @@ const COLORS = ["black", "blue", "red", "white", "grey", "gold", "brown", "green
 const MATERIALS = ["plastic", "metal", "jute", "cotton", "paper", "leather"];
 
 const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
-const POPULAR_IDS = ["P77", "MP10", "MP03", "D184", "D200", "KC01", "Sr 159", "Sr 231", "JB 02"];
+const POPULAR_IDS = [
+  "P77",
+  "MP10",
+  "MP03",
+  "D184",
+  "D200",
+  "KC01",
+  "Sr 159",
+  "Sr 231",
+  "JB 02",
+];
 
 const MOQ = {
   Pen: 50,
@@ -33,7 +43,6 @@ const getMaterial = (p) => {
   if (p.category === "Bags") {
     if (/jute/i.test(p.name)) return "jute";
     if (/cotton/i.test(p.name)) return "cotton";
-    if (/nylon/i.test(p.name)) return "nylon";
     if (/paper/i.test(p.name)) return "paper";
   }
   if (p.category === "Key Ring") {
@@ -53,7 +62,7 @@ const getSetType = (p) => {
 
 /* ---------------- MAIN ---------------- */
 
-export default function ProductsGrid() {
+export default function ProductsGrid({ initialSearch = "" }) {
   const [filters, setFilters] = useState({
     category: "All",
     colors: [],
@@ -65,14 +74,26 @@ export default function ProductsGrid() {
     sort: "featured",
   });
 
+  /* 🔗 INITIAL SEARCH FROM HEADER */
+  useEffect(() => {
+    if (!initialSearch) return;
+
+    setFilters((f) => ({
+      ...f,
+      search: initialSearch,
+    }));
+  }, [initialSearch]);
+
   const filteredProducts = useMemo(() => {
     let result = products.filter((p) => {
-      if (filters.category !== "All" && p.category !== filters.category) return false;
+      if (filters.category !== "All" && p.category !== filters.category)
+        return false;
+
       if (filters.search) {
-  const term = filters.search.toLowerCase();
-  const haystack = `${p.name} ${p.category}`.toLowerCase();
-  if (!haystack.includes(term)) return false;
-}
+        const term = filters.search.toLowerCase();
+        const haystack = `${p.name} ${p.category}`.toLowerCase();
+        if (!haystack.includes(term)) return false;
+      }
 
       if (filters.colors.length) {
         const c = getColor(p);
@@ -122,7 +143,10 @@ export default function ProductsGrid() {
           <input
             placeholder="Search products…"
             className="w-full px-4 py-2 rounded-lg border"
-            onChange={(e) => setFilters({ ...filters, search: e.target.value })}
+            value={filters.search}
+            onChange={(e) =>
+              setFilters({ ...filters, search: e.target.value })
+            }
           />
 
           {/* Category */}
@@ -143,7 +167,7 @@ export default function ProductsGrid() {
             </div>
           </div>
 
-          {/* Colors */}
+          {/* Colours */}
           <div>
             <h4 className="text-sm font-semibold mb-2">Colour</h4>
             <div className="flex flex-wrap gap-2">
@@ -179,66 +203,6 @@ export default function ProductsGrid() {
             </div>
           </div>
 
-          {/* Eco & Popular */}
-          <div className="flex gap-2">
-            <button
-              onClick={() => setFilters({ ...filters, ecoOnly: !filters.ecoOnly })}
-              className={`px-3 py-1 rounded-full ${
-                filters.ecoOnly ? "bg-green-600 text-white" : "border"
-              }`}
-            >
-              🌱 Eco
-            </button>
-
-            <button
-              onClick={() =>
-                setFilters({ ...filters, popularOnly: !filters.popularOnly })
-              }
-              className={`px-3 py-1 rounded-full ${
-                filters.popularOnly ? "bg-yellow-500 text-white" : "border"
-              }`}
-            >
-              ⭐ Popular
-            </button>
-          </div>
-
-          {/* Set Types */}
-          {filters.category === "Combo Sets" && (
-            <div>
-              <h4 className="text-sm font-semibold mb-2">Set Type</h4>
-              <div className="flex gap-2">
-                {["2-in-1", "3-in-1", "4-in-1"].map((t) => (
-                  <button
-                    key={t}
-                    onClick={() => toggle("setTypes", t)}
-                    className={`px-3 py-1 rounded-full border ${
-                      filters.setTypes.includes(t)
-                        ? "bg-dark text-white"
-                        : ""
-                    }`}
-                  >
-                    {t}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Sort */}
-          <div>
-            <h4 className="text-sm font-semibold mb-2">Sort by</h4>
-            <select
-              className="w-full px-3 py-2 border rounded-lg"
-              onChange={(e) =>
-                setFilters({ ...filters, sort: e.target.value })
-              }
-            >
-              <option value="featured">Featured</option>
-              <option value="price">Price: Low → High</option>
-              <option value="premium">Premium first</option>
-              <option value="eco">Eco first</option>
-            </select>
-          </div>
         </div>
       </div>
 
@@ -247,7 +211,7 @@ export default function ProductsGrid() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {filteredProducts.map((product, index) => (
             <ProductCard
-              key={`${product.category}-${product.id}-${product.name}-${index}`}
+              key={`${product.category}-${product.id}-${index}`}
               product={product}
             />
           ))}
@@ -263,15 +227,8 @@ function ProductCard({ product }) {
   const minQty = MOQ[product.category] || 10;
   const [qty, setQty] = useState(minQty);
 
-  const increase = () => setQty((q) => q + 10);
-  const decrease = () => setQty((q) => (q > minQty ? q - 10 : q));
-
   return (
-    <div className="rounded-xl p-4 bg-white border shadow-sm flex flex-col hover:shadow-xl transition">
-      {isEco(product) && (
-        <span className="text-green-600 text-xs mb-1">🌱 Eco Friendly</span>
-      )}
-
+    <div className="rounded-xl p-4 bg-white border shadow-sm flex flex-col">
       <img
         src={`/products/${product.id}.jpg`}
         className="h-48 object-contain my-3"
@@ -287,16 +244,6 @@ function ProductCard({ product }) {
       <p className="text-[11px] text-gray-500">
         Includes 1-colour logo imprint
       </p>
-
-      <p className="text-[11px] text-gray-400 mb-3">
-        Products are subject to availability
-      </p>
-
-      <div className="flex justify-between items-center mb-3">
-        <button onClick={decrease}>–</button>
-        <span>{qty}</span>
-        <button onClick={increase}>+</button>
-      </div>
 
       <button
         onClick={() => {
