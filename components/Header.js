@@ -8,8 +8,8 @@ import Link from "next/link";
 const SUGGESTIONS = [
   "Plastic pen",
   "Metal pen",
-  "Notebook",
-  "Key ring",
+  "Notebooks",
+  "Key rings",
   "Bags",
   "Red pen",
   "Blue notebook",
@@ -43,21 +43,46 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-6">
+      <div className="max-w-7xl mx-auto px-6 py-4">
 
-        {/* LOGO */}
-        <Link href="/" className="flex items-center shrink-0">
-          <Image
-            src="/raya-logo.png"
-            alt="Raya logo"
-            width={240}
-            height={120}
-            priority
-          />
-        </Link>
+        {/* ROW 1 — LOGO + NAV */}
+        <div className="flex items-center justify-between gap-6">
+          {/* LOGO */}
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/raya-logo.png"
+              alt="Raya logo"
+              width={240}
+              height={120}
+              priority
+            />
+          </Link>
 
-        {/* SEARCH */}
-        <div ref={searchRef} className="relative flex-1 max-w-xl">
+          {/* DESKTOP NAV */}
+          <nav className="hidden md:flex items-center gap-8 font-medium">
+            <Link href="/products" className="hover:text-primary">
+              Products
+            </Link>
+            <Link
+              href="/quote"
+              className="bg-primary px-5 py-2 rounded-lg hover:opacity-90"
+            >
+              Get a Quote
+            </Link>
+          </nav>
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-2xl"
+            aria-label="Toggle menu"
+          >
+            ☰
+          </button>
+        </div>
+
+        {/* ROW 2 — FULL WIDTH SEARCH */}
+        <div ref={searchRef} className="relative mt-4">
           <input
             value={query}
             onChange={(e) => {
@@ -69,7 +94,17 @@ export default function Header() {
               if (e.key === "Enter") handleSearch(query);
             }}
             placeholder="Search pens, notebooks, bags..."
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="
+              w-full
+              px-4
+              py-3
+              rounded-xl
+              border
+              border-gray-300
+              focus:outline-none
+              focus:ring-2
+              focus:ring-primary
+            "
           />
 
           {showSuggestions && (
@@ -86,30 +121,9 @@ export default function Header() {
             </div>
           )}
         </div>
-
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex items-center gap-8 font-medium">
-          <Link href="/products" className="hover:text-primary">
-            Products
-          </Link>
-          <Link
-            href="/quote"
-            className="bg-primary px-5 py-2 rounded-lg hover:opacity-90"
-          >
-            Get a Quote
-          </Link>
-        </nav>
-
-        {/* MOBILE MENU */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl"
-        >
-          ☰
-        </button>
       </div>
 
-      {/* MOBILE DROPDOWN */}
+      {/* MOBILE MENU */}
       {open && (
         <div className="md:hidden border-t bg-white">
           <nav className="flex flex-col px-6 py-4 gap-4 font-medium">
