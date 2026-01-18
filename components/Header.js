@@ -45,8 +45,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="max-w-7xl mx-auto px-6 py-4">
 
-        {/* ROW 1 — LOGO + NAV */}
+        {/* ROW 1 — LOGO + SEARCH + NAV (DESKTOP) */}
         <div className="flex items-center justify-between gap-6">
+
           {/* LOGO */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
@@ -57,6 +58,40 @@ export default function Header() {
               priority
             />
           </Link>
+
+          {/* SEARCH — DESKTOP ONLY */}
+          <div
+            ref={searchRef}
+            className="relative hidden md:block flex-1 max-w-xl"
+          >
+            <input
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setShowSuggestions(true);
+              }}
+              onFocus={() => setShowSuggestions(true)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleSearch(query);
+              }}
+              placeholder="Search pens, notebooks, bags..."
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+
+            {showSuggestions && (
+              <div className="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border overflow-hidden">
+                {SUGGESTIONS.map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => handleSearch(item)}
+                    className="w-full text-left px-4 py-3 hover:bg-gray-100 text-sm"
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center gap-8 font-medium">
@@ -81,8 +116,11 @@ export default function Header() {
           </button>
         </div>
 
-        {/* ROW 2 — FULL WIDTH SEARCH */}
-        <div ref={searchRef} className="relative mt-4">
+        {/* SEARCH — MOBILE ONLY */}
+        <div
+          ref={searchRef}
+          className="relative mt-4 md:hidden"
+        >
           <input
             value={query}
             onChange={(e) => {
@@ -94,17 +132,7 @@ export default function Header() {
               if (e.key === "Enter") handleSearch(query);
             }}
             placeholder="Search pens, notebooks, bags..."
-            className="
-              w-full
-              px-4
-              py-3
-              rounded-xl
-              border
-              border-gray-300
-              focus:outline-none
-              focus:ring-2
-              focus:ring-primary
-            "
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
           />
 
           {showSuggestions && (
