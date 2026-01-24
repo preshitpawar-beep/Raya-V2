@@ -1,19 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-
-/* 🔎 SEARCH SUGGESTIONS (FILTER-SAFE WORDING) */
-const SUGGESTIONS = [
-  "Metal pen",
-  "Plastic pen",
-  "Notebook",
-  "Eco notebook",
-  "Key ring",
-  "Bags",
-];
+import { products } from "./productsData"; // adjust path if needed
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -23,7 +14,7 @@ export default function Header() {
   const router = useRouter();
   const searchRef = useRef(null);
 
-  /* CLOSE SUGGESTIONS ON OUTSIDE CLICK */
+  /* CLOSE ON OUTSIDE CLICK */
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
@@ -34,10 +25,42 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  /* 🔎 AUTOCOMPLETE SOURCE */
+  const suggestionPool = useMemo(() => {
+    const base = new Set();
+
+    products.forEach((p) => {
+      base.add(p.name);
+      base.add(p.category);
+
+      if (p.id.startsWith("MP")) base.add("Metal pen");
+      if (p.category === "Pen") base.add("Plastic pen");
+      if (p.category === "Notebook") base.add("Notebook");
+      if (p.category === "Key Ring") base.add("Key ring");
+      if (p.category === "Bags") base.add("Bags");
+
+      if (/eco|bamboo|cork|jute/i.test(p.name)) {
+        base.add("Eco products");
+        base.add("Eco notebook");
+      }
+    });
+
+    return Array.from(base);
+  }, []);
+
+  /* 🔥 FILTERED AUTOCOMPLETE */
+  const filteredSuggestions = useMemo(() => {
+    if (!query) return [];
+    const q = query.toLowerCase();
+
+    return suggestionPool
+      .filter((item) => item.toLowerCase().includes(q))
+      .slice(0, 8);
+  }, [query, suggestionPool]);
+
   const handleSearch = (value) => {
     if (!value) return;
     setShowSuggestions(false);
-    setQuery(value);
     router.push(`/products?search=${encodeURIComponent(value)}`);
   };
 
@@ -59,7 +82,7 @@ export default function Header() {
             />
           </Link>
 
-          {/* SEARCH — DESKTOP */}
+          {/* SEARCH */}
           <div
             ref={searchRef}
             className="relative hidden md:block flex-1 max-w-xl"
@@ -78,9 +101,9 @@ export default function Header() {
               className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
             />
 
-            {showSuggestions && (
+            {showSuggestions && filteredSuggestions.length > 0 && (
               <div className="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border overflow-hidden">
-                {SUGGESTIONS.map((item) => (
+                {filteredSuggestions.map((item) => (
                   <button
                     key={item}
                     onClick={() => handleSearch(item)}
@@ -95,75 +118,24 @@ export default function Header() {
 
           {/* NAV */}
           <nav className="hidden md:flex items-center gap-8 font-medium">
-            <Link href="/products" className="hover:text-primary">
-              Products
-            </Link>
+            <Link href="/products">Products</Link>
             <Link
               href="/quote"
-              className="bg-primary px-5 py-2 rounded-lg hover:opacity-90"
+              className="bg-primary px-5 py-2 rounded-lg"
             >
               Get a Quote
             </Link>
           </nav>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE MENU */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden text-2xl"
-            aria-label="Toggle menu"
           >
             ☰
           </button>
         </div>
-
-        {/* SEARCH — MOBILE */}
-        <div ref={searchRef} className="relative mt-4 md:hidden">
-          <input
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setShowSuggestions(true);
-            }}
-            onFocus={() => setShowSuggestions(true)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") handleSearch(query);
-            }}
-            placeholder="Search pens, notebooks, bags..."
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-
-          {showSuggestions && (
-            <div className="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border overflow-hidden">
-              {SUGGESTIONS.map((item) => (
-                <button
-                  key={item}
-                  onClick={() => handleSearch(item)}
-                  className="w-full text-left px-4 py-3 hover:bg-gray-100 text-sm"
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
       </div>
-
-      {/* MOBILE MENU */}
-      {open && (
-        <div className="md:hidden border-t bg-white">
-          <nav className="flex flex-col px-6 py-4 gap-4 font-medium">
-            <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-            <Link href="/products" onClick={() => setOpen(false)}>Products</Link>
-            <Link
-              href="/quote"
-              onClick={() => setOpen(false)}
-              className="bg-primary px-4 py-2 rounded-lg text-center"
-            >
-              Get a Quote
-            </Link>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
