@@ -960,7 +960,7 @@ export const products = [
   },
   {
     "id": "D138",
-    "name": "D138 - Elastic Black Notebook | 192 Pages | Non Dated | A5 Size",
+    "name": "D138 - Elastic Black Notebook | A5 Size",
     "category": "Notebook",
     "price": 3.36,
     "image": "/products/D138.png"
