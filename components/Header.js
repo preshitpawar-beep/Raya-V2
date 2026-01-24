@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
+const SUGGESTIONS = [ "Plastic pen", "Metal pen", "Notebooks", "Key rings", "Bags", "Red pen", "Blue notebook", ];
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
