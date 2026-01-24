@@ -14,7 +14,7 @@ export default function Header() {
   const router = useRouter();
   const searchRef = useRef(null);
 
-  /* CLOSE ON OUTSIDE CLICK */
+  /* CLOSE SUGGESTIONS ON OUTSIDE CLICK */
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
@@ -25,30 +25,29 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  /* 🔎 AUTOCOMPLETE SOURCE */
+  /* AUTOCOMPLETE SOURCE */
   const suggestionPool = useMemo(() => {
-    const base = new Set();
+    const set = new Set();
 
     products.forEach((p) => {
-      base.add(p.name);
-      base.add(p.category);
+      set.add(p.name);
 
-      if (p.id.startsWith("MP")) base.add("Metal pen");
-      if (p.category === "Pen") base.add("Plastic pen");
-      if (p.category === "Notebook") base.add("Notebook");
-      if (p.category === "Key Ring") base.add("Key ring");
-      if (p.category === "Bags") base.add("Bags");
+      if (p.id.startsWith("MP")) set.add("Metal pen");
+      if (p.category === "Pen") set.add("Plastic pen");
+      if (p.category === "Notebook") set.add("Notebook");
+      if (p.category === "Key Ring") set.add("Key ring");
+      if (p.category === "Bags") set.add("Bags");
 
       if (/eco|bamboo|cork|jute/i.test(p.name)) {
-        base.add("Eco products");
-        base.add("Eco notebook");
+        set.add("Eco notebook");
+        set.add("Eco products");
       }
     });
 
-    return Array.from(base);
+    return Array.from(set);
   }, []);
 
-  /* 🔥 FILTERED AUTOCOMPLETE */
+  /* FILTERED AUTOCOMPLETE */
   const filteredSuggestions = useMemo(() => {
     if (!query) return [];
     const q = query.toLowerCase();
@@ -58,65 +57,76 @@ export default function Header() {
       .slice(0, 8);
   }, [query, suggestionPool]);
 
+  /* SEARCH HANDLER */
   const handleSearch = (value) => {
     if (!value) return;
-    setShowSuggestions(false);
+
     router.push(`/products?search=${encodeURIComponent(value)}`);
+
+    // ✅ CLEAR INPUT AFTER SEARCH
+    setQuery("");
+    setShowSuggestions(false);
+    setOpen(false);
   };
+
+  /* SHARED SEARCH INPUT (DESKTOP + MOBILE) */
+  const SearchBox = ({ mobile = false }) => (
+    <div
+      ref={searchRef}
+      className={`relative ${mobile ? "md:hidden mt-4" : "hidden md:block flex-1 max-w-xl"}`}
+    >
+      <input
+        value={query}
+        onChange={(e) => {
+          setQuery(e.target.value);
+          setShowSuggestions(true);
+        }}
+        onFocus={() => setShowSuggestions(true)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") handleSearch(query);
+        }}
+        placeholder="Search pens, notebooks, bags..."
+        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+      />
+
+      {showSuggestions && filteredSuggestions.length > 0 && (
+        <div className="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border overflow-hidden z-50">
+          {filteredSuggestions.map((item) => (
+            <button
+              key={item}
+              onClick={() => handleSearch(item)}
+              className="w-full text-left px-4 py-3 hover:bg-gray-100 text-sm"
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="max-w-7xl mx-auto px-6 py-4">
 
-        {/* LOGO + SEARCH + NAV */}
-        <div className="flex items-center justify-between gap-6">
+        {/* ROW 1: LOGO + SEARCH + NAV */}
+        <div className="flex items-center justify-between gap-4">
 
           {/* LOGO */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
               src="/raya-logo.png"
               alt="Raya logo"
-              width={240}
-              height={120}
+              width={220}
+              height={110}
               priority
             />
           </Link>
 
-          {/* SEARCH */}
-          <div
-            ref={searchRef}
-            className="relative hidden md:block flex-1 max-w-xl"
-          >
-            <input
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setShowSuggestions(true);
-              }}
-              onFocus={() => setShowSuggestions(true)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleSearch(query);
-              }}
-              placeholder="Search pens, notebooks, bags..."
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
-            />
+          {/* DESKTOP SEARCH */}
+          <SearchBox />
 
-            {showSuggestions && filteredSuggestions.length > 0 && (
-              <div className="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border overflow-hidden">
-                {filteredSuggestions.map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => handleSearch(item)}
-                    className="w-full text-left px-4 py-3 hover:bg-gray-100 text-sm"
-                  >
-                    {item}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* NAV */}
+          {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center gap-8 font-medium">
             <Link href="/products">Products</Link>
             <Link
@@ -127,15 +137,36 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* MOBILE MENU */}
+          {/* MOBILE MENU BUTTON (FIXED CLICKABILITY) */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-2xl"
+            className="md:hidden text-2xl z-50"
+            aria-label="Toggle menu"
           >
             ☰
           </button>
         </div>
+
+        {/* MOBILE SEARCH (RESTORED) */}
+        <SearchBox mobile />
       </div>
+
+      {/* MOBILE MENU */}
+      {open && (
+        <div className="md:hidden border-t bg-white">
+          <nav className="flex flex-col px-6 py-4 gap-4 font-medium">
+            <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+            <Link href="/products" onClick={() => setOpen(false)}>Products</Link>
+            <Link
+              href="/quote"
+              onClick={() => setOpen(false)}
+              className="bg-primary px-4 py-2 rounded-lg text-center"
+            >
+              Get a Quote
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
