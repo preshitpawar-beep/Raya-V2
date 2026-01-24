@@ -6,10 +6,29 @@ import { products } from "./productsData";
 /* ---------------- CONFIG ---------------- */
 
 const CATEGORIES = ["All", "Pen", "Notebook", "Key Ring", "Combo Sets", "Bags"];
+
+const CATEGORY_ALIASES = {
+  pen: "Pen",
+  pens: "Pen",
+  notebook: "Notebook",
+  notebooks: "Notebook",
+  "key ring": "Key Ring",
+  "key rings": "Key Ring",
+  keyring: "Key Ring",
+  keyrings: "Key Ring",
+  bag: "Bags",
+  bags: "Bags",
+  combo: "Combo Sets",
+  combos: "Combo Sets",
+  "combo set": "Combo Sets",
+  "combo sets": "Combo Sets",
+};
+
 const COLORS = ["black", "blue", "red", "white", "grey", "gold", "brown", "green"];
 const MATERIALS = ["plastic", "metal", "jute", "cotton", "paper", "leather"];
 
 const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
+
 const POPULAR_IDS = [
   "P77",
   "MP10",
@@ -52,14 +71,6 @@ const getMaterial = (p) => {
   return null;
 };
 
-const getSetType = (p) => {
-  if (p.category !== "Combo Sets") return null;
-  if (p.name.includes("2-in-1")) return "2-in-1";
-  if (p.name.includes("3-in-1")) return "3-in-1";
-  if (p.name.includes("4-in-1")) return "4-in-1";
-  return null;
-};
-
 /* ---------------- MAIN ---------------- */
 
 export default function ProductsGrid({ initialSearch = "" }) {
@@ -69,44 +80,44 @@ export default function ProductsGrid({ initialSearch = "" }) {
     materials: [],
     ecoOnly: false,
     popularOnly: false,
-    setTypes: [],
     search: "",
-    sort: "featured",
   });
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-  /* 🔗 SMART SEARCH → FILTERS */
+  /* 🔗 SMART SEARCH PARSER */
   useEffect(() => {
     if (!initialSearch) return;
 
-    const words = initialSearch.toLowerCase().split(" ").filter(Boolean);
+    const text = initialSearch.toLowerCase();
 
     let category = "All";
     let materials = [];
     let colors = [];
-    let remainingWords = [];
+    let remainingText = text;
 
-    words.forEach((word) => {
-      const matchedCategory = CATEGORIES.find(
-        (c) => c.toLowerCase() === word
-      );
-      if (matchedCategory) {
-        category = matchedCategory;
-        return;
+    // Category detection (handles plurals + phrases)
+    Object.entries(CATEGORY_ALIASES).forEach(([key, value]) => {
+      if (text.includes(key)) {
+        category = value;
+        remainingText = remainingText.replace(key, "");
       }
+    });
 
-      if (MATERIALS.includes(word)) {
-        materials.push(word);
-        return;
+    // Material detection
+    MATERIALS.forEach((m) => {
+      if (text.includes(m)) {
+        materials.push(m);
+        remainingText = remainingText.replace(m, "");
       }
+    });
 
-      if (COLORS.includes(word)) {
-        colors.push(word);
-        return;
+    // Colour detection
+    COLORS.forEach((c) => {
+      if (text.includes(c)) {
+        colors.push(c);
+        remainingText = remainingText.replace(c, "");
       }
-
-      remainingWords.push(word);
     });
 
     setFilters((f) => ({
@@ -114,19 +125,18 @@ export default function ProductsGrid({ initialSearch = "" }) {
       category,
       materials,
       colors,
-      search: remainingWords.join(" "),
+      search: remainingText.trim(),
     }));
   }, [initialSearch]);
 
   const filteredProducts = useMemo(() => {
-    let result = products.filter((p) => {
+    return products.filter((p) => {
       if (filters.category !== "All" && p.category !== filters.category)
         return false;
 
       if (filters.search) {
         const term = filters.search.toLowerCase();
-        const haystack = `${p.name} ${p.category}`.toLowerCase();
-        if (!haystack.includes(term)) return false;
+        if (!p.name.toLowerCase().includes(term)) return false;
       }
 
       if (filters.colors.length) {
@@ -139,18 +149,8 @@ export default function ProductsGrid({ initialSearch = "" }) {
         if (!filters.materials.includes(m)) return false;
       }
 
-      if (filters.ecoOnly && !isEco(p)) return false;
-      if (filters.popularOnly && !POPULAR_IDS.includes(p.id)) return false;
-
-      if (filters.setTypes.length) {
-        const t = getSetType(p);
-        if (!filters.setTypes.includes(t)) return false;
-      }
-
       return true;
     });
-
-    return result;
   }, [filters]);
 
   const toggle = (key, value) => {
@@ -162,11 +162,10 @@ export default function ProductsGrid({ initialSearch = "" }) {
     }));
   };
 
-  /* ---------------- FILTER UI (REUSED) ---------------- */
+  /* ---------------- FILTER UI ---------------- */
 
   const FiltersUI = (
     <div className="space-y-6">
-
       <input
         placeholder="Search products…"
         className="w-full px-4 py-2 rounded-lg border"
@@ -185,23 +184,6 @@ export default function ProductsGrid({ initialSearch = "" }) {
               onClick={() => setFilters({ ...filters, category: c })}
               className={`px-3 py-1 rounded-full text-sm border ${
                 filters.category === c ? "bg-dark text-white" : ""
-              }`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <h4 className="text-sm font-semibold mb-2">Colour</h4>
-        <div className="flex flex-wrap gap-2">
-          {COLORS.map((c) => (
-            <button
-              key={c}
-              onClick={() => toggle("colors", c)}
-              className={`px-3 py-1 rounded-full text-sm border ${
-                filters.colors.includes(c) ? "bg-dark text-white" : ""
               }`}
             >
               {c}
@@ -242,7 +224,6 @@ export default function ProductsGrid({ initialSearch = "" }) {
       </div>
 
       <div className="grid grid-cols-12 gap-8">
-
         {/* DESKTOP SIDEBAR */}
         <div className="hidden md:block md:col-span-3">
           <div className="sticky top-24 bg-white p-5 rounded-xl border shadow-sm">
@@ -255,7 +236,7 @@ export default function ProductsGrid({ initialSearch = "" }) {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {filteredProducts.map((product, index) => (
               <ProductCard
-                key={`${product.category}-${product.id}-${index}`}
+                key={`${product.id}-${index}`}
                 product={product}
               />
             ))}
@@ -269,22 +250,10 @@ export default function ProductsGrid({ initialSearch = "" }) {
           <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl p-6 max-h-[85vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <h3 className="font-semibold text-lg">Filters</h3>
-              <button
-                onClick={() => setMobileFiltersOpen(false)}
-                className="text-sm"
-              >
-                Close
-              </button>
+              <button onClick={() => setMobileFiltersOpen(false)}>Close</button>
             </div>
 
             {FiltersUI}
-
-            <button
-              onClick={() => setMobileFiltersOpen(false)}
-              className="mt-6 w-full bg-dark text-white py-3 rounded-lg"
-            >
-              Apply filters
-            </button>
           </div>
         </div>
       )}
@@ -305,20 +274,15 @@ function ProductCard({ product }) {
         onError={(e) => (e.currentTarget.src = "/placeholder.jpg")}
       />
 
-      <div className="space-y-1">
-        <h3 className="text-sm font-semibold">{product.name}</h3>
+      <h3 className="text-sm font-semibold">{product.name}</h3>
 
-        <p className="text-xs text-gray-600">
-          From £{product.price.toFixed(2)} per unit
-        </p>
+      <p className="text-xs text-gray-600">
+        From £{product.price.toFixed(2)} per unit
+      </p>
 
-        <p className="text-[11px] text-gray-500">
-          Prices includes 1‑colour branding
-        </p>
-      </div>
-
-      {/* Spacer ensures consistent gap before button */}
-      <div className="h-4" />
+      <p className="text-[11px] text-gray-500 mb-4">
+        Includes 1-colour logo imprint
+      </p>
 
       <button
         onClick={() => {
@@ -341,4 +305,3 @@ function ProductCard({ product }) {
     </div>
   );
 }
-
