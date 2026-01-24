@@ -1170,7 +1170,7 @@ export const products = [
   },
   {
     "id": "D220",
-    "name": "D220 - Text Cork Notebook | 192 Pages | Non Dated | A5 Size",
+    "name": "D220 - Black Textured Notebook | 192 Pages | Non Dated | A5 Size",
     "category": "Notebook",
     "price": 6.91,
     "image": "/products/D220.png"
