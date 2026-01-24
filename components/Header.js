@@ -5,7 +5,15 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-const SUGGESTIONS = [ "Plastic pen", "Metal pen", "Notebooks", "Key rings", "Bags", "Red pen", "Blue notebook", ];
+/* 🔎 SEARCH SUGGESTIONS (FILTER-SAFE WORDING) */
+const SUGGESTIONS = [
+  "Metal pen",
+  "Plastic pen",
+  "Notebook",
+  "Eco notebook",
+  "Key ring",
+  "Bags",
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -15,7 +23,7 @@ export default function Header() {
   const router = useRouter();
   const searchRef = useRef(null);
 
-  /* CLOSE ON OUTSIDE CLICK */
+  /* CLOSE SUGGESTIONS ON OUTSIDE CLICK */
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
@@ -37,7 +45,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="max-w-7xl mx-auto px-6 py-4">
 
-        {/* ROW 1 — LOGO + SEARCH + NAV (DESKTOP) */}
+        {/* LOGO + SEARCH + NAV */}
         <div className="flex items-center justify-between gap-6">
 
           {/* LOGO */}
@@ -51,7 +59,7 @@ export default function Header() {
             />
           </Link>
 
-          {/* SEARCH — DESKTOP ONLY */}
+          {/* SEARCH — DESKTOP */}
           <div
             ref={searchRef}
             className="relative hidden md:block flex-1 max-w-xl"
@@ -85,7 +93,7 @@ export default function Header() {
             )}
           </div>
 
-          {/* DESKTOP NAV */}
+          {/* NAV */}
           <nav className="hidden md:flex items-center gap-8 font-medium">
             <Link href="/products" className="hover:text-primary">
               Products
@@ -108,11 +116,8 @@ export default function Header() {
           </button>
         </div>
 
-        {/* SEARCH — MOBILE ONLY */}
-        <div
-          ref={searchRef}
-          className="relative mt-4 md:hidden"
-        >
+        {/* SEARCH — MOBILE */}
+        <div ref={searchRef} className="relative mt-4 md:hidden">
           <input
             value={query}
             onChange={(e) => {
@@ -147,12 +152,8 @@ export default function Header() {
       {open && (
         <div className="md:hidden border-t bg-white">
           <nav className="flex flex-col px-6 py-4 gap-4 font-medium">
-            <Link href="/" onClick={() => setOpen(false)}>
-              Home
-            </Link>
-            <Link href="/products" onClick={() => setOpen(false)}>
-              Products
-            </Link>
+            <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+            <Link href="/products" onClick={() => setOpen(false)}>Products</Link>
             <Link
               href="/quote"
               onClick={() => setOpen(false)}
