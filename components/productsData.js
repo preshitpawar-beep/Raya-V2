@@ -965,216 +965,217 @@ export const products = [
     "price": 3.36,
     "image": "/products/D138.png"
   },
-  {
-    "id": "D139",
-    "name": "D139 - Elastic Red Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 3.74,
-    "image": "/products/D139.png"
-  },
-  {
-    "id": "D140",
-    "name": "D140 - Elastic Blue Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 3.74,
-    "image": "/products/D140.png"
-  },
-  {
-    "id": "D141",
-    "name": "D141 - Elastic White Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 4.11,
-    "image": "/products/D141.png"
-  },
-  {
-    "id": "D145",
-    "name": "D145 - Mars Black Organizer Flap Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 7.47,
-    "image": "/products/D145.png"
-  },
-  {
-    "id": "D146",
-    "name": "D146 - Mars Brown Organizer Flap Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 7.47,
-    "image": "/products/D146.png"
-  },
-  {
-    "id": "D159",
-    "name": "D159 - Black Soft PU Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.23,
-    "image": "/products/D159.png"
-  },
-  {
-    "id": "D160",
-    "name": "D160 - Tan Brown Soft PU Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.23,
-    "image": "/products/D160.png"
-  },
-  {
-    "id": "D161",
-    "name": "D161 - Brown Peridot Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.23,
-    "image": "/products/D161.png"
-  },
-  {
-    "id": "D162",
-    "name": "D162 - Black Perdot Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.23,
-    "image": "/products/D162.png"
-  },
-  {
-    "id": "D163",
-    "name": "D163 - Blue Peridot Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.23,
-    "image": "/products/D163.png"
-  },
-  {
-    "id": "D168",
-    "name": "D168 - Oxford Blue Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.54,
-    "image": "/products/D168.png"
-  },
-  {
-    "id": "D169",
-    "name": "D169 - Oxford Black Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.54,
-    "image": "/products/D169.png"
-  },
-  {
-    "id": "D176",
-    "name": "D176 - Round Flap Black Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.23,
-    "image": "/products/D176.png"
-  },
-  {
-    "id": "D177",
-    "name": "D177 - Round Flap Tan Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.23,
-    "image": "/products/D177.png"
-  },
-  {
-    "id": "D181",
-    "name": "D181 - Blue Soft PU Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.23,
-    "image": "/products/D181.png"
-  },
-  {
-    "id": "D184",
-    "name": "D184 - Eco Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 3.17,
-    "image": "/products/D184.png"
-  },
-  {
-    "id": "D185",
-    "name": "D185 - Cork Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 3.55,
-    "image": "/products/D185.png"
-  },
-  {
-    "id": "D191",
-    "name": "D191 - Blocks Design Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.54,
-    "image": "/products/D191.png"
-  },
-  {
-    "id": "D192",
-    "name": "D192 - Triangle Flap Brown Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.04,
-    "image": "/products/D192.png"
-  },
-  {
-    "id": "D194",
-    "name": "D194 - Jewel Blue Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.04,
-    "image": "/products/D194.png"
-  },
-  {
-    "id": "D195",
-    "name": "D195 - Triangle Flap Grey Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.04,
-    "image": "/products/D195.png"
-  },
-  {
-    "id": "D198",
-    "name": "D198 - Black Soft PU Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.6,
-    "image": "/products/D198.png"
-  },
-  {
-    "id": "D199",
-    "name": "D199 - White Soft PU Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.6,
-    "image": "/products/D199.png"
-  },
-  {
-    "id": "D200",
-    "name": "D200 - Bamboo Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 5.6,
-    "image": "/products/D200.png"
-  },
-  {
-    "id": "D201",
-    "name": "D201 - 3 Pattern Blue Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.54,
-    "image": "/products/D201.png"
-  },
-  {
-    "id": "D202",
-    "name": "D202 - 3 Pattern Brown Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.54,
-    "image": "/products/D202.png"
-  },
-  {
-    "id": "D208",
-    "name": "D208 - Zenith Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.35,
-    "image": "/products/D208.png"
-  },
-  {
-    "id": "D209",
-    "name": "D209 - E-Square Design Notebook (Variant) | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.72,
-    "image": "/products/D209.png"
-  },
-  {
-    "id": "D210",
-    "name": "D210 - Sphere Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.72,
-    "image": "/products/D210.png"
-  },
-  {
-    "id": "D220",
-    "name": "D220 - Black Textured Notebook | 192 Pages | Non Dated | A5 Size",
-    "category": "Notebook",
-    "price": 6.91,
-    "image": "/products/D220.png"
-  },
+{
+  "id": "D139",
+  "name": "D139 - Elastic Red Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 3.74,
+  "image": "/products/D139.png"
+},
+{
+  "id": "D140",
+  "name": "D140 - Elastic Blue Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 3.74,
+  "image": "/products/D140.png"
+},
+{
+  "id": "D141",
+  "name": "D141 - Elastic White Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 4.11,
+  "image": "/products/D141.png"
+},
+{
+  "id": "D145",
+  "name": "D145 - Mars Black Organizer Flap Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 7.47,
+  "image": "/products/D145.png"
+},
+{
+  "id": "D146",
+  "name": "D146 - Mars Brown Organizer Flap Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 7.47,
+  "image": "/products/D146.png"
+},
+{
+  "id": "D159",
+  "name": "D159 - Black Soft PU Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.23,
+  "image": "/products/D159.png"
+},
+{
+  "id": "D160",
+  "name": "D160 - Tan Brown Soft PU Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.23,
+  "image": "/products/D160.png"
+},
+{
+  "id": "D161",
+  "name": "D161 - Brown Peridot Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.23,
+  "image": "/products/D161.png"
+},
+{
+  "id": "D162",
+  "name": "D162 - Black Perdot Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.23,
+  "image": "/products/D162.png"
+},
+{
+  "id": "D163",
+  "name": "D163 - Blue Peridot Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.23,
+  "image": "/products/D163.png"
+},
+{
+  "id": "D168",
+  "name": "D168 - Oxford Blue Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 6.54,
+  "image": "/products/D168.png"
+},
+{
+  "id": "D169",
+  "name": "D169 - Oxford Black Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 6.54,
+  "image": "/products/D169.png"
+},
+{
+  "id": "D176",
+  "name": "D176 - Round Flap Black Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.23,
+  "image": "/products/D176.png"
+},
+{
+  "id": "D177",
+  "name": "D177 - Round Flap Tan Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.23,
+  "image": "/products/D177.png"
+},
+{
+  "id": "D181",
+  "name": "D181 - Blue Soft PU Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.23,
+  "image": "/products/D181.png"
+},
+{
+  "id": "D184",
+  "name": "D184 - Eco Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 3.17,
+  "image": "/products/D184.png"
+},
+{
+  "id": "D185",
+  "name": "D185 - Cork Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 3.55,
+  "image": "/products/D185.png"
+},
+{
+  "id": "D191",
+  "name": "D191 - Blocks Design Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 6.54,
+  "image": "/products/D191.png"
+},
+{
+  "id": "D192",
+  "name": "D192 - Triangle Flap Brown Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.04,
+  "image": "/products/D192.png"
+},
+{
+  "id": "D194",
+  "name": "D194 - Jewel Blue Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.04,
+  "image": "/products/D194.png"
+},
+{
+  "id": "D195",
+  "name": "D195 - Triangle Flap Grey Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.04,
+  "image": "/products/D195.png"
+},
+{
+  "id": "D198",
+  "name": "D198 - Black Soft PU Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.6,
+  "image": "/products/D198.png"
+},
+{
+  "id": "D199",
+  "name": "D199 - White Soft PU Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.6,
+  "image": "/products/D199.png"
+},
+{
+  "id": "D200",
+  "name": "D200 - Bamboo Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 5.6,
+  "image": "/products/D200.png"
+},
+{
+  "id": "D201",
+  "name": "D201 - 3 Pattern Blue Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 6.54,
+  "image": "/products/D201.png"
+},
+{
+  "id": "D202",
+  "name": "D202 - 3 Pattern Brown Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 6.54,
+  "image": "/products/D202.png"
+},
+{
+  "id": "D208",
+  "name": "D208 - Zenith Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 6.35,
+  "image": "/products/D208.png"
+},
+{
+  "id": "D209",
+  "name": "D209 - E-Square Design Notebook (Variant) | A5 Size",
+  "category": "Notebook",
+  "price": 6.72,
+  "image": "/products/D209.png"
+},
+{
+  "id": "D210",
+  "name": "D210 - Sphere Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 6.72,
+  "image": "/products/D210.png"
+},
+{
+  "id": "D220",
+  "name": "D220 - Black Textured Notebook | A5 Size",
+  "category": "Notebook",
+  "price": 6.91,
+  "image": "/products/D220.png"
+}
+
   {
     "id": "Sr 111",
     "name": "Sr 111 - Gift Set \u2013 Classic Metal \u2013 2-in-1 (Pen + Keychain)",
