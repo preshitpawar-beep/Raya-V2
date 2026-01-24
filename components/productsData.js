@@ -1174,7 +1174,7 @@ export const products = [
   "category": "Notebook",
   "price": 6.91,
   "image": "/products/D220.png"
-}
+},
 
   {
     "id": "Sr 111",
