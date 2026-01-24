@@ -77,46 +77,63 @@ export default function ProductsGrid({ initialSearch = "" }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   /* 🔗 SMART SEARCH → FILTERS */
-  useEffect(() => {
-    if (!initialSearch) return;
+ useEffect(() => {
+  if (!initialSearch) return;
 
-    const words = initialSearch.toLowerCase().split(" ").filter(Boolean);
+  const words = initialSearch.toLowerCase().split(" ").filter(Boolean);
 
-    let category = "All";
-    let materials = [];
-    let colors = [];
-    let remainingWords = [];
+  let category = "All";
+  let materials = [];
+  let colors = [];
+  let remainingWords = [];
 
-    words.forEach((word) => {
-      const matchedCategory = CATEGORIES.find(
-        (c) => c.toLowerCase() === word
-      );
-      if (matchedCategory) {
-        category = matchedCategory;
-        return;
-      }
+  words.forEach((word) => {
+    const normalized = word.endsWith("s") ? word.slice(0, -1) : word;
 
-      if (MATERIALS.includes(word)) {
-        materials.push(word);
-        return;
-      }
+    /* CATEGORY MATCH */
+    if (normalized === "pen") {
+      category = "Pen";
+      return;
+    }
 
-      if (COLORS.includes(word)) {
-        colors.push(word);
-        return;
-      }
+    if (normalized === "notebook") {
+      category = "Notebook";
+      return;
+    }
 
-      remainingWords.push(word);
-    });
+    if (normalized === "bag") {
+      category = "Bags";
+      return;
+    }
 
-    setFilters((f) => ({
-      ...f,
-      category,
-      materials,
-      colors,
-      search: remainingWords.join(" "),
-    }));
-  }, [initialSearch]);
+    if (normalized === "key") {
+      category = "Key Ring";
+      return;
+    }
+
+    /* MATERIAL MATCH */
+    if (MATERIALS.includes(normalized)) {
+      materials.push(normalized);
+      return;
+    }
+
+    /* COLOUR MATCH */
+    if (COLORS.includes(normalized)) {
+      colors.push(normalized);
+      return;
+    }
+
+    remainingWords.push(word);
+  });
+
+  setFilters((f) => ({
+    ...f,
+    category,
+    materials,
+    colors,
+    search: remainingWords.join(" "),
+  }));
+}, [initialSearch]);
 
   const filteredProducts = useMemo(() => {
     let result = products.filter((p) => {
