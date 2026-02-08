@@ -34,7 +34,7 @@ export default function Footer() {
             <p className="text-sm text-gray-700">
               Email:{" "}
               <a href="mailto:info@legacyimprint.co.uk" className="underline">
-                xyz@gmail.com
+                info@legacyimprint.co.uk
               </a>
             </p>
           </div>
