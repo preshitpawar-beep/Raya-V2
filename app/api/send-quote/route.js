@@ -19,7 +19,7 @@ export async function POST(req) {
           <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:12px; padding:24px;">
             
             <img 
-              src="https://legacyimprint.co.uk/logo.png"
+              src="https://legacyimprint.co.uk/raya-logo.png"
               alt="Legacy Imprint"
               style="height:40px; margin-bottom:20px;"
             />
