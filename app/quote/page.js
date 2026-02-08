@@ -35,8 +35,7 @@ export default function Quote() {
             your request.
           </p>
           <p className="text-gray-700">
-            We usually respond within <strong>1 business day</strong> with a
-            personalised quote.
+            We usually respond within <strong>1 business day</strong>.
           </p>
         </div>
       </main>
@@ -50,7 +49,7 @@ export default function Quote() {
     <main className="bg-[#F7F8FA]">
       <div className="max-w-xl mx-auto px-6 py-12 md:py-20">
 
-        {/* Guided Intro */}
+        {/* Intro */}
         <div className="mb-8">
           <h1 className="text-2xl md:text-3xl font-bold mb-3">
             Get a Quote
@@ -64,23 +63,27 @@ export default function Quote() {
         {/* Form */}
         <form
           className="space-y-5 bg-white rounded-2xl p-6 md:p-8 shadow-sm"
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
 
             const form = e.target;
-            const name = form[0].value;
-            const email = form[1].value;
-            const company = form[2].value;
 
-            const mailtoLink = `mailto:preshit555@gmail.com?subject=Quote Request from ${name}&body=
-Name: ${name}%0D%0A
-Email: ${email}%0D%0A
-Company: ${company}%0D%0A%0D%0A
-Message:%0D%0A${message}`;
+            const response = await fetch("/api/send-quote", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name: form[0].value,
+                email: form[1].value,
+                company: form[2].value,
+                message: message,
+              }),
+            });
 
-            window.location.href = mailtoLink;
-
-            setSubmitted(true);
+            if (response.ok) {
+              setSubmitted(true);
+            } else {
+              alert("Failed to send enquiry. Please try again.");
+            }
           }}
         >
           <div>
@@ -129,7 +132,7 @@ Message:%0D%0A${message}`;
 
           <button
             type="submit"
-            className="w-full bg-dark text-white py-3.5 rounded-xl font-semibold text-base hover:opacity-90"
+            className="w-full bg-dark text-white py-3.5 rounded-xl font-semibold hover:opacity-90"
           >
             Send Quote Request
           </button>
