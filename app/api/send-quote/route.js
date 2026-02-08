@@ -7,19 +7,20 @@ export async function POST(req) {
     const body = await req.json();
 
     await resend.emails.send({
-      from: "Website Enquiry <onboarding@resend.dev>",
-      to: ["info@legacyimprint.co.uk"],
-      reply_to: body.email,
-      subject: `New Website Enquiry from ${body.name}`,
-      text: `
+  from: "Legacy Imprint Website <info@legacyimprint.co.uk>",
+  to: ["info@legacyimprint.co.uk"],
+  reply_to: body.email,
+  subject: `New Website Enquiry from ${body.name}`,
+  text: `
 Name: ${body.name}
 Email: ${body.email}
 Company: ${body.company || "N/A"}
 
 Message:
 ${body.message}
-      `,
-    });
+  `,
+});
+
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
