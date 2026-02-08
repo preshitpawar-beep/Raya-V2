@@ -21,7 +21,7 @@ export default function Quote() {
   }, []);
 
   /* ----------------------------------------
-     Success state
+     Success states
   ---------------------------------------- */
   if (submitted) {
     return (
