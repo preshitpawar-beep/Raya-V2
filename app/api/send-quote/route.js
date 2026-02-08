@@ -85,7 +85,7 @@ export async function POST(req) {
 
             <p style="margin-top:24px; font-size:14px; color:#374151;">
               Kind regards,<br />
-              <strong>Legacy Imprint Team</strong>
+              <strong>Legacy Imprint SW Team</strong>
             </p>
 
             <hr style="margin:24px 0;" />
