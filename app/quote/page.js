@@ -3,25 +3,37 @@
 import { useState, useEffect } from "react";
 
 export default function Quote() {
+  const initialMessage = "";
   const [submitted, setSubmitted] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(initialMessage);
 
   /* ----------------------------------------
-     Load selected product + quantity
+     Load selected product + quantity (ONE TIME)
   ---------------------------------------- */
   useEffect(() => {
     const savedItem = localStorage.getItem("quoteItem");
 
     if (savedItem) {
       const { product, quantity } = JSON.parse(savedItem);
+
       setMessage(
         `Product: ${product}\nQuantity: ${quantity}\n\nAdditional requirements:`
       );
+
+      // ✅ Clear after use so it doesn't persist
+      localStorage.removeItem("quoteItem");
     }
   }, []);
 
   /* ----------------------------------------
-     Success states
+     Clear form handler
+  ---------------------------------------- */
+  const clearForm = () => {
+    setMessage(initialMessage);
+  };
+
+  /* ----------------------------------------
+     Success state
   ---------------------------------------- */
   if (submitted) {
     return (
@@ -65,7 +77,6 @@ export default function Quote() {
           className="space-y-5 bg-white rounded-2xl p-6 md:p-8 shadow-sm"
           onSubmit={async (e) => {
             e.preventDefault();
-
             const form = e.target;
 
             const response = await fetch("/api/send-quote", {
@@ -75,11 +86,12 @@ export default function Quote() {
                 name: form[0].value,
                 email: form[1].value,
                 company: form[2].value,
-                message: message,
+                message,
               }),
             });
 
             if (response.ok) {
+              setMessage(initialMessage);
               setSubmitted(true);
             } else {
               alert("Failed to send enquiry. Please try again.");
@@ -130,12 +142,23 @@ export default function Quote() {
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-dark text-white py-3.5 rounded-xl font-semibold hover:opacity-90"
-          >
-            Send Quote Request
-          </button>
+          {/* Buttons */}
+          <div className="flex gap-3">
+            <button
+              type="submit"
+              className="flex-1 bg-dark text-white py-3.5 rounded-xl font-semibold hover:opacity-90"
+            >
+              Send Quote Request
+            </button>
+
+            <button
+              type="button"
+              onClick={clearForm}
+              className="flex-1 border border-gray-300 text-gray-700 py-3.5 rounded-xl font-semibold hover:bg-gray-100"
+            >
+              Clear Form
+            </button>
+          </div>
         </form>
 
         {/* What Happens Next */}
