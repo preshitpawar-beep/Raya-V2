@@ -30,6 +30,17 @@ const MOQ = {
   Bags: 10,
 };
 
+const DEFAULT_FILTERS = {
+  category: "All",
+  colors: [],
+  materials: [],
+  ecoOnly: false,
+  popularOnly: false,
+  setTypes: [],
+  search: "",
+  sort: "featured",
+};
+
 /* ---------------- HELPERS ---------------- */
 
 const isEco = (p) =>
@@ -63,80 +74,50 @@ const getSetType = (p) => {
 /* ---------------- MAIN ---------------- */
 
 export default function ProductsGrid({ initialSearch = "" }) {
-  const [filters, setFilters] = useState({
-    category: "All",
-    colors: [],
-    materials: [],
-    ecoOnly: false,
-    popularOnly: false,
-    setTypes: [],
-    search: "",
-    sort: "featured",
-  });
-
+  const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
+  const hasActiveFilters = useMemo(
+    () => JSON.stringify(filters) !== JSON.stringify(DEFAULT_FILTERS),
+    [filters]
+  );
+
   /* 🔗 SMART SEARCH → FILTERS */
- useEffect(() => {
-  if (!initialSearch) return;
+  useEffect(() => {
+    if (!initialSearch) return;
 
-  const words = initialSearch.toLowerCase().split(" ").filter(Boolean);
+    const words = initialSearch.toLowerCase().split(" ").filter(Boolean);
 
-  let category = "All";
-  let materials = [];
-  let colors = [];
-  let remainingWords = [];
+    let category = "All";
+    let materials = [];
+    let colors = [];
+    let remainingWords = [];
 
-  words.forEach((word) => {
-    const normalized = word.endsWith("s") ? word.slice(0, -1) : word;
+    words.forEach((word) => {
+      const normalized = word.endsWith("s") ? word.slice(0, -1) : word;
 
-    /* CATEGORY MATCH */
-    if (normalized === "pen") {
-      category = "Pen";
-      return;
-    }
+      if (normalized === "pen") return (category = "Pen");
+      if (normalized === "notebook") return (category = "Notebook");
+      if (normalized === "bag") return (category = "Bags");
+      if (normalized === "key") return (category = "Key Ring");
 
-    if (normalized === "notebook") {
-      category = "Notebook";
-      return;
-    }
+      if (MATERIALS.includes(normalized)) return materials.push(normalized);
+      if (COLORS.includes(normalized)) return colors.push(normalized);
 
-    if (normalized === "bag") {
-      category = "Bags";
-      return;
-    }
+      remainingWords.push(word);
+    });
 
-    if (normalized === "key") {
-      category = "Key Ring";
-      return;
-    }
-
-    /* MATERIAL MATCH */
-    if (MATERIALS.includes(normalized)) {
-      materials.push(normalized);
-      return;
-    }
-
-    /* COLOUR MATCH */
-    if (COLORS.includes(normalized)) {
-      colors.push(normalized);
-      return;
-    }
-
-    remainingWords.push(word);
-  });
-
-  setFilters((f) => ({
-    ...f,
-    category,
-    materials,
-    colors,
-    search: remainingWords.join(" "),
-  }));
-}, [initialSearch]);
+    setFilters((f) => ({
+      ...f,
+      category,
+      materials,
+      colors,
+      search: remainingWords.join(" "),
+    }));
+  }, [initialSearch]);
 
   const filteredProducts = useMemo(() => {
-    let result = products.filter((p) => {
+    return products.filter((p) => {
       if (filters.category !== "All" && p.category !== filters.category)
         return false;
 
@@ -166,8 +147,6 @@ export default function ProductsGrid({ initialSearch = "" }) {
 
       return true;
     });
-
-    return result;
   }, [filters]);
 
   const toggle = (key, value) => {
@@ -179,11 +158,10 @@ export default function ProductsGrid({ initialSearch = "" }) {
     }));
   };
 
-  /* ---------------- FILTER UI (REUSED) ---------------- */
+  /* ---------------- FILTER UI ---------------- */
 
   const FiltersUI = (
     <div className="space-y-6">
-
       <input
         placeholder="Search products…"
         className="w-full px-4 py-2 rounded-lg border"
@@ -248,26 +226,45 @@ export default function ProductsGrid({ initialSearch = "" }) {
 
   return (
     <>
-      {/* MOBILE FILTER BUTTON */}
-      <div className="md:hidden mb-6">
+      {/* MOBILE ACTIONS */}
+      <div className="md:hidden mb-6 flex gap-3">
         <button
           onClick={() => setMobileFiltersOpen(true)}
-          className="w-full border rounded-lg px-4 py-3 text-sm font-medium"
+          className="flex-1 border rounded-lg px-4 py-3 text-sm font-medium"
         >
           Filters
         </button>
+
+        {hasActiveFilters && (
+          <button
+            onClick={() => setFilters(DEFAULT_FILTERS)}
+            className="flex-1 border rounded-lg px-4 py-3 text-sm font-medium text-red-600"
+          >
+            Clear
+          </button>
+        )}
       </div>
 
       <div className="grid grid-cols-12 gap-8">
-
-        {/* DESKTOP SIDEBAR */}
+        {/* DESKTOP FILTERS */}
         <div className="hidden md:block md:col-span-3">
           <div className="sticky top-24 bg-white p-5 rounded-xl border shadow-sm">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-semibold">Filters</h3>
+              {hasActiveFilters && (
+                <button
+                  onClick={() => setFilters(DEFAULT_FILTERS)}
+                  className="text-sm text-red-600 hover:underline"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
             {FiltersUI}
           </div>
         </div>
 
-        {/* PRODUCT GRID */}
+        {/* PRODUCTS */}
         <div className="col-span-12 md:col-span-9">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {filteredProducts.map((product, index) => (
@@ -286,12 +283,14 @@ export default function ProductsGrid({ initialSearch = "" }) {
           <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl p-6 max-h-[85vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <h3 className="font-semibold text-lg">Filters</h3>
-              <button
-                onClick={() => setMobileFiltersOpen(false)}
-                className="text-sm"
-              >
-                Close
-              </button>
+              {hasActiveFilters && (
+                <button
+                  onClick={() => setFilters(DEFAULT_FILTERS)}
+                  className="text-sm text-red-600"
+                >
+                  Clear
+                </button>
+              )}
             </div>
 
             {FiltersUI}
@@ -324,17 +323,14 @@ function ProductCard({ product }) {
 
       <div className="space-y-1">
         <h3 className="text-sm font-semibold">{product.name}</h3>
-
         <p className="text-xs text-gray-600">
           From £{product.price.toFixed(2)} per unit
         </p>
-
         <p className="text-[11px] text-gray-500">
-          Prices includes 1‑colour branding
+          Prices includes 1-colour branding
         </p>
       </div>
 
-      {/* Spacer ensures consistent gap before button */}
       <div className="h-4" />
 
       <button
@@ -358,4 +354,3 @@ function ProductCard({ product }) {
     </div>
   );
 }
-
