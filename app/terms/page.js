@@ -18,7 +18,7 @@ export default function Terms() {
 
       <p className="mb-4">
         If you have any questions regarding these terms, please contact us at
-        xyz@gmail.com.
+        info@legacyimprint.co.uk.
       </p>
     </main>
   );
