@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
 
       <p className="mb-4">
         If you have any questions about how your data is handled, please contact us at
-        xyz@gmail.com.
+        info@legacyimprint.co.uk.
       </p>
     </main>
   );
