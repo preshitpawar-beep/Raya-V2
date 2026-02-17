@@ -28,10 +28,17 @@ const slides = [
   },
 ];
 
+const swipeConfidenceThreshold = 50;
+
+const swipePower = (offset, velocity) => {
+  return Math.abs(offset) * velocity;
+};
+
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
+  // Auto play
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
       setIndex((prev) => (prev + 1) % slides.length);
@@ -45,15 +52,29 @@ export default function HeroSlider() {
   return (
     <section className="relative w-full overflow-hidden">
 
-      {/* ================= MOBILE HERO (UNCHANGED) ================= */}
-      <div className="md:hidden relative h-[60vh]">
+      {/* ================= MOBILE HERO ================= */}
+      <div className="md:hidden relative h-[60vh] overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={slides[index].image}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
+
+              if (swipe < -swipeConfidenceThreshold) {
+                setIndex((prev) => (prev + 1) % slides.length);
+              } else if (swipe > swipeConfidenceThreshold) {
+                setIndex((prev) =>
+                  prev === 0 ? slides.length - 1 : prev - 1
+                );
+              }
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="absolute inset-0"
           >
             <Image
@@ -67,14 +88,16 @@ export default function HeroSlider() {
           </motion.div>
         </AnimatePresence>
 
+        {/* CONTENT */}
         <div className="relative z-10 h-full flex items-end">
-          <div className="p-5 w-full">
+          <div className="p-5 pb-16 w-full">
             <h1 className="text-3xl font-bold text-white mb-2 leading-tight">
               {slides[index].title}
             </h1>
             <p className="text-sm text-white/90 mb-4">
               {slides[index].subtitle}
             </p>
+
             <div className="flex flex-col gap-2">
               <Link
                 href="/products"
@@ -92,16 +115,17 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        {/* Mobile dots */}
-        <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-3 z-20">
+        {/* MOBILE DOTS (SAFE ZONE) */}
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
           {slides.map((_, i) => (
             <button
               key={i}
+              aria-label={`Go to slide ${i + 1}`}
               onClick={() => {
                 if (timeoutRef.current) clearTimeout(timeoutRef.current);
                 setIndex(i);
               }}
-              className={`w-2.5 h-2.5 rounded-full ${
+              className={`w-2.5 h-2.5 rounded-full transition ${
                 i === index ? "bg-white" : "bg-white/40"
               }`}
             />
@@ -109,11 +133,11 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* ================= DESKTOP HERO (60 / 40) ================= */}
+      {/* ================= DESKTOP HERO ================= */}
       <div className="hidden md:block relative">
         <div className="grid grid-cols-[3fr_2fr] min-h-[48vh]">
 
-          {/* LEFT – TEXT (60%) */}
+          {/* LEFT – TEXT */}
           <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-br from-[#F6F5F2] to-[#EEECE6]" />
 
@@ -153,7 +177,7 @@ export default function HeroSlider() {
             </div>
           </div>
 
-          {/* RIGHT – IMAGE (40%) */}
+          {/* RIGHT – IMAGE */}
           <div className="relative flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
@@ -176,10 +200,9 @@ export default function HeroSlider() {
               </motion.div>
             </AnimatePresence>
           </div>
-
         </div>
 
-        {/* Desktop dots – absolute, no gap */}
+        {/* DESKTOP DOTS */}
         <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-3 z-20">
           {slides.map((_, i) => (
             <button
@@ -195,7 +218,6 @@ export default function HeroSlider() {
           ))}
         </div>
       </div>
-
     </section>
   );
 }
