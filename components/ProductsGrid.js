@@ -45,6 +45,24 @@ const DEFAULT_FILTERS = {
 };
 
 /* ---------------- HELPERS ---------------- */
+const MULTI_VARIANT_RANGES = [
+  { from: 119, to: 126 },
+  { from: 127, to: 132 },
+  { from: 133, to: 139 },
+  { from: 140, to: 146 },
+];
+
+const isMultiVariantProduct = (product) => {
+  if (!product?.id?.startsWith("MP")) return false;
+
+  const number = parseInt(product.id.replace("MP", ""), 10);
+  if (Number.isNaN(number)) return false;
+
+  return MULTI_VARIANT_RANGES.some(
+    (range) => number >= range.from && number <= range.to
+  );
+};
+
 
 const isEco = (p) =>
   ECO_KEYWORDS.some((k) => p.name.toLowerCase().includes(k));
@@ -355,10 +373,7 @@ export default function ProductsGrid({ initialSearch = "" }) {
 
 function ProductCard({ product, onImageClick }) {
   const minQty = MOQ[product.category] || 10;
-  const isMultiVariant =
-    product.id.includes("-") ||
-    product.name.includes("-") ||
-    /\bMP\d+\s*[-–]\s*MP\d+/i.test(product.name);
+  const isMultiVariant = isMultiVariantProduct(product);
 
   return (
     <div className="rounded-xl p-4 bg-white border shadow-sm flex flex-col">
