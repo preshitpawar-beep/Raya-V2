@@ -3,7 +3,11 @@
 export default function ProductImageModal({ product, onClose }) {
   if (!product) return null;
 
-  const isMultiVariant = product.id.includes("-");
+  const isMultiVariant =
+  product.id.includes("-") ||
+  product.name.includes("-") ||
+  /\bMP\d+\s*[-–]\s*MP\d+/i.test(product.name);
+
 
   return (
     <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center">
