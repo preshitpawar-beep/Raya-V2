@@ -327,7 +327,7 @@ function ProductCard({ product }) {
           From £{product.price.toFixed(2)} per unit
         </p>
         <p className="text-[11px] text-gray-500">
-          Prices includes 1-colour branding
+          Price includes one standard branding method.
         </p>
       </div>
 
