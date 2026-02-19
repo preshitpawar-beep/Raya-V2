@@ -2,8 +2,11 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { products } from "./productsData";
+import ProductImageModal from "@/components/ProductImageModal";
 
 /* ---------------- CONFIG ---------------- */
+
+const ITEMS_PER_PAGE = 50;
 
 const CATEGORIES = ["All", "Pen", "Notebook", "Key Ring", "Combo Sets", "Bags"];
 const COLORS = ["black", "blue", "red", "white", "grey", "gold", "brown", "green"];
@@ -76,11 +79,18 @@ const getSetType = (p) => {
 export default function ProductsGrid({ initialSearch = "" }) {
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [zoomProduct, setZoomProduct] = useState(null);
+  const [page, setPage] = useState(1);
 
   const hasActiveFilters = useMemo(
     () => JSON.stringify(filters) !== JSON.stringify(DEFAULT_FILTERS),
     [filters]
   );
+
+  /* reset page when filters change */
+  useEffect(() => {
+    setPage(1);
+  }, [filters]);
 
   /* 🔗 SMART SEARCH → FILTERS */
   useEffect(() => {
@@ -148,6 +158,13 @@ export default function ProductsGrid({ initialSearch = "" }) {
       return true;
     });
   }, [filters]);
+
+  /* PAGINATION */
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  const paginatedProducts = useMemo(() => {
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredProducts, page]);
 
   const toggle = (key, value) => {
     setFilters((f) => ({
@@ -224,6 +241,8 @@ export default function ProductsGrid({ initialSearch = "" }) {
     </div>
   );
 
+  /* ---------------- RETURN (UNCHANGED STRUCTURE) ---------------- */
+
   return (
     <>
       {/* MOBILE ACTIONS */}
@@ -267,13 +286,32 @@ export default function ProductsGrid({ initialSearch = "" }) {
         {/* PRODUCTS */}
         <div className="col-span-12 md:col-span-9">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {filteredProducts.map((product, index) => (
+            {paginatedProducts.map((product, index) => (
               <ProductCard
                 key={`${product.category}-${product.id}-${index}`}
                 product={product}
+                onImageClick={() => setZoomProduct(product)}
               />
             ))}
           </div>
+
+          {totalPages > 1 && (
+            <div className="flex justify-center gap-2 mt-12">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setPage(i + 1)}
+                  className={`px-4 py-2 rounded border text-sm ${
+                    page === i + 1
+                      ? "bg-dark text-white"
+                      : "bg-white hover:bg-gray-100"
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -304,28 +342,45 @@ export default function ProductsGrid({ initialSearch = "" }) {
           </div>
         </div>
       )}
+
+      <ProductImageModal
+        product={zoomProduct}
+        onClose={() => setZoomProduct(null)}
+      />
     </>
   );
 }
 
 /* ---------------- CARD ---------------- */
 
-function ProductCard({ product }) {
+function ProductCard({ product, onImageClick }) {
   const minQty = MOQ[product.category] || 10;
+  const isMultiVariant = product.id.includes("-");
 
   return (
     <div className="rounded-xl p-4 bg-white border shadow-sm flex flex-col">
       <img
         src={`/products/${product.id}.jpg`}
-        className="h-48 object-contain my-4"
+        className="h-48 object-contain my-4 cursor-zoom-in"
+        onClick={onImageClick}
         onError={(e) => (e.currentTarget.src = "/placeholder.jpg")}
       />
 
       <div className="space-y-1">
         <h3 className="text-sm font-semibold">{product.name}</h3>
-        <p className="text-xs text-gray-600">
-          From £{product.price.toFixed(2)} per unit
+
+        <p className="text-xs text-gray-700">
+          From £{product.price.toFixed(2)}{" "}
+          <span className="text-gray-500">(excl. VAT)</span>
         </p>
+
+        {isMultiVariant && (
+          <p className="text-[11px] text-gray-600 leading-snug">
+            Price is <strong>per unit</strong>. Please specify required{" "}
+            <strong>part number / colour</strong> (shown left to right).
+          </p>
+        )}
+
         <p className="text-[11px] text-gray-500">
           Price includes one standard branding method.
         </p>
