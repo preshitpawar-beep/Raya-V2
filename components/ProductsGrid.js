@@ -355,7 +355,10 @@ export default function ProductsGrid({ initialSearch = "" }) {
 
 function ProductCard({ product, onImageClick }) {
   const minQty = MOQ[product.category] || 10;
-  const isMultiVariant = product.id.includes("-");
+  const isMultiVariant =
+    product.id.includes("-") ||
+    product.name.includes("-") ||
+    /\bMP\d+\s*[-–]\s*MP\d+/i.test(product.name);
 
   return (
     <div className="rounded-xl p-4 bg-white border shadow-sm flex flex-col">
