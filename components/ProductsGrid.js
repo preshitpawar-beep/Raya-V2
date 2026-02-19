@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { products } from "./productsData";
-import ProductImageModal from "@/components/ProductImageModal";
+import ProductImageModal from "./ProductImageModal";
 
 /* ---------------- CONFIG ---------------- */
 
