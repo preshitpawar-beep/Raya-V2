@@ -1,8 +1,29 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { products } from "./productsData";
+import ProductImageModal from "./ProductImageModal";
+
+/* ---------- MULTI VARIANT HELPER (SAME AS GRID) ---------- */
+
+const MULTI_VARIANT_RANGES = [
+  { from: 119, to: 126 },
+  { from: 127, to: 132 },
+  { from: 133, to: 139 },
+  { from: 140, to: 146 },
+];
+
+const isMultiVariantProduct = (product) => {
+  if (!product?.id?.startsWith("MP")) return false;
+
+  const number = parseInt(product.id.replace("MP", ""), 10);
+  if (Number.isNaN(number)) return false;
+
+  return MULTI_VARIANT_RANGES.some(
+    (range) => number >= range.from && number <= range.to
+  );
+};
 
 /* ---------- BALANCED FEATURED SELECTION ---------- */
 
@@ -57,6 +78,7 @@ const featuredProducts = [
 
 export default function FeaturedProducts() {
   const sliderRef = useRef(null);
+  const [zoomProduct, setZoomProduct] = useState(null);
 
   const scroll = (direction) => {
     if (!sliderRef.current) return;
@@ -87,10 +109,10 @@ export default function FeaturedProducts() {
           <div className="md:hidden pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-transparent z-10" />
           <div className="md:hidden pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
 
-          {/* LEFT ARROW (DESKTOP) */}
+          {/* LEFT ARROW */}
           <button
             onClick={() => scroll("left")}
-            className="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white border shadow hover:shadow-md transition"
+            className="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white border shadow"
           >
             ←
           </button>
@@ -98,22 +120,21 @@ export default function FeaturedProducts() {
           {/* SLIDER TRACK */}
           <div
             ref={sliderRef}
-            className="
-              flex gap-5 overflow-x-auto pb-6
-              snap-x snap-mandatory
-              scrollbar-hide
-              scroll-smooth
-            "
+            className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide scroll-smooth"
           >
             {featuredProducts.map((product) => (
-              <FeaturedCard key={product.id} product={product} />
+              <FeaturedCard
+                key={product.id}
+                product={product}
+                onImageClick={() => setZoomProduct(product)}
+              />
             ))}
           </div>
 
-          {/* RIGHT ARROW (DESKTOP) */}
+          {/* RIGHT ARROW */}
           <button
             onClick={() => scroll("right")}
-            className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white border shadow hover:shadow-md transition"
+            className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white border shadow"
           >
             →
           </button>
@@ -130,16 +151,23 @@ export default function FeaturedProducts() {
         </div>
 
       </div>
+
+      {/* IMAGE MODAL */}
+      <ProductImageModal
+        product={zoomProduct}
+        onClose={() => setZoomProduct(null)}
+      />
     </section>
   );
 }
 
 /* ================= CARD ================= */
 
-function FeaturedCard({ product }) {
+function FeaturedCard({ product, onImageClick }) {
+  const isMultiVariant = isMultiVariantProduct(product);
+
   return (
-    <Link
-      href="/quote"
+    <div
       className="
         snap-start
         min-w-[200px] max-w-[200px]
@@ -153,15 +181,19 @@ function FeaturedCard({ product }) {
         flex-shrink-0
         flex
         flex-col
+        cursor-pointer
       "
     >
-      {/* IMAGE SLOT */}
-      <div className="h-[150px] md:h-[180px] flex items-center justify-center">
+      {/* IMAGE */}
+      <div
+        className="h-[150px] md:h-[180px] flex items-center justify-center"
+        onClick={onImageClick}
+      >
         <img
           src={`/products/${product.id}.jpg`}
           alt={product.name}
           className="max-h-full object-contain"
-          onError={(e) => (e.currentTarget.src = product.image)}
+          onError={(e) => (e.currentTarget.src = "/placeholder.jpg")}
         />
       </div>
 
@@ -172,18 +204,27 @@ function FeaturedCard({ product }) {
         </h3>
 
         <p className="text-xs text-gray-700 mb-1">
-          From £{product.price.toFixed(2)} per unit
+          From £{product.price.toFixed(2)}{" "}
+          <span className="text-gray-500">(excl. VAT)</span>
         </p>
+
+        {isMultiVariant && (
+          <p className="text-[11px] text-gray-600 mb-2">
+            Price is per unit. Please specify required part number / colour.
+          </p>
+        )}
 
         <p className="text-[11px] text-gray-500 mb-4">
-          Prices includes 1‑colour branding
+          Price includes one standard branding method
         </p>
 
-        {/* CTA */}
-        <span className="mt-auto inline-block bg-dark text-white py-2 px-4 rounded-lg text-sm font-semibold text-center">
+        <Link
+          href="/quote"
+          className="mt-auto inline-block bg-dark text-white py-2 px-4 rounded-lg text-sm font-semibold text-center"
+        >
           Get a quote
-        </span>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
