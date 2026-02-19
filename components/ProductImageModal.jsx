@@ -1,17 +1,35 @@
 "use client";
 
+/* ---------------- HELPERS ---------------- */
+
+const MULTI_VARIANT_RANGES = [
+  { from: 119, to: 126 },
+  { from: 127, to: 132 },
+  { from: 133, to: 139 },
+  { from: 140, to: 146 },
+];
+
+const isMultiVariantProduct = (product) => {
+  if (!product?.id?.startsWith("MP")) return false;
+
+  const number = parseInt(product.id.replace("MP", ""), 10);
+  if (Number.isNaN(number)) return false;
+
+  return MULTI_VARIANT_RANGES.some(
+    (range) => number >= range.from && number <= range.to
+  );
+};
+
+/* ---------------- MODAL ---------------- */
+
 export default function ProductImageModal({ product, onClose }) {
   if (!product) return null;
 
-  const isMultiVariant =
-  product.id.includes("-") ||
-  product.name.includes("-") ||
-  /\bMP\d+\s*[-–]\s*MP\d+/i.test(product.name);
-
+  const isMultiVariant = isMultiVariantProduct(product);
 
   return (
     <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center">
-      {/* BACKDROP CLICK CLOSE */}
+      {/* BACKDROP */}
       <div
         className="absolute inset-0"
         onClick={onClose}
@@ -42,8 +60,8 @@ export default function ProductImageModal({ product, onClose }) {
 
           {isMultiVariant && (
             <p className="text-xs text-gray-600">
-              Multiple variants available — please specify required part number
-              / colour (shown left to right).
+              Multiple variants available — please specify required part number /
+              colour (shown left to right).
             </p>
           )}
         </div>
