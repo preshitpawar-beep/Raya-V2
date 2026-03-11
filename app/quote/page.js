@@ -1,4 +1,4 @@
-import QuoteForm from "./QuoteForm";
+import QuoteForm from "./QuoteForm.jsx";
 
 export const metadata = {
   title: "Get a Free Quote",
