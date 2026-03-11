@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products } from "../../../components/productsData";
 import QuoteButton from "./QuoteButton";
+import ProductZoomButton from "./ProductZoomButton";
 
 /* ── helpers ── */
 const MOQ = { Pen: 50, Notebook: 10, "Key Ring": 30, "Combo Sets": 10, Bags: 10 };
@@ -70,13 +71,17 @@ export default function ProductPage({ params }) {
         {/* Main product section */}
         <div className="grid md:grid-cols-2 gap-10 mb-16">
 
-          {/* Image */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex items-center justify-center p-8 min-h-[340px] relative">
+          {/* Image — with zoom button */}
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex items-center justify-center p-8 min-h-[340px] relative group">
             {eco && (
-              <span className="absolute top-4 left-4 bg-green-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              <span className="absolute top-4 left-4 bg-green-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full z-10">
                 Eco-Friendly
               </span>
             )}
+
+            {/* Zoom button — client component handles the modal */}
+            <ProductZoomButton product={product} />
+
             <div className="relative w-full h-72">
               <Image
                 src={`/products/${product.id}.jpg`}
@@ -148,7 +153,7 @@ export default function ProductPage({ params }) {
           </div>
         </div>
 
-        {/* Info tabs – static, clean layout */}
+        {/* Product Details */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8 mb-16">
           <h2 className="text-base font-bold text-dark mb-6">Product Details</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -163,7 +168,14 @@ export default function ProductPage({ params }) {
                   { label: "Product Code", value: product.id },
                   { label: "Category", value: product.category },
                   { label: "Min. Order", value: `${minQty} units` },
-                  { label: "Material", value: product.id.startsWith("MP") ? "Metal" : product.category === "Bags" ? "Jute / Cotton" : "Plastic / Mixed" },
+                  {
+                    label: "Material",
+                    value: product.id.startsWith("MP")
+                      ? "Metal"
+                      : product.category === "Bags"
+                      ? "Jute / Cotton"
+                      : "Plastic / Mixed",
+                  },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex justify-between text-sm border-b border-gray-50 pb-2">
                     <dt className="text-gray-500">{label}</dt>
@@ -176,14 +188,14 @@ export default function ProductPage({ params }) {
             {/* Branding */}
             <div>
               <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
-                Branding Options
+                Branding
               </h3>
               <dl className="space-y-3">
                 {[
-                  { label: "Screen Print", value: "Included ✓" },
-                  { label: "Pad Print", value: "Included ✓" },
-                  { label: "Laser Engrave", value: "On request" },
+                  { label: "1 Branding Method", value: "Included ✓" },
+                  { label: "Options", value: "Screen / Pad / Laser" },
                   { label: "Setup Fee", value: "None ✓" },
+                  { label: "Visual Proof", value: "Free ✓" },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex justify-between text-sm border-b border-gray-50 pb-2">
                     <dt className="text-gray-500">{label}</dt>
@@ -201,9 +213,7 @@ export default function ProductPage({ params }) {
               <dl className="space-y-3">
                 {[
                   { label: "Standard", value: "10–14 working days" },
-                  { label: "Express", value: "5–7 working days" },
                   { label: "Area", value: "UK Mainland" },
-                  { label: "Courier", value: "DPD / Royal Mail" },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex justify-between text-sm border-b border-gray-50 pb-2">
                     <dt className="text-gray-500">{label}</dt>
@@ -212,6 +222,7 @@ export default function ProductPage({ params }) {
                 ))}
               </dl>
             </div>
+
           </div>
         </div>
 
