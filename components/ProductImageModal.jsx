@@ -96,7 +96,7 @@ export default function ProductImageModal({ product, onClose }) {
 
         {/* Image */}
         <img
-          src={`/products/${product.id}.jpg`}
+          src={product.image}
           alt={product.name}
           className="w-full object-contain max-h-[65vh]"
           onError={(e) => (e.currentTarget.src = "/placeholder.jpg")}
