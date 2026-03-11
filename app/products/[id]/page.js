@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import QuoteButton from "./QuoteButton";
 import { notFound } from "next/navigation";
 import { products } from "../../../components/productsData";
 
