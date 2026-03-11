@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { products } from "./productsData";
@@ -348,32 +349,55 @@ export default function ProductsGrid({ initialSearch = "" }) {
         </div>
       </div>
 
-      {/* MOBILE FILTER DRAWER — slides down from TOP */}
-      {mobileFiltersOpen && (
+      {/* MOBILE FILTER DRAWER — portal-rendered, slides from top */}
+      {mobileFiltersOpen && typeof document !== "undefined" && createPortal(
         <div
-          className="fixed inset-0 z-50 bg-black/40 modal-overlay"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            backgroundColor: "rgba(0,0,0,0.45)",
+          }}
           onClick={() => setMobileFiltersOpen(false)}
         >
           <div
-            className="absolute top-0 left-0 right-0 bg-white rounded-b-2xl modal-content-top flex flex-col"
-            style={{ maxHeight: "85vh" }}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              backgroundColor: "#fff",
+              borderBottomLeftRadius: "1rem",
+              borderBottomRightRadius: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              maxHeight: "85dvh",
+              height: "auto",
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header — never scrolls */}
-            <div className="flex justify-between items-center px-6 pt-6 pb-4 border-b border-gray-100 flex-shrink-0">
-              <h3 className="font-semibold text-lg">Filters</h3>
-              <div className="flex items-center gap-3">
+            <div style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "1.25rem 1.5rem 1rem",
+              borderBottom: "1px solid #f3f4f6",
+              flexShrink: 0,
+            }}>
+              <span style={{ fontWeight: 600, fontSize: "1.1rem" }}>Filters</span>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
                 {hasActiveFilters && (
                   <button
                     onClick={() => setFilters(DEFAULT_FILTERS)}
-                    className="text-sm text-red-500"
+                    style={{ fontSize: "0.875rem", color: "#ef4444", background: "none", border: "none", cursor: "pointer" }}
                   >
                     Clear all
                   </button>
                 )}
                 <button
                   onClick={() => setMobileFiltersOpen(false)}
-                  className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
+                  style={{ fontSize: "1.5rem", lineHeight: 1, color: "#9ca3af", background: "none", border: "none", cursor: "pointer", padding: "0 0.25rem" }}
                   aria-label="Close filters"
                 >
                   ×
@@ -381,22 +405,38 @@ export default function ProductsGrid({ initialSearch = "" }) {
               </div>
             </div>
 
-            {/* Scrollable filter options */}
-            <div className="overflow-y-auto flex-1 px-6 py-5">
+            {/* Scrollable filter options — takes all available space */}
+            <div style={{ overflowY: "auto", flex: 1, padding: "1.25rem 1.5rem" }}>
               {FiltersUI}
             </div>
 
-            {/* Apply button — always pinned at bottom */}
-            <div className="px-6 py-4 border-t border-gray-100 flex-shrink-0 bg-white">
+            {/* Apply button — always pinned at bottom, never pushed off screen */}
+            <div style={{
+              padding: "1rem 1.5rem",
+              borderTop: "1px solid #f3f4f6",
+              flexShrink: 0,
+              backgroundColor: "#fff",
+            }}>
               <button
                 onClick={() => setMobileFiltersOpen(false)}
-                className="w-full bg-dark text-white py-3 rounded-xl font-medium text-sm"
+                style={{
+                  width: "100%",
+                  backgroundColor: "#1f2937",
+                  color: "#fff",
+                  padding: "0.875rem",
+                  borderRadius: "0.75rem",
+                  fontWeight: 500,
+                  fontSize: "0.9rem",
+                  border: "none",
+                  cursor: "pointer",
+                }}
               >
                 Show {filteredProducts.length} product{filteredProducts.length !== 1 ? "s" : ""}
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       <ProductImageModal product={zoomProduct} onClose={() => setZoomProduct(null)} />
