@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ProductImageModal from "./ProductImageModal";
+import ProductImageModal from "../../../components/ProductImageModal";
 
 export default function ProductZoomButton({ product }) {
   const [open, setOpen] = useState(false);
