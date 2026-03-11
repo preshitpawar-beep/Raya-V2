@@ -11,10 +11,36 @@ const MOQ = { Pen: 50, Notebook: 10, "Key Ring": 30, "Combo Sets": 10, Bags: 10 
 const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
 const isEco = (p) => ECO_KEYWORDS.some((k) => p.name.toLowerCase().includes(k));
 
+/* ── extract meaningful keywords from a product name ── */
+function getNameKeywords(name) {
+  // Strip the product code prefix (e.g. "P1 - ", "Sr 111 - ", "JB 01 - ")
+  const stripped = name.replace(/^[\w\s]+ - /, "").toLowerCase();
+  // Split into words, drop very short/generic ones
+  return stripped.split(/[\s\-–|()×,/]+/).filter(
+    (w) => w.length > 2 && !["and", "the", "with", "size", "gsm", "cm", "in"].includes(w)
+  );
+}
+
 function getRelated(product) {
-  return products
-    .filter((p) => p.id !== product.id && p.category === product.category)
-    .slice(0, 4);
+  const keywords = getNameKeywords(product.name);
+  const sameCat = products.filter((p) => p.id !== product.id && p.category === product.category);
+
+  // Score each candidate: +2 per shared keyword, +1 if similar price range (within 50%)
+  const scored = sameCat.map((p) => {
+    const pKeywords = getNameKeywords(p.name);
+    const sharedKeywords = keywords.filter((k) => pKeywords.includes(k)).length;
+    const priceSimilar = Math.abs(p.price - product.price) / (product.price || 1) < 0.5 ? 1 : 0;
+    return { p, score: sharedKeywords * 2 + priceSimilar };
+  });
+
+  // Sort by score descending, then shuffle within same-score groups for variety
+  scored.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return Math.random() - 0.5;
+  });
+
+  // Take top 4 — if not enough with shared keywords, fill with same-category products
+  return scored.slice(0, 4).map((s) => s.p);
 }
 
 /* ── metadata ── */
