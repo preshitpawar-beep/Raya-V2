@@ -66,7 +66,7 @@ export const metadata = {
     images: ["/og-image.png"],
   },
 
-// --- Robots ---
+  // --- Robots ---
   robots: {
     index: true,
     follow: true,
@@ -80,7 +80,7 @@ export const metadata = {
 
   // --- Google Search Console verification ---
   verification: {
-    google: "p27q4DOPVSvWpAZb0II",
+    google: "p27q4DOPVSvWpAZb0IIw-mENTQ18vSGb-ioLns_npoY",
   },
 };
 
