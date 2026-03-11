@@ -102,7 +102,7 @@ export default function Header() {
           <Link href="/" className="shrink-0">
             <Image
               src="/raya-logo.png"
-              alt="Raya logo"
+              alt="Legacy Imprint SW – Branded Promotional Products"
               width={220}
               height={110}
               priority
@@ -143,7 +143,7 @@ export default function Header() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-2xl z-50"
-            aria-label="Menu"
+            aria-label="Toggle navigation menu"
           >
             ☰
           </button>
