@@ -307,7 +307,7 @@ export default function ProductsGrid({ initialSearch = "" }) {
                     index={index}
                     onImageClick={() => setZoomProduct(product)}
                     onPageClick={() =>
-                      router.push(`/products/${encodeURIComponent(product.id)}`)
+                      router.push(`/products/${product.id.replace(/\s+/g, "-")}`)
                     }
                   />
                 ))}
@@ -355,10 +355,12 @@ export default function ProductsGrid({ initialSearch = "" }) {
           onClick={() => setMobileFiltersOpen(false)}
         >
           <div
-            className="absolute top-0 left-0 right-0 bg-white rounded-b-2xl p-6 max-h-[85vh] overflow-y-auto modal-content-top"
+            className="absolute top-0 left-0 right-0 bg-white rounded-b-2xl modal-content-top flex flex-col"
+            style={{ maxHeight: "85vh" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center mb-6">
+            {/* Header — never scrolls */}
+            <div className="flex justify-between items-center px-6 pt-6 pb-4 border-b border-gray-100 flex-shrink-0">
               <h3 className="font-semibold text-lg">Filters</h3>
               <div className="flex items-center gap-3">
                 {hasActiveFilters && (
@@ -378,13 +380,21 @@ export default function ProductsGrid({ initialSearch = "" }) {
                 </button>
               </div>
             </div>
-            {FiltersUI}
-            <button
-              onClick={() => setMobileFiltersOpen(false)}
-              className="mt-6 w-full bg-dark text-white py-3 rounded-xl font-medium"
-            >
-              Show {filteredProducts.length} product{filteredProducts.length !== 1 ? "s" : ""}
-            </button>
+
+            {/* Scrollable filter options */}
+            <div className="overflow-y-auto flex-1 px-6 py-5">
+              {FiltersUI}
+            </div>
+
+            {/* Apply button — always pinned at bottom */}
+            <div className="px-6 py-4 border-t border-gray-100 flex-shrink-0 bg-white">
+              <button
+                onClick={() => setMobileFiltersOpen(false)}
+                className="w-full bg-dark text-white py-3 rounded-xl font-medium text-sm"
+              >
+                Show {filteredProducts.length} product{filteredProducts.length !== 1 ? "s" : ""}
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -437,7 +447,7 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
         {!imgLoaded && <div className="img-skeleton absolute inset-0" />}
 
         <Image
-          src={`/products/${product.id}.jpg`}
+          src={product.image}
           alt={`${product.name} – custom branded ${product.category.toLowerCase()} for UK businesses`}
           fill
           sizes="(max-width: 768px) 50vw, 33vw"
