@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import QuoteButton from "./QuoteButton";
 import { notFound } from "next/navigation";
 import { products } from "../../../components/productsData";
+import QuoteButton from "./QuoteButton";
 
 /* ── helpers ── */
 const MOQ = { Pen: 50, Notebook: 10, "Key Ring": 30, "Combo Sets": 10, Bags: 10 };
@@ -137,26 +137,7 @@ export default function ProductPage({ params }) {
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-              <Link
-                href={`/quote?product=${encodeURIComponent(product.name)}&qty=${minQty}`}
-                onClick={() => {
-                  if (typeof window !== "undefined") {
-                    localStorage.setItem(
-                      "quoteItem",
-                      JSON.stringify({
-                        id: product.id,
-                        product: product.name,
-                        quantity: minQty,
-                        price: product.price,
-                        category: product.category,
-                      })
-                    );
-                  }
-                }}
-                className="flex-1 bg-dark text-white text-center py-3.5 rounded-xl font-semibold hover:opacity-90 transition active:scale-95"
-              >
-                Get a Quote
-              </Link>
+              <QuoteButton product={product} minQty={minQty} />
               <Link
                 href="/products"
                 className="flex-1 border border-gray-200 text-dark text-center py-3.5 rounded-xl font-semibold hover:bg-white transition"
