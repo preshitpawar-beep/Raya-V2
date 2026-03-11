@@ -88,6 +88,16 @@ export default function ProductsGrid({ initialSearch = "" }) {
     return () => clearTimeout(t);
   }, []);
 
+  // Prevent body scroll when mobile filter drawer is open
+  useEffect(() => {
+    if (mobileFiltersOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileFiltersOpen]);
+
   const hasActiveFilters = useMemo(
     () => JSON.stringify(filters) !== JSON.stringify(DEFAULT_FILTERS),
     [filters]
@@ -338,20 +348,35 @@ export default function ProductsGrid({ initialSearch = "" }) {
         </div>
       </div>
 
-      {/* MOBILE FILTER DRAWER */}
+      {/* MOBILE FILTER DRAWER — slides down from TOP */}
       {mobileFiltersOpen && (
-        <div className="fixed inset-0 z-50 bg-black/40 modal-overlay">
-          <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl p-6 max-h-[85vh] overflow-y-auto modal-content">
+        <div
+          className="fixed inset-0 z-50 bg-black/40 modal-overlay"
+          onClick={() => setMobileFiltersOpen(false)}
+        >
+          <div
+            className="absolute top-0 left-0 right-0 bg-white rounded-b-2xl p-6 max-h-[85vh] overflow-y-auto modal-content-top"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex justify-between items-center mb-6">
               <h3 className="font-semibold text-lg">Filters</h3>
-              {hasActiveFilters && (
+              <div className="flex items-center gap-3">
+                {hasActiveFilters && (
+                  <button
+                    onClick={() => setFilters(DEFAULT_FILTERS)}
+                    className="text-sm text-red-500"
+                  >
+                    Clear all
+                  </button>
+                )}
                 <button
-                  onClick={() => setFilters(DEFAULT_FILTERS)}
-                  className="text-sm text-red-500"
+                  onClick={() => setMobileFiltersOpen(false)}
+                  className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
+                  aria-label="Close filters"
                 >
-                  Clear all
+                  ×
                 </button>
-              )}
+              </div>
             </div>
             {FiltersUI}
             <button
@@ -399,9 +424,9 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
           )}
         </div>
 
-        {/* Zoom button — visible on hover */}
+        {/* Zoom button — always visible on mobile, hover on desktop */}
         <button
-          className="absolute top-2 right-2 z-10 bg-white/90 rounded-full w-7 h-7 flex items-center justify-center text-xs shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute top-2 right-2 z-10 bg-white/90 rounded-full w-9 h-9 flex items-center justify-center text-base shadow-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity border border-gray-100"
           onClick={(e) => { e.stopPropagation(); onImageClick(); }}
           aria-label="Zoom product image"
         >
