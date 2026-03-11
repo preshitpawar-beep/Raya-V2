@@ -7,8 +7,8 @@ import Link from "next/link";
 
 const slides = [
   {
-    title: "Custom Branded Promotional Products",
-    subtitle: "Pens, notebooks, bags & corporate giveaways for UK businesses",
+    title: "Custom Branded Promotional Products for UK Businesses",
+    subtitle: "Pens, notebooks, bags & corporate giveaways — based in Tiverton, Devon",
     image: "/hero/hero-slide-products.png",
   },
   {
@@ -115,7 +115,7 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        {/* MOBILE DOTS (SAFE ZONE) */}
+        {/* MOBILE DOTS */}
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20">
           {slides.map((_, i) => (
             <button
@@ -207,6 +207,7 @@ export default function HeroSlider() {
           {slides.map((_, i) => (
             <button
               key={i}
+              aria-label={`Go to slide ${i + 1}`}
               onClick={() => {
                 if (timeoutRef.current) clearTimeout(timeoutRef.current);
                 setIndex(i);
