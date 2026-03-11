@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import Image from "next/image";
 import { products } from "./productsData";
 import ProductImageModal from "./ProductImageModal";
 
@@ -377,12 +378,19 @@ function ProductCard({ product, onImageClick }) {
 
   return (
     <div className="rounded-xl p-4 bg-white border shadow-sm flex flex-col">
-      <img
-        src={`/products/${product.id}.jpg`}
-        className="h-48 object-contain my-4 cursor-zoom-in"
+      <div
+        className="relative h-48 my-4 cursor-zoom-in"
         onClick={onImageClick}
-        onError={(e) => (e.currentTarget.src = "/placeholder.jpg")}
-      />
+      >
+        <Image
+          src={`/products/${product.id}.jpg`}
+          alt={`${product.name} – custom branded ${product.category.toLowerCase()} for UK businesses`}
+          fill
+          sizes="(max-width: 768px) 50vw, 33vw"
+          className="object-contain"
+          onError={(e) => (e.currentTarget.src = "/placeholder.jpg")}
+        />
+      </div>
 
       <div className="space-y-1">
         <h3 className="text-sm font-semibold">{product.name}</h3>
