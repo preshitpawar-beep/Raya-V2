@@ -19,8 +19,9 @@ function getRelated(product) {
 
 /* ── metadata ── */
 export async function generateMetadata({ params }) {
+  const slug = params.id;
   const product = products.find(
-    (p) => encodeURIComponent(p.id) === params.id || p.id === decodeURIComponent(params.id)
+    (p) => toSlug(p.id) === slug || p.id === slug
   );
   if (!product) return { title: "Product Not Found" };
 
@@ -28,25 +29,30 @@ export async function generateMetadata({ params }) {
     title: `${product.name} – Custom Branded ${product.category}`,
     description: `${product.name} from £${product.price.toFixed(2)} excl. VAT. Custom branded ${product.category.toLowerCase()} for UK businesses. Branding included, no setup fees.`,
     alternates: {
-      canonical: `https://www.legacyimprint.co.uk/products/${encodeURIComponent(product.id)}`,
+      canonical: `https://www.legacyimprint.co.uk/products/${toSlug(product.id)}`,
     },
     openGraph: {
       title: `${product.name} | Legacy Imprint SW`,
       description: `Custom branded ${product.category.toLowerCase()} from £${product.price.toFixed(2)}. Branding included.`,
-      images: [`/products/${product.id}.jpg`],
+      images: [product.image],
     },
   };
 }
 
+/* ── slug helper ── */
+const toSlug = (id) => id.replace(/\s+/g, "-");
+const fromSlug = (slug) => slug.replace(/-/g, " ");
+
 /* ── static params ── */
 export async function generateStaticParams() {
-  return products.map((p) => ({ id: encodeURIComponent(p.id) }));
+  return products.map((p) => ({ id: toSlug(p.id) }));
 }
 
 /* ── page ── */
 export default function ProductPage({ params }) {
+  const slug = params.id;
   const product = products.find(
-    (p) => encodeURIComponent(p.id) === params.id || p.id === decodeURIComponent(params.id)
+    (p) => toSlug(p.id) === slug || p.id === slug
   );
 
   if (!product) notFound();
@@ -84,7 +90,7 @@ export default function ProductPage({ params }) {
 
             <div className="relative w-full h-72">
               <Image
-                src={`/products/${product.id}.jpg`}
+                src={product.image}
                 alt={`${product.name} – custom branded ${product.category.toLowerCase()}`}
                 fill
                 priority
@@ -230,21 +236,21 @@ export default function ProductPage({ params }) {
         {related.length > 0 && (
           <div>
             <h2 className="text-lg font-bold text-dark mb-2">
-              Similar {product.category}s You Might Like
+              Similar {product.category === "Combo Sets" ? "Combo Sets" : `${product.category}s`} You Might Like
             </h2>
             <p className="text-sm text-gray-400 mb-6">
-              Other popular {product.category.toLowerCase()}s with branding included
+              Other popular {product.category.toLowerCase()} with branding included
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {related.map((p) => (
                 <Link
                   key={p.id}
-                  href={`/products/${encodeURIComponent(p.id)}`}
+                  href={`/products/${toSlug(p.id)}`}
                   className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition group"
                 >
                   <div className="relative h-36 bg-gray-50">
                     <Image
-                      src={`/products/${p.id}.jpg`}
+                      src={p.image}
                       alt={`${p.name} – branded ${p.category.toLowerCase()}`}
                       fill
                       sizes="25vw"
