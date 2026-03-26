@@ -15,8 +15,6 @@ const MATERIALS = ["plastic", "metal", "jute", "cotton", "paper", "leather"];
 const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
 const POPULAR_IDS = ["P77","MP10","MP03","D184","D200","KC01","Sr 159","Sr 231","JB 02"];
 
-const MOQ = { Pen: 50, Notebook: 10, "Key Ring": 30, "Combo Sets": 10, Bags: 10 };
-
 const DEFAULT_FILTERS = {
   category: "All", colors: [], materials: [],
   ecoOnly: false, popularOnly: false, setTypes: [],
@@ -451,6 +449,10 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
   const eco = isEco(product);
   const popular = ["P77","MP10","MP03","D184","D200","KC01"].includes(product.id);
 
+  const moq = product.moq || 10;
+  const bestPrice = product.pricing ? product.pricing["500"] : product.price;
+  const hasTiers = product.pricing && bestPrice < product.price;
+
   return (
     <div
       className="product-card card-enter rounded-xl bg-white border border-gray-100 shadow-sm overflow-hidden flex flex-col cursor-pointer group"
@@ -508,10 +510,17 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
           {product.name}
         </h3>
 
+        {/* ── PRICING ── */}
         <p className="text-sm font-semibold text-dark mt-0.5">
           From £{product.price.toFixed(2)}{" "}
-          <span className="text-xs font-normal text-gray-400">(excl. VAT)</span>
+          <span className="text-xs font-normal text-gray-400">per unit</span>
         </p>
+
+        {hasTiers && (
+          <p className="text-[10px] text-emerald-600 font-medium mt-0.5">
+            As low as £{bestPrice.toFixed(2)} at 500+
+          </p>
+        )}
 
         {isMultiVariant && (
           <p className="text-[11px] text-gray-500 leading-snug mt-1">
@@ -519,7 +528,9 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
           </p>
         )}
 
-        <p className="text-[11px] text-gray-400 mt-1">Branding included</p>
+        <p className="text-[11px] text-gray-400 mt-1">
+          Branding included · Min {moq} units
+        </p>
 
         <div className="mt-auto pt-3">
           <button
@@ -530,8 +541,9 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
                 JSON.stringify({
                   id: product.id,
                   product: product.name,
-                  quantity: MOQ[product.category] || 10,
+                  quantity: moq,
                   price: product.price,
+                  pricing: product.pricing || null,
                   category: product.category,
                 })
               );
