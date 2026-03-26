@@ -20,7 +20,7 @@ const isMultiVariantProduct = (product) => {
   );
 };
 
-const TIER_LABELS = { "50": "50+", "100": "100+", "250": "250+", "500": "500+" };
+const TIER_LABELS = { "10": "10+", "25": "25+", "50": "50+", "100": "100+", "250": "250+", "500": "500+" };
 
 /* ---------------- MODAL ---------------- */
 export default function ProductImageModal({ product, onClose }) {
@@ -104,16 +104,24 @@ export default function ProductImageModal({ product, onClose }) {
         <div className="mt-4 text-center space-y-2">
           <p className="text-sm font-semibold">{product.name}</p>
 
-          {/* Tiered pricing table */}
+          {/* Tiered pricing table — only tiers at or above MOQ, max 5 */}
           {hasTiers ? (
             <div className="mt-3">
-              <div className="inline-flex rounded-lg border border-gray-200 overflow-hidden text-xs">
-                {Object.entries(product.pricing).map(([qty, price]) => (
+              <div className="inline-flex flex-wrap justify-center rounded-lg border border-gray-200 overflow-hidden text-xs">
+                {(() => {
+                  const sorted = Object.entries(product.pricing)
+                    .filter(([qty]) => Number(qty) >= (product.moq || 10))
+                    .sort(([a], [b]) => Number(a) - Number(b));
+                  const capped = sorted.length > 5
+                    ? [sorted[0], ...sorted.slice(2)]
+                    : sorted;
+                  return capped.map(([qty, price]) => (
                   <div key={qty} className="px-3 py-2 text-center border-r border-gray-200 last:border-r-0">
                     <div className="text-gray-400 font-medium">{TIER_LABELS[qty] || `${qty}+`}</div>
                     <div className="text-dark font-bold mt-0.5">£{price.toFixed(2)}</div>
                   </div>
-                ))}
+                  ));
+                })()}
               </div>
               <p className="text-[11px] text-gray-400 mt-1.5">
                 Per unit, excl. VAT · Branding included
