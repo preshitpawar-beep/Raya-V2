@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { products } from "./productsData";
@@ -71,19 +72,12 @@ function seededShuffle(arr, seed) {
 
 /* ─────────────────────────────────────────────
    DAY-BASED DEMAND ROTATION
-   Mon/Tue/Wed  → pen-heavy
-   Thu/Fri      → notebooks + combo sets
-   Sat/Sun      → bags + key rings
-   Seed rotates daily so different families
-   appear each day within the same theme.
 ───────────────────────────────────────────── */
 function buildFeatured() {
   const now = new Date();
-  const dayOfWeek = now.getDay();           // 0=Sun … 6=Sat
-  // Seed = days since epoch — changes every day
+  const dayOfWeek = now.getDay();
   const seed = Math.floor(now.getTime() / 86400000);
 
-  // All families per category
   const penFamilies      = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Pen")), seed);
   const notebookFamilies = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Notebook")), seed + 1);
   const keyringFamilies  = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Key Ring")), seed + 2);
@@ -92,12 +86,10 @@ function buildFeatured() {
   const combo3Families   = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Combo Sets" && p.name.includes("3-in-1"))), seed + 5);
   const combo4Families   = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Combo Sets" && p.name.includes("4-in-1"))), seed + 6);
 
-  // Budget pick per category (always cheapest family representative)
   const budgetPen      = [...penFamilies].sort((a, b) => a.price - b.price)[0];
   const budgetNotebook = [...notebookFamilies].sort((a, b) => a.price - b.price)[0];
   const budgetBag      = [...bagFamilies].sort((a, b) => a.price - b.price)[0];
 
-  // Eco pick (first eco product found across all families today)
   const ecoPickPool = seededShuffle(
     pickOnePerFamily(products.filter(isEco)), seed + 7
   );
@@ -105,49 +97,41 @@ function buildFeatured() {
 
   let featured = [];
 
-  // ── MON / TUE / WED — pen focused ──
   if (dayOfWeek >= 1 && dayOfWeek <= 3) {
-    const midPens    = penFamilies.filter((p) => p.price >= 0.3 && p.price < 1.5);
+    const midPens    = penFamilies.filter((p) => p.price >= 0.3 && p.price < 2.5);
     const metalPens  = penFamilies.filter((p) => p.id.startsWith("MP"));
     featured = [
-      budgetPen,                          // 1 budget pen
-      ...(midPens.slice(0, 2)),           // 2 mid-range pens
-      ...(metalPens.slice(0, 2)),         // 2 metal pens
-      ecoPick,                            // 1 eco product
-      ...(notebookFamilies.slice(0, 1)),  // 1 notebook
-      ...(combo2Families.slice(0, 1)),    // 1 combo
-      ...(keyringFamilies.slice(0, 1)),   // 1 keyring
+      budgetPen,
+      ...(midPens.slice(0, 2)),
+      ...(metalPens.slice(0, 2)),
+      ecoPick,
+      ...(notebookFamilies.slice(0, 1)),
+      ...(combo2Families.slice(0, 1)),
+      ...(keyringFamilies.slice(0, 1)),
     ];
-  }
-
-  // ── THU / FRI — notebooks + combos focused ──
-  else if (dayOfWeek === 4 || dayOfWeek === 5) {
+  } else if (dayOfWeek === 4 || dayOfWeek === 5) {
     featured = [
-      budgetNotebook,                     // 1 budget notebook
-      ...(notebookFamilies.slice(1, 3)),  // 2 more notebooks
-      ...(combo2Families.slice(0, 1)),    // 1 × 2-in-1
-      ...(combo3Families.slice(0, 1)),    // 1 × 3-in-1
-      ...(combo4Families.slice(0, 1)),    // 1 × 4-in-1
-      ecoPick,                            // 1 eco product
-      ...(penFamilies.slice(0, 1)),       // 1 pen
-      ...(keyringFamilies.slice(0, 1)),   // 1 keyring
+      budgetNotebook,
+      ...(notebookFamilies.slice(1, 3)),
+      ...(combo2Families.slice(0, 1)),
+      ...(combo3Families.slice(0, 1)),
+      ...(combo4Families.slice(0, 1)),
+      ecoPick,
+      ...(penFamilies.slice(0, 1)),
+      ...(keyringFamilies.slice(0, 1)),
     ];
-  }
-
-  // ── SAT / SUN — bags + key rings focused ──
-  else {
+  } else {
     featured = [
-      budgetBag,                          // 1 budget bag
-      ...(bagFamilies.slice(1, 3)),       // 2 more bags
-      ...(keyringFamilies.slice(0, 2)),   // 2 key rings
-      ecoPick,                            // 1 eco product
-      ...(combo2Families.slice(0, 1)),    // 1 combo
-      ...(penFamilies.slice(0, 1)),       // 1 pen
-      ...(notebookFamilies.slice(0, 1)),  // 1 notebook
+      budgetBag,
+      ...(bagFamilies.slice(1, 3)),
+      ...(keyringFamilies.slice(0, 2)),
+      ecoPick,
+      ...(combo2Families.slice(0, 1)),
+      ...(penFamilies.slice(0, 1)),
+      ...(notebookFamilies.slice(0, 1)),
     ];
   }
 
-  // Deduplicate (ecoPick might already appear in another slot)
   const seen = new Set();
   return featured.filter((p) => {
     if (!p || seen.has(p.id)) return false;
@@ -164,13 +148,13 @@ const featuredProducts = buildFeatured();
 export default function FeaturedProducts() {
   const sliderRef = useRef(null);
   const [zoomProduct, setZoomProduct] = useState(null);
+  const router = useRouter();
 
   const scroll = (dir) => {
     if (!sliderRef.current) return;
     sliderRef.current.scrollBy({ left: dir === "left" ? -280 : 280, behavior: "smooth" });
   };
 
-  // Day label for the subtle subheading
   const dayOfWeek = new Date().getDay();
   const theme =
     dayOfWeek >= 1 && dayOfWeek <= 3 ? "Pens & Writing"
@@ -181,7 +165,6 @@ export default function FeaturedProducts() {
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-14">
 
-        {/* Header */}
         <div className="mb-8 max-w-2xl">
           <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">
             Featured products · {theme}
@@ -191,13 +174,9 @@ export default function FeaturedProducts() {
           </h2>
         </div>
 
-        {/* Slider */}
         <div className="relative">
-
-          {/* Right-edge fade only — left fade removed */}
           <div className="md:hidden pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
 
-          {/* Left arrow */}
           <button
             onClick={() => scroll("left")}
             className="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-200 shadow hover:shadow-md transition"
@@ -205,7 +184,6 @@ export default function FeaturedProducts() {
             ←
           </button>
 
-          {/* Track */}
           <div
             ref={sliderRef}
             className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory no-scrollbar scroll-smooth"
@@ -215,11 +193,13 @@ export default function FeaturedProducts() {
                 key={product.id}
                 product={product}
                 onImageClick={() => setZoomProduct(product)}
+                onCardClick={() =>
+                  router.push(`/products/${product.id.replace(/\s+/g, "-")}`)
+                }
               />
             ))}
           </div>
 
-          {/* Right arrow */}
           <button
             onClick={() => scroll("right")}
             className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-200 shadow hover:shadow-md transition"
@@ -228,7 +208,6 @@ export default function FeaturedProducts() {
           </button>
         </div>
 
-        {/* View all */}
         <div className="mt-10">
           <Link
             href="/products"
@@ -245,37 +224,32 @@ export default function FeaturedProducts() {
 }
 
 /* ─────────────────────────────────────────────
-   CARD
+   CARD — UPDATED WITH TIERED PRICING
 ───────────────────────────────────────────── */
-function FeaturedCard({ product, onImageClick }) {
+function FeaturedCard({ product, onImageClick, onCardClick }) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const isMultiVariant = isMultiVariantProduct(product);
   const eco = isEco(product);
   const popular = POPULAR_IDS.includes(product.id);
 
-  // Budget badge — under £0.50 for pens, under £2 for others
-  const isBudget =
-    (product.category === "Pen" && product.price <= 0.5) ||
-    (product.category !== "Pen" && product.price <= 2.0);
+  const moq = product.moq || 10;
+  const bestPrice = product.pricing ? product.pricing["500"] : product.price;
+  const hasTiers = product.pricing && bestPrice < product.price;
 
   return (
-    <div className="product-card snap-start min-w-[200px] max-w-[200px] md:min-w-[260px] md:max-w-[260px] rounded-xl bg-white border border-gray-100 shadow-sm flex-shrink-0 flex flex-col overflow-hidden group">
+    <div
+      className="product-card snap-start min-w-[200px] max-w-[200px] md:min-w-[260px] md:max-w-[260px] rounded-xl bg-white border border-gray-100 shadow-sm flex-shrink-0 flex flex-col overflow-hidden group cursor-pointer"
+      onClick={onCardClick}
+    >
 
       {/* Image */}
       <div
-        className="relative h-[150px] md:h-[180px] bg-gray-50 overflow-hidden cursor-pointer"
-        onClick={onImageClick}
+        className="relative h-[150px] md:h-[180px] bg-gray-50 overflow-hidden"
       >
-        {/* Badges */}
         <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
           {popular && (
             <span className="bg-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">
               Popular
-            </span>
-          )}
-          {isBudget && !popular && (
-            <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">
-              Budget pick
             </span>
           )}
           {eco && (
@@ -285,7 +259,6 @@ function FeaturedCard({ product, onImageClick }) {
           )}
         </div>
 
-        {/* Zoom button */}
         <button
           className="absolute top-2 right-2 z-10 bg-white/90 rounded-full w-9 h-9 flex items-center justify-center text-base shadow-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity border border-gray-100"
           onClick={(e) => { e.stopPropagation(); onImageClick(); }}
@@ -294,7 +267,6 @@ function FeaturedCard({ product, onImageClick }) {
           ⤢
         </button>
 
-        {/* Shimmer */}
         {!imgLoaded && <div className="img-skeleton absolute inset-0" />}
 
         <Image
@@ -316,8 +288,14 @@ function FeaturedCard({ product, onImageClick }) {
 
         <p className="text-sm font-semibold text-dark mt-0.5">
           From £{product.price.toFixed(2)}{" "}
-          <span className="text-xs font-normal text-gray-400">(excl. VAT)</span>
+          <span className="text-xs font-normal text-gray-400">per unit</span>
         </p>
+
+        {hasTiers && (
+          <p className="text-[10px] text-emerald-600 font-medium mt-0.5">
+            As low as £{bestPrice.toFixed(2)} at 500+
+          </p>
+        )}
 
         {isMultiVariant && (
           <p className="text-[11px] text-gray-500 leading-snug mt-1">
@@ -325,11 +303,14 @@ function FeaturedCard({ product, onImageClick }) {
           </p>
         )}
 
-        <p className="text-[11px] text-gray-400 mt-1">Branding included</p>
+        <p className="text-[11px] text-gray-400 mt-1">
+          Branding included · Min {moq} units
+        </p>
 
         <div className="mt-auto pt-3">
           <Link
             href="/quote"
+            onClick={(e) => e.stopPropagation()}
             className="w-full block bg-dark text-white py-2.5 rounded-lg text-sm font-medium text-center hover:opacity-90 active:scale-95 transition"
           >
             Get a quote
