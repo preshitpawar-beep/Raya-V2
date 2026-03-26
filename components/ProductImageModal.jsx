@@ -20,16 +20,16 @@ const isMultiVariantProduct = (product) => {
   );
 };
 
+const TIER_LABELS = { "50": "50+", "100": "100+", "250": "250+", "500": "500+" };
+
 /* ---------------- MODAL ---------------- */
 export default function ProductImageModal({ product, onClose }) {
   const [mounted, setMounted] = useState(false);
 
-  // Ensure we're on the client before using createPortal
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Lock body scroll while open
   useEffect(() => {
     if (product) {
       document.body.style.overflow = "hidden";
@@ -41,7 +41,6 @@ export default function ProductImageModal({ product, onClose }) {
     };
   }, [product]);
 
-  // Close on Escape key
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "Escape") onClose();
@@ -53,9 +52,8 @@ export default function ProductImageModal({ product, onClose }) {
   if (!product || !mounted) return null;
 
   const isMultiVariant = isMultiVariantProduct(product);
+  const hasTiers = product.pricing && Object.keys(product.pricing).length > 0;
 
-  // Portal renders directly onto document.body, completely escaping
-  // any parent with transform/filter/will-change that breaks fixed positioning
   return createPortal(
     <div
       className="modal-overlay"
@@ -98,16 +96,41 @@ export default function ProductImageModal({ product, onClose }) {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full object-contain max-h-[65vh]"
+          className="w-full object-contain max-h-[55vh]"
           onError={(e) => (e.currentTarget.src = "/placeholder.jpg")}
         />
 
         {/* Details */}
-        <div className="mt-4 text-center space-y-1">
+        <div className="mt-4 text-center space-y-2">
           <p className="text-sm font-semibold">{product.name}</p>
-          <p className="text-xs text-gray-400">
-            From £{product.price.toFixed(2)} (excl. VAT)
-          </p>
+
+          {/* Tiered pricing table */}
+          {hasTiers ? (
+            <div className="mt-3">
+              <div className="inline-flex rounded-lg border border-gray-200 overflow-hidden text-xs">
+                {Object.entries(product.pricing).map(([qty, price]) => (
+                  <div key={qty} className="px-3 py-2 text-center border-r border-gray-200 last:border-r-0">
+                    <div className="text-gray-400 font-medium">{TIER_LABELS[qty] || `${qty}+`}</div>
+                    <div className="text-dark font-bold mt-0.5">£{price.toFixed(2)}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[11px] text-gray-400 mt-1.5">
+                Per unit, excl. VAT · Branding included
+              </p>
+            </div>
+          ) : (
+            <p className="text-xs text-gray-400">
+              From £{product.price.toFixed(2)} per unit (excl. VAT)
+            </p>
+          )}
+
+          {product.moq && (
+            <p className="text-[11px] text-gray-500">
+              Minimum order: {product.moq} units
+            </p>
+          )}
+
           {isMultiVariant && (
             <p className="text-xs text-gray-600 mt-1">
               Multiple variants available — please specify required part number /
