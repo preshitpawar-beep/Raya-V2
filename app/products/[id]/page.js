@@ -2,20 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products } from "../../../components/productsData";
-import QuoteButton from "./QuoteButton";
 import ProductZoomButton from "./ProductZoomButton";
+import PricingSection from "./PricingSection";
 
 /* ── helpers ── */
-const MOQ = { Pen: 50, Notebook: 10, "Key Ring": 30, "Combo Sets": 10, Bags: 10 };
-
 const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
 const isEco = (p) => ECO_KEYWORDS.some((k) => p.name.toLowerCase().includes(k));
 
-/* ── extract meaningful keywords from a product name ── */
 function getNameKeywords(name) {
-  // Strip the product code prefix (e.g. "P1 - ", "Sr 111 - ", "JB 01 - ")
   const stripped = name.replace(/^[\w\s]+ - /, "").toLowerCase();
-  // Split into words, drop very short/generic ones
   return stripped.split(/[\s\-–|()×,/]+/).filter(
     (w) => w.length > 2 && !["and", "the", "with", "size", "gsm", "cm", "in"].includes(w)
   );
@@ -24,24 +19,21 @@ function getNameKeywords(name) {
 function getRelated(product) {
   const keywords = getNameKeywords(product.name);
   const sameCat = products.filter((p) => p.id !== product.id && p.category === product.category);
-
-  // Score each candidate: +2 per shared keyword, +1 if similar price range (within 50%)
   const scored = sameCat.map((p) => {
     const pKeywords = getNameKeywords(p.name);
     const sharedKeywords = keywords.filter((k) => pKeywords.includes(k)).length;
     const priceSimilar = Math.abs(p.price - product.price) / (product.price || 1) < 0.5 ? 1 : 0;
     return { p, score: sharedKeywords * 2 + priceSimilar };
   });
-
-  // Sort by score descending, then shuffle within same-score groups for variety
   scored.sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score;
     return Math.random() - 0.5;
   });
-
-  // Take top 4 — if not enough with shared keywords, fill with same-category products
   return scored.slice(0, 4).map((s) => s.p);
 }
+
+/* ── slug helpers ── */
+const toSlug = (id) => id.replace(/\s+/g, "-");
 
 /* ── metadata ── */
 export async function generateMetadata({ params }) {
@@ -51,23 +43,23 @@ export async function generateMetadata({ params }) {
   );
   if (!product) return { title: "Product Not Found" };
 
+  const lowestPrice = product.pricing
+    ? Math.min(...Object.values(product.pricing))
+    : product.price;
+
   return {
     title: `${product.name} – Custom Branded ${product.category}`,
-    description: `${product.name} from £${product.price.toFixed(2)} excl. VAT. Custom branded ${product.category.toLowerCase()} for UK businesses. Branding included, no setup fees.`,
+    description: `${product.name} from £${lowestPrice.toFixed(2)} excl. VAT. Custom branded ${product.category.toLowerCase()} for UK businesses. Branding included, no setup fees. Volume discounts available.`,
     alternates: {
       canonical: `https://www.legacyimprint.co.uk/products/${toSlug(product.id)}`,
     },
     openGraph: {
       title: `${product.name} | Legacy Imprint SW`,
-      description: `Custom branded ${product.category.toLowerCase()} from £${product.price.toFixed(2)}. Branding included.`,
+      description: `Custom branded ${product.category.toLowerCase()} from £${lowestPrice.toFixed(2)}. Branding included. Volume discounts at 100+, 250+ and 500+ units.`,
       images: [product.image],
     },
   };
 }
-
-/* ── slug helper ── */
-const toSlug = (id) => id.replace(/\s+/g, "-");
-const fromSlug = (slug) => slug.replace(/-/g, " ");
 
 /* ── static params ── */
 export async function generateStaticParams() {
@@ -83,7 +75,7 @@ export default function ProductPage({ params }) {
 
   if (!product) notFound();
 
-  const minQty = MOQ[product.category] || 10;
+  const moq = product.moq || 10;
   const related = getRelated(product);
   const eco = isEco(product);
 
@@ -100,10 +92,10 @@ export default function ProductPage({ params }) {
           <span className="text-dark font-medium truncate max-w-[200px]">{product.name}</span>
         </nav>
 
-        {/* Main product section */}
+        {/* ═══ MAIN PRODUCT SECTION ═══ */}
         <div className="grid md:grid-cols-2 gap-10 mb-16">
 
-          {/* Image — with zoom button */}
+          {/* ── Image ── */}
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex items-center justify-center p-8 min-h-[340px] relative group">
             {eco && (
               <span className="absolute top-4 left-4 bg-green-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full z-10">
@@ -111,7 +103,6 @@ export default function ProductPage({ params }) {
               </span>
             )}
 
-            {/* Zoom button — client component handles the modal */}
             <ProductZoomButton product={product} />
 
             <div className="relative w-full h-72">
@@ -126,7 +117,7 @@ export default function ProductPage({ params }) {
             </div>
           </div>
 
-          {/* Details */}
+          {/* ── Details ── */}
           <div className="flex flex-col">
 
             {/* Category pill */}
@@ -134,23 +125,15 @@ export default function ProductPage({ params }) {
               {product.category}
             </span>
 
-            <h1 className="text-2xl md:text-3xl font-bold text-dark leading-tight mb-3">
+            <h1 className="text-2xl md:text-3xl font-bold text-dark leading-tight mb-4">
               {product.name}
             </h1>
 
-            {/* Price */}
-            <div className="flex items-baseline gap-2 mb-1">
-              <span className="text-2xl font-bold text-dark">
-                From £{product.price.toFixed(2)}
-              </span>
-              <span className="text-sm text-gray-400">per unit (excl. VAT)</span>
-            </div>
-            <p className="text-xs text-gray-400 mb-6">
-              Price includes one standard branding method. No setup fees.
-            </p>
+            {/* ═══ INTERACTIVE PRICING (client component) ═══ */}
+            <PricingSection product={product} moq={moq} />
 
             {/* Trust badges */}
-            <div className="grid grid-cols-2 gap-3 mb-7">
+            <div className="grid grid-cols-2 gap-3 mt-7 mb-4">
               {[
                 { icon: "✓", label: "Branding included" },
                 { icon: "🚚", label: "UK delivery" },
@@ -167,25 +150,17 @@ export default function ProductPage({ params }) {
               ))}
             </div>
 
-            {/* Minimum order */}
-            <p className="text-xs text-gray-500 mb-5">
-              Minimum order quantity: <span className="font-semibold text-dark">{minQty} units</span>
-            </p>
-
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-              <QuoteButton product={product} minQty={minQty} />
-              <Link
-                href="/products"
-                className="flex-1 border border-gray-200 text-dark text-center py-3.5 rounded-xl font-semibold hover:bg-white transition"
-              >
-                ← Back to Products
-              </Link>
-            </div>
+            {/* Back link */}
+            <Link
+              href="/products"
+              className="inline-flex self-start text-sm text-gray-500 hover:text-dark transition mt-2"
+            >
+              ← Back to products
+            </Link>
           </div>
         </div>
 
-        {/* Product Details */}
+        {/* ═══ PRODUCT DETAILS ═══ */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8 mb-16">
           <h2 className="text-base font-bold text-dark mb-6">Product Details</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -199,13 +174,17 @@ export default function ProductPage({ params }) {
                 {[
                   { label: "Product Code", value: product.id },
                   { label: "Category", value: product.category },
-                  { label: "Min. Order", value: `${minQty} units` },
+                  { label: "Min. Order", value: `${moq} units` },
                   {
                     label: "Material",
                     value: product.id.startsWith("MP")
                       ? "Metal"
                       : product.category === "Bags"
                       ? "Jute / Cotton"
+                      : product.category === "Key Ring"
+                      ? "Metal"
+                      : product.category === "Notebook"
+                      ? "PU / Paper"
                       : "Plastic / Mixed",
                   },
                 ].map(({ label, value }) => (
@@ -258,7 +237,7 @@ export default function ProductPage({ params }) {
           </div>
         </div>
 
-        {/* Related products */}
+        {/* ═══ RELATED PRODUCTS ═══ */}
         {related.length > 0 && (
           <div>
             <h2 className="text-lg font-bold text-dark mb-2">
@@ -287,7 +266,9 @@ export default function ProductPage({ params }) {
                     <p className="text-xs font-semibold text-dark leading-snug line-clamp-2">
                       {p.name}
                     </p>
-                    <p className="text-xs text-gray-400 mt-1">From £{p.price.toFixed(2)}</p>
+                    <p className="text-xs text-gray-400 mt-1">
+                      From £{(p.pricing ? Math.min(...Object.values(p.pricing)) : p.price).toFixed(2)}
+                    </p>
                   </div>
                 </Link>
               ))}
