@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 
-const TIER_ORDER = ["50", "100", "250", "500"];
-const TIER_LABELS = { "50": "50+", "100": "100+", "250": "250+", "500": "500+" };
+const TIER_ORDER = ["10", "25", "50", "100", "250", "500"];
+const TIER_LABELS = { "10": "10+", "25": "25+", "50": "50+", "100": "100+", "250": "250+", "500": "500+" };
 
 function tierForQty(qty) {
   if (qty >= 500) return "500";
   if (qty >= 250) return "250";
   if (qty >= 100) return "100";
-  return "50";
+  if (qty >= 50) return "50";
+  if (qty >= 25) return "25";
+  return "10";
 }
 
 export default function PricingSection({ product, moq }) {
@@ -78,10 +80,14 @@ export default function PricingSection({ product, moq }) {
   /* ── Full tiered pricing ── */
   return (
     <div>
-      {/* Header price */}
+      {/* Header price — lowest price from tiers customer can actually order */}
       <div className="flex items-baseline gap-2 mb-1">
         <span className="text-2xl font-bold text-dark">
-          From £{(product.pricing["500"] || product.price).toFixed(2)}
+          From £{Math.min(
+            ...TIER_ORDER
+              .filter((t) => Number(t) >= moq && product.pricing[t] != null)
+              .map((t) => product.pricing[t])
+          ).toFixed(2)}
         </span>
         <span className="text-sm text-gray-400">per unit (excl. VAT)</span>
       </div>
@@ -89,45 +95,63 @@ export default function PricingSection({ product, moq }) {
         Price includes one standard branding method. No setup fees.
       </p>
 
-      {/* ── Tier cards ── */}
+      {/* ── Tier cards — only show tiers at or above MOQ ── */}
       <div>
         <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
           Volume pricing
         </h2>
-        <div className="grid grid-cols-4 gap-2">
-          {TIER_ORDER.map((tier) => {
-            const price = product.pricing[tier];
-            if (price == null) return null;
-            const isActive = activeTier === tier && !customQty;
-            const isBest = tier === "500";
-            return (
-              <button
-                key={tier}
-                onClick={() => {
-                  setSelectedTier(tier);
-                  setCustomQty("");
-                }}
-                className={`relative rounded-xl border-2 px-2 py-3.5 text-center transition ${
-                  isActive
-                    ? "border-dark bg-dark/[0.03]"
-                    : "border-gray-200 bg-white hover:border-gray-300"
-                }`}
-              >
-                {isBest && (
-                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
-                    Best value
-                  </span>
-                )}
-                <p className="text-[11px] text-gray-400 font-medium">
-                  {TIER_LABELS[tier]}
-                </p>
-                <p className="text-base md:text-lg font-bold text-dark mt-0.5">
-                  £{price.toFixed(2)}
-                </p>
-              </button>
-            );
-          })}
-        </div>
+        {(() => {
+          const allVisible = TIER_ORDER.filter(
+            (t) => Number(t) >= moq && product.pricing[t] != null
+          );
+          /* Cap at 5 visible tiers — if 6, drop the second one (least useful mid-tier) */
+          const visibleTiers = allVisible.length > 5
+            ? [allVisible[0], ...allVisible.slice(2)]
+            : allVisible;
+          const colClass =
+            visibleTiers.length >= 5 ? "grid-cols-3 md:grid-cols-5"
+            : visibleTiers.length === 4 ? "grid-cols-2 md:grid-cols-4"
+            : visibleTiers.length === 3 ? "grid-cols-3"
+            : visibleTiers.length === 2 ? "grid-cols-2"
+            : "grid-cols-1";
+          const lastTier = visibleTiers[visibleTiers.length - 1];
+
+          return (
+            <div className={`grid ${colClass} gap-2`}>
+              {visibleTiers.map((tier) => {
+                const price = product.pricing[tier];
+                const isActive = activeTier === tier && !customQty;
+                const isBest = tier === lastTier && visibleTiers.length > 1;
+                return (
+                  <button
+                    key={tier}
+                    onClick={() => {
+                      setSelectedTier(tier);
+                      setCustomQty("");
+                    }}
+                    className={`relative rounded-xl border-2 px-2 py-3.5 text-center transition ${
+                      isActive
+                        ? "border-dark bg-dark/[0.03]"
+                        : "border-gray-200 bg-white hover:border-gray-300"
+                    }`}
+                  >
+                    {isBest && (
+                      <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                        Best value
+                      </span>
+                    )}
+                    <p className="text-[11px] text-gray-400 font-medium">
+                      {TIER_LABELS[tier]}
+                    </p>
+                    <p className="text-base md:text-lg font-bold text-dark mt-0.5">
+                      £{price.toFixed(2)}
+                    </p>
+                  </button>
+                );
+              })}
+            </div>
+          );
+        })()}
       </div>
 
       {/* ── Custom quantity ── */}
