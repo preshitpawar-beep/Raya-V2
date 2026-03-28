@@ -2,16 +2,27 @@
 
 import { useState } from "react";
 
-const TIER_ORDER = ["10", "25", "50", "100", "250", "500"];
-const TIER_LABELS = { "10": "10+", "25": "25+", "50": "50+", "100": "100+", "250": "250+", "500": "500+" };
+const TIER_ORDER = ["10", "25", "50", "100", "250"];
+const TIER_LABELS = { "10": "10+", "25": "25+", "50": "50+", "100": "100+", "250": "250+" };
 
 function tierForQty(qty) {
-  if (qty >= 500) return "500";
   if (qty >= 250) return "250";
   if (qty >= 100) return "100";
   if (qty >= 50) return "50";
   if (qty >= 25) return "25";
   return "10";
+}
+
+/* Branding badge shown near price */
+function BrandingBadge() {
+  return (
+    <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1.5 rounded-full border border-emerald-200">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0">
+        <path d="M13.3 4.7L6.3 11.7L2.7 8.1L3.8 7L6.3 9.5L12.2 3.6L13.3 4.7Z" fill="currentColor"/>
+      </svg>
+      1 branding option included
+    </span>
+  );
 }
 
 export default function PricingSection({ product, moq }) {
@@ -63,9 +74,10 @@ export default function PricingSection({ product, moq }) {
           </span>
           <span className="text-sm text-gray-400">per unit (excl. VAT)</span>
         </div>
-        <p className="text-xs text-gray-400 mb-6">
+        <p className="text-xs text-gray-400 mb-3">
           Price includes one standard branding method. No setup fees.
         </p>
+        <div className="mb-6"><BrandingBadge /></div>
 
         <button
           onClick={handleQuote}
@@ -81,19 +93,13 @@ export default function PricingSection({ product, moq }) {
   return (
     <div>
       {/* Header price — lowest price from tiers customer can actually order */}
-      <div className="flex items-baseline gap-2 mb-1">
+      <div className="flex items-baseline gap-2 mb-1.5">
         <span className="text-2xl font-bold text-dark">
-          From £{Math.min(
-            ...TIER_ORDER
-              .filter((t) => Number(t) >= moq && product.pricing[t] != null)
-              .map((t) => product.pricing[t])
-          ).toFixed(2)}
+          From £{product.price.toFixed(2)}
         </span>
         <span className="text-sm text-gray-400">per unit (excl. VAT)</span>
       </div>
-      <p className="text-xs text-gray-400 mb-5">
-        Price includes one standard branding method. No setup fees.
-      </p>
+      <div className="mb-5"><BrandingBadge /></div>
 
       {/* ── Tier cards — only show tiers at or above MOQ ── */}
       <div>
