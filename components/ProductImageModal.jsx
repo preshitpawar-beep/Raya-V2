@@ -20,7 +20,7 @@ const isMultiVariantProduct = (product) => {
   );
 };
 
-const TIER_LABELS = { "10": "10+", "25": "25+", "50": "50+", "100": "100+", "250": "250+", "500": "500+" };
+const TIER_LABELS = { "10": "10+", "25": "25+", "50": "50+", "100": "100+", "250": "250+" };
 
 /* ---------------- MODAL ---------------- */
 export default function ProductImageModal({ product, onClose }) {
