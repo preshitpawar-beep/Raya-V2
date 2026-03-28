@@ -450,8 +450,6 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
   const popular = ["P77","MP10","MP03","D184","D200","KC01"].includes(product.id);
 
   const moq = product.moq || 10;
-  const bestPrice = product.pricing ? product.pricing["500"] : product.price;
-  const hasTiers = product.pricing && bestPrice < product.price;
 
   return (
     <div
@@ -516,11 +514,12 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
           <span className="text-xs font-normal text-gray-400">per unit</span>
         </p>
 
-        {hasTiers && (
-          <p className="text-[10px] text-emerald-600 font-medium mt-0.5">
-            As low as £{bestPrice.toFixed(2)} at 500+
-          </p>
-        )}
+        <span className="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 text-[10px] font-semibold px-2 py-1 rounded-full mt-1.5 self-start border border-emerald-100">
+          <svg width="10" height="10" viewBox="0 0 16 16" fill="none" className="shrink-0">
+            <path d="M13.3 4.7L6.3 11.7L2.7 8.1L3.8 7L6.3 9.5L12.2 3.6L13.3 4.7Z" fill="currentColor"/>
+          </svg>
+          Branding included
+        </span>
 
         {isMultiVariant && (
           <p className="text-[11px] text-gray-500 leading-snug mt-1">
@@ -529,7 +528,7 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
         )}
 
         <p className="text-[11px] text-gray-400 mt-1">
-          Branding included · Min {moq} units
+          Min {moq} units
         </p>
 
         <div className="mt-auto pt-3">
