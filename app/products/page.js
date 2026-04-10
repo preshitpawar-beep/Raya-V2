@@ -22,8 +22,10 @@ export default function Products({ searchParams }) {
         <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-10">
           Products
         </h1>
-        {/* 🔗 PASS SEARCH PARAM INTO GRID */}
-        <ProductsGrid initialSearch={searchParams?.search || ""} />
+        <ProductsGrid
+          initialSearch={searchParams?.search || ""}
+          initialCategory={searchParams?.category || "All"}
+        />
       </div>
     </main>
   );
