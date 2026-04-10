@@ -46,12 +46,12 @@ export default function Footer() {
                 { label: "Bags", href: "/products?category=Bags" },
               ].map(({ label, href }) => (
                 <li key={label}>
-                  <Link
+                  <a
                     href={href}
                     className="text-sm text-white/60 hover:text-white transition"
                   >
                     {label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
