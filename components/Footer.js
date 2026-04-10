@@ -2,59 +2,124 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F5F3EE] border-t">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
+    <footer className="bg-[#1a1a18] text-white">
+
+      {/* Top strip — tagline */}
+      <div className="border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-14 py-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <p className="text-2xl md:text-3xl font-medium text-white/90 leading-snug max-w-xl">
+            Branded products that leave a lasting impression.
+          </p>
+          <Link
+            href="/quote"
+            className="inline-flex items-center gap-2 bg-white text-[#1a1a18] px-6 py-3 rounded-lg text-sm font-semibold hover:bg-gray-100 transition flex-shrink-0 self-start md:self-auto"
+          >
+            Get a quote →
+          </Link>
+        </div>
+      </div>
+
+      {/* Main grid */}
+      <div className="max-w-7xl mx-auto px-6 md:px-14 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+
           {/* Brand */}
-          <div>
-            <h3 className="font-semibold mb-2">Legacy Imprint SW</h3>
-            <p className="text-sm text-gray-700">
-              Branded promotional products for UK businesses.
+          <div className="col-span-2 md:col-span-1">
+            <p className="text-white font-semibold text-base mb-3">Legacy Imprint SW</p>
+            <p className="text-sm text-white/50 leading-relaxed mb-4">
+              Custom branded promotional merchandise for UK businesses. Personal service, clear pricing, no setup fees.
             </p>
-            <p className="text-sm text-gray-700 mt-2">
-              Based in Tiverton, United Kingdom.
+            <p className="text-xs text-white/30 uppercase tracking-widest">
+              Tiverton, Devon · UK
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Products */}
           <div>
-            <h4 className="font-semibold mb-3">Quick links</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/products">Products</Link></li>
-              <li><Link href="/quote">Get a Quote</Link></li>
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">Products</p>
+            <ul className="space-y-2.5">
+              {[
+                { label: "Pens", href: "/products?category=Pen" },
+                { label: "Notebooks", href: "/products?category=Notebook" },
+                { label: "Key Rings", href: "/products?category=Key+Ring" },
+                { label: "Combo Sets", href: "/products?category=Combo+Sets" },
+                { label: "Bags", href: "/products?category=Bags" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-sm text-white/60 hover:text-white transition"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">Company</p>
+            <ul className="space-y-2.5">
+              {[
+                { label: "Home", href: "/" },
+                { label: "All Products", href: "/products" },
+                { label: "Get a Quote", href: "/quote" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms & Conditions", href: "/terms" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-sm text-white/60 hover:text-white transition"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-3">Contact</h4>
-            <p className="text-sm text-gray-700">
-              Email:{" "}
-              <a href="mailto:info@legacyimprint.co.uk" className="underline">
-                info@legacyimprint.co.uk
-              </a>
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">Get in touch</p>
+            <ul className="space-y-3">
+              <li>
+                <p className="text-xs text-white/40 mb-0.5">Email</p>
+                <a
+                  href="mailto:info@legacyimprint.co.uk"
+                  className="text-sm text-white/70 hover:text-white transition break-all"
+                >
+                  info@legacyimprint.co.uk
+                </a>
+              </li>
+              <li className="pt-2">
+                <p className="text-xs text-white/40 mb-0.5">Response time</p>
+                <p className="text-sm text-white/70">Within 1 working day</p>
+              </li>
+              <li className="pt-2">
+                <p className="text-xs text-white/40 mb-0.5">Delivery</p>
+                <p className="text-sm text-white/70">UK Mainland · 10–14 days</p>
+              </li>
+            </ul>
           </div>
 
         </div>
-
-        {/* Legal */}
-        <div className="mt-10 pt-6 border-t text-sm text-gray-600 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p>© {new Date().getFullYear()} Legacy Imprint SW. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/privacy-policy" className="hover:underline">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:underline">
-              Terms & Conditions
-            </Link>
-          </div>
-        </div>
-
       </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-14 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-white/30">
+            © {new Date().getFullYear()} Legacy Imprint SW. All rights reserved.
+          </p>
+          <div className="flex items-center gap-1 text-xs text-white/30">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 mr-1.5" />
+            Branding included · No setup fees · Free visual proof
+          </div>
+        </div>
+      </div>
+
     </footer>
   );
 }
