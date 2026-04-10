@@ -1,7 +1,7 @@
 import "./globals.css";
-import Script from "next/script";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import CookieBanner from "../components/CookieBanner";
 
 export const metadata = {
   // --- Base ---
@@ -33,7 +33,7 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
-  // --- Open Graph (LinkedIn, Facebook, WhatsApp previews) ---
+  // --- Open Graph ---
   openGraph: {
     title: "Legacy Imprint SW | Branded Promotional Products UK",
     description:
@@ -115,19 +115,8 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
 
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-YR2SQ4W2X6"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-YR2SQ4W2X6');
-          `}
-        </Script>
+        {/* Cookie consent banner — also conditionally loads GA */}
+        <CookieBanner />
       </body>
     </html>
   );
