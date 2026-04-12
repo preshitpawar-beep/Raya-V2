@@ -60,8 +60,6 @@ export default function TrustIntro() {
                 textDecoration: "none",
                 transition: "background 0.15s ease",
               }}
-              onMouseOver={(e) => e.currentTarget.style.background = "rgba(26,26,24,0.05)"}
-              onMouseOut={(e) => e.currentTarget.style.background = "transparent"}
             >
               Browse products →
             </a>
