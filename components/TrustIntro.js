@@ -1,6 +1,6 @@
 export default function TrustIntro() {
   return (
-    <section className="w-full bg-[#1a1a18]">
+    <section className="w-full bg-[#F5F0EB]">
       <div className="max-w-7xl mx-auto">
 
         {/* ── DESKTOP: side by side ── */}
@@ -10,22 +10,22 @@ export default function TrustIntro() {
           <div className="flex flex-col justify-between px-14 py-16">
 
             {/* Top — label */}
-            <p className="text-xs uppercase tracking-widest text-white/30">
+            <p className="text-xs uppercase tracking-widest text-dark/30">
               Our products
             </p>
 
             {/* Middle — statement */}
             <div>
-              <h2 className="text-4xl lg:text-5xl font-medium leading-tight text-white mb-6">
+              <h2 className="text-4xl lg:text-5xl font-medium leading-tight text-dark mb-6">
                 Merchandise
                 <br />
                 that holds up —
                 <br />
-                <span className="text-white/50">in quality and</span>
+                <span className="text-dark/50">in quality and</span>
                 <br />
-                <span className="text-white/50">perception.</span>
+                <span className="text-dark/50">perception.</span>
               </h2>
-              <p className="text-base text-white/50 leading-relaxed max-w-sm">
+              <p className="text-base text-dark/50 leading-relaxed max-w-sm">
                 Designed for businesses that care how they show up. Personal service, clear pricing, real products.
               </p>
             </div>
@@ -35,14 +35,14 @@ export default function TrustIntro() {
               <div className="flex items-center gap-4 mb-8">
                 {["Thoughtful", "Reliable", "Consistent"].map((tag, i) => (
                   <div key={tag} className="flex items-center gap-4">
-                    {i > 0 && <span className="h-px w-5 bg-white/15" />}
-                    <span className="text-xs uppercase tracking-widest text-white/30">{tag}</span>
+                    {i > 0 && <span className="h-px w-5 bg-dark/15" />}
+                    <span className="text-xs uppercase tracking-widest text-dark/30">{tag}</span>
                   </div>
                 ))}
               </div>
               <a
                 href="/products"
-                className="inline-flex items-center gap-2 border border-white/20 text-white/80 text-sm font-medium px-6 py-3 rounded-lg hover:bg-white/5 transition"
+                className="inline-flex items-center gap-2 border border-dark/20 text-dark/80 text-sm font-medium px-6 py-3 rounded-lg hover:bg-dark/5 transition"
               >
                 Browse products →
               </a>
@@ -75,7 +75,7 @@ export default function TrustIntro() {
           {/* Image first on mobile */}
           <div className="relative flex items-center justify-center px-8 pt-12 pb-4"
             style={{
-              background: "radial-gradient(ellipse at 50% 60%, rgba(181,132,90,0.2) 0%, transparent 70%)"
+              background: "radial-gradient(ellipse at 50% 60%, rgba(181,132,90,0.12) 0%, transparent 70%)"
             }}
           >
             <img
@@ -87,26 +87,26 @@ export default function TrustIntro() {
 
           {/* Text below */}
           <div className="px-6 pb-12 pt-6">
-            <p className="text-xs uppercase tracking-widest text-white/30 mb-4">
+            <p className="text-xs uppercase tracking-widest text-dark/30 mb-4">
               Our products
             </p>
-            <h2 className="text-3xl font-medium leading-tight text-white mb-4">
+            <h2 className="text-3xl font-medium leading-tight text-dark mb-4">
               Merchandise that holds up — in quality and perception.
             </h2>
-            <p className="text-sm text-white/50 leading-relaxed mb-8">
+            <p className="text-sm text-dark/50 leading-relaxed mb-8">
               Designed for businesses that care how they show up.
             </p>
             <div className="flex items-center gap-3 mb-8">
               {["Thoughtful", "Reliable", "Consistent"].map((tag, i) => (
                 <div key={tag} className="flex items-center gap-3">
-                  {i > 0 && <span className="h-px w-4 bg-white/15" />}
-                  <span className="text-[10px] uppercase tracking-widest text-white/30">{tag}</span>
+                  {i > 0 && <span className="h-px w-4 bg-dark/15" />}
+                  <span className="text-[10px] uppercase tracking-widest text-dark/30">{tag}</span>
                 </div>
               ))}
             </div>
             <a
               href="/products"
-              className="inline-flex items-center gap-2 border border-white/20 text-white/80 text-sm font-medium px-6 py-3 rounded-lg"
+              className="inline-flex items-center gap-2 border border-dark/20 text-dark/80 text-sm font-medium px-6 py-3 rounded-lg"
             >
               Browse products →
             </a>
