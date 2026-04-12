@@ -5,7 +5,7 @@ export default function TrustIntro() {
       {/* ── HERO BANNER — All Products flat lay ── */}
       <div className="relative w-full overflow-hidden" style={{ height: "52vh", minHeight: "380px" }}>
         <img
-          src="/trust/All_Products.png"
+          src="/trust/All Products.png"
           alt="Legacy Imprint SW branded promotional products"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -50,7 +50,7 @@ export default function TrustIntro() {
             {/* LEFT — Notebook close-up (tall) */}
             <div className="relative rounded-2xl overflow-hidden group">
               <img
-                src="/trust/Slide_1.png"
+                src="/trust/Slide 1.png"
                 alt="Premium branded notebook with gold badge detail"
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
@@ -72,7 +72,7 @@ export default function TrustIntro() {
             <div className="flex flex-col gap-4">
 
               {/* Pen tile */}
-              <div className="relative rounded-2xl overflow-hidden group flex-1" style={{ background: "#f0efed" }}>
+              <div className="relative rounded-2xl overflow-hidden group flex-1" style={{ background: "#ffffff" }}>
                 <img
                   src="/trust/Slide3.png"
                   alt="Premium metal branded pen"
@@ -90,7 +90,7 @@ export default function TrustIntro() {
               {/* Bag tile */}
               <div className="relative rounded-2xl overflow-hidden group flex-1">
                 <img
-                  src="/trust/Bag_1.png"
+                  src="/trust/Bag 1.png"
                   alt="Legacy Imprint SW branded cotton tote bag"
                   className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
@@ -113,7 +113,7 @@ export default function TrustIntro() {
             {/* Notebook */}
             <div className="relative rounded-2xl overflow-hidden" style={{ height: "280px" }}>
               <img
-                src="/trust/Slide_1.png"
+                src="/trust/Slide 1.png"
                 alt="Premium branded notebook"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
@@ -127,7 +127,7 @@ export default function TrustIntro() {
             </div>
 
             {/* Pen */}
-            <div className="relative rounded-2xl overflow-hidden" style={{ height: "200px", background: "#f0efed" }}>
+            <div className="relative rounded-2xl overflow-hidden" style={{ height: "200px", background: "#ffffff" }}>
               <img
                 src="/trust/Slide3.png"
                 alt="Premium metal branded pen"
@@ -144,7 +144,7 @@ export default function TrustIntro() {
             {/* Bag */}
             <div className="relative rounded-2xl overflow-hidden" style={{ height: "240px" }}>
               <img
-                src="/trust/Bag_1.png"
+                src="/trust/Bag 1.png"
                 alt="Branded cotton tote bag"
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
