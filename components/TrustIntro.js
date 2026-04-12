@@ -40,8 +40,8 @@ export default function TrustIntro() {
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
               {["Thoughtful", "Reliable", "Consistent"].map((tag, i) => (
                 <div key={tag} style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                  {i > 0 && <span style={{ height: "1px", width: "1.25rem", background: "rgba(26,26,24,0.15)", display: "block" }} />}
-                  <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(26,26,24,0.3)" }}>{tag}</span>
+                  {i > 0 && <span style={{ height: "1px", width: "1.25rem", background: "rgba(26,26,24,0.3)", display: "block" }} />}
+                  <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(26,26,24,0.6)" }}>{tag}</span>
                 </div>
               ))}
             </div>
@@ -124,8 +124,8 @@ export default function TrustIntro() {
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.75rem" }}>
             {["Thoughtful", "Reliable", "Consistent"].map((tag, i) => (
               <div key={tag} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                {i > 0 && <span style={{ height: "1px", width: "1rem", background: "rgba(26,26,24,0.15)", display: "block" }} />}
-                <span style={{ fontSize: "0.6rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(26,26,24,0.3)" }}>{tag}</span>
+                {i > 0 && <span style={{ height: "1px", width: "1rem", background: "rgba(26,26,24,0.3)", display: "block" }} />}
+                <span style={{ fontSize: "0.6rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(26,26,24,0.6)" }}>{tag}</span>
               </div>
             ))}
           </div>
