@@ -30,101 +30,79 @@ const slides = [
 
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
   const timeoutRef = useRef(null);
 
-  // Touch tracking
+  // Touch tracking for mobile swipe
   const touchStartX = useRef(null);
   const touchStartY = useRef(null);
-  const isDragging = useRef(false);
+  const isSwiping = useRef(false);
 
-  const goTo = useCallback((nextIndex, dir) => {
+  const goNext = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setDirection(dir);
-    setIndex(nextIndex);
+    setIndex((prev) => (prev + 1) % slides.length);
   }, []);
 
-  const next = useCallback(() => {
-    goTo((index + 1) % slides.length, 1);
-  }, [index, goTo]);
-
-  const prev = useCallback(() => {
-    goTo(index === 0 ? slides.length - 1 : index - 1, -1);
-  }, [index, goTo]);
+  const goPrev = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  }, []);
 
   // Auto play
   useEffect(() => {
-    timeoutRef.current = setTimeout(next, 5000);
+    timeoutRef.current = setTimeout(() => {
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, 5000);
     return () => clearTimeout(timeoutRef.current);
-  }, [index, next]);
+  }, [index]);
 
   // Touch handlers
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
-    isDragging.current = false;
+    isSwiping.current = false;
   };
 
   const handleTouchMove = (e) => {
     if (touchStartX.current === null) return;
     const dx = Math.abs(e.touches[0].clientX - touchStartX.current);
     const dy = Math.abs(e.touches[0].clientY - touchStartY.current);
-    // Only prevent scroll if horizontal swipe is dominant
     if (dx > dy && dx > 8) {
-      isDragging.current = true;
-      e.preventDefault();
+      isSwiping.current = true;
+      e.preventDefault(); // prevent page scroll during horizontal swipe
     }
   };
 
   const handleTouchEnd = (e) => {
-    if (touchStartX.current === null) return;
+    if (!isSwiping.current || touchStartX.current === null) return;
     const dx = e.changedTouches[0].clientX - touchStartX.current;
-    const dy = Math.abs(e.changedTouches[0].clientY - touchStartY.current);
-
-    // Only trigger if horizontal swipe and not accidental
-    if (isDragging.current && Math.abs(dx) > 40 && dy < 80) {
-      if (dx < 0) next();
-      else prev();
+    const dy = Math.abs(e.changedTouches[0].clientY - (touchStartY.current || 0));
+    if (Math.abs(dx) > 45 && dy < 80) {
+      dx < 0 ? goNext() : goPrev();
     }
-
     touchStartX.current = null;
     touchStartY.current = null;
-    isDragging.current = false;
-  };
-
-  const slideVariants = {
-    enter: (dir) => ({ opacity: 0, x: dir > 0 ? 60 : -60 }),
-    center: { opacity: 1, x: 0 },
-    exit: (dir) => ({ opacity: 0, x: dir > 0 ? -60 : 60 }),
-  };
-
-  const textVariants = {
-    enter: (dir) => ({ opacity: 0, y: dir > 0 ? 16 : -16 }),
-    center: { opacity: 1, y: 0 },
-    exit: (dir) => ({ opacity: 0, y: dir > 0 ? -16 : 16 }),
+    isSwiping.current = false;
   };
 
   return (
     <section className="relative w-full overflow-hidden">
 
-      {/* ── MOBILE HERO ── */}
+      {/* ═══════════════════════════════
+          MOBILE HERO
+      ═══════════════════════════════ */}
       <div
-        className="md:hidden relative overflow-hidden"
-        style={{ height: "60vh" }}
+        className="md:hidden relative h-[60vh] overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Background image */}
-        <AnimatePresence initial={false} custom={direction} mode="sync">
+        <AnimatePresence mode="wait">
           <motion.div
-            key={`bg-${index}`}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+            key={slides[index].image}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
             className="absolute inset-0"
           >
             <Image
@@ -138,17 +116,15 @@ export default function HeroSlider() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Text content */}
+        {/* Content */}
         <div className="relative z-10 h-full flex items-end">
           <div className="p-5 pb-16 w-full">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
+            <AnimatePresence mode="wait">
               <motion.div
                 key={`text-${index}`}
-                custom={direction}
-                variants={textVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
                 <h1 className="text-3xl font-bold text-white mb-2 leading-tight">
@@ -158,16 +134,10 @@ export default function HeroSlider() {
                   {slides[index].subtitle}
                 </p>
                 <div className="flex flex-col gap-2">
-                  <Link
-                    href="/products"
-                    className="bg-white text-dark px-5 py-3 rounded-lg font-semibold text-center"
-                  >
+                  <Link href="/products" className="bg-white text-dark px-5 py-3 rounded-lg font-semibold text-center">
                     View Products
                   </Link>
-                  <Link
-                    href="/quote"
-                    className="border border-white/60 text-white px-5 py-3 rounded-lg font-semibold text-center"
-                  >
+                  <Link href="/quote" className="border border-white/60 text-white px-5 py-3 rounded-lg font-semibold text-center">
                     Get a Quote
                   </Link>
                 </div>
@@ -176,18 +146,21 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        {/* Dots */}
+        {/* Pill dots */}
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
           {slides.map((_, i) => (
             <button
               key={i}
               aria-label={`Go to slide ${i + 1}`}
-              onClick={() => goTo(i, i > index ? 1 : -1)}
+              onClick={() => {
+                if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                setIndex(i);
+              }}
               style={{
                 width: i === index ? "20px" : "8px",
                 height: "8px",
                 borderRadius: "4px",
-                backgroundColor: i === index ? "#fff" : "rgba(255,255,255,0.4)",
+                background: i === index ? "#fff" : "rgba(255,255,255,0.4)",
                 border: "none",
                 padding: 0,
                 cursor: "pointer",
@@ -196,14 +169,11 @@ export default function HeroSlider() {
             />
           ))}
         </div>
-
-        {/* Swipe hint — fades after first interaction */}
-        <div className="absolute bottom-14 right-5 z-20 flex items-center gap-1 opacity-50">
-          <span style={{ fontSize: "0.6rem", color: "white", letterSpacing: "0.1em", textTransform: "uppercase" }}>swipe</span>
-        </div>
       </div>
 
-      {/* ── DESKTOP HERO ── */}
+      {/* ═══════════════════════════════
+          DESKTOP HERO — original clean version
+      ═══════════════════════════════ */}
       <div className="hidden md:block relative">
         <div className="grid grid-cols-[3fr_2fr] min-h-[48vh]">
 
@@ -211,14 +181,12 @@ export default function HeroSlider() {
           <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-br from-[#F6F5F2] to-[#EEECE6]" />
             <div className="relative z-10 w-full max-w-2xl px-14">
-              <AnimatePresence initial={false} custom={direction} mode="wait">
+              <AnimatePresence mode="wait">
                 <motion.div
-                  key={`desktop-text-${index}`}
-                  custom={direction}
-                  variants={textVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
+                  key={index}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
                 >
                   <h1 className="text-5xl font-bold leading-tight text-dark mb-4">
@@ -241,16 +209,14 @@ export default function HeroSlider() {
           </div>
 
           {/* RIGHT — image */}
-          <div className="relative flex items-center justify-center overflow-hidden">
-            <AnimatePresence initial={false} custom={direction} mode="sync">
+          <div className="relative flex items-center justify-center">
+            <AnimatePresence mode="wait">
               <motion.div
-                key={`desktop-img-${index}`}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+                key={slides[index].image}
+                initial={{ opacity: 0, x: 16 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -16 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
                 className="relative w-full h-full flex items-center justify-center"
               >
                 <div className="relative w-[80%] h-[80%]">
@@ -273,9 +239,12 @@ export default function HeroSlider() {
             <button
               key={i}
               aria-label={`Go to slide ${i + 1}`}
-              onClick={() => goTo(i, i > index ? 1 : -1)}
+              onClick={() => {
+                if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                setIndex(i);
+              }}
               className={`rounded-full transition-all duration-300 ${
-                i === index ? "bg-dark w-6 h-3" : "bg-gray-300 w-3 h-3"
+                i === index ? "bg-dark w-3 h-3" : "bg-gray-300 w-3 h-3"
               }`}
             />
           ))}
