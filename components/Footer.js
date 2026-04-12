@@ -6,16 +6,10 @@ export default function Footer() {
 
       {/* Top strip — tagline */}
       <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 md:px-14 py-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-6 md:px-14 py-8">
           <p className="text-2xl md:text-3xl font-medium text-white/90 leading-snug max-w-xl">
             Branded products that leave a lasting impression.
           </p>
-          <Link
-            href="/quote"
-            className="inline-flex items-center gap-2 bg-white text-[#1a1a18] px-6 py-3 rounded-lg text-sm font-semibold hover:bg-gray-100 transition flex-shrink-0 self-start md:self-auto"
-          >
-            Get a quote →
-          </Link>
         </div>
       </div>
 
