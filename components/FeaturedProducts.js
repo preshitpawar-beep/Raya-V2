@@ -24,10 +24,10 @@ const isMultiVariantProduct = (p) => {
 const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
 const isEco = (p) => ECO_KEYWORDS.some((k) => p.name.toLowerCase().includes(k));
 const POPULAR_IDS = ["P77", "MP10", "MP03", "D184", "D200", "KC01"];
+const PEN_COVER_IDS = ["B3", "B7", "B9", "B12", "B13", "B14", "B15", "B16", "B17"];
 
 /* ─────────────────────────────────────────────
-   FAMILY KEY — strips colour/size variants so
-   "Gripper Red" and "Gripper Black" → "gripper"
+   FAMILY KEY
 ───────────────────────────────────────────── */
 const VARIANT_WORDS = [
   "black","white","red","blue","grey","gray","gold","silver",
@@ -48,7 +48,6 @@ function getFamilyKey(name) {
     .trim();
 }
 
-/* Pick one per family — cheapest representative */
 function pickOnePerFamily(list) {
   const map = new Map();
   for (const p of list) {
@@ -58,7 +57,6 @@ function pickOnePerFamily(list) {
   return Array.from(map.values());
 }
 
-/* Deterministic shuffle using a numeric seed (day of year) */
 function seededShuffle(arr, seed) {
   const a = [...arr];
   let s = seed;
@@ -71,69 +69,80 @@ function seededShuffle(arr, seed) {
 }
 
 /* ─────────────────────────────────────────────
-   DAY-BASED DEMAND ROTATION
+   BUILD FEATURED
+   Fixed priority order:
+   1. Pens (plastic + metal)
+   2. Notebook
+   3. Combo Sets (2-in-1 + 3-in-1)
+   4. Key Ring
+   5. Bag
+   6. Pen Cover (B-series)
+
+   Daily seed rotates WHICH items appear
+   within each category, order never changes.
 ───────────────────────────────────────────── */
 function buildFeatured() {
-  const now = new Date();
-  const dayOfWeek = now.getDay();
-  const seed = Math.floor(now.getTime() / 86400000);
+  const seed = Math.floor(Date.now() / 86400000);
 
-  const penFamilies      = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Pen")), seed);
-  const notebookFamilies = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Notebook")), seed + 1);
-  const keyringFamilies  = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Key Ring")), seed + 2);
-  const bagFamilies      = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Bags")), seed + 3);
-  const combo2Families   = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Combo Sets" && p.name.includes("2-in-1"))), seed + 4);
-  const combo3Families   = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Combo Sets" && p.name.includes("3-in-1"))), seed + 5);
-  const combo4Families   = seededShuffle(pickOnePerFamily(products.filter((p) => p.category === "Combo Sets" && p.name.includes("4-in-1"))), seed + 6);
-
-  const budgetPen      = [...penFamilies].sort((a, b) => a.price - b.price)[0];
-  const budgetNotebook = [...notebookFamilies].sort((a, b) => a.price - b.price)[0];
-  const budgetBag      = [...bagFamilies].sort((a, b) => a.price - b.price)[0];
-
-  const ecoPickPool = seededShuffle(
-    pickOnePerFamily(products.filter(isEco)), seed + 7
+  // 1. Pens — one plastic, one metal
+  const plasticPens = seededShuffle(
+    pickOnePerFamily(products.filter((p) =>
+      p.category === "Pen" && !p.id.startsWith("MP") && !PEN_COVER_IDS.includes(p.id)
+    )), seed
   );
-  const ecoPick = ecoPickPool[0];
+  const metalPens = seededShuffle(
+    pickOnePerFamily(products.filter((p) => p.category === "Pen" && p.id.startsWith("MP"))),
+    seed + 1
+  );
+  const pens = [plasticPens[0], metalPens[0]].filter(Boolean);
 
-  let featured = [];
+  // 2. Notebook — one family
+  const notebooks = seededShuffle(
+    pickOnePerFamily(products.filter((p) => p.category === "Notebook")),
+    seed + 2
+  ).slice(0, 1);
 
-  if (dayOfWeek >= 1 && dayOfWeek <= 3) {
-    const midPens    = penFamilies.filter((p) => p.price >= 0.3 && p.price < 2.5);
-    const metalPens  = penFamilies.filter((p) => p.id.startsWith("MP"));
-    featured = [
-      budgetPen,
-      ...(midPens.slice(0, 2)),
-      ...(metalPens.slice(0, 2)),
-      ecoPick,
-      ...(notebookFamilies.slice(0, 1)),
-      ...(combo2Families.slice(0, 1)),
-      ...(keyringFamilies.slice(0, 1)),
-    ];
-  } else if (dayOfWeek === 4 || dayOfWeek === 5) {
-    featured = [
-      budgetNotebook,
-      ...(notebookFamilies.slice(1, 3)),
-      ...(combo2Families.slice(0, 1)),
-      ...(combo3Families.slice(0, 1)),
-      ...(combo4Families.slice(0, 1)),
-      ecoPick,
-      ...(penFamilies.slice(0, 1)),
-      ...(keyringFamilies.slice(0, 1)),
-    ];
-  } else {
-    featured = [
-      budgetBag,
-      ...(bagFamilies.slice(1, 3)),
-      ...(keyringFamilies.slice(0, 2)),
-      ecoPick,
-      ...(combo2Families.slice(0, 1)),
-      ...(penFamilies.slice(0, 1)),
-      ...(notebookFamilies.slice(0, 1)),
-    ];
-  }
+  // 3. Combo Sets — one 2-in-1, one 3-in-1
+  const combo2 = seededShuffle(
+    pickOnePerFamily(products.filter((p) => p.category === "Combo Sets" && p.name.includes("2-in-1"))),
+    seed + 3
+  ).slice(0, 1);
+  const combo3 = seededShuffle(
+    pickOnePerFamily(products.filter((p) => p.category === "Combo Sets" && p.name.includes("3-in-1"))),
+    seed + 4
+  ).slice(0, 1);
+
+  // 4. Key Ring — one family
+  const keyrings = seededShuffle(
+    pickOnePerFamily(products.filter((p) => p.category === "Key Ring")),
+    seed + 5
+  ).slice(0, 1);
+
+  // 5. Bag — one family
+  const bags = seededShuffle(
+    pickOnePerFamily(products.filter((p) => p.category === "Bags")),
+    seed + 6
+  ).slice(0, 1);
+
+  // 6. Pen Cover — one B-series item
+  const penCovers = seededShuffle(
+    products.filter((p) => PEN_COVER_IDS.includes(p.id)),
+    seed + 7
+  ).slice(0, 1);
+
+  // Always in this fixed order
+  const ordered = [
+    ...pens,
+    ...notebooks,
+    ...combo2,
+    ...combo3,
+    ...keyrings,
+    ...bags,
+    ...penCovers,
+  ];
 
   const seen = new Set();
-  return featured.filter((p) => {
+  return ordered.filter((p) => {
     if (!p || seen.has(p.id)) return false;
     seen.add(p.id);
     return true;
@@ -155,19 +164,13 @@ export default function FeaturedProducts() {
     sliderRef.current.scrollBy({ left: dir === "left" ? -280 : 280, behavior: "smooth" });
   };
 
-  const dayOfWeek = new Date().getDay();
-  const theme =
-    dayOfWeek >= 1 && dayOfWeek <= 3 ? "Pens & Writing"
-    : dayOfWeek >= 4 && dayOfWeek <= 5 ? "Notebooks & Gift Sets"
-    : "Bags & Key Rings";
-
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-14">
 
         <div className="mb-8 max-w-2xl">
           <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">
-            Featured products · {theme}
+            Featured products
           </p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight text-dark">
             A curated mix of popular, practical branded products.
@@ -224,7 +227,7 @@ export default function FeaturedProducts() {
 }
 
 /* ─────────────────────────────────────────────
-   CARD — UPDATED WITH TIERED PRICING
+   CARD
 ───────────────────────────────────────────── */
 function FeaturedCard({ product, onImageClick, onCardClick }) {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -238,11 +241,8 @@ function FeaturedCard({ product, onImageClick, onCardClick }) {
       className="product-card snap-start min-w-[200px] max-w-[200px] md:min-w-[260px] md:max-w-[260px] rounded-xl bg-white border border-gray-100 shadow-sm flex-shrink-0 flex flex-col overflow-hidden group cursor-pointer"
       onClick={onCardClick}
     >
-
       {/* Image */}
-      <div
-        className="relative h-[150px] md:h-[180px] bg-gray-50 overflow-hidden"
-      >
+      <div className="relative h-[150px] md:h-[180px] bg-gray-50 overflow-hidden">
         <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
           {popular && (
             <span className="bg-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">
@@ -301,9 +301,7 @@ function FeaturedCard({ product, onImageClick, onCardClick }) {
           </p>
         )}
 
-        <p className="text-[11px] text-gray-400 mt-1">
-          Min {moq} units
-        </p>
+        <p className="text-[11px] text-gray-400 mt-1">Min {moq} units</p>
 
         <div className="mt-auto pt-3">
           <Link
