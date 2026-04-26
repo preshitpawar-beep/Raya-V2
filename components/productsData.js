@@ -1702,7 +1702,7 @@ export const products = [
   },
   {
     "id": "KC01",
-    "name": "KC01 - Rectangular Metal Keychain (Black Insert)",
+    "name": "KC01 - Rectangular Metal Keyring (Black Insert)",
     "category": "Key Ring",
     "price": 1.0,
     "pricing": {
@@ -1716,7 +1716,7 @@ export const products = [
   },
   {
     "id": "KC02",
-    "name": "KC02 - Rectangular Metal Keychain (Black Gloss)",
+    "name": "KC02 - Rectangular Metal Keyring (Black Gloss)",
     "category": "Key Ring",
     "price": 1.0,
     "pricing": {
@@ -1730,7 +1730,7 @@ export const products = [
   },
   {
     "id": "KC03",
-    "name": "KC03 - Round Metal Keychain (Black Disc)",
+    "name": "KC03 - Round Metal Keyring (Black Disc)",
     "category": "Key Ring",
     "price": 1.1,
     "pricing": {
@@ -1744,7 +1744,7 @@ export const products = [
   },
   {
     "id": "KC04",
-    "name": "KC04 - Rectangular Metal Keychain (Grey Insert)",
+    "name": "KC04 - Rectangular Metal Keyring (Grey Insert)",
     "category": "Key Ring",
     "price": 1.0,
     "pricing": {
@@ -1758,7 +1758,7 @@ export const products = [
   },
   {
     "id": "KC06",
-    "name": "KC06 - Metal Bottle Opener Keychain with Leather Strap",
+    "name": "KC06 - Metal Bottle Opener Keyring with Leather Strap",
     "category": "Key Ring",
     "price": 1.5,
     "pricing": {
@@ -1772,7 +1772,7 @@ export const products = [
   },
   {
     "id": "KC07",
-    "name": "KC07 - Double Loop Metal Keychain with Black Insert",
+    "name": "KC07 - Double Loop Metal Keyring with Black Insert",
     "category": "Key Ring",
     "price": 1.5,
     "pricing": {
@@ -1786,7 +1786,7 @@ export const products = [
   },
   {
     "id": "KC08",
-    "name": "KC08 - Double Loop Metal Keychain with Brown Leather",
+    "name": "KC08 - Double Loop Metal Keyring with Brown Leather",
     "category": "Key Ring",
     "price": 1.5,
     "pricing": {
@@ -1800,7 +1800,7 @@ export const products = [
   },
   {
     "id": "KC09",
-    "name": "KC09 - Leather Strap Metal Keychain (Brown)",
+    "name": "KC09 - Leather Strap Metal Keyring (Brown)",
     "category": "Key Ring",
     "price": 1.4,
     "pricing": {
@@ -1814,7 +1814,7 @@ export const products = [
   },
   {
     "id": "KC10",
-    "name": "KC10 - Leather Strap Metal Keychain (Black)",
+    "name": "KC10 - Leather Strap Metal Keyring (Black)",
     "category": "Key Ring",
     "price": 1.4,
     "pricing": {
@@ -1828,7 +1828,7 @@ export const products = [
   },
   {
     "id": "KC11",
-    "name": "KC11 - Rectangular Metal Keychain (Chrome Finish)",
+    "name": "KC11 - Rectangular Metal Keyring (Chrome Finish)",
     "category": "Key Ring",
     "price": 1.0,
     "pricing": {
@@ -1842,7 +1842,7 @@ export const products = [
   },
   {
     "id": "KC12",
-    "name": "KC12 - Round Premium Metal Keychain",
+    "name": "KC12 - Round Premium Metal Keyring",
     "category": "Key Ring",
     "price": 1.2,
     "pricing": {
@@ -1856,7 +1856,7 @@ export const products = [
   },
   {
     "id": "KC13",
-    "name": "KC13 - Leather Strap Metal Keychain with Buckle",
+    "name": "KC13 - Leather Strap Metal Keyring with Buckle",
     "category": "Key Ring",
     "price": 1.5,
     "pricing": {
@@ -2293,7 +2293,7 @@ export const products = [
   },
   {
     "id": "Sr 111",
-    "name": "Sr 111 - Gift Set – Classic Metal – 2-in-1 (Pen + Keychain)",
+    "name": "Sr 111 - Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
     "category": "Combo Sets",
     "price": 3.5,
     "pricing": {
@@ -2307,7 +2307,7 @@ export const products = [
   },
   {
     "id": "Sr 112",
-    "name": "Sr 112 - Gift Set – Classic Metal – 2-in-1 (Pen + Keychain)",
+    "name": "Sr 112 - Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
     "category": "Combo Sets",
     "price": 3.5,
     "pricing": {
@@ -2318,6 +2318,118 @@ export const products = [
     },
     "moq": 10,
     "image": "/products/Sr 112.jpg"
+  },
+  {
+    "id": "Sr 238",
+    "name": "Sr 238 - Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "category": "Combo Sets",
+    "price": 3.5,
+    "pricing": {
+      "10": 7.0,
+      "25": 5.0,
+      "50": 3.75,
+      "100": 3.5
+    },
+    "moq": 10,
+    "image": "/products/Sr 238.jpg"
+  },
+  {
+    "id": "Sr 239",
+    "name": "Sr 239 - Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "category": "Combo Sets",
+    "price": 3.25,
+    "pricing": {
+      "10": 7.0,
+      "25": 5.0,
+      "50": 3.5,
+      "100": 3.25
+    },
+    "moq": 10,
+    "image": "/products/Sr 239.jpg"
+  },
+  {
+    "id": "Sr 240",
+    "name": "Sr 240 - Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "category": "Combo Sets",
+    "price": 3.0,
+    "pricing": {
+      "10": 6.5,
+      "25": 4.75,
+      "50": 3.25,
+      "100": 3.0
+    },
+    "moq": 10,
+    "image": "/products/Sr 240.jpg"
+  },
+  {
+    "id": "Sr 241",
+    "name": "Sr 241 - Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "category": "Combo Sets",
+    "price": 2.75,
+    "pricing": {
+      "10": 6.5,
+      "25": 4.25,
+      "50": 3.0,
+      "100": 2.75
+    },
+    "moq": 10,
+    "image": "/products/Sr 241.jpg"
+  },
+  {
+    "id": "Sr 254",
+    "name": "Sr 254 - Gift Set – Bamboo Executive – 2-in-1 (Pen + Keyring)",
+    "category": "Combo Sets",
+    "price": 3.75,
+    "pricing": {
+      "10": 7.5,
+      "25": 5.5,
+      "50": 4.0,
+      "100": 3.75
+    },
+    "moq": 10,
+    "image": "/products/Sr 254.jpg"
+  },
+  {
+    "id": "Sr 242",
+    "name": "Sr 242 - Gift Set – Corporate Metal – 2-in-1 (Pen + Card Holder)",
+    "category": "Combo Sets",
+    "price": 3.75,
+    "pricing": {
+      "10": 7.0,
+      "25": 5.0,
+      "50": 4.0,
+      "100": 3.75
+    },
+    "moq": 10,
+    "image": "/products/Sr 242.jpg"
+  },
+  {
+    "id": "Sr 247",
+    "name": "Sr 247 - Gift Set – Leatherette – 2-in-1 (Pen + Card Holder)",
+    "category": "Combo Sets",
+    "price": 4.5,
+    "pricing": {
+      "10": 8.0,
+      "25": 6.0,
+      "50": 4.75,
+      "100": 4.5
+    },
+    "moq": 10,
+    "image": "/products/Sr 247.jpg"
+  },
+  {
+    "id": "Sr 248",
+    "name": "Sr 248 - Gift Set – Leatherette – 2-in-1 (Pen + Card Holder)",
+    "category": "Combo Sets",
+    "price": 4.0,
+    "pricing": {
+      "10": 7.5,
+      "25": 5.5,
+      "50": 4.25,
+      "100": 4.0
+    },
+    "moq": 10,
+    "image": "/products/Sr 248.jpg"
   },
   {
     "id": "Sr 138",
@@ -2371,183 +2483,6 @@ export const products = [
     "image": "/products/Sr 141.jpg"
   },
   {
-    "id": "Sr 145",
-    "name": "Sr 145 - Gift Set – Mars Diary Black – 2-in-1 (A5 Diary + Pen)",
-    "category": "Combo Sets",
-    "price": 8.5,
-    "pricing": {
-      "10": 11.5,
-      "25": 9.0,
-      "50": 8.5
-    },
-    "moq": 10,
-    "image": "/products/Sr 145.jpg"
-  },
-  {
-    "id": "Sr 146",
-    "name": "Sr 146 - Gift Set – Mars Diary Brown – 2-in-1 (A5 Diary + Pen)",
-    "category": "Combo Sets",
-    "price": 8.5,
-    "pricing": {
-      "10": 11.5,
-      "25": 9.0,
-      "50": 8.5
-    },
-    "moq": 10,
-    "image": "/products/Sr 146.jpg"
-  },
-  {
-    "id": "Sr 217",
-    "name": "Sr 217 - Gift Set – Premium Diary – 2-in-1 (A5 Diary + Pen)",
-    "category": "Combo Sets",
-    "price": 7.0,
-    "pricing": {
-      "10": 10.0,
-      "25": 7.5,
-      "50": 7.0
-    },
-    "moq": 10,
-    "image": "/products/Sr 217.jpg"
-  },
-  {
-    "id": "Sr 218",
-    "name": "Sr 218 - Gift Set – Premium Diary Blue – 2-in-1 (A5 Diary + Pen)",
-    "category": "Combo Sets",
-    "price": 7.0,
-    "pricing": {
-      "10": 10.0,
-      "25": 7.5,
-      "50": 7.0
-    },
-    "moq": 10,
-    "image": "/products/Sr 218.jpg"
-  },
-  {
-    "id": "Sr 219",
-    "name": "Sr 219 - Gift Set – Premium Diary Tan – 2-in-1 (A5 Diary + Pen)",
-    "category": "Combo Sets",
-    "price": 7.0,
-    "pricing": {
-      "10": 10.0,
-      "25": 7.5,
-      "50": 7.0
-    },
-    "moq": 10,
-    "image": "/products/Sr 219.jpg"
-  },
-  {
-    "id": "Sr 238",
-    "name": "Sr 238 - Gift Set – Classic Metal – 2-in-1 (Pen + Keychain)",
-    "category": "Combo Sets",
-    "price": 3.5,
-    "pricing": {
-      "10": 7.0,
-      "25": 5.0,
-      "50": 3.75,
-      "100": 3.5
-    },
-    "moq": 10,
-    "image": "/products/Sr 238.jpg"
-  },
-  {
-    "id": "Sr 239",
-    "name": "Sr 239 - Gift Set – Classic Metal – 2-in-1 (Pen + Keychain)",
-    "category": "Combo Sets",
-    "price": 3.25,
-    "pricing": {
-      "10": 7.0,
-      "25": 5.0,
-      "50": 3.5,
-      "100": 3.25
-    },
-    "moq": 10,
-    "image": "/products/Sr 239.jpg"
-  },
-  {
-    "id": "Sr 240",
-    "name": "Sr 240 - Gift Set – Classic Metal – 2-in-1 (Pen + Keychain)",
-    "category": "Combo Sets",
-    "price": 3.0,
-    "pricing": {
-      "10": 6.5,
-      "25": 4.75,
-      "50": 3.25,
-      "100": 3.0
-    },
-    "moq": 10,
-    "image": "/products/Sr 240.jpg"
-  },
-  {
-    "id": "Sr 241",
-    "name": "Sr 241 - Gift Set – Classic Metal – 2-in-1 (Pen + Keychain)",
-    "category": "Combo Sets",
-    "price": 2.75,
-    "pricing": {
-      "10": 6.5,
-      "25": 4.25,
-      "50": 3.0,
-      "100": 2.75
-    },
-    "moq": 10,
-    "image": "/products/Sr 241.jpg"
-  },
-  {
-    "id": "Sr 242",
-    "name": "Sr 242 - Gift Set – Corporate Metal – 2-in-1 (Pen + Card Holder)",
-    "category": "Combo Sets",
-    "price": 3.75,
-    "pricing": {
-      "10": 7.0,
-      "25": 5.0,
-      "50": 4.0,
-      "100": 3.75
-    },
-    "moq": 10,
-    "image": "/products/Sr 242.jpg"
-  },
-  {
-    "id": "Sr 247",
-    "name": "Sr 247 - Gift Set – Leatherette – 2-in-1 (Pen + Card Holder)",
-    "category": "Combo Sets",
-    "price": 4.5,
-    "pricing": {
-      "10": 8.0,
-      "25": 6.0,
-      "50": 4.75,
-      "100": 4.5
-    },
-    "moq": 10,
-    "image": "/products/Sr 247.jpg"
-  },
-  {
-    "id": "Sr 248",
-    "name": "Sr 248 - Gift Set – Leatherette – 2-in-1 (Pen + Card Holder)",
-    "category": "Combo Sets",
-    "price": 4.0,
-    "pricing": {
-      "10": 7.5,
-      "25": 5.5,
-      "50": 4.25,
-      "100": 4.0
-    },
-    "moq": 10,
-    "image": "/products/Sr 248.jpg"
-  },
-  {
-    "id": "Sr 254",
-    "name": "Sr 254 - Gift Set – Bamboo Executive – 2-in-1 (Pen + Keychain)",
-    "category": "Combo Sets",
-    "price": 3.75,
-    "pricing": {
-      "10": 7.5,
-      "25": 5.5,
-      "50": 4.0,
-      "100": 3.75
-    },
-    "moq": 10,
-    "image": "/products/Sr 254.jpg"
-  },
-  {
     "id": "Sr 267",
     "name": "Sr 267 - Gift Set – Elastic Diary White – 2-in-1 (A5 Diary + Pen)",
     "category": "Combo Sets",
@@ -2599,6 +2534,71 @@ export const products = [
     "image": "/products/Sr 270.jpg"
   },
   {
+    "id": "Sr 145",
+    "name": "Sr 145 - Gift Set – Mars Diary Black – 2-in-1 (A5 Diary + Pen)",
+    "category": "Combo Sets",
+    "price": 8.5,
+    "pricing": {
+      "10": 11.5,
+      "25": 9.0,
+      "50": 8.5
+    },
+    "moq": 10,
+    "image": "/products/Sr 145.jpg"
+  },
+  {
+    "id": "Sr 146",
+    "name": "Sr 146 - Gift Set – Mars Diary Brown – 2-in-1 (A5 Diary + Pen)",
+    "category": "Combo Sets",
+    "price": 8.5,
+    "pricing": {
+      "10": 11.5,
+      "25": 9.0,
+      "50": 8.5
+    },
+    "moq": 10,
+    "image": "/products/Sr 146.jpg"
+  },
+  {
+    "id": "Sr 217",
+    "name": "Sr 217 - Gift Set – Premium Diary – 2-in-1 (A5 Diary + Pen)",
+    "category": "Combo Sets",
+    "price": 7.0,
+    "pricing": {
+      "10": 10.0,
+      "25": 7.5,
+      "50": 7.0
+    },
+    "moq": 10,
+    "image": "/products/Sr 217.jpg"
+  },
+  {
+    "id": "Sr 218",
+    "name": "Sr 218 - Gift Set – Premium Diary Blue – 2-in-1 (A5 Diary + Pen)",
+    "category": "Combo Sets",
+    "price": 7.0,
+    "pricing": {
+      "10": 10.0,
+      "25": 7.5,
+      "50": 7.0
+    },
+    "moq": 10,
+    "image": "/products/Sr 217.jpg"
+  },
+  {
+    "id": "Sr 219",
+    "name": "Sr 219 - Gift Set – Premium Diary Tan – 2-in-1 (A5 Diary + Pen)",
+    "category": "Combo Sets",
+    "price": 7.0,
+    "pricing": {
+      "10": 10.0,
+      "25": 7.5,
+      "50": 7.0
+    },
+    "moq": 10,
+    "image": "/products/Sr 219.jpg"
+  },
+  {
     "id": "Sr 273",
     "name": "Sr 273 - Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen)",
     "category": "Combo Sets",
@@ -2610,6 +2610,32 @@ export const products = [
     },
     "moq": 10,
     "image": "/products/Sr 273.jpg"
+  },
+  {
+    "id": "Sr 284",
+    "name": "Sr 284 - Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen)",
+    "category": "Combo Sets",
+    "price": 7.5,
+    "pricing": {
+      "10": 10.5,
+      "25": 8.0,
+      "100": 7.5
+    },
+    "moq": 10,
+    "image": "/products/Sr 284.jpg"
+  },
+  {
+    "id": "Sr 285",
+    "name": "Sr 285 - Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen)",
+    "category": "Combo Sets",
+    "price": 7.5,
+    "pricing": {
+      "10": 10.5,
+      "25": 8.0,
+      "100": 7.5
+    },
+    "moq": 10,
+    "image": "/products/Sr 285.jpg"
   },
   {
     "id": "Sr 274",
@@ -2672,32 +2698,6 @@ export const products = [
     },
     "moq": 10,
     "image": "/products/Sr 281.jpg"
-  },
-  {
-    "id": "Sr 284",
-    "name": "Sr 284 - Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen)",
-    "category": "Combo Sets",
-    "price": 7.5,
-    "pricing": {
-      "10": 10.5,
-      "25": 8.0,
-      "100": 7.5
-    },
-    "moq": 10,
-    "image": "/products/Sr 284.jpg"
-  },
-  {
-    "id": "Sr 285",
-    "name": "Sr 285 - Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen)",
-    "category": "Combo Sets",
-    "price": 7.5,
-    "pricing": {
-      "10": 10.5,
-      "25": 8.0,
-      "100": 7.5
-    },
-    "moq": 10,
-    "image": "/products/Sr 285.jpg"
   },
   {
     "id": "Sr 299",
@@ -2766,7 +2766,7 @@ export const products = [
   },
   {
     "id": "Sr 125",
-    "name": "Sr 125 - Gift Set – Premium Metal – 3-in-1 (Pen + Keychain + Card Holder)",
+    "name": "Sr 125 - Gift Set – Premium Metal – 3-in-1 (Pen + Keyring + Card Holder)",
     "category": "Combo Sets",
     "price": 4.75,
     "pricing": {
@@ -2779,7 +2779,7 @@ export const products = [
   },
   {
     "id": "Sr 126",
-    "name": "Sr 126 - Gift Set – Executive Leather – 3-in-1 (Pen + Keychain + Card Holder)",
+    "name": "Sr 126 - Gift Set – Executive Leather – 3-in-1 (Pen + Keyring + Card Holder)",
     "category": "Combo Sets",
     "price": 5.0,
     "pricing": {
@@ -2793,7 +2793,7 @@ export const products = [
   },
   {
     "id": "Sr 127",
-    "name": "Sr 127 - Gift Set – Executive Leather – 3-in-1 (Pen + Keychain + Card Holder)",
+    "name": "Sr 127 - Gift Set – Executive Leather – 3-in-1 (Pen + Keyring + Card Holder)",
     "category": "Combo Sets",
     "price": 5.0,
     "pricing": {
@@ -2807,7 +2807,7 @@ export const products = [
   },
   {
     "id": "Sr 158",
-    "name": "Sr 158 - Gift Set – Black Elastic – 3-in-1 (A5 Diary + Pen + Keychain)",
+    "name": "Sr 158 - Gift Set – Black Elastic – 3-in-1 (A5 Diary + Pen + Keyring)",
     "category": "Combo Sets",
     "price": 7.5,
     "pricing": {
@@ -2820,7 +2820,7 @@ export const products = [
   },
   {
     "id": "Sr 228",
-    "name": "Sr 228 - Gift Set – Black Mars Diary – 3-in-1 (A5 Diary + Pen + Keychain)",
+    "name": "Sr 228 - Gift Set – Black Mars Diary – 3-in-1 (A5 Diary + Pen + Keyring)",
     "category": "Combo Sets",
     "price": 10.5,
     "pricing": {
@@ -2833,7 +2833,7 @@ export const products = [
   },
   {
     "id": "Sr 229",
-    "name": "Sr 229 - Gift Set – Diary Classic – 3-in-1 (A5 Diary + Pen + Keychain)",
+    "name": "Sr 229 - Gift Set – Diary Classic – 3-in-1 (A5 Diary + Pen + Keyring)",
     "category": "Combo Sets",
     "price": 9.0,
     "pricing": {
@@ -2846,7 +2846,7 @@ export const products = [
   },
   {
     "id": "Sr 251",
-    "name": "Sr 251 - Gift Set – Wooden Diary – 3-in-1 (A5 Diary + Pen + Keychain)",
+    "name": "Sr 251 - Gift Set – Wooden Diary – 3-in-1 (A5 Diary + Pen + Keyring)",
     "category": "Combo Sets",
     "price": 8.5,
     "pricing": {
@@ -2859,7 +2859,7 @@ export const products = [
   },
   {
     "id": "Sr 252",
-    "name": "Sr 252 - Gift Set – Wooden Diary Dark – 3-in-1 (A5 Diary + Pen + Keychain)",
+    "name": "Sr 252 - Gift Set – Wooden Diary Dark – 3-in-1 (A5 Diary + Pen + Keyring)",
     "category": "Combo Sets",
     "price": 8.5,
     "pricing": {
@@ -2872,7 +2872,7 @@ export const products = [
   },
   {
     "id": "Sr 159",
-    "name": "Sr 159 - Gift Set – Black Elastic – 4-in-1 (A5 Diary + Pen + Keychain + Card Holder)",
+    "name": "Sr 159 - Gift Set – Black Elastic – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder)",
     "category": "Combo Sets",
     "price": 8.5,
     "pricing": {
@@ -2885,7 +2885,7 @@ export const products = [
   },
   {
     "id": "Sr 161",
-    "name": "Sr 161 - Gift Set – Mars Executive – 4-in-1 (A5 Diary + Pen + Keychain + Card Holder)",
+    "name": "Sr 161 - Gift Set – Mars Executive – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder)",
     "category": "Combo Sets",
     "price": 11.5,
     "pricing": {
@@ -2898,7 +2898,7 @@ export const products = [
   },
   {
     "id": "Sr 162",
-    "name": "Sr 162 - Gift Set – Blue Saffire Executive – 4-in-1 (A5 Diary + Pen + Keychain + Card Holder)",
+    "name": "Sr 162 - Gift Set – Blue Saffire Executive – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder)",
     "category": "Combo Sets",
     "price": 11.5,
     "pricing": {
@@ -2911,7 +2911,7 @@ export const products = [
   },
   {
     "id": "Sr 230",
-    "name": "Sr 230 - Gift Set – Diary Executive – 4-in-1 (A5 Diary + Pen + Keychain + Card Holder)",
+    "name": "Sr 230 - Gift Set – Diary Executive – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder)",
     "category": "Combo Sets",
     "price": 11.5,
     "pricing": {
@@ -2924,7 +2924,7 @@ export const products = [
   },
   {
     "id": "Sr 231",
-    "name": "Sr 231 - Gift Set – Diary Executive – 4-in-1 (A5 Diary + Pen + Keychain + Card Holder)",
+    "name": "Sr 231 - Gift Set – Diary Executive – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder)",
     "category": "Combo Sets",
     "price": 11.5,
     "pricing": {
@@ -2937,7 +2937,7 @@ export const products = [
   },
   {
     "id": "Sr 298",
-    "name": "Sr 298 - Gift Set – Azure Blue Diary – 4-in-1 (A5 Diary + Pen + Keychain + Card Holder)",
+    "name": "Sr 298 - Gift Set – Azure Blue Diary – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder)",
     "category": "Combo Sets",
     "price": 11.5,
     "pricing": {
