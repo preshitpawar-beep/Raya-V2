@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 const WORK = [
   {
-    src: "/work/keyring-rce.jpg",
+    src: "/work/keyring-rce-2.jpg",
     alt: "Engraved metal keyring branded for Renovo Classic Engineering",
     title: "Engraved keyrings",
     client: "Renovo Classic Engineering",
