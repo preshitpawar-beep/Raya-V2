@@ -242,7 +242,7 @@ function FeaturedCard({ product, onImageClick, onCardClick }) {
       onClick={onCardClick}
     >
       {/* Image */}
-      <div className="relative h-[150px] md:h-[180px] bg-gray-50 overflow-hidden">
+      <div className="relative h-[120px] md:h-[150px] bg-gray-50 overflow-hidden">
         <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
           {popular && (
             <span className="bg-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">

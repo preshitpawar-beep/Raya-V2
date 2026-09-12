@@ -1,7 +1,6 @@
 import HeroSlider from "../components/HeroSlider";
 import TrustStrip from "../components/TrustStrip";
 import FeaturedProducts from "../components/FeaturedProducts";
-import TrustedBy from "../components/TrustedBy";
 import CollectionShopStrip from "../components/CollectionShopStrip";
 import TrustIntro from "../components/TrustIntro";
 import Slider from "../components/Slider";
@@ -34,7 +33,6 @@ export default function Home() {
       <HeroSlider />
       <TrustStrip />
       <FeaturedProducts />
-      <TrustedBy />
       <CollectionShopStrip />
       <TrustIntro />
       <Slider />

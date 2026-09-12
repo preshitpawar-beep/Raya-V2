@@ -65,7 +65,7 @@ const getSetType = (p) => {
 function ShimmerCard() {
   return (
     <div className="rounded-xl bg-white border border-gray-100 overflow-hidden shadow-sm">
-      <div className="img-skeleton h-44 w-full" />
+      <div className="img-skeleton h-32 md:h-36 w-full" />
       <div className="p-4 space-y-2">
         <div className="img-skeleton h-3 w-3/4 rounded" />
         <div className="img-skeleton h-3 w-1/2 rounded" />
@@ -472,7 +472,7 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
       style={{ animationDelay: `${Math.min(index * 40, 320)}ms` }}
       onClick={onPageClick}
     >
-      <div className="relative overflow-hidden bg-gray-50 h-44">
+      <div className="relative overflow-hidden bg-gray-50 h-32 md:h-36">
         <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
           {popular && (
             <span className="bg-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">

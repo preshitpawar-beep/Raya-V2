@@ -33,6 +33,15 @@ export default function RecentWork() {
           </p>
         </Reveal>
 
+        <Reveal>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-xs uppercase tracking-widest text-gray-500 whitespace-nowrap">
+              Trusted by UK businesses
+            </span>
+            <span className="h-px flex-1 bg-black/10" />
+          </div>
+        </Reveal>
+
         <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
           {WORK.map((w, i) => (
             <Reveal key={w.title} delay={i * 0.08}>
