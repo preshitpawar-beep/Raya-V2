@@ -89,7 +89,7 @@ export default function Footer() {
               </li>
               <li className="pt-2">
                 <p className="text-xs text-white/40 mb-0.5">Response time</p>
-                <p className="text-sm text-white/70">Within 1 working day</p>
+                <p className="text-sm text-white/70">Within the same working day</p>
               </li>
               <li className="pt-2">
                 <p className="text-xs text-white/40 mb-0.5">Delivery</p>

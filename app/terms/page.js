@@ -116,7 +116,7 @@ export default function Terms() {
       <section className="mb-10">
         <h2 className="text-lg font-semibold text-dark mb-3">6. Delivery</h2>
         <p className="text-sm text-gray-600 leading-relaxed mb-3">
-          6.1 Standard delivery is to UK Mainland addresses only, within 10 to 14 working days
+          6.1 Standard delivery is to UK Mainland addresses only, typically within 8 to 10 days after proof approval
           from the date of proof approval, unless otherwise agreed in writing.
         </p>
         <p className="text-sm text-gray-600 leading-relaxed mb-3">

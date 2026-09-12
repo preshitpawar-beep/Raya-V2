@@ -1,19 +1,24 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req) {
   try {
-    const { name, email, company, message } = await req.json();
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { name, email, company, message, logoName, logoType, logoBase64 } = await req.json();
 
     /* ===========================
        1. EMAIL TO YOU (BRANDED)
     ============================ */
+    const attachments =
+      logoBase64 && logoName
+        ? [{ filename: logoName, content: logoBase64, contentType: logoType || undefined }]
+        : undefined;
+
     await resend.emails.send({
       from: "Legacy Imprint Website <info@legacyimprint.co.uk>",
       to: ["info@legacyimprint.co.uk"],
       reply_to: email,
       subject: `New Quote Enquiry from ${name}`,
+      attachments,
       html: `
         <div style="font-family: Arial, sans-serif; background:#f7f8fa; padding:24px;">
           <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:12px; padding:24px;">
@@ -37,6 +42,7 @@ export async function POST(req) {
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Company:</strong> ${company || "N/A"}</p>
+            <p><strong>Logo attached:</strong> ${logoName ? logoName : "No"}</p>
 
             <p style="margin-top:16px;"><strong>Message:</strong></p>
             <p style="white-space:pre-line; color:#374151;">
@@ -80,7 +86,7 @@ export async function POST(req) {
             </p>
 
             <p style="color:#374151; font-size:14px;">
-              We usually respond within <strong>1 business day</strong>.
+              We usually respond the <strong>same working day</strong>.
             </p>
 
             <p style="margin-top:24px; font-size:14px; color:#374151;">

@@ -2,6 +2,8 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
+import PromoBar from "../components/PromoBar";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 export const metadata = {
   // --- Base ---
@@ -111,11 +113,13 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-white text-dark antialiased">
+        <PromoBar />
         <Header />
         <main>{children}</main>
         <Footer />
 
         {/* Cookie consent banner — also conditionally loads GA */}
+        <WhatsAppButton />
         <CookieBanner />
       </body>
     </html>

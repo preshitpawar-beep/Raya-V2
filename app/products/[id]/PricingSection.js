@@ -216,7 +216,7 @@ export default function PricingSection({ product, moq }) {
         Get a quote for {displayQty >= moq ? displayQty : moq} units
       </button>
       <p className="text-center text-[11px] text-gray-400 mt-2.5">
-        No obligation · Typically respond within 1 working day
+        No obligation · We usually reply the same working day
       </p>
     </div>
   );

@@ -154,3 +154,9 @@ button, a {
 .card-enter {
   animation: cardEntrance 0.3s ease both;
 }
+
+/* ── MARQUEE (trust strip) ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

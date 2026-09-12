@@ -16,7 +16,7 @@ export default function HowItWorks() {
       step: "03",
       title: "We review & come back to you",
       desc:
-        "We’ll check availability, pricing, and branding options, and respond with a clear quote within one working day.",
+        "We’ll check availability, pricing, and branding options, and respond with a clear quote the same working day, usually within a few hours.",
     },
   ];
 
@@ -66,7 +66,7 @@ export default function HowItWorks() {
           </p>
           <p className="text-sm font-medium text-dark">
             Typical response time:{" "}
-            <span className="font-semibold">within 1 working day</span>
+            <span className="font-semibold">the same working day</span>
           </p>
         </div>
 

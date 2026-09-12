@@ -49,13 +49,13 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${product.name} – Custom Branded ${product.category}`,
-    description: `${product.name} from £${lowestPrice.toFixed(2)} excl. VAT. Custom branded ${product.category.toLowerCase()} for UK businesses. Branding included, no setup fees. Volume discounts available.`,
+    description: `${product.description} From £${lowestPrice.toFixed(2)} per unit excl. VAT.`.slice(0, 300),
     alternates: {
       canonical: `https://www.legacyimprint.co.uk/products/${toSlug(product.id)}`,
     },
     openGraph: {
       title: `${product.name} | Legacy Imprint SW`,
-      description: `Custom branded ${product.category.toLowerCase()} from £${lowestPrice.toFixed(2)}. Branding included. Volume discounts at 100+, 250+ and 500+ units.`,
+      description: `Custom branded ${product.category.toLowerCase()} from £${lowestPrice.toFixed(2)}. Branding included. Volume discounts at higher quantities.`,
       images: [product.image],
     },
   };
@@ -78,9 +78,29 @@ export default function ProductPage({ params }) {
   const moq = product.moq || 10;
   const related = getRelated(product);
   const eco = isEco(product);
+  const BASE = "https://www.legacyimprint.co.uk";
+  const lowestPrice = product.pricing ? Math.min(...Object.values(product.pricing)) : product.price;
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    sku: product.sku || product.id,
+    image: `${BASE}${product.image}`,
+    category: product.category,
+    brand: { "@type": "Brand", name: "Legacy Imprint SW" },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "GBP",
+      price: lowestPrice.toFixed(2),
+      availability: "https://schema.org/InStock",
+      url: `${BASE}/products/${toSlug(product.id)}`,
+    },
+  };
 
   return (
     <main className="bg-[#F7F8FA] min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }} />
       <div className="max-w-6xl mx-auto px-6 py-10 md:py-16">
 
         {/* Breadcrumb */}
@@ -138,7 +158,7 @@ export default function ProductPage({ params }) {
                 { icon: "✓", label: "Branding included" },
                 { icon: "🚚", label: "UK delivery" },
                 { icon: "🖼", label: "Free visual proof" },
-                { icon: "💬", label: "1-day response" },
+                { icon: "💬", label: "Fast response" },
               ].map(({ icon, label }) => (
                 <div
                   key={label}
@@ -163,6 +183,7 @@ export default function ProductPage({ params }) {
         {/* ═══ PRODUCT DETAILS ═══ */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8 mb-16">
           <h2 className="text-base font-bold text-dark mb-6">Product Details</h2>
+          <p className="text-sm text-gray-700 leading-relaxed mb-8 max-w-3xl">{product.description}</p>
           <div className="grid md:grid-cols-3 gap-8">
 
             {/* Specifications */}
@@ -223,7 +244,7 @@ export default function ProductPage({ params }) {
               </h3>
               <dl className="space-y-3">
                 {[
-                  { label: "Standard", value: "10–14 working days" },
+                  { label: "Standard", value: "8–10 days after proof approval" },
                   { label: "Area", value: "UK Mainland" },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex justify-between text-sm border-b border-gray-50 pb-2">
