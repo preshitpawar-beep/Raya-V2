@@ -9,13 +9,13 @@ import ProductImageModal from "./ProductImageModal";
 
 /* ---------------- CONFIG ---------------- */
 const ITEMS_PER_PAGE = 50;
-const CATEGORIES = ["All", "Pen", "Notebook", "Key Ring", "Combo Sets", "Bags"];
+const CATEGORIES = ["All", "Pen", "Notebook", "Key Ring", "Combo Sets", "Bags", "Gift Boxes"];
 const COLORS = ["black", "blue", "red", "white", "grey", "gold", "brown", "green"];
 const MATERIALS = ["plastic", "metal", "jute", "cotton", "paper", "leather"];
 const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
 const POPULAR_IDS = ["P77","MP10","MP03","D184","D200","KC01","Sr 159","Sr 231","JB 02"];
 
-const MOQ_MAP = { Pen: 50, Notebook: 10, "Key Ring": 30, "Combo Sets": 10, Bags: 10 };
+const MOQ_MAP = { Pen: 50, Notebook: 10, "Key Ring": 30, "Combo Sets": 10, Bags: 10, "Gift Boxes": 25 };
 
 const DEFAULT_FILTERS = {
   category: "All", colors: [], materials: [],

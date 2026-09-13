@@ -12,6 +12,7 @@ const SHOW = [
   "branded-notebooks",
   "corporate-gift-sets",
   "branded-keyrings",
+  "pen-gift-boxes",
 ];
 
 export default function CollectionShopStrip() {

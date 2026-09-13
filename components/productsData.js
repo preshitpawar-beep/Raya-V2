@@ -83,7 +83,7 @@ export const products = [
     "id": "B3",
     "sku": "B3",
     "name": "Black Paper Gift Box for Pens",
-    "category": "Pen",
+    "category": "Gift Boxes",
     "price": 0.6,
     "pricing": {
       "25": 2.25,
@@ -1353,7 +1353,7 @@ export const products = [
   {
     "id": "MP47",
     "sku": "MP47",
-    "name": "Black Matte Stylus",
+    "name": "Black Matte Stylus Pen",
     "category": "Pen",
     "price": 1.4,
     "pricing": {
@@ -1364,7 +1364,7 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/MP47.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Branded stylus pen with a smooth ballpoint for writing and a soft tip for smartphones and tablets. Made from metal with a matte black finish. A practical promotional giveaway for events, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
   {
     "id": "CT 06",
@@ -1431,7 +1431,7 @@ export const products = [
   {
     "id": "MP56",
     "sku": "MP56",
-    "name": "White Stylus",
+    "name": "White Stylus Pen",
     "category": "Pen",
     "price": 1.5,
     "pricing": {
@@ -1442,7 +1442,7 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/MP56.jpg",
-    "description": "Branded white pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Branded stylus pen with a smooth ballpoint for writing and a soft tip for smartphones and tablets. Made from metal with a white finish. A practical promotional giveaway for events, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
   {
     "id": "CT 07",
@@ -3267,7 +3267,7 @@ export const products = [
   {
     "id": "P46",
     "sku": "P46",
-    "name": "Metal Slim Stylus Black",
+    "name": "Slim Metal Stylus Pen (Black)",
     "category": "Pen",
     "price": 0.7,
     "pricing": {
@@ -3278,7 +3278,7 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/P46.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Branded stylus pen with a smooth ballpoint for writing and a soft tip for smartphones and tablets. A slim metal design in black. A practical promotional giveaway for events, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
   {
     "id": "P51",
@@ -3733,7 +3733,7 @@ export const products = [
     "id": "B7",
     "sku": "B7",
     "name": "Velvet Pen Pouch",
-    "category": "Pen",
+    "category": "Gift Boxes",
     "price": 0.35,
     "pricing": {
       "25": 1.7,
@@ -3749,7 +3749,7 @@ export const products = [
     "id": "B9",
     "sku": "B9",
     "name": "Ribbon Gift Box for Pens",
-    "category": "Pen",
+    "category": "Gift Boxes",
     "price": 0.45,
     "pricing": {
       "25": 1.8,
@@ -3765,7 +3765,7 @@ export const products = [
     "id": "B12",
     "sku": "B12",
     "name": "Red Premium Gift Box for Pens",
-    "category": "Pen",
+    "category": "Gift Boxes",
     "price": 1,
     "pricing": {
       "25": 2.5,
@@ -3781,7 +3781,7 @@ export const products = [
     "id": "B13",
     "sku": "B13",
     "name": "Black Slim Gift Box for Pens",
-    "category": "Pen",
+    "category": "Gift Boxes",
     "price": 0.6,
     "pricing": {
       "25": 2.25,
@@ -3797,7 +3797,7 @@ export const products = [
     "id": "B14",
     "sku": "B14",
     "name": "Red Slim Gift Box for Pens",
-    "category": "Pen",
+    "category": "Gift Boxes",
     "price": 0.7,
     "pricing": {
       "25": 2.25,
@@ -3813,7 +3813,7 @@ export const products = [
     "id": "B15",
     "sku": "B15",
     "name": "Premium Metal Gift Box for Pens (Gold)",
-    "category": "Pen",
+    "category": "Gift Boxes",
     "price": 1.2,
     "pricing": {
       "25": 2.75,
@@ -3829,7 +3829,7 @@ export const products = [
     "id": "B16",
     "sku": "B16",
     "name": "Premium Metal Gift Box for Pens (Rose Gold)",
-    "category": "Pen",
+    "category": "Gift Boxes",
     "price": 1.2,
     "pricing": {
       "25": 2.75,
@@ -3845,7 +3845,7 @@ export const products = [
     "id": "B17",
     "sku": "B17",
     "name": "Premium Metal Gift Box for Pens (Silver)",
-    "category": "Pen",
+    "category": "Gift Boxes",
     "price": 1.2,
     "pricing": {
       "25": 2.75,

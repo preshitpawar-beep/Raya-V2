@@ -81,6 +81,14 @@ export const COLLECTIONS = [
       "Custom metal keyrings engraved or printed with your logo. A durable, everyday-carry promotional item that keeps your brand in hand.",
     match: (p) => p.category === "Key Ring",
   },
+  {
+    slug: "pen-gift-boxes",
+    title: "Pen Gift Boxes",
+    h1: "Pen Gift Boxes & Presentation Pouches",
+    intro:
+      "Premium gift boxes and velvet pouches for presenting a branded pen. Paper, slim, metal and velvet options that turn a pen into a proper corporate gift. The pen shown is for presentation only and is not included.",
+    match: (p) => p.category === "Gift Boxes",
+  },
 ];
 
 export const getCollection = (slug) => COLLECTIONS.find((c) => c.slug === slug);
