@@ -82,7 +82,7 @@ export const products = [
   {
     "id": "B3",
     "sku": "B3",
-    "name": "Black Paper Box Pen",
+    "name": "Black Paper Gift Box for Pens",
     "category": "Pen",
     "price": 0.6,
     "pricing": {
@@ -93,7 +93,7 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/B3.jpg",
-    "description": "Branded black pen printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Black paper gift box for presenting a pen as a premium corporate gift. Made from sustainable paper, it gives a branded pen a polished finish for events, client gifts and giveaways across the UK. The pen shown is for presentation only and is not included."
   },
   {
     "id": "JB 02",
@@ -3732,7 +3732,7 @@ export const products = [
   {
     "id": "B7",
     "sku": "B7",
-    "name": "Velvet Pouch Pen",
+    "name": "Velvet Pen Pouch",
     "category": "Pen",
     "price": 0.35,
     "pricing": {
@@ -3743,12 +3743,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/B7.jpg",
-    "description": "Branded pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Soft velvet pouch for presenting a pen as a premium gift. A simple, elegant way to dress up a branded pen for corporate gifts and giveaways across the UK. The pen shown is for presentation only and is not included."
   },
   {
     "id": "B9",
     "sku": "B9",
-    "name": "Simple Ribbon Box Pen",
+    "name": "Ribbon Gift Box for Pens",
     "category": "Pen",
     "price": 0.45,
     "pricing": {
@@ -3759,12 +3759,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/B9.jpg",
-    "description": "Branded pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Simple gift box with a ribbon finish for presenting a pen. An easy way to turn a branded pen into a thoughtful corporate gift for events and client giveaways across the UK. The pen shown is for presentation only and is not included."
   },
   {
     "id": "B12",
     "sku": "B12",
-    "name": "Red Master Box Pen",
+    "name": "Red Premium Gift Box for Pens",
     "category": "Pen",
     "price": 1,
     "pricing": {
@@ -3775,12 +3775,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/B12.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Red premium gift box for presenting a pen. A smart presentation case that gives a branded pen a high end feel for corporate gifts and giveaways across the UK. The pen shown is for presentation only and is not included."
   },
   {
     "id": "B13",
     "sku": "B13",
-    "name": "Black Slim Box Pen",
+    "name": "Black Slim Gift Box for Pens",
     "category": "Pen",
     "price": 0.6,
     "pricing": {
@@ -3791,12 +3791,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/B13.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Slim black gift box for presenting a single pen. A neat, understated case that adds a premium finish to a branded pen for corporate gifts across the UK. The pen shown is for presentation only and is not included."
   },
   {
     "id": "B14",
     "sku": "B14",
-    "name": "Red Slim Box Pen",
+    "name": "Red Slim Gift Box for Pens",
     "category": "Pen",
     "price": 0.7,
     "pricing": {
@@ -3807,12 +3807,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/B14.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Slim red gift box for presenting a single pen. A neat, understated case that adds a premium finish to a branded pen for corporate gifts across the UK. The pen shown is for presentation only and is not included."
   },
   {
     "id": "B15",
     "sku": "B15",
-    "name": "Premium Metal Box (Gold) Pen",
+    "name": "Premium Metal Gift Box for Pens (Gold)",
     "category": "Pen",
     "price": 1.2,
     "pricing": {
@@ -3823,12 +3823,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/B15.jpg",
-    "description": "Branded pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Premium metal gift box in a gold finish for presenting a pen. A luxurious presentation case that makes a branded pen feel like a proper gift for corporate occasions across the UK. The pen shown is for presentation only and is not included."
   },
   {
     "id": "B16",
     "sku": "B16",
-    "name": "Premium Metal Box (Rose Gold) Pen",
+    "name": "Premium Metal Gift Box for Pens (Rose Gold)",
     "category": "Pen",
     "price": 1.2,
     "pricing": {
@@ -3839,12 +3839,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/B16.jpg",
-    "description": "Branded pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Premium metal gift box in a rose gold finish for presenting a pen. A luxurious presentation case that makes a branded pen feel like a proper gift for corporate occasions across the UK. The pen shown is for presentation only and is not included."
   },
   {
     "id": "B17",
     "sku": "B17",
-    "name": "Premium Metal Box (Silver) Pen",
+    "name": "Premium Metal Gift Box for Pens (Silver)",
     "category": "Pen",
     "price": 1.2,
     "pricing": {
@@ -3855,6 +3855,6 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/B17.jpg",
-    "description": "Branded pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Premium metal gift box in a silver finish for presenting a pen. A luxurious presentation case that makes a branded pen feel like a proper gift for corporate occasions across the UK. The pen shown is for presentation only and is not included."
   }
 ];
