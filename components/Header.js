@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "./productsData"; // adjust path if needed
+import { searchMatches } from "./search";
 
 export default function Header() {
   const router = useRouter();
@@ -45,6 +46,8 @@ export default function Header() {
       if (p.category === "Notebook") set.add("Notebook");
       if (p.category === "Key Ring") set.add("Key ring");
       if (p.category === "Bags") set.add("Bags");
+      if (p.category === "Combo Sets") set.add("Gift set");
+      if (p.category === "Gift Boxes") set.add("Pen gift box");
 
       if (/eco|bamboo|cork|jute/i.test(p.name)) {
         set.add("Eco notebook");
@@ -56,10 +59,8 @@ export default function Header() {
 
   const suggestions = useMemo(() => {
     if (!query.trim()) return [];
-    const q = query.toLowerCase();
-
     return suggestionPool
-      .filter((s) => s.toLowerCase().includes(q))
+      .filter((s) => searchMatches(s, query))
       .slice(0, 8);
   }, [query, suggestionPool]);
 

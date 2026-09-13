@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { products } from "./productsData";
 import ProductImageModal from "./ProductImageModal";
+import { searchMatches, scoreProduct } from "./search";
 
 /* ---------------- CONFIG ---------------- */
 const ITEMS_PER_PAGE = 50;
@@ -143,11 +144,11 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
   );
 
   const filteredProducts = useMemo(() => {
-    return products.filter((p) => {
+    const result = products.filter((p) => {
       if (filters.category !== "All" && p.category !== filters.category) return false;
       if (filters.search) {
-        const term = filters.search.toLowerCase();
-        if (!`${p.name} ${p.category}`.toLowerCase().includes(term)) return false;
+        const haystack = `${p.name} ${p.category} ${p.sku || ""}`;
+        if (!searchMatches(haystack, filters.search)) return false;
       }
       if (filters.colors.length && !filters.colors.includes(getColor(p))) return false;
       if (filters.materials.length && !filters.materials.includes(getMaterial(p))) return false;
@@ -156,6 +157,11 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
       if (filters.setTypes.length && !filters.setTypes.includes(getSetType(p))) return false;
       return true;
     });
+    // When searching, order by relevance (best matches first).
+    if (filters.search && filters.search.trim()) {
+      result.sort((a, b) => scoreProduct(b, filters.search) - scoreProduct(a, filters.search));
+    }
+    return result;
   }, [filters]);
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
