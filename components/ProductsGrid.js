@@ -12,7 +12,7 @@ import { searchMatches, scoreProduct } from "./search";
 const ITEMS_PER_PAGE = 50;
 const CATEGORIES = ["All", "Pen", "Notebook", "Key Ring", "Combo Sets", "Bags", "Gift Boxes"];
 const COLORS = ["black", "blue", "red", "white", "grey", "gold", "brown", "green"];
-const MATERIALS = ["plastic", "metal", "jute", "cotton", "paper", "leather"];
+const MATERIALS = ["plastic", "metal", "jute", "cotton", "nylon", "paper", "leather"];
 const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
 const POPULAR_IDS = ["P77","MP10","MP03","D184","D200","KC01","Sr 159","Sr 231","JB 02"];
 
@@ -41,14 +41,21 @@ const isEco = (p) => ECO_KEYWORDS.some((k) => p.name.toLowerCase().includes(k));
 const getColor = (p) => COLORS.find((c) => p.name.toLowerCase().includes(c));
 
 const getMaterial = (p) => {
-  if (p.category === "Pen") return p.id.startsWith("MP") ? "metal" : "plastic";
+  const n = p.name.toLowerCase();
+  if (p.category === "Pen") {
+    if (/\bmetal\b|bullet|stylus|aluminium|brass|stainless/.test(n)) return "metal";
+    if (p.id.startsWith("MP")) return "metal";
+    return "plastic";
+  }
   if (p.category === "Bags") {
-    if (/jute/i.test(p.name)) return "jute";
-    if (/cotton/i.test(p.name)) return "cotton";
-    if (/paper/i.test(p.name)) return "paper";
+    if (/jute/.test(n)) return "jute";
+    if (/nylon/.test(n)) return "nylon";
+    if (/cotton|canvas/.test(n)) return "cotton";
+    if (/paper/.test(n)) return "paper";
+    return null;
   }
   if (p.category === "Key Ring") {
-    if (/leather/i.test(p.name)) return "leather";
+    if (/leather/.test(n)) return "leather";
     return "metal";
   }
   return null;
@@ -537,7 +544,7 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
 
         {isMultiVariant && (
           <p className="text-[11px] text-gray-500 leading-snug mt-1">
-            Specify part number / colour when ordering.
+            Several colours shown, numbered left to right. Tell us the number(s) you want on your quote.
           </p>
         )}
 

@@ -297,7 +297,7 @@ function FeaturedCard({ product, onImageClick, onCardClick }) {
 
         {isMultiVariant && (
           <p className="text-[11px] text-gray-500 leading-snug mt-1">
-            Specify part number / colour when ordering.
+            Several colours shown, numbered left to right. Tell us the number(s) you want on your quote.
           </p>
         )}
 

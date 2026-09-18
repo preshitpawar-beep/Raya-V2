@@ -141,8 +141,8 @@ export default function ProductImageModal({ product, onClose }) {
 
           {isMultiVariant && (
             <p className="text-xs text-gray-600 mt-1">
-              Multiple variants available — please specify required part number /
-              colour (shown left to right).
+              This pen comes in several colours, shown in the photo and numbered
+              left to right. Tell us the number(s) you want when you request a quote.
             </p>
           )}
         </div>

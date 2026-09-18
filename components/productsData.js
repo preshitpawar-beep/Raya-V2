@@ -18,7 +18,7 @@ export const products = [
   {
     "id": "Sr 111",
     "sku": "Sr 111",
-    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring) (Sr 111)",
     "category": "Combo Sets",
     "price": 3.5,
     "pricing": {
@@ -113,7 +113,7 @@ export const products = [
   {
     "id": "Sr 112",
     "sku": "Sr 112",
-    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring) (Sr 112)",
     "category": "Combo Sets",
     "price": 3.5,
     "pricing": {
@@ -193,7 +193,7 @@ export const products = [
   {
     "id": "JB 03",
     "sku": "JB 03",
-    "name": "Jute Bag – Large - 35 x 40 x 15 cm (13.4 x 15.7 x 6 in)",
+    "name": "Jute Bag – Large - 35 x 40 x 15 cm (13.8 x 15.7 x 5.9 in)",
     "category": "Bags",
     "price": 3.75,
     "pricing": {
@@ -209,7 +209,7 @@ export const products = [
   {
     "id": "Sr 238",
     "sku": "Sr 238",
-    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring) (Sr 238)",
     "category": "Combo Sets",
     "price": 3.5,
     "pricing": {
@@ -304,7 +304,7 @@ export const products = [
   {
     "id": "Sr 239",
     "sku": "Sr 239",
-    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring) (Sr 239)",
     "category": "Combo Sets",
     "price": 3.25,
     "pricing": {
@@ -399,7 +399,7 @@ export const products = [
   {
     "id": "Sr 240",
     "sku": "Sr 240",
-    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring) (Sr 240)",
     "category": "Combo Sets",
     "price": 3,
     "pricing": {
@@ -491,7 +491,7 @@ export const products = [
   {
     "id": "Sr 241",
     "sku": "Sr 241",
-    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring)",
+    "name": "Gift Set – Classic Metal – 2-in-1 (Pen + Keyring) (Sr 241)",
     "category": "Combo Sets",
     "price": 2.75,
     "pricing": {
@@ -600,7 +600,7 @@ export const products = [
   {
     "id": "D159",
     "sku": "D159",
-    "name": "Black Soft PU Notebook | A5 Size",
+    "name": "Black Soft PU Notebook | A5 Size (D159)",
     "category": "Notebook",
     "price": 4.75,
     "pricing": {
@@ -774,7 +774,7 @@ export const products = [
   {
     "id": "Sr 247",
     "sku": "Sr 247",
-    "name": "Gift Set – Leatherette – 2-in-1 (Pen + Card Holder)",
+    "name": "Gift Set – Leatherette – 2-in-1 (Pen + Card Holder) (Sr 247)",
     "category": "Combo Sets",
     "price": 4.5,
     "pricing": {
@@ -868,7 +868,7 @@ export const products = [
   {
     "id": "Sr 248",
     "sku": "Sr 248",
-    "name": "Gift Set – Leatherette – 2-in-1 (Pen + Card Holder)",
+    "name": "Gift Set – Leatherette – 2-in-1 (Pen + Card Holder) (Sr 248)",
     "category": "Combo Sets",
     "price": 4,
     "pricing": {
@@ -884,7 +884,7 @@ export const products = [
   {
     "id": "D162",
     "sku": "D162",
-    "name": "Black Perdot Notebook | A5 Size",
+    "name": "Black Peridot Notebook | A5 Size",
     "category": "Notebook",
     "price": 4.75,
     "pricing": {
@@ -1057,7 +1057,7 @@ export const products = [
   {
     "id": "Sr 139",
     "sku": "Sr 139",
-    "name": "Gift Set – Elastic Diary Red – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Elastic Diary Red – 2-in-1 (A5 Diary + Pen) (Sr 139)",
     "category": "Combo Sets",
     "price": 6,
     "pricing": {
@@ -1227,7 +1227,7 @@ export const products = [
   {
     "id": "Sr 141",
     "sku": "Sr 141",
-    "name": "Gift Set – Elastic Diary White – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Elastic Diary White – 2-in-1 (A5 Diary + Pen) (Sr 141)",
     "category": "Combo Sets",
     "price": 6,
     "pricing": {
@@ -1306,7 +1306,7 @@ export const products = [
   {
     "id": "Sr 267",
     "sku": "Sr 267",
-    "name": "Gift Set – Elastic Diary White – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Elastic Diary White – 2-in-1 (A5 Diary + Pen) (Sr 267)",
     "category": "Combo Sets",
     "price": 5.5,
     "pricing": {
@@ -1384,7 +1384,7 @@ export const products = [
   {
     "id": "Sr 268",
     "sku": "Sr 268",
-    "name": "Gift Set – Elastic Diary Red – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Elastic Diary Red – 2-in-1 (A5 Diary + Pen) (Sr 268)",
     "category": "Combo Sets",
     "price": 5.5,
     "pricing": {
@@ -1949,7 +1949,7 @@ export const products = [
   {
     "id": "D198",
     "sku": "D198",
-    "name": "Black Soft PU Notebook | A5 Size",
+    "name": "Black Soft PU Notebook | A5 Size (D198)",
     "category": "Notebook",
     "price": 4.75,
     "pricing": {
@@ -2013,7 +2013,7 @@ export const products = [
   {
     "id": "Sr 273",
     "sku": "Sr 273",
-    "name": "Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen) (Sr 273)",
     "category": "Combo Sets",
     "price": 8,
     "pricing": {
@@ -2091,7 +2091,7 @@ export const products = [
   {
     "id": "Sr 284",
     "sku": "Sr 284",
-    "name": "Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen) (Sr 284)",
     "category": "Combo Sets",
     "price": 7.5,
     "pricing": {
@@ -2169,7 +2169,7 @@ export const products = [
   {
     "id": "Sr 285",
     "sku": "Sr 285",
-    "name": "Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Premium – 2-in-1 (A5 Diary + Pen) (Sr 285)",
     "category": "Combo Sets",
     "price": 7.5,
     "pricing": {
@@ -2246,7 +2246,7 @@ export const products = [
   {
     "id": "Sr 274",
     "sku": "Sr 274",
-    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen) (Sr 274)",
     "category": "Combo Sets",
     "price": 7,
     "pricing": {
@@ -2322,7 +2322,7 @@ export const products = [
   {
     "id": "Sr 276",
     "sku": "Sr 276",
-    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen) (Sr 276)",
     "category": "Combo Sets",
     "price": 7,
     "pricing": {
@@ -2398,7 +2398,7 @@ export const products = [
   {
     "id": "Sr 277",
     "sku": "Sr 277",
-    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen) (Sr 277)",
     "category": "Combo Sets",
     "price": 7,
     "pricing": {
@@ -2475,7 +2475,7 @@ export const products = [
   {
     "id": "Sr 280",
     "sku": "Sr 280",
-    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen) (Sr 280)",
     "category": "Combo Sets",
     "price": 7,
     "pricing": {
@@ -2553,7 +2553,7 @@ export const products = [
   {
     "id": "Sr 281",
     "sku": "Sr 281",
-    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen) (Sr 281)",
     "category": "Combo Sets",
     "price": 7.5,
     "pricing": {
@@ -2599,7 +2599,7 @@ export const products = [
   {
     "id": "MP119",
     "sku": "MP119",
-    "name": "MP126 Pen",
+    "name": "Metal Ballpoint Pen (Colours MP119 to MP126)",
     "category": "Pen",
     "price": 1.5,
     "pricing": {
@@ -2610,12 +2610,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/MP119.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP119 to MP126, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
   {
     "id": "Sr 299",
     "sku": "Sr 299",
-    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen) (Sr 299)",
     "category": "Combo Sets",
     "price": 7.5,
     "pricing": {
@@ -2630,7 +2630,7 @@ export const products = [
   {
     "id": "MP127",
     "sku": "MP127",
-    "name": "MP132 Pen",
+    "name": "Metal Ballpoint Pen (Colours MP127 to MP132)",
     "category": "Pen",
     "price": 1.5,
     "pricing": {
@@ -2641,12 +2641,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/MP127.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP127 to MP132, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
   {
     "id": "MP133",
     "sku": "MP133",
-    "name": "MP139 Pen",
+    "name": "Metal Ballpoint Pen (Colours MP133 to MP139)",
     "category": "Pen",
     "price": 1,
     "pricing": {
@@ -2657,12 +2657,12 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/MP133.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP133 to MP139, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
   {
     "id": "Sr 300",
     "sku": "Sr 300",
-    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen)",
+    "name": "Gift Set – Diary Classic – 2-in-1 (A5 Diary + Pen) (Sr 300)",
     "category": "Combo Sets",
     "price": 7.5,
     "pricing": {
@@ -2677,7 +2677,7 @@ export const products = [
   {
     "id": "MP140",
     "sku": "MP140",
-    "name": "MP146 Pen",
+    "name": "Metal Ballpoint Pen (Colours MP140 to MP146)",
     "category": "Pen",
     "price": 1.6,
     "pricing": {
@@ -2688,7 +2688,7 @@ export const products = [
     },
     "moq": 25,
     "image": "/products/MP140.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
+    "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP140 to MP146, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
   {
     "id": "P1",
@@ -2881,7 +2881,7 @@ export const products = [
   {
     "id": "Sr 126",
     "sku": "Sr 126",
-    "name": "Gift Set – Executive Leather – 3-in-1 (Pen + Keyring + Card Holder)",
+    "name": "Gift Set – Executive Leather – 3-in-1 (Pen + Keyring + Card Holder) (Sr 126)",
     "category": "Combo Sets",
     "price": 5,
     "pricing": {
@@ -2927,7 +2927,7 @@ export const products = [
   {
     "id": "Sr 127",
     "sku": "Sr 127",
-    "name": "Gift Set – Executive Leather – 3-in-1 (Pen + Keyring + Card Holder)",
+    "name": "Gift Set – Executive Leather – 3-in-1 (Pen + Keyring + Card Holder) (Sr 127)",
     "category": "Combo Sets",
     "price": 5,
     "pricing": {
@@ -3340,7 +3340,7 @@ export const products = [
   {
     "id": "Sr 230",
     "sku": "Sr 230",
-    "name": "Gift Set – Diary Executive – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder)",
+    "name": "Gift Set – Diary Executive – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder) (Sr 230)",
     "category": "Combo Sets",
     "price": 11.5,
     "pricing": {
@@ -3385,7 +3385,7 @@ export const products = [
   {
     "id": "Sr 231",
     "sku": "Sr 231",
-    "name": "Gift Set – Diary Executive – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder)",
+    "name": "Gift Set – Diary Executive – 4-in-1 (A5 Diary + Pen + Keyring + Card Holder) (Sr 231)",
     "category": "Combo Sets",
     "price": 11.5,
     "pricing": {
@@ -3654,7 +3654,7 @@ export const products = [
   {
     "id": "P72",
     "sku": "P72",
-    "name": "Navigator White Pen",
+    "name": "Navigator White Pen (P72)",
     "category": "Pen",
     "price": 0.8,
     "pricing": {
@@ -3686,7 +3686,7 @@ export const products = [
   {
     "id": "P74",
     "sku": "P74",
-    "name": "Navigator White Pen",
+    "name": "Navigator White Pen (P74)",
     "category": "Pen",
     "price": 0.8,
     "pricing": {
