@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // TODO: add your WhatsApp number in international format, digits only, e.g. "447700900123".
 // While this is empty, the button opens the quote page instead. Fill it in to enable WhatsApp.
-const WHATSAPP_NUMBER = "";
+const WHATSAPP_NUMBER = "447391362174";
 const PREFILL = "Hi Legacy Imprint, I'd like a quote for some branded products.";
 
 export default function WhatsAppButton() {
