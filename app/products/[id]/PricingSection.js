@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 
-const TIER_ORDER = ["10", "25", "50", "100", "250"];
-const TIER_LABELS = { "10": "10+", "25": "25+", "50": "50+", "100": "100+", "250": "250+" };
+const TIER_ORDER = ["10", "25", "50", "100", "250", "500", "750", "1000"];
+const TIER_LABELS = { "10": "10+", "25": "25+", "50": "50+", "100": "100+", "250": "250+", "500": "500+", "750": "750+", "1000": "1000+" };
 
 function tierForQty(qty) {
+  if (qty >= 1000) return "1000";
+  if (qty >= 750) return "750";
+  if (qty >= 500) return "500";
   if (qty >= 250) return "250";
   if (qty >= 100) return "100";
   if (qty >= 50) return "50";

@@ -68,14 +68,17 @@ export const products = [
     "sku": "P77",
     "name": "Nature Touch Bamboo Pen",
     "category": "Pen",
-    "price": 0.8,
+    "price": 0.6,
     "pricing": {
       "25": 2.25,
       "50": 1.5,
       "100": 1.1,
-      "250": 0.8
+      "250": 0.8,
+      "500": 0.75,
+      "750": 0.68,
+      "1000": 0.6
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P77.jpg",
     "description": "Branded pen printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -170,7 +173,7 @@ export const products = [
       "100": 2.25,
       "250": 1.9
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP01.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -186,7 +189,7 @@ export const products = [
       "100": 1.7,
       "250": 1.4
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP02.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -266,7 +269,7 @@ export const products = [
       "100": 2.25,
       "250": 1.9
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP03.jpg",
     "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -282,7 +285,7 @@ export const products = [
       "100": 2.5,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP05.jpg",
     "description": "Branded chrome pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -361,7 +364,7 @@ export const products = [
       "100": 3,
       "250": 2.75
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP06.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -377,7 +380,7 @@ export const products = [
       "100": 2.5,
       "250": 2
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP08.jpg",
     "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -454,7 +457,7 @@ export const products = [
       "100": 4,
       "250": 3.75
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP09.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -469,7 +472,7 @@ export const products = [
       "50": 4,
       "100": 3.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP10.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -546,7 +549,7 @@ export const products = [
       "100": 2,
       "250": 1.6
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP12.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -562,7 +565,7 @@ export const products = [
       "100": 1.5,
       "250": 1.1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP13.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -641,7 +644,7 @@ export const products = [
       "100": 1.6,
       "250": 1.3
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP14.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -657,7 +660,7 @@ export const products = [
       "100": 2,
       "250": 1.6
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP15.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -737,7 +740,7 @@ export const products = [
       "100": 1.4,
       "250": 1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP16.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -753,7 +756,7 @@ export const products = [
       "100": 2.25,
       "250": 1.8
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP17.jpg",
     "description": "Branded chrome pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -831,7 +834,7 @@ export const products = [
       "100": 1.7,
       "250": 1.3
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP18.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -847,7 +850,7 @@ export const products = [
       "100": 2,
       "250": 1.7
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP19.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -925,7 +928,7 @@ export const products = [
       "100": 2.5,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP21.jpg",
     "description": "Branded white pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -941,7 +944,7 @@ export const products = [
       "100": 3.5,
       "250": 3.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP22.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1019,7 +1022,7 @@ export const products = [
       "100": 2.25,
       "250": 1.8
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP27.jpg",
     "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1035,7 +1038,7 @@ export const products = [
       "100": 2.25,
       "250": 1.8
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP28.jpg",
     "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1112,7 +1115,7 @@ export const products = [
       "100": 2.25,
       "250": 1.9
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP29.jpg",
     "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1128,7 +1131,7 @@ export const products = [
       "100": 2.25,
       "250": 1.9
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP32.jpg",
     "description": "Branded green pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1189,7 +1192,7 @@ export const products = [
       "100": 2.25,
       "250": 1.9
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP41.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1205,7 +1208,7 @@ export const products = [
       "100": 2.25,
       "250": 1.9
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP42.jpg",
     "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1267,7 +1270,7 @@ export const products = [
       "100": 1.1,
       "250": 0.7
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP43.jpg",
     "description": "Branded white pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1283,7 +1286,7 @@ export const products = [
       "100": 2.75,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP44.jpg",
     "description": "Branded gunmetal pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1346,7 +1349,7 @@ export const products = [
       "100": 1.9,
       "250": 1.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP45.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1362,7 +1365,7 @@ export const products = [
       "100": 1.7,
       "250": 1.4
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP47.jpg",
     "description": "Branded stylus pen with a smooth ballpoint for writing and a soft tip for smartphones and tablets. Made from metal with a matte black finish. A practical promotional giveaway for events, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1424,7 +1427,7 @@ export const products = [
       "100": 3,
       "250": 2.75
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP48.jpg",
     "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1440,7 +1443,7 @@ export const products = [
       "100": 1.9,
       "250": 1.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP56.jpg",
     "description": "Branded stylus pen with a smooth ballpoint for writing and a soft tip for smartphones and tablets. Made from metal with a white finish. A practical promotional giveaway for events, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1502,7 +1505,7 @@ export const products = [
       "100": 1.9,
       "250": 1.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP63.jpg",
     "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1518,7 +1521,7 @@ export const products = [
       "100": 2.5,
       "250": 2
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP64.jpg",
     "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1580,7 +1583,7 @@ export const products = [
       "100": 3,
       "250": 2.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP65.jpg",
     "description": "Branded chrome pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1596,7 +1599,7 @@ export const products = [
       "100": 1.5,
       "250": 1.1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP66.jpg",
     "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1658,7 +1661,7 @@ export const products = [
       "100": 1.5,
       "250": 1.1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP67.jpg",
     "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1674,7 +1677,7 @@ export const products = [
       "100": 1.5,
       "250": 1.1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP68.jpg",
     "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1737,7 +1740,7 @@ export const products = [
       "100": 1.5,
       "250": 1.1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP70.jpg",
     "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1753,7 +1756,7 @@ export const products = [
       "100": 1.5,
       "250": 1.1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP71.jpg",
     "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1816,7 +1819,7 @@ export const products = [
       "100": 1.5,
       "250": 1.1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP72.jpg",
     "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1832,7 +1835,7 @@ export const products = [
       "100": 1.4,
       "250": 1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP78.jpg",
     "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1895,7 +1898,7 @@ export const products = [
       "100": 1.4,
       "250": 1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP79.jpg",
     "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1911,7 +1914,7 @@ export const products = [
       "100": 1.4,
       "250": 1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP80.jpg",
     "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1974,7 +1977,7 @@ export const products = [
       "100": 1.6,
       "250": 1.2
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP81.jpg",
     "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -1990,7 +1993,7 @@ export const products = [
       "100": 1.6,
       "250": 1.2
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP82.jpg",
     "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2053,7 +2056,7 @@ export const products = [
       "100": 1.6,
       "250": 1.2
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP83.jpg",
     "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2069,7 +2072,7 @@ export const products = [
       "100": 2,
       "250": 1.6
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP84.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2131,7 +2134,7 @@ export const products = [
       "100": 2,
       "250": 1.6
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP86.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2147,7 +2150,7 @@ export const products = [
       "100": 2,
       "250": 1.6
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP87.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2208,7 +2211,7 @@ export const products = [
       "100": 1.9,
       "250": 1.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP88.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2224,7 +2227,7 @@ export const products = [
       "100": 2.25,
       "250": 1.9
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP89.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2284,7 +2287,7 @@ export const products = [
       "100": 2.5,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP90.jpg",
     "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2300,7 +2303,7 @@ export const products = [
       "100": 2.5,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP91.jpg",
     "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2360,7 +2363,7 @@ export const products = [
       "100": 2.75,
       "250": 2.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP92.jpg",
     "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2376,7 +2379,7 @@ export const products = [
       "100": 2.5,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP109.jpg",
     "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2437,7 +2440,7 @@ export const products = [
       "100": 2.5,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP110.jpg",
     "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2453,7 +2456,7 @@ export const products = [
       "100": 2.5,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP111.jpg",
     "description": "Branded chrome pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2515,7 +2518,7 @@ export const products = [
       "100": 2.5,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP112.jpg",
     "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2531,7 +2534,7 @@ export const products = [
       "100": 2.5,
       "250": 2.25
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP113.jpg",
     "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2592,7 +2595,7 @@ export const products = [
       "100": 3,
       "250": 2.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP114.jpg",
     "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2608,7 +2611,7 @@ export const products = [
       "100": 1.9,
       "250": 1.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP119.jpg",
     "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP119 to MP126, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2639,7 +2642,7 @@ export const products = [
       "100": 1.9,
       "250": 1.5
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP127.jpg",
     "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP127 to MP132, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2655,7 +2658,7 @@ export const products = [
       "100": 1.4,
       "250": 1
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP133.jpg",
     "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP133 to MP139, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2686,7 +2689,7 @@ export const products = [
       "100": 2,
       "250": 1.6
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/MP140.jpg",
     "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP140 to MP146, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -2695,12 +2698,15 @@ export const products = [
     "sku": "P1",
     "name": "Basic Black Pen",
     "category": "Pen",
-    "price": 0.35,
+    "price": 0.28,
     "pricing": {
       "100": 0.6,
-      "250": 0.35
+      "250": 0.35,
+      "500": 0.35,
+      "750": 0.32,
+      "1000": 0.28
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P1.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -2724,12 +2730,15 @@ export const products = [
     "sku": "P2",
     "name": "Basic Red Pen",
     "category": "Pen",
-    "price": 0.35,
+    "price": 0.28,
     "pricing": {
       "100": 0.6,
-      "250": 0.35
+      "250": 0.35,
+      "500": 0.35,
+      "750": 0.32,
+      "1000": 0.28
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P2.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -2738,12 +2747,15 @@ export const products = [
     "sku": "P3",
     "name": "Basic Blue Pen",
     "category": "Pen",
-    "price": 0.35,
+    "price": 0.28,
     "pricing": {
       "100": 0.6,
-      "250": 0.35
+      "250": 0.35,
+      "500": 0.35,
+      "750": 0.32,
+      "1000": 0.28
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P3.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -2767,12 +2779,15 @@ export const products = [
     "sku": "P8",
     "name": "Gripper Red Pen",
     "category": "Pen",
-    "price": 0.4,
+    "price": 0.31,
     "pricing": {
       "100": 0.6,
-      "250": 0.4
+      "250": 0.4,
+      "500": 0.39,
+      "750": 0.35,
+      "1000": 0.31
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P8.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -2781,12 +2796,15 @@ export const products = [
     "sku": "P9",
     "name": "Gripper Black Pen",
     "category": "Pen",
-    "price": 0.4,
+    "price": 0.31,
     "pricing": {
       "100": 0.6,
-      "250": 0.4
+      "250": 0.4,
+      "500": 0.39,
+      "750": 0.35,
+      "1000": 0.31
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P9.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -2810,12 +2828,15 @@ export const products = [
     "sku": "P10",
     "name": "Gripper Blue Pen",
     "category": "Pen",
-    "price": 0.4,
+    "price": 0.31,
     "pricing": {
       "100": 0.6,
-      "250": 0.4
+      "250": 0.4,
+      "500": 0.39,
+      "750": 0.35,
+      "1000": 0.31
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P10.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -2824,12 +2845,15 @@ export const products = [
     "sku": "P13",
     "name": "Style Red Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.33,
     "pricing": {
       "100": 0.7,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.41,
+      "750": 0.37,
+      "1000": 0.33
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P13.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -2853,13 +2877,16 @@ export const products = [
     "sku": "P21",
     "name": "Twist White Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.34,
     "pricing": {
       "50": 1.1,
       "100": 0.7,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.42,
+      "750": 0.38,
+      "1000": 0.34
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P21.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -2868,13 +2895,16 @@ export const products = [
     "sku": "P27",
     "name": "Space White Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.4,
     "pricing": {
       "50": 1.2,
       "100": 0.8,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.5,
+      "750": 0.45,
+      "1000": 0.4
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P27.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -2899,13 +2929,16 @@ export const products = [
     "sku": "P28",
     "name": "Space Dark Blue Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.4,
     "pricing": {
       "50": 1.2,
       "100": 0.8,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.5,
+      "750": 0.45,
+      "1000": 0.4
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P28.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -2914,13 +2947,16 @@ export const products = [
     "sku": "P29",
     "name": "Matty White Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.39,
     "pricing": {
       "50": 1.1,
       "100": 0.7,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.49,
+      "750": 0.44,
+      "1000": 0.39
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P29.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -2945,13 +2981,16 @@ export const products = [
     "sku": "P30",
     "name": "Matty Black Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.39,
     "pricing": {
       "50": 1.1,
       "100": 0.7,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.49,
+      "750": 0.44,
+      "1000": 0.39
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P30.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -2960,13 +2999,16 @@ export const products = [
     "sku": "P31",
     "name": "Triangle Black Pen",
     "category": "Pen",
-    "price": 0.6,
+    "price": 0.41,
     "pricing": {
       "50": 1.2,
       "100": 0.8,
-      "250": 0.6
+      "250": 0.6,
+      "500": 0.51,
+      "750": 0.46,
+      "1000": 0.41
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P31.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -2990,13 +3032,16 @@ export const products = [
     "sku": "P32",
     "name": "Triangle White Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.39,
     "pricing": {
       "50": 1.1,
       "100": 0.8,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.49,
+      "750": 0.44,
+      "1000": 0.39
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P32.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -3005,13 +3050,16 @@ export const products = [
     "sku": "P33",
     "name": "Curve Blue Pen",
     "category": "Pen",
-    "price": 0.6,
+    "price": 0.44,
     "pricing": {
       "50": 1.2,
       "100": 0.8,
-      "250": 0.6
+      "250": 0.6,
+      "500": 0.55,
+      "750": 0.5,
+      "1000": 0.44
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P33.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -3035,13 +3083,16 @@ export const products = [
     "sku": "P34",
     "name": "Curve Red Pen",
     "category": "Pen",
-    "price": 0.6,
+    "price": 0.44,
     "pricing": {
       "50": 1.2,
       "100": 0.8,
-      "250": 0.6
+      "250": 0.6,
+      "500": 0.55,
+      "750": 0.5,
+      "1000": 0.44
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P34.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -3050,14 +3101,17 @@ export const products = [
     "sku": "P35",
     "name": "Probo White Pen",
     "category": "Pen",
-    "price": 0.6,
+    "price": 0.46,
     "pricing": {
       "25": 2,
       "50": 1.2,
       "100": 0.8,
-      "250": 0.6
+      "250": 0.6,
+      "500": 0.57,
+      "750": 0.51,
+      "1000": 0.46
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P35.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3081,14 +3135,17 @@ export const products = [
     "sku": "P36",
     "name": "Probo Black Pen",
     "category": "Pen",
-    "price": 0.6,
+    "price": 0.46,
     "pricing": {
       "25": 2,
       "50": 1.2,
       "100": 0.8,
-      "250": 0.6
+      "250": 0.6,
+      "500": 0.57,
+      "750": 0.51,
+      "1000": 0.46
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P36.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3097,14 +3154,17 @@ export const products = [
     "sku": "P37",
     "name": "Prada White Pen",
     "category": "Pen",
-    "price": 0.6,
+    "price": 0.46,
     "pricing": {
       "25": 2,
       "50": 1.2,
       "100": 0.8,
-      "250": 0.6
+      "250": 0.6,
+      "500": 0.58,
+      "750": 0.52,
+      "1000": 0.46
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P37.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3128,14 +3188,17 @@ export const products = [
     "sku": "P38",
     "name": "Prada Black Pen",
     "category": "Pen",
-    "price": 0.6,
+    "price": 0.48,
     "pricing": {
       "25": 2,
       "50": 1.2,
       "100": 0.9,
-      "250": 0.6
+      "250": 0.6,
+      "500": 0.6,
+      "750": 0.54,
+      "1000": 0.48
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P38.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3144,14 +3207,17 @@ export const products = [
     "sku": "P41",
     "name": "Tissot White Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.54,
     "pricing": {
       "25": 2.25,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.68,
+      "750": 0.61,
+      "1000": 0.54
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P41.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3175,14 +3241,17 @@ export const products = [
     "sku": "P42",
     "name": "Mercedes Black Pen",
     "category": "Pen",
-    "price": 0.8,
+    "price": 0.65,
     "pricing": {
       "25": 2.25,
       "50": 1.5,
       "100": 1.1,
-      "250": 0.8
+      "250": 0.8,
+      "500": 0.81,
+      "750": 0.73,
+      "1000": 0.65
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P42.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3198,7 +3267,7 @@ export const products = [
       "100": 1.1,
       "250": 0.8
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/P43.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3229,7 +3298,7 @@ export const products = [
       "100": 1.1,
       "250": 0.8
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/P44.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3245,7 +3314,7 @@ export const products = [
       "100": 1.1,
       "250": 0.8
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/P45.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3276,7 +3345,7 @@ export const products = [
       "100": 1,
       "250": 0.7
     },
-    "moq": 25,
+    "moq": 50,
     "image": "/products/P46.jpg",
     "description": "Branded stylus pen with a smooth ballpoint for writing and a soft tip for smartphones and tablets. A slim metal design in black. A practical promotional giveaway for events, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3285,12 +3354,15 @@ export const products = [
     "sku": "P51",
     "name": "Bosch Red Pen",
     "category": "Pen",
-    "price": 0.35,
+    "price": 0.26,
     "pricing": {
       "100": 0.6,
-      "250": 0.35
+      "250": 0.35,
+      "500": 0.32,
+      "750": 0.29,
+      "1000": 0.26
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P51.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -3314,12 +3386,15 @@ export const products = [
     "sku": "P52",
     "name": "Bosch Light Grey Pen",
     "category": "Pen",
-    "price": 0.35,
+    "price": 0.26,
     "pricing": {
       "100": 0.6,
-      "250": 0.35
+      "250": 0.35,
+      "500": 0.32,
+      "750": 0.29,
+      "1000": 0.26
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P52.jpg",
     "description": "Branded grey pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -3328,12 +3403,15 @@ export const products = [
     "sku": "P53",
     "name": "Bosch Sky Blue Pen",
     "category": "Pen",
-    "price": 0.35,
+    "price": 0.26,
     "pricing": {
       "100": 0.6,
-      "250": 0.35
+      "250": 0.35,
+      "500": 0.32,
+      "750": 0.29,
+      "1000": 0.26
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P53.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
@@ -3357,13 +3435,16 @@ export const products = [
     "sku": "P55",
     "name": "Garrex Black Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.37,
     "pricing": {
       "50": 1.1,
       "100": 0.7,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.46,
+      "750": 0.41,
+      "1000": 0.37
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P55.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -3372,13 +3453,16 @@ export const products = [
     "sku": "P56",
     "name": "Texpin Blue Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.37,
     "pricing": {
       "50": 1.1,
       "100": 0.7,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.46,
+      "750": 0.41,
+      "1000": 0.37
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P56.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -3402,13 +3486,16 @@ export const products = [
     "sku": "P57",
     "name": "Texpin Red Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.37,
     "pricing": {
       "50": 1.1,
       "100": 0.7,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.46,
+      "750": 0.41,
+      "1000": 0.37
     },
-    "moq": 50,
+    "moq": 500,
     "image": "/products/P57.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
   },
@@ -3417,14 +3504,17 @@ export const products = [
     "sku": "P58",
     "name": "Cool Black Pen",
     "category": "Pen",
-    "price": 0.8,
+    "price": 0.65,
     "pricing": {
       "25": 2.25,
       "50": 1.5,
       "100": 1.1,
-      "250": 0.8
+      "250": 0.8,
+      "500": 0.81,
+      "750": 0.73,
+      "1000": 0.65
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P58.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3448,14 +3538,17 @@ export const products = [
     "sku": "P59",
     "name": "Cool Red Pen",
     "category": "Pen",
-    "price": 0.8,
+    "price": 0.65,
     "pricing": {
       "25": 2.25,
       "50": 1.5,
       "100": 1.1,
-      "250": 0.8
+      "250": 0.8,
+      "500": 0.81,
+      "750": 0.73,
+      "1000": 0.65
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P59.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3464,14 +3557,17 @@ export const products = [
     "sku": "P60",
     "name": "Cool Blue Pen",
     "category": "Pen",
-    "price": 0.8,
+    "price": 0.65,
     "pricing": {
       "25": 2.25,
       "50": 1.5,
       "100": 1.1,
-      "250": 0.8
+      "250": 0.8,
+      "500": 0.81,
+      "750": 0.73,
+      "1000": 0.65
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P60.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3480,14 +3576,17 @@ export const products = [
     "sku": "P61",
     "name": "Soft Black Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.59,
     "pricing": {
       "25": 2,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.74,
+      "750": 0.67,
+      "1000": 0.59
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P61.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3496,14 +3595,17 @@ export const products = [
     "sku": "P62",
     "name": "Soft Grey Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.59,
     "pricing": {
       "25": 2,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.74,
+      "750": 0.67,
+      "1000": 0.59
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P62.jpg",
     "description": "Branded grey pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3512,14 +3614,17 @@ export const products = [
     "sku": "P63",
     "name": "Red Square Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.54,
     "pricing": {
       "25": 2,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.68,
+      "750": 0.61,
+      "1000": 0.54
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P63.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3528,14 +3633,17 @@ export const products = [
     "sku": "P64",
     "name": "White Square Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.54,
     "pricing": {
       "25": 2,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.68,
+      "750": 0.61,
+      "1000": 0.54
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P64.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3544,14 +3652,17 @@ export const products = [
     "sku": "P65",
     "name": "Blue Square Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.54,
     "pricing": {
       "25": 2,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.68,
+      "750": 0.61,
+      "1000": 0.54
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P65.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3560,14 +3671,17 @@ export const products = [
     "sku": "P66",
     "name": "Black Square Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.54,
     "pricing": {
       "25": 2,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.68,
+      "750": 0.61,
+      "1000": 0.54
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P66.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3576,14 +3690,17 @@ export const products = [
     "sku": "P67",
     "name": "Black Glow Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.59,
     "pricing": {
       "25": 2,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.74,
+      "750": 0.67,
+      "1000": 0.59
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P67.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3592,14 +3709,17 @@ export const products = [
     "sku": "P68",
     "name": "Red Glow Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.59,
     "pricing": {
       "25": 2,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.74,
+      "750": 0.67,
+      "1000": 0.59
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P68.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3608,14 +3728,17 @@ export const products = [
     "sku": "P69",
     "name": "Blue Glow Pen",
     "category": "Pen",
-    "price": 0.7,
+    "price": 0.59,
     "pricing": {
       "25": 2,
       "50": 1.4,
       "100": 1,
-      "250": 0.7
+      "250": 0.7,
+      "500": 0.74,
+      "750": 0.67,
+      "1000": 0.59
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P69.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3624,14 +3747,17 @@ export const products = [
     "sku": "P70",
     "name": "Obsidian Black Pen",
     "category": "Pen",
-    "price": 0.9,
+    "price": 0.69,
     "pricing": {
       "25": 2.25,
       "50": 1.6,
       "100": 1.1,
-      "250": 0.9
+      "250": 0.9,
+      "500": 0.86,
+      "750": 0.77,
+      "1000": 0.69
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P70.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3640,14 +3766,17 @@ export const products = [
     "sku": "P71",
     "name": "Obsidian Blue Pen",
     "category": "Pen",
-    "price": 0.9,
+    "price": 0.69,
     "pricing": {
       "25": 2.25,
       "50": 1.6,
       "100": 1.1,
-      "250": 0.9
+      "250": 0.9,
+      "500": 0.86,
+      "750": 0.77,
+      "1000": 0.69
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P71.jpg",
     "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3656,14 +3785,17 @@ export const products = [
     "sku": "P72",
     "name": "Navigator White Pen (P72)",
     "category": "Pen",
-    "price": 0.8,
+    "price": 0.65,
     "pricing": {
       "25": 2.25,
       "50": 1.5,
       "100": 1.1,
-      "250": 0.8
+      "250": 0.8,
+      "500": 0.81,
+      "750": 0.73,
+      "1000": 0.65
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P72.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3672,14 +3804,17 @@ export const products = [
     "sku": "P73",
     "name": "Navigator Red Pen",
     "category": "Pen",
-    "price": 0.8,
+    "price": 0.65,
     "pricing": {
       "25": 2.25,
       "50": 1.5,
       "100": 1.1,
-      "250": 0.8
+      "250": 0.8,
+      "500": 0.81,
+      "750": 0.73,
+      "1000": 0.65
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P73.jpg",
     "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3688,14 +3823,17 @@ export const products = [
     "sku": "P74",
     "name": "Navigator White Pen (P74)",
     "category": "Pen",
-    "price": 0.8,
+    "price": 0.65,
     "pricing": {
       "25": 2.25,
       "50": 1.5,
       "100": 1.1,
-      "250": 0.8
+      "250": 0.8,
+      "500": 0.81,
+      "750": 0.73,
+      "1000": 0.65
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P74.jpg",
     "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3704,14 +3842,17 @@ export const products = [
     "sku": "P75",
     "name": "Navigator Black Gold Pen",
     "category": "Pen",
-    "price": 0.9,
+    "price": 0.67,
     "pricing": {
       "25": 2.25,
       "50": 1.5,
       "100": 1.1,
-      "250": 0.9
+      "250": 0.9,
+      "500": 0.84,
+      "750": 0.76,
+      "1000": 0.67
     },
-    "moq": 25,
+    "moq": 500,
     "image": "/products/P75.jpg",
     "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 25 units."
   },
@@ -3720,12 +3861,15 @@ export const products = [
     "sku": "P78",
     "name": "Galaxy Mix Color (5 different Colours) Pen",
     "category": "Pen",
-    "price": 0.5,
+    "price": 0.33,
     "pricing": {
       "100": 0.7,
-      "250": 0.5
+      "250": 0.5,
+      "500": 0.41,
+      "750": 0.37,
+      "1000": 0.33
     },
-    "moq": 100,
+    "moq": 500,
     "image": "/products/P78.jpg",
     "description": "Branded pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 100 units."
   },
