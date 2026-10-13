@@ -1867,7 +1867,7 @@ export const products = [
       "50": 7
     },
     "moq": 10,
-    "image": "/products/Sr 217.jpg",
+    "image": "/products/Sr 218.jpg",
     "description": "Blue corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 10 units."
   },
   {

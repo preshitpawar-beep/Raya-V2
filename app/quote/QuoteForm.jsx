@@ -19,8 +19,11 @@ export default function QuoteForm() {
     const savedItem = localStorage.getItem("quoteItem");
     if (savedItem) {
       try {
-        const { product, quantity } = JSON.parse(savedItem);
-        setMessage(`Product: ${product}\nQuantity: ${quantity}\n\nAdditional requirements:`);
+        const { id, product, quantity } = JSON.parse(savedItem);
+        const lines = [`Product: ${product}`];
+        if (id) lines.push(`Product code: ${id}`);
+        lines.push(`Quantity: ${quantity}`, "", "Additional requirements:");
+        setMessage(lines.join("\n"));
       } catch (e) {}
       localStorage.removeItem("quoteItem");
     }
