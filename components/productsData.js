@@ -13,7 +13,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 01.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A natural jute bag with a rustic, eco-friendly look that feels good to carry. A dependable choice for events, trade shows and corporate giveaways. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "Sr 111",
@@ -28,7 +28,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 111.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 gift set that brings together pen and keyring in one presentation box. A practical giveaway for corporate gifting, events and everyday branding for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
   },
   {
     "id": "D138",
@@ -43,7 +43,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D138.jpg",
-    "description": "Branded black notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo, with an elastic closure to keep it shut. A dependable choice for marketing campaigns, events and client thank-yous for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "KC01",
@@ -59,7 +59,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC01.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A weighty metal keyring that makes an inexpensive gift feel a cut above. Ideal for staff gifts, events and brand awareness for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "P77",
@@ -78,7 +78,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P77.jpg",
-    "description": "Branded pen printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A greener pen made from natural, sustainable materials, with a tactile everyday feel. A smart pick for staff gifts, events and brand awareness for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 500 units."
   },
   {
     "id": "B3",
@@ -109,7 +109,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 02.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A natural jute bag with a rustic, eco-friendly look that feels good to carry. A smart pick for marketing campaigns, events and client thank-yous for UK businesses. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "Sr 112",
@@ -124,7 +124,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 112.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 gift set that brings together pen and keyring in one presentation box. Ideal for staff gifts, events and brand awareness for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
   },
   {
     "id": "D139",
@@ -139,7 +139,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D139.jpg",
-    "description": "Branded red notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo, with an elastic closure to keep it shut. A practical giveaway for exhibitions, office use and promotional giveaways. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "KC02",
@@ -155,7 +155,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC02.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A weighty metal keyring that makes an inexpensive gift feel a cut above. A smart pick for conferences, client gifts and staff welcome packs for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "MP01",
@@ -171,7 +171,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP01.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. A smart pick for events, trade shows and corporate giveaways. We include one branding method and a free digital proof, with no hidden setup costs. Minimum order 100 units."
   },
   {
     "id": "MP02",
@@ -187,7 +187,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP02.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. A dependable choice for trade shows, onboarding packs and customer giveaways. One branding method, a free digital proof and no setup fees are all included. Minimum order 100 units."
   },
   {
     "id": "JB 03",
@@ -203,7 +203,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 03.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A natural jute bag with a rustic, eco-friendly look that feels good to carry. A practical giveaway for events, trade shows and corporate giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
   },
   {
     "id": "Sr 238",
@@ -218,7 +218,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 238.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing pen and keyring, boxed and ready to hand over. Ideal for conferences, client gifts and staff welcome packs for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "D140",
@@ -233,7 +233,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D140.jpg",
-    "description": "Branded blue notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart A5 notebook that makes a useful, keep-it-on-the-desk giveaway, with an elastic closure to keep it shut. A smart pick for corporate gifting, events and everyday branding. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "KC03",
@@ -249,7 +249,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC03.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A solid metal keyring, engraved or printed, that keeps your brand on show every day. Well suited to events, trade shows and corporate giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
   },
   {
     "id": "MP03",
@@ -265,7 +265,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP03.jpg",
-    "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. Ideal for trade shows, onboarding packs and customer giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Orders start at 100 units."
   },
   {
     "id": "MP05",
@@ -281,7 +281,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP05.jpg",
-    "description": "Branded chrome pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. Well suited to staff gifts, events and brand awareness for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 100 units."
   },
   {
     "id": "JB 04",
@@ -296,7 +296,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 04.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A natural jute bag with a rustic, eco-friendly look that feels good to carry. A dependable choice for trade shows, onboarding packs and customer giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "Sr 239",
@@ -311,7 +311,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 239.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 gift set that brings together pen and keyring in one presentation box. A dependable choice for trade shows, onboarding packs and customer giveaways. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
   },
   {
     "id": "D141",
@@ -326,7 +326,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D141.jpg",
-    "description": "Branded white notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart A5 notebook that makes a useful, keep-it-on-the-desk giveaway, with an elastic closure to keep it shut. A dependable choice for trade shows, onboarding packs and customer giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "KC04",
@@ -342,7 +342,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC04.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A durable grey metal keyring built to take daily use and still look sharp. Popular for corporate gifting, events and everyday branding. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "MP06",
@@ -358,7 +358,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP06.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. Ideal for conferences, client gifts and staff welcome packs. One branding method, a free digital proof and no setup fees are all included. Orders start at 100 units."
   },
   {
     "id": "MP08",
@@ -374,7 +374,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP08.jpg",
-    "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined gold metal pen that looks and writes the part for client-facing gifts. A dependable choice for events, trade shows and corporate giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Minimum order 100 units."
   },
   {
     "id": "JB 05",
@@ -389,7 +389,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 05.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical jute bag that puts your brand in people's hands long after the event. A smart pick for marketing campaigns, events and client thank-yous for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "Sr 240",
@@ -404,7 +404,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 240.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing pen and keyring, boxed and ready to hand over. A smart pick for events, trade shows and corporate giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
   },
   {
     "id": "D145",
@@ -419,7 +419,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D145.jpg",
-    "description": "Branded black notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo. Ideal for staff gifts, events and brand awareness. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
   },
   {
     "id": "KC06",
@@ -435,7 +435,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC06.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A leather keyring with a classic, understated finish. A practical giveaway for corporate gifting, events and everyday branding for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "MP09",
@@ -451,7 +451,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP09.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. Well suited to corporate gifting, events and everyday branding. One branding method, a free digital proof and no setup fees are all included. Orders start at 100 units."
   },
   {
     "id": "MP10",
@@ -466,7 +466,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP10.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. A smart pick for corporate gifting, events and everyday branding for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 100 units."
   },
   {
     "id": "JB 06",
@@ -481,7 +481,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 06.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A natural jute bag with a rustic, eco-friendly look that feels good to carry. Well suited to events, trade shows and corporate giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
   },
   {
     "id": "Sr 241",
@@ -496,7 +496,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 241.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining pen and keyring, presented in a gift box. A practical giveaway for events, trade shows and corporate giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "D146",
@@ -511,7 +511,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D146.jpg",
-    "description": "Branded brown notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo. Ideal for staff gifts, events and brand awareness. We include one branding method and a free digital proof, with no hidden setup costs. Available from just 50 units."
   },
   {
     "id": "KC07",
@@ -527,7 +527,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC07.jpg",
-    "description": "Branded black keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A durable black metal keyring built to take daily use and still look sharp. A smart pick for marketing campaigns, events and client thank-yous. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "MP12",
@@ -543,7 +543,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP12.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. Ideal for marketing campaigns, events and client thank-yous. Branding, a free digital proof and setup are all included in the price. Minimum order 100 units."
   },
   {
     "id": "MP13",
@@ -559,7 +559,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP13.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. A smart pick for corporate gifting, events and everyday branding for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 100 units."
   },
   {
     "id": "JB 07",
@@ -574,7 +574,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 07.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A natural jute bag with a rustic, eco-friendly look that feels good to carry. A smart pick for marketing campaigns, events and client thank-yous. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "Sr 254",
@@ -589,7 +589,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 254.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. An eco-friendly option made from sustainable materials. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining pen and keyring, presented in a gift box. A dependable choice for exhibitions, office use and promotional giveaways for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
   },
   {
     "id": "D159",
@@ -604,7 +604,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D159.jpg",
-    "description": "Branded black notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical A5 notebook for meetings, events and onboarding packs. A dependable choice for conferences, client gifts and staff welcome packs. We include one branding method and a free digital proof, with no hidden setup costs. Order from 50 units."
   },
   {
     "id": "KC08",
@@ -620,7 +620,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC08.jpg",
-    "description": "Branded brown keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A brown leather keyring with a classic, understated finish. A dependable choice for corporate gifting, events and everyday branding. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "MP14",
@@ -636,7 +636,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP14.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. Ideal for exhibitions, office use and promotional giveaways for UK businesses. One branding method, a free digital proof and no setup fees are all included. Available from 100 units upwards."
   },
   {
     "id": "MP15",
@@ -652,7 +652,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP15.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. Popular for conferences, client gifts and staff welcome packs for UK businesses. Branding, a free digital proof and setup are all included in the price. Orders start at 100 units."
   },
   {
     "id": "JB 08",
@@ -668,7 +668,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 08.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A natural jute bag with a rustic, eco-friendly look that feels good to carry. Popular for conferences, client gifts and staff welcome packs. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "Sr 242",
@@ -683,7 +683,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 242.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing pen and card holder, boxed and ready to hand over. Well suited to corporate gifting, events and everyday branding for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
   },
   {
     "id": "D160",
@@ -698,7 +698,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D160.jpg",
-    "description": "Branded brown notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo. A dependable choice for conferences, client gifts and staff welcome packs for UK businesses. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "KC09",
@@ -714,7 +714,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC09.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart leather keyring that feels good in the hand and wears in nicely. Popular for marketing campaigns, events and client thank-yous for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Order from 50 units."
   },
   {
     "id": "MP16",
@@ -730,7 +730,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP16.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. Well suited to staff gifts, events and brand awareness for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 100 units."
   },
   {
     "id": "MP17",
@@ -746,7 +746,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP17.jpg",
-    "description": "Branded chrome pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. A smart pick for corporate gifting, events and everyday branding for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 100 units."
   },
   {
     "id": "JB 09",
@@ -760,7 +760,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 09.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical white jute bag that puts your brand in people's hands long after the event. Popular for staff gifts, events and brand awareness for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "Sr 247",
@@ -775,7 +775,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 247.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing pen and card holder, boxed and ready to hand over. A smart pick for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
   },
   {
     "id": "D161",
@@ -790,7 +790,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D161.jpg",
-    "description": "Branded brown notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical A5 notebook for meetings, events and onboarding packs. A practical giveaway for corporate gifting, events and everyday branding for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "KC10",
@@ -806,7 +806,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC10.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart leather keyring that feels good in the hand and wears in nicely. A smart pick for trade shows, onboarding packs and customer giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "MP18",
@@ -822,7 +822,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP18.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. Popular for marketing campaigns, events and client thank-yous for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from 100 units upwards."
   },
   {
     "id": "MP19",
@@ -838,7 +838,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP19.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty metal pen that gives your logo a higher-end backdrop. Popular for marketing campaigns, events and client thank-yous for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Orders start at 100 units."
   },
   {
     "id": "JB 10",
@@ -852,7 +852,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JB 10.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical black jute bag that puts your brand in people's hands long after the event. A smart pick for conferences, client gifts and staff welcome packs for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units."
   },
   {
     "id": "Sr 248",
@@ -867,7 +867,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 248.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 gift set that brings together pen and card holder in one presentation box. A dependable choice for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
   },
   {
     "id": "D162",
@@ -882,7 +882,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D162.jpg",
-    "description": "Branded black notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart A5 notebook that makes a useful, keep-it-on-the-desk giveaway. Ideal for events, trade shows and corporate giveaways. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "KC11",
@@ -898,7 +898,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC11.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A weighty metal keyring that makes an inexpensive gift feel a cut above. Well suited to events, trade shows and corporate giveaways. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "MP21",
@@ -914,7 +914,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP21.jpg",
-    "description": "Branded white pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined white metal pen that looks and writes the part for client-facing gifts. Well suited to staff gifts, events and brand awareness for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 100 units."
   },
   {
     "id": "MP22",
@@ -930,7 +930,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP22.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty metal pen that gives your logo a higher-end backdrop. Popular for staff gifts, events and brand awareness for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Available from 100 units upwards."
   },
   {
     "id": "CT 01",
@@ -946,7 +946,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/CT 01.jpg",
-    "description": "Branded white bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical white cotton bag that puts your brand in people's hands long after the event. A dependable choice for marketing campaigns, events and client thank-yous for UK businesses. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "Sr 138",
@@ -961,7 +961,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 138.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Ideal for exhibitions, office use and promotional giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "D163",
@@ -976,7 +976,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D163.jpg",
-    "description": "Branded blue notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical A5 notebook for meetings, events and onboarding packs. A practical giveaway for exhibitions, office use and promotional giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Available from just 50 units."
   },
   {
     "id": "KC12",
@@ -992,7 +992,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC12.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A durable metal keyring built to take daily use and still look sharp. Popular for conferences, client gifts and staff welcome packs. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "MP27",
@@ -1008,7 +1008,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP27.jpg",
-    "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty blue metal pen that gives your logo a higher-end backdrop. Ideal for conferences, client gifts and staff welcome packs for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 100 units."
   },
   {
     "id": "MP28",
@@ -1024,7 +1024,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP28.jpg",
-    "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined red metal pen that looks and writes the part for client-facing gifts. Popular for conferences, client gifts and staff welcome packs for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 100 units."
   },
   {
     "id": "CT 02",
@@ -1039,7 +1039,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/CT 02.jpg",
-    "description": "Branded black bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical black cotton bag that puts your brand in people's hands long after the event. A smart pick for corporate gifting, events and everyday branding for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Order from 50 units."
   },
   {
     "id": "Sr 139",
@@ -1054,7 +1054,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 139.jpg",
-    "description": "Red corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Ideal for corporate gifting, events and everyday branding for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "D168",
@@ -1069,7 +1069,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D168.jpg",
-    "description": "Branded blue notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart A5 notebook that makes a useful, keep-it-on-the-desk giveaway. Popular for marketing campaigns, events and client thank-yous for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Order from 50 units."
   },
   {
     "id": "KC13",
@@ -1085,7 +1085,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/KC13.jpg",
-    "description": "Branded keyring printed with your company logo. Made from metal. A popular promotional keyring for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart leather keyring that feels good in the hand and wears in nicely. A smart pick for conferences, client gifts and staff welcome packs for UK businesses. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
   },
   {
     "id": "MP29",
@@ -1101,7 +1101,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP29.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. A smart pick for staff gifts, events and brand awareness for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Minimum order 100 units."
   },
   {
     "id": "MP32",
@@ -1117,7 +1117,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP32.jpg",
-    "description": "Branded green pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined green metal pen that looks and writes the part for client-facing gifts. Well suited to marketing campaigns, events and client thank-yous for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from 100 units upwards."
   },
   {
     "id": "CT 03",
@@ -1132,7 +1132,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/CT 03.jpg",
-    "description": "Branded white bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical white cotton bag that puts your brand in people's hands long after the event. A dependable choice for events, trade shows and corporate giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "Sr 140",
@@ -1147,7 +1147,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 140.jpg",
-    "description": "Blue corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Popular for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "D169",
@@ -1162,7 +1162,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D169.jpg",
-    "description": "Branded black notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo. Popular for exhibitions, office use and promotional giveaways for UK businesses. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
   },
   {
     "id": "MP41",
@@ -1178,7 +1178,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP41.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty metal pen that gives your logo a higher-end backdrop. Ideal for exhibitions, office use and promotional giveaways. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from 100 units upwards."
   },
   {
     "id": "MP42",
@@ -1194,7 +1194,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP42.jpg",
-    "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. Ideal for events, trade shows and corporate giveaways. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 100 units."
   },
   {
     "id": "CT 04",
@@ -1209,7 +1209,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/CT 04.jpg",
-    "description": "Branded black bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A reusable black cotton bag that is sturdy enough for everyday use and the shops. Popular for staff gifts, events and brand awareness for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "Sr 141",
@@ -1224,7 +1224,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 141.jpg",
-    "description": "White corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A white 2-in-1 gift set that brings together an A5 diary and pen in one presentation box. Ideal for marketing campaigns, events and client thank-yous for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "D176",
@@ -1239,7 +1239,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D176.jpg",
-    "description": "Branded black notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart A5 notebook that makes a useful, keep-it-on-the-desk giveaway. Popular for conferences, client gifts and staff welcome packs for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "MP43",
@@ -1255,7 +1255,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP43.jpg",
-    "description": "Branded white pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined white metal pen that looks and writes the part for client-facing gifts. A practical giveaway for marketing campaigns, events and client thank-yous for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 100 units."
   },
   {
     "id": "MP44",
@@ -1271,7 +1271,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP44.jpg",
-    "description": "Branded gunmetal pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. A smart pick for events, trade shows and corporate giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from 100 units upwards."
   },
   {
     "id": "CT 05",
@@ -1287,7 +1287,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/CT 05.jpg",
-    "description": "Branded white bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A reusable white cotton bag that is sturdy enough for everyday use and the shops. Popular for trade shows, onboarding packs and customer giveaways for UK businesses. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "Sr 267",
@@ -1302,7 +1302,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 267.jpg",
-    "description": "White corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart white gift set combining an A5 diary and pen, presented in a gift box. A dependable choice for exhibitions, office use and promotional giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
   },
   {
     "id": "D177",
@@ -1317,7 +1317,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D177.jpg",
-    "description": "Branded tan notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart A5 notebook that makes a useful, keep-it-on-the-desk giveaway. Ideal for corporate gifting, events and everyday branding. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "MP45",
@@ -1333,7 +1333,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP45.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. A dependable choice for staff gifts, events and brand awareness for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 100 units."
   },
   {
     "id": "MP47",
@@ -1349,7 +1349,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP47.jpg",
-    "description": "Branded stylus pen with a smooth ballpoint for writing and a soft tip for smartphones and tablets. Made from metal with a matte black finish. A practical promotional giveaway for events, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A black stylus pen that works on paper and on screens, handy for people always on the move. Well suited to events, trade shows and corporate giveaways. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 100 units."
   },
   {
     "id": "CT 06",
@@ -1364,7 +1364,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/CT 06.jpg",
-    "description": "Branded white bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A reusable white cotton bag that is sturdy enough for everyday use and the shops. Ideal for exhibitions, office use and promotional giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "Sr 268",
@@ -1379,7 +1379,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 268.jpg",
-    "description": "Red corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart red gift set combining an A5 diary and pen, presented in a gift box. Ideal for corporate gifting, events and everyday branding for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "D181",
@@ -1394,7 +1394,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D181.jpg",
-    "description": "Branded blue notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart A5 notebook that makes a useful, keep-it-on-the-desk giveaway. Ideal for conferences, client gifts and staff welcome packs for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
   },
   {
     "id": "MP48",
@@ -1410,7 +1410,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP48.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty black metal pen that gives your logo a higher-end backdrop. Ideal for staff gifts, events and brand awareness for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Orders start at 100 units."
   },
   {
     "id": "MP56",
@@ -1426,7 +1426,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP56.jpg",
-    "description": "Branded stylus pen with a smooth ballpoint for writing and a soft tip for smartphones and tablets. Made from metal with a white finish. A practical promotional giveaway for events, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A dual-purpose stylus pen, with a ballpoint for writing and a soft tip for touchscreens. Popular for marketing campaigns, events and client thank-yous. One branding method, a free digital proof and no setup fees are all included. Available from 100 units upwards."
   },
   {
     "id": "CT 07",
@@ -1441,7 +1441,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/CT 07.jpg",
-    "description": "Branded black bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical black cotton bag that puts your brand in people's hands long after the event. Well suited to exhibitions, office use and promotional giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
   },
   {
     "id": "Sr 269",
@@ -1456,7 +1456,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 269.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. An eco-friendly option made from sustainable materials. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Ideal for marketing campaigns, events and client thank-yous for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
   },
   {
     "id": "D184",
@@ -1471,7 +1471,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D184.jpg",
-    "description": "Branded notebook printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A sustainable A5 notebook that keeps things green without giving up a clean, brandable cover. Well suited to corporate gifting, events and everyday branding. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "MP63",
@@ -1487,7 +1487,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP63.jpg",
-    "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty gold metal pen that gives your logo a higher-end backdrop. Ideal for trade shows, onboarding packs and customer giveaways. Branding, a free digital proof and setup are all included in the price. Available from 100 units upwards."
   },
   {
     "id": "MP64",
@@ -1503,7 +1503,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP64.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. Popular for exhibitions, office use and promotional giveaways. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from 100 units upwards."
   },
   {
     "id": "HBDB 01",
@@ -1519,7 +1519,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/HBDB 01.jpg",
-    "description": "Branded black bag printed with your company logo. Made from jute/cotton. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical black nylon bag that puts your brand in people's hands long after the event. Popular for conferences, client gifts and staff welcome packs for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "Sr 270",
@@ -1534,7 +1534,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 270.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. An eco-friendly option made from sustainable materials. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "D185",
@@ -1549,7 +1549,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D185.jpg",
-    "description": "Branded notebook printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A sustainable A5 notebook that keeps things green without giving up a clean, brandable cover. A smart pick for exhibitions, office use and promotional giveaways. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
   },
   {
     "id": "MP65",
@@ -1565,7 +1565,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP65.jpg",
-    "description": "Branded chrome pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. A dependable choice for trade shows, onboarding packs and customer giveaways. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from 100 units upwards."
   },
   {
     "id": "MP66",
@@ -1581,7 +1581,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP66.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. A smart pick for corporate gifting, events and everyday branding. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 100 units."
   },
   {
     "id": "HBDB 02",
@@ -1597,7 +1597,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/HBDB 02.jpg",
-    "description": "Branded white bag printed with your company logo. Made from jute/cotton. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical white nylon bag that puts your brand in people's hands long after the event. Ideal for events, trade shows and corporate giveaways. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units."
   },
   {
     "id": "Sr 145",
@@ -1612,7 +1612,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 145.jpg",
-    "description": "Black corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart black gift set combining an A5 diary and pen, presented in a gift box. A smart pick for corporate gifting, events and everyday branding for UK businesses. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "D191",
@@ -1627,7 +1627,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D191.jpg",
-    "description": "Branded notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo. A practical giveaway for conferences, client gifts and staff welcome packs for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "MP67",
@@ -1643,7 +1643,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP67.jpg",
-    "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined red metal pen that looks and writes the part for client-facing gifts. Well suited to trade shows, onboarding packs and customer giveaways for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 100 units."
   },
   {
     "id": "MP68",
@@ -1659,7 +1659,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP68.jpg",
-    "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined blue metal pen that looks and writes the part for client-facing gifts. Ideal for conferences, client gifts and staff welcome packs for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 100 units."
   },
   {
     "id": "HBDB 03",
@@ -1675,7 +1675,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/HBDB 03.jpg",
-    "description": "Branded blue bag printed with your company logo. Made from jute/cotton. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical blue nylon bag that puts your brand in people's hands long after the event. A practical giveaway for exhibitions, office use and promotional giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
   },
   {
     "id": "Sr 146",
@@ -1690,7 +1690,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 146.jpg",
-    "description": "Brown corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for staff gifts, events and brand awareness for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "D192",
@@ -1705,7 +1705,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D192.jpg",
-    "description": "Branded brown notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo. Popular for marketing campaigns, events and client thank-yous for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "MP70",
@@ -1721,7 +1721,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP70.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined black metal pen that looks and writes the part for client-facing gifts. Well suited to events, trade shows and corporate giveaways. Branding, a free digital proof and setup are all included in the price. Available from 100 units upwards."
   },
   {
     "id": "MP71",
@@ -1737,7 +1737,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP71.jpg",
-    "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty red metal pen that gives your logo a higher-end backdrop. Popular for staff gifts, events and brand awareness. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 100 units."
   },
   {
     "id": "HBDB 04",
@@ -1753,7 +1753,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/HBDB 04.jpg",
-    "description": "Branded red bag printed with your company logo. Made from jute/cotton. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A light, foldable red nylon bag that packs down small and holds plenty. Popular for staff gifts, events and brand awareness for UK businesses. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "Sr 217",
@@ -1768,7 +1768,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 217.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Popular for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "D194",
@@ -1783,7 +1783,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D194.jpg",
-    "description": "Branded blue notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical A5 notebook for meetings, events and onboarding packs. A practical giveaway for staff gifts, events and brand awareness for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Order from 50 units."
   },
   {
     "id": "MP72",
@@ -1799,7 +1799,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP72.jpg",
-    "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. Popular for corporate gifting, events and everyday branding. Branding, a free digital proof and setup are all included in the price. Minimum order 100 units."
   },
   {
     "id": "MP78",
@@ -1815,7 +1815,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP78.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A black metal pen with a satisfying weight and a premium, executive feel. A practical giveaway for staff gifts, events and brand awareness for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from 100 units upwards."
   },
   {
     "id": "JCZB 01",
@@ -1831,7 +1831,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JCZB 01.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A natural jute bag with a rustic, eco-friendly look that feels good to carry. A practical giveaway for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "Sr 218",
@@ -1846,7 +1846,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 218.jpg",
-    "description": "Blue corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A practical giveaway for events, trade shows and corporate giveaways. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "D195",
@@ -1861,7 +1861,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D195.jpg",
-    "description": "Branded grey notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical A5 notebook for meetings, events and onboarding packs. A dependable choice for trade shows, onboarding packs and customer giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "MP79",
@@ -1877,7 +1877,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP79.jpg",
-    "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A red metal pen with a satisfying weight and a premium, executive feel. Well suited to corporate gifting, events and everyday branding for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 100 units."
   },
   {
     "id": "MP80",
@@ -1893,7 +1893,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP80.jpg",
-    "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty blue metal pen that gives your logo a higher-end backdrop. Well suited to conferences, client gifts and staff welcome packs. Branding, a free digital proof and setup are all included in the price. Available from 100 units upwards."
   },
   {
     "id": "JCZB 02",
@@ -1909,7 +1909,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/JCZB 02.jpg",
-    "description": "Branded bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A natural jute bag with a rustic, eco-friendly look that feels good to carry. A smart pick for events, trade shows and corporate giveaways for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "Sr 219",
@@ -1924,7 +1924,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 219.jpg",
-    "description": "Tan corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 gift set that brings together an A5 diary and pen in one presentation box. Ideal for conferences, client gifts and staff welcome packs for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
   },
   {
     "id": "D198",
@@ -1939,7 +1939,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D198.jpg",
-    "description": "Branded black notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical A5 notebook for meetings, events and onboarding packs. Ideal for staff gifts, events and brand awareness for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Order from 50 units."
   },
   {
     "id": "MP81",
@@ -1955,7 +1955,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP81.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A black metal pen with a satisfying weight and a premium, executive feel. Well suited to corporate gifting, events and everyday branding for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Minimum order 100 units."
   },
   {
     "id": "MP82",
@@ -1971,7 +1971,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP82.jpg",
-    "description": "Branded red pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. A smart pick for trade shows, onboarding packs and customer giveaways for UK businesses. One branding method, a free digital proof and no setup fees are all included. Orders start at 100 units."
   },
   {
     "id": "DSB 01",
@@ -1987,7 +1987,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/DSB 01.jpg",
-    "description": "Branded white bag printed with your company logo. Made from jute/cotton. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical white bag that puts your brand in people's hands long after the event. Ideal for staff gifts, events and brand awareness. We include one branding method and a free digital proof, with no hidden setup costs. Order from 50 units."
   },
   {
     "id": "Sr 273",
@@ -2002,7 +2002,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 273.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Well suited to trade shows, onboarding packs and customer giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "D199",
@@ -2017,7 +2017,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D199.jpg",
-    "description": "Branded white notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo. A dependable choice for events, trade shows and corporate giveaways for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Order from 50 units."
   },
   {
     "id": "MP83",
@@ -2033,7 +2033,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP83.jpg",
-    "description": "Branded blue pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty blue metal pen that gives your logo a higher-end backdrop. A practical giveaway for corporate gifting, events and everyday branding. One branding method, a free digital proof and no setup fees are all included. Minimum order 100 units."
   },
   {
     "id": "MP84",
@@ -2049,7 +2049,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP84.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. A practical giveaway for exhibitions, office use and promotional giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 100 units."
   },
   {
     "id": "DSB 02",
@@ -2064,7 +2064,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/DSB 02.jpg",
-    "description": "Branded black bag printed with your company logo. Made from jute/cotton. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A roomy black bag with a flat surface that shows your logo off well. Well suited to exhibitions, office use and promotional giveaways for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
   },
   {
     "id": "Sr 284",
@@ -2079,7 +2079,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 284.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Well suited to corporate gifting, events and everyday branding for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "D200",
@@ -2094,7 +2094,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D200.jpg",
-    "description": "Branded notebook printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "An eco-friendly A5 notebook made from more sustainable materials, with room on the cover for your logo. A smart pick for conferences, client gifts and staff welcome packs for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "MP86",
@@ -2110,7 +2110,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP86.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. A practical giveaway for corporate gifting, events and everyday branding. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Minimum order 100 units."
   },
   {
     "id": "MP87",
@@ -2126,7 +2126,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP87.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. Ideal for staff gifts, events and brand awareness. Branding, a free digital proof and setup are all included in the price. Minimum order 100 units."
   },
   {
     "id": "PAP Small 06",
@@ -2141,7 +2141,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/PAP Small 06.jpg",
-    "description": "Branded black bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart black paper bag that gives gifts and purchases a tidy, branded finish. A dependable choice for exhibitions, office use and promotional giveaways for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
   },
   {
     "id": "Sr 285",
@@ -2156,7 +2156,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 285.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for events, trade shows and corporate giveaways. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "D201",
@@ -2171,7 +2171,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D201.jpg",
-    "description": "Branded blue notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical A5 notebook for meetings, events and onboarding packs. Well suited to events, trade shows and corporate giveaways for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Available from just 50 units."
   },
   {
     "id": "MP88",
@@ -2187,7 +2187,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP88.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. A smart pick for conferences, client gifts and staff welcome packs for UK businesses. Branding, a free digital proof and setup are all included in the price. Minimum order 100 units."
   },
   {
     "id": "MP89",
@@ -2203,7 +2203,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP89.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. A dependable choice for events, trade shows and corporate giveaways for UK businesses. One branding method, a free digital proof and no setup fees are all included. Available from 100 units upwards."
   },
   {
     "id": "PAP Medium 07",
@@ -2218,7 +2218,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/PAP Medium 07.jpg",
-    "description": "Branded black bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart black paper bag that gives gifts and purchases a tidy, branded finish. Ideal for trade shows, onboarding packs and customer giveaways. We include one branding method and a free digital proof, with no hidden setup costs. Order from 50 units."
   },
   {
     "id": "Sr 274",
@@ -2233,7 +2233,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 274.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Well suited to exhibitions, office use and promotional giveaways. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "D202",
@@ -2248,7 +2248,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D202.jpg",
-    "description": "Branded brown notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart A5 notebook that makes a useful, keep-it-on-the-desk giveaway. Ideal for exhibitions, office use and promotional giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "MP90",
@@ -2264,7 +2264,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP90.jpg",
-    "description": "Branded pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. Popular for trade shows, onboarding packs and customer giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Minimum order 100 units."
   },
   {
     "id": "MP91",
@@ -2280,7 +2280,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP91.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined black metal pen that looks and writes the part for client-facing gifts. Popular for conferences, client gifts and staff welcome packs for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from 100 units upwards."
   },
   {
     "id": "PAP Large 08",
@@ -2295,7 +2295,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/PAP Large 08.jpg",
-    "description": "Branded black bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart black paper bag that gives gifts and purchases a tidy, branded finish. A smart pick for marketing campaigns, events and client thank-yous for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "Sr 276",
@@ -2310,7 +2310,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 276.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A smart pick for staff gifts, events and brand awareness for UK businesses. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
   },
   {
     "id": "D208",
@@ -2325,7 +2325,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D208.jpg",
-    "description": "Branded notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo. A practical giveaway for exhibitions, office use and promotional giveaways for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Order from 50 units."
   },
   {
     "id": "MP92",
@@ -2341,7 +2341,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP92.jpg",
-    "description": "Branded black pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined black metal pen that looks and writes the part for client-facing gifts. A practical giveaway for conferences, client gifts and staff welcome packs for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 100 units."
   },
   {
     "id": "MP109",
@@ -2357,7 +2357,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP109.jpg",
-    "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty gold metal pen that gives your logo a higher-end backdrop. Well suited to corporate gifting, events and everyday branding for UK businesses. One branding method, a free digital proof and no setup fees are all included. Minimum order 100 units."
   },
   {
     "id": "PAP Medium 04",
@@ -2372,7 +2372,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/PAP Medium 04.jpg",
-    "description": "Branded white bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart white paper bag that gives gifts and purchases a tidy, branded finish. A smart pick for staff gifts, events and brand awareness for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "Sr 277",
@@ -2387,7 +2387,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 277.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A smart pick for marketing campaigns, events and client thank-yous for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
   },
   {
     "id": "D209",
@@ -2402,7 +2402,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D209.jpg",
-    "description": "Branded notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A tidy A5 notebook with a soft PU cover, ready for your logo. Popular for marketing campaigns, events and client thank-yous for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
   },
   {
     "id": "MP110",
@@ -2418,7 +2418,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP110.jpg",
-    "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty gold metal pen that gives your logo a higher-end backdrop. Popular for exhibitions, office use and promotional giveaways. One branding method, a free digital proof and no setup fees are all included. Available from 100 units upwards."
   },
   {
     "id": "MP111",
@@ -2434,7 +2434,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP111.jpg",
-    "description": "Branded chrome pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty metal pen that gives your logo a higher-end backdrop. A smart pick for staff gifts, events and brand awareness. Branding, a free digital proof and setup are all included in the price. Orders start at 100 units."
   },
   {
     "id": "PAP Large 05",
@@ -2449,7 +2449,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/PAP Large 05.jpg",
-    "description": "Branded white bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart white paper bag that gives gifts and purchases a tidy, branded finish. A practical giveaway for conferences, client gifts and staff welcome packs. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "Sr 280",
@@ -2464,7 +2464,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 280.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for conferences, client gifts and staff welcome packs for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "D210",
@@ -2479,7 +2479,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D210.jpg",
-    "description": "Branded notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical A5 notebook for meetings, events and onboarding packs. A dependable choice for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "MP112",
@@ -2495,7 +2495,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP112.jpg",
-    "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A gold metal pen with a satisfying weight and a premium, executive feel. Popular for trade shows, onboarding packs and customer giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 100 units."
   },
   {
     "id": "MP113",
@@ -2511,7 +2511,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP113.jpg",
-    "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. Well suited to exhibitions, office use and promotional giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from 100 units upwards."
   },
   {
     "id": "PAP ECO 02",
@@ -2526,7 +2526,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/PAP ECO 02.jpg",
-    "description": "Branded brown bag printed with your company logo. An eco-friendly option made from sustainable materials. A popular promotional bag for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart brown paper bag that gives gifts and purchases a tidy, branded finish. A dependable choice for staff gifts, events and brand awareness. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "Sr 281",
@@ -2541,7 +2541,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 281.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A practical giveaway for trade shows, onboarding packs and customer giveaways. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "D220",
@@ -2556,7 +2556,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/D220.jpg",
-    "description": "Branded black notebook printed with your company logo. Made from PU/paper. A popular promotional notebook for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A practical A5 notebook for meetings, events and onboarding packs. A smart pick for events, trade shows and corporate giveaways. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
   },
   {
     "id": "MP114",
@@ -2572,7 +2572,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP114.jpg",
-    "description": "Branded gold pen printed with your company logo. Made from metal. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. A smart pick for corporate gifting, events and everyday branding. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from 100 units upwards."
   },
   {
     "id": "MP119",
@@ -2588,7 +2588,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP119.jpg",
-    "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP119 to MP126, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. Popular for trade shows, onboarding packs and customer giveaways. Branding, a free digital proof and setup are all included in the price. Minimum order 100 units."
   },
   {
     "id": "Sr 299",
@@ -2603,7 +2603,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 299.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Ideal for trade shows, onboarding packs and customer giveaways for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units."
   },
   {
     "id": "MP127",
@@ -2619,7 +2619,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP127.jpg",
-    "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP127 to MP132, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined metal pen that looks and writes the part for client-facing gifts. Ideal for corporate gifting, events and everyday branding for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 100 units."
   },
   {
     "id": "MP133",
@@ -2635,7 +2635,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP133.jpg",
-    "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP133 to MP139, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A metal pen with a satisfying weight and a premium, executive feel. A practical giveaway for marketing campaigns, events and client thank-yous. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 100 units."
   },
   {
     "id": "Sr 300",
@@ -2650,7 +2650,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 300.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Well suited to conferences, client gifts and staff welcome packs. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
   },
   {
     "id": "MP140",
@@ -2666,7 +2666,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/MP140.jpg",
-    "description": "Branded metal ballpoint pen available in the full colour range shown in the photo. The colours are numbered left to right, MP140 to MP146, so just tell us the number(s) you want when you request a quote. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A solid metal pen with a quality finish, ideal when you want the branding to feel considered. Popular for conferences, client gifts and staff welcome packs. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 100 units."
   },
   {
     "id": "P1",
@@ -2683,7 +2683,7 @@ export const products = [
     },
     "moq": 1000,
     "image": "/products/P1.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 1,000 units."
+    "description": "A lightweight black plastic pen that prints cleanly and keeps the cost per unit low. A smart pick for events, trade shows and corporate giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Available from 1,000 units upwards."
   },
   {
     "id": "Sr 303",
@@ -2698,7 +2698,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 303.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. An eco-friendly option made from sustainable materials. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A dependable choice for trade shows, onboarding packs and customer giveaways. We include one branding method and a free digital proof, with no hidden setup costs. Available from just 50 units."
   },
   {
     "id": "P2",
@@ -2715,7 +2715,7 @@ export const products = [
     },
     "moq": 1000,
     "image": "/products/P2.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 1,000 units."
+    "description": "A simple, hard-working red pen with plenty of room for your branding. Well suited to staff gifts, events and brand awareness for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 1,000 units."
   },
   {
     "id": "P3",
@@ -2732,7 +2732,7 @@ export const products = [
     },
     "moq": 1000,
     "image": "/products/P3.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 1,000 units."
+    "description": "A blue everyday pen that is easy on the budget for larger runs. Ideal for trade shows, onboarding packs and customer giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Available from 1,000 units upwards."
   },
   {
     "id": "Sr 304",
@@ -2747,7 +2747,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 304.jpg",
-    "description": "Green corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A smart pick for conferences, client gifts and staff welcome packs for UK businesses. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
   },
   {
     "id": "P8",
@@ -2764,7 +2764,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P8.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A simple, hard-working red pen with plenty of room for your branding. Popular for conferences, client gifts and staff welcome packs. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from 500 units upwards."
   },
   {
     "id": "P9",
@@ -2781,7 +2781,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P9.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight black plastic pen that prints cleanly and keeps the cost per unit low. A smart pick for marketing campaigns, events and client thank-yous for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 500 units."
   },
   {
     "id": "Sr 305",
@@ -2796,7 +2796,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 305.jpg",
-    "description": "Blue corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart blue gift set combining an A5 diary and pen, presented in a gift box. Well suited to corporate gifting, events and everyday branding for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
   },
   {
     "id": "P10",
@@ -2813,7 +2813,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P10.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable blue pen built for high-volume giveaways where every penny counts. A practical giveaway for exhibitions, office use and promotional giveaways for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 500 units."
   },
   {
     "id": "P13",
@@ -2830,7 +2830,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P13.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A red everyday pen that is easy on the budget for larger runs. A dependable choice for staff gifts, events and brand awareness for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 500 units."
   },
   {
     "id": "Sr 125",
@@ -2845,7 +2845,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 125.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining pen, keyring and card holder, presented in a gift box. A practical giveaway for conferences, client gifts and staff welcome packs. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
   },
   {
     "id": "P21",
@@ -2863,7 +2863,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P21.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A white everyday pen that is easy on the budget for larger runs. Ideal for conferences, client gifts and staff welcome packs. Branding, a free digital proof and setup are all included in the price. Available from 500 units upwards."
   },
   {
     "id": "P27",
@@ -2881,7 +2881,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P27.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable white pen built for high-volume giveaways where every penny counts. Popular for corporate gifting, events and everyday branding for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 500 units."
   },
   {
     "id": "Sr 126",
@@ -2896,7 +2896,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 126.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 3-in-1 corporate gift set pairing pen, keyring and card holder, boxed and ready to hand over. A dependable choice for staff gifts, events and brand awareness for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "P28",
@@ -2914,7 +2914,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P28.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight blue plastic pen that prints cleanly and keeps the cost per unit low. A practical giveaway for trade shows, onboarding packs and customer giveaways for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from 500 units upwards."
   },
   {
     "id": "P29",
@@ -2932,7 +2932,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P29.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight white plastic pen that prints cleanly and keeps the cost per unit low. Well suited to conferences, client gifts and staff welcome packs for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 500 units."
   },
   {
     "id": "Sr 127",
@@ -2947,7 +2947,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 127.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 3-in-1 gift set that brings together pen, keyring and card holder in one presentation box. A practical giveaway for conferences, client gifts and staff welcome packs for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "P30",
@@ -2965,7 +2965,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P30.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A black everyday pen that is easy on the budget for larger runs. A smart pick for exhibitions, office use and promotional giveaways. We include one branding method and a free digital proof, with no hidden setup costs. Minimum order 500 units."
   },
   {
     "id": "P31",
@@ -2983,7 +2983,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P31.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable black pen built for high-volume giveaways where every penny counts. Ideal for marketing campaigns, events and client thank-yous. One branding method, a free digital proof and no setup fees are all included. Available from 500 units upwards."
   },
   {
     "id": "Sr 158",
@@ -2998,7 +2998,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 158.jpg",
-    "description": "Black corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart black gift set combining an A5 diary, pen and keyring, presented in a gift box. A practical giveaway for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
   },
   {
     "id": "P32",
@@ -3016,7 +3016,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P32.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight white plastic pen that prints cleanly and keeps the cost per unit low. Ideal for marketing campaigns, events and client thank-yous for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 500 units."
   },
   {
     "id": "P33",
@@ -3034,7 +3034,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P33.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable blue pen built for high-volume giveaways where every penny counts. Ideal for conferences, client gifts and staff welcome packs for UK businesses. Branding, a free digital proof and setup are all included in the price. Minimum order 500 units."
   },
   {
     "id": "Sr 228",
@@ -3049,7 +3049,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 228.jpg",
-    "description": "Black corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart black gift set combining an A5 diary, pen and keyring, presented in a gift box. Well suited to exhibitions, office use and promotional giveaways. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
   },
   {
     "id": "P34",
@@ -3067,7 +3067,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P34.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A red everyday pen that is easy on the budget for larger runs. A dependable choice for events, trade shows and corporate giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Minimum order 500 units."
   },
   {
     "id": "P35",
@@ -3086,7 +3086,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P35.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A white everyday pen that is easy on the budget for larger runs. Well suited to marketing campaigns, events and client thank-yous for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Minimum order 500 units."
   },
   {
     "id": "Sr 229",
@@ -3101,7 +3101,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 229.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 3-in-1 gift set that brings together an A5 diary, pen and keyring in one presentation box. A practical giveaway for conferences, client gifts and staff welcome packs. Add your logo with one branding method included, plus a free digital proof and no setup fees. Order from 50 units."
   },
   {
     "id": "P36",
@@ -3120,7 +3120,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P36.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight black plastic pen that prints cleanly and keeps the cost per unit low. Ideal for marketing campaigns, events and client thank-yous for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Available from 500 units upwards."
   },
   {
     "id": "P37",
@@ -3139,7 +3139,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P37.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A white everyday pen that is easy on the budget for larger runs. Popular for corporate gifting, events and everyday branding for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Minimum order 500 units."
   },
   {
     "id": "Sr 251",
@@ -3154,7 +3154,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 251.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 3-in-1 gift set that brings together an A5 diary, pen and keyring in one presentation box. Popular for trade shows, onboarding packs and customer giveaways. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units."
   },
   {
     "id": "P38",
@@ -3173,7 +3173,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P38.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A black everyday pen that is easy on the budget for larger runs. A smart pick for exhibitions, office use and promotional giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 500 units."
   },
   {
     "id": "P41",
@@ -3192,7 +3192,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P41.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight white plastic pen that prints cleanly and keeps the cost per unit low. Popular for corporate gifting, events and everyday branding. One branding method, a free digital proof and no setup fees are all included. Orders start at 500 units."
   },
   {
     "id": "Sr 252",
@@ -3207,7 +3207,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 252.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary, pen and keyring, presented in a gift box. Well suited to corporate gifting, events and everyday branding for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
   },
   {
     "id": "P42",
@@ -3226,7 +3226,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P42.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A black everyday pen that is easy on the budget for larger runs. Popular for staff gifts, events and brand awareness for UK businesses. One branding method, a free digital proof and no setup fees are all included. Orders start at 500 units."
   },
   {
     "id": "P43",
@@ -3242,7 +3242,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/P43.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined black metal pen that looks and writes the part for client-facing gifts. Popular for exhibitions, office use and promotional giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Minimum order 100 units."
   },
   {
     "id": "Sr 159",
@@ -3257,7 +3257,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 159.jpg",
-    "description": "Black corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 4-in-1 corporate gift set pairing an A5 diary, pen, keyring and card holder, boxed and ready to hand over. Ideal for exhibitions, office use and promotional giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "P44",
@@ -3273,7 +3273,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/P44.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A refined red metal pen that looks and writes the part for client-facing gifts. A practical giveaway for marketing campaigns, events and client thank-yous. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 100 units."
   },
   {
     "id": "P45",
@@ -3289,7 +3289,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/P45.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A weighty blue metal pen that gives your logo a higher-end backdrop. A dependable choice for exhibitions, office use and promotional giveaways. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 100 units."
   },
   {
     "id": "Sr 161",
@@ -3304,7 +3304,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 161.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 4-in-1 corporate gift set pairing an A5 diary, pen, keyring and card holder, boxed and ready to hand over. A practical giveaway for staff gifts, events and brand awareness for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
   },
   {
     "id": "P46",
@@ -3320,7 +3320,7 @@ export const products = [
     },
     "moq": 100,
     "image": "/products/P46.jpg",
-    "description": "Branded stylus pen with a smooth ballpoint for writing and a soft tip for smartphones and tablets. A slim metal design in black. A practical promotional giveaway for events, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 100 units."
+    "description": "A dual-purpose stylus pen, with a ballpoint for writing and a soft tip for touchscreens. A practical giveaway for events, trade shows and corporate giveaways for UK businesses. One branding method, a free digital proof and no setup fees are all included. Minimum order 100 units."
   },
   {
     "id": "P51",
@@ -3337,7 +3337,7 @@ export const products = [
     },
     "moq": 1000,
     "image": "/products/P51.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 1,000 units."
+    "description": "A simple, hard-working red pen with plenty of room for your branding. Well suited to staff gifts, events and brand awareness. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 1,000 units."
   },
   {
     "id": "Sr 162",
@@ -3352,7 +3352,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 162.jpg",
-    "description": "Blue corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A blue 4-in-1 gift set that brings together an A5 diary, pen, keyring and card holder in one presentation box. Popular for marketing campaigns, events and client thank-yous. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units."
   },
   {
     "id": "P52",
@@ -3369,7 +3369,7 @@ export const products = [
     },
     "moq": 1000,
     "image": "/products/P52.jpg",
-    "description": "Branded grey pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 1,000 units."
+    "description": "A simple, hard-working grey pen with plenty of room for your branding. A smart pick for events, trade shows and corporate giveaways for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 1,000 units."
   },
   {
     "id": "P53",
@@ -3386,7 +3386,7 @@ export const products = [
     },
     "moq": 1000,
     "image": "/products/P53.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 1,000 units."
+    "description": "A lightweight blue plastic pen that prints cleanly and keeps the cost per unit low. Popular for exhibitions, office use and promotional giveaways. Branding, a free digital proof and setup are all included in the price. Available from 1,000 units upwards."
   },
   {
     "id": "Sr 230",
@@ -3401,7 +3401,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 230.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart gift set combining an A5 diary, pen, keyring and card holder, presented in a gift box. Well suited to conferences, client gifts and staff welcome packs for UK businesses. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "P55",
@@ -3419,7 +3419,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P55.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight black plastic pen that prints cleanly and keeps the cost per unit low. A practical giveaway for events, trade shows and corporate giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Minimum order 500 units."
   },
   {
     "id": "P56",
@@ -3437,7 +3437,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P56.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight blue plastic pen that prints cleanly and keeps the cost per unit low. A dependable choice for trade shows, onboarding packs and customer giveaways. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Minimum order 500 units."
   },
   {
     "id": "Sr 231",
@@ -3452,7 +3452,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 231.jpg",
-    "description": "corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A 4-in-1 gift set that brings together an A5 diary, pen, keyring and card holder in one presentation box. Popular for conferences, client gifts and staff welcome packs. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
   },
   {
     "id": "P57",
@@ -3470,7 +3470,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P57.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable red pen built for high-volume giveaways where every penny counts. A practical giveaway for trade shows, onboarding packs and customer giveaways. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 500 units."
   },
   {
     "id": "P58",
@@ -3489,7 +3489,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P58.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight black plastic pen that prints cleanly and keeps the cost per unit low. A practical giveaway for corporate gifting, events and everyday branding for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from 500 units upwards."
   },
   {
     "id": "Sr 298",
@@ -3504,7 +3504,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 298.jpg",
-    "description": "Blue corporate gift set, printed or engraved with your logo. A popular promotional gift set for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and low minimums from 50 units."
+    "description": "A smart blue gift set combining an A5 diary, pen, keyring and card holder, presented in a gift box. A practical giveaway for events, trade shows and corporate giveaways. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
   },
   {
     "id": "P59",
@@ -3523,7 +3523,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P59.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight red plastic pen that prints cleanly and keeps the cost per unit low. Ideal for staff gifts, events and brand awareness. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 500 units."
   },
   {
     "id": "P60",
@@ -3542,7 +3542,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P60.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable blue pen built for high-volume giveaways where every penny counts. A practical giveaway for marketing campaigns, events and client thank-yous for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Minimum order 500 units."
   },
   {
     "id": "P61",
@@ -3561,7 +3561,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P61.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight black plastic pen that prints cleanly and keeps the cost per unit low. Popular for staff gifts, events and brand awareness for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 500 units."
   },
   {
     "id": "P62",
@@ -3580,7 +3580,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P62.jpg",
-    "description": "Branded grey pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A simple, hard-working grey pen with plenty of room for your branding. A dependable choice for staff gifts, events and brand awareness for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from 500 units upwards."
   },
   {
     "id": "P63",
@@ -3599,7 +3599,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P63.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A simple, hard-working red pen with plenty of room for your branding. A dependable choice for staff gifts, events and brand awareness for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from 500 units upwards."
   },
   {
     "id": "P64",
@@ -3618,7 +3618,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P64.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight white plastic pen that prints cleanly and keeps the cost per unit low. A smart pick for conferences, client gifts and staff welcome packs. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 500 units."
   },
   {
     "id": "P65",
@@ -3637,7 +3637,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P65.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable blue pen built for high-volume giveaways where every penny counts. A smart pick for exhibitions, office use and promotional giveaways. One branding method, a free digital proof and no setup fees are all included. Orders start at 500 units."
   },
   {
     "id": "P66",
@@ -3656,7 +3656,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P66.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A black everyday pen that is easy on the budget for larger runs. A smart pick for exhibitions, office use and promotional giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from 500 units upwards."
   },
   {
     "id": "P67",
@@ -3675,7 +3675,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P67.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A black everyday pen that is easy on the budget for larger runs. Well suited to exhibitions, office use and promotional giveaways. One branding method, a free digital proof and no setup fees are all included. Minimum order 500 units."
   },
   {
     "id": "P68",
@@ -3694,7 +3694,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P68.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight red plastic pen that prints cleanly and keeps the cost per unit low. A smart pick for corporate gifting, events and everyday branding for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Available from 500 units upwards."
   },
   {
     "id": "P69",
@@ -3713,7 +3713,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P69.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable blue pen built for high-volume giveaways where every penny counts. Ideal for conferences, client gifts and staff welcome packs. Branding, a free digital proof and setup are all included in the price. Available from 500 units upwards."
   },
   {
     "id": "P70",
@@ -3732,7 +3732,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P70.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable black pen built for high-volume giveaways where every penny counts. Ideal for conferences, client gifts and staff welcome packs. One branding method, a free digital proof and no setup fees are all included. Minimum order 500 units."
   },
   {
     "id": "P71",
@@ -3751,7 +3751,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P71.jpg",
-    "description": "Branded blue pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable blue pen built for high-volume giveaways where every penny counts. A dependable choice for exhibitions, office use and promotional giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 500 units."
   },
   {
     "id": "P72",
@@ -3770,7 +3770,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P72.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight white plastic pen that prints cleanly and keeps the cost per unit low. A dependable choice for marketing campaigns, events and client thank-yous. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 500 units."
   },
   {
     "id": "P73",
@@ -3789,7 +3789,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P73.jpg",
-    "description": "Branded red pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A red everyday pen that is easy on the budget for larger runs. Popular for events, trade shows and corporate giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Orders start at 500 units."
   },
   {
     "id": "P74",
@@ -3808,7 +3808,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P74.jpg",
-    "description": "Branded white pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A reliable white pen built for high-volume giveaways where every penny counts. A practical giveaway for conferences, client gifts and staff welcome packs for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 500 units."
   },
   {
     "id": "P75",
@@ -3827,7 +3827,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P75.jpg",
-    "description": "Branded black pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A black everyday pen that is easy on the budget for larger runs. A dependable choice for staff gifts, events and brand awareness. We include one branding method and a free digital proof, with no hidden setup costs. Orders start at 500 units."
   },
   {
     "id": "P78",
@@ -3844,7 +3844,7 @@ export const products = [
     },
     "moq": 500,
     "image": "/products/P78.jpg",
-    "description": "Branded pen printed with your company logo. A popular promotional pen for events, giveaways, offices and corporate gifts across the UK. One branding method included, no setup fees, free digital proof, and a minimum order of 500 units."
+    "description": "A lightweight plastic pen that prints cleanly and keeps the cost per unit low. Well suited to marketing campaigns, events and client thank-yous. Add your logo with one branding method included, plus a free digital proof and no setup fees. Orders start at 500 units."
   },
   {
     "id": "B7",

@@ -93,7 +93,7 @@ export default function Footer() {
               </li>
               <li className="pt-2">
                 <p className="text-xs text-white/40 mb-0.5">Delivery</p>
-                <p className="text-sm text-white/70">UK Mainland · 10–14 days</p>
+                <p className="text-sm text-white/70">UK Mainland · 8–10 days after proof</p>
               </li>
             </ul>
           </div>

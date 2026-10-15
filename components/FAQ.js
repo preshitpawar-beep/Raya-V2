@@ -21,7 +21,7 @@ const FAQS = [
   },
   {
     q: "Are there any setup or artwork fees?",
-    a: "No. One branding method and a free digital proof are included in the price. No hidden setup fees.",
+    a: "No. One branding method and a free digital proof are included in the price, with no hidden setup fees. Pad printing and laser engraving are included as standard, and UV printing is available for a small extra cost.",
   },
   {
     q: "Do you offer a discount for new customers?",

@@ -225,7 +225,7 @@ export default function ProductPage({ params }) {
               <dl className="space-y-3">
                 {[
                   { label: "1 Branding Method", value: "Included ✓" },
-                  { label: "Options", value: "Screen / Pad / Laser" },
+                  { label: "Options", value: "Pad / Laser · UV extra" },
                   { label: "Setup Fee", value: "None ✓" },
                   { label: "Visual Proof", value: "Free ✓" },
                 ].map(({ label, value }) => (
