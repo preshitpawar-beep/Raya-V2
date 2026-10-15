@@ -1,7 +1,7 @@
 const ITEMS = [
   "Free digital proof",
   "No setup fees",
-  "Low minimums",
+  "Volume pricing",
   "UK business supplier",
   "Fast replies, same working day",
   "Branding included",

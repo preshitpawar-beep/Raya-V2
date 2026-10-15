@@ -30,7 +30,7 @@ export const COLLECTIONS = [
     title: "Blue Promotional Pens",
     h1: "Blue Branded Promotional Pens",
     intro:
-      "Blue promotional pens printed with your logo. Browse our blue branded pens, with branding included and low minimums.",
+      "Blue promotional pens printed with your logo. Browse our blue branded pens, with branding and free digital proofs included.",
     match: (p) => p.category === "Pen" && /\bblue\b|navy|sky/i.test(p.name),
   },
   {

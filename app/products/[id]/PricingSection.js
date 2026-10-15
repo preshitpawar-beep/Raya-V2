@@ -80,7 +80,10 @@ export default function PricingSection({ product, moq }) {
         <p className="text-xs text-gray-400 mb-3">
           Price includes one standard branding method. No setup fees.
         </p>
-        <div className="mb-6"><BrandingBadge /></div>
+        <div className="mb-2"><BrandingBadge /></div>
+        <p className="text-xs text-gray-500 mb-6">
+          Pad printing and laser engraving are included. UV printing is available for a small extra cost.
+        </p>
 
         <button
           onClick={handleQuote}
@@ -102,7 +105,10 @@ export default function PricingSection({ product, moq }) {
         </span>
         <span className="text-sm text-gray-400">per unit (excl. VAT)</span>
       </div>
-      <div className="mb-5"><BrandingBadge /></div>
+      <div className="mb-2"><BrandingBadge /></div>
+      <p className="text-xs text-gray-500 mb-5">
+        Pad printing and laser engraving are included. UV printing is available for a small extra cost.
+      </p>
 
       {/* ── Tier cards — only show tiers at or above MOQ ── */}
       <div>

@@ -13,7 +13,7 @@ const FAQS = [
   },
   {
     q: "What are your minimum order quantities?",
-    a: "Minimums are low and depend on the product, often from as few as 10 to 100 units. The minimum is shown on each product page.",
+    a: "Minimum order quantities vary by product and are shown on each product page. As a guide, keyrings, bags, gift boxes, notebooks and gift sets start from 50 units, and pens from 100 upwards depending on the style. If you need a specific quantity, just ask.",
   },
   {
     q: "What logo formats do you accept?",
