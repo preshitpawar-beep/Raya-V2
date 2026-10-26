@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { products } from "./productsData";
 import ProductImageModal from "./ProductImageModal";
-import { searchMatches, scoreProduct } from "./search";
+import { searchMatches, scoreProduct, buildHaystack } from "./search";
 
 /* ---------------- CONFIG ---------------- */
 const ITEMS_PER_PAGE = 50;
@@ -121,6 +121,30 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
     return () => { document.body.style.overflow = ""; };
   }, [mobileFiltersOpen]);
 
+  // Keep filters in sync with the URL. This is what makes a fresh search from
+  // the header bar work when the user is ALREADY on the products page —
+  // without it the grid only ever read the search term once, on first load.
+  useEffect(() => {
+    const next = {
+      ...DEFAULT_FILTERS,
+      category: searchParams.get("category") || "All",
+      search: searchParams.get("search") || "",
+      colors: searchParams.get("colors") ? searchParams.get("colors").split(",") : [],
+      materials: searchParams.get("materials") ? searchParams.get("materials").split(",") : [],
+    };
+    setFilters((prev) =>
+      prev.category === next.category &&
+      prev.search === next.search &&
+      prev.colors.join(",") === next.colors.join(",") &&
+      prev.materials.join(",") === next.materials.join(",")
+        ? prev
+        : next
+    );
+    const urlPage = parseInt(searchParams.get("page") || "1", 10);
+    setPage((prev) => (prev === urlPage ? prev : urlPage));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
   // Sync filters + page to URL so back button restores state
   const syncToUrl = useCallback((newFilters, newPage) => {
     const params = new URLSearchParams();
@@ -154,8 +178,7 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
     const result = products.filter((p) => {
       if (filters.category !== "All" && p.category !== filters.category) return false;
       if (filters.search) {
-        const haystack = `${p.name} ${p.category} ${p.sku || ""}`;
-        if (!searchMatches(haystack, filters.search)) return false;
+        if (!searchMatches(buildHaystack(p), filters.search)) return false;
       }
       if (filters.colors.length && !filters.colors.includes(getColor(p))) return false;
       if (filters.materials.length && !filters.materials.includes(getMaterial(p))) return false;
@@ -325,26 +348,53 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
         {/* PRODUCTS GRID */}
         <div className="col-span-12 md:col-span-9">
           <p className="text-xs text-gray-400 mb-4 font-medium">
-            {mounted
-              ? `${filteredProducts.length} product${filteredProducts.length !== 1 ? "s" : ""} found`
-              : "Loading products…"}
+            {!mounted
+              ? "Loading products…"
+              : filters.search
+              ? `${filteredProducts.length} result${filteredProducts.length !== 1 ? "s" : ""} for “${filters.search}”`
+              : `${filteredProducts.length} product${filteredProducts.length !== 1 ? "s" : ""}`}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-            {!mounted
-              ? Array.from({ length: 9 }).map((_, i) => <ShimmerCard key={i} />)
-              : paginatedProducts.map((product, index) => (
-                  <ProductCard
-                    key={`${product.category}-${product.id}-${index}`}
-                    product={product}
-                    index={index}
-                    onImageClick={() => setZoomProduct(product)}
-                    onPageClick={() =>
-                      router.push(`/products/${product.id.replace(/\s+/g, "-")}`)
-                    }
-                  />
-                ))}
-          </div>
+          {mounted && filteredProducts.length === 0 ? (
+            /* Professional empty state — a near-miss never looks broken */
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm px-6 py-16 text-center">
+              <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-400">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </div>
+              <h3 className="text-base font-semibold text-dark mb-1.5">
+                No products match {filters.search ? `“${filters.search}”` : "those filters"}
+              </h3>
+              <p className="text-sm text-gray-500 mb-6 max-w-sm mx-auto leading-relaxed">
+                Try fewer or different words, or search by product code such as “MP03” or “Sr 218”.
+                You can also browse by category, colour and material.
+              </p>
+              <button
+                onClick={() => updateFilters(DEFAULT_FILTERS)}
+                className="inline-flex items-center justify-center bg-dark text-white px-6 py-3 rounded-xl text-sm font-semibold hover:opacity-90 active:scale-95 transition"
+              >
+                Clear search and filters
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+              {!mounted
+                ? Array.from({ length: 9 }).map((_, i) => <ShimmerCard key={i} />)
+                : paginatedProducts.map((product, index) => (
+                    <ProductCard
+                      key={`${product.category}-${product.id}-${index}`}
+                      product={product}
+                      index={index}
+                      onImageClick={() => setZoomProduct(product)}
+                      onPageClick={() =>
+                        router.push(`/products/${product.id.replace(/\s+/g, "-")}`)
+                      }
+                    />
+                  ))}
+            </div>
+          )}
 
           {/* Pagination */}
           {totalPages > 1 && (

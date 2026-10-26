@@ -28,7 +28,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 111.jpg",
-    "description": "A 2-in-1 gift set that brings together pen and keyring in one presentation box. A practical giveaway for corporate gifting, events and everyday branding for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
+    "description": "A 2-in-1 gift set that brings together pen and keyring in one presentation box. A practical giveaway for corporate gifting, events and everyday branding for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D138",
@@ -124,7 +124,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 112.jpg",
-    "description": "A 2-in-1 gift set that brings together pen and keyring in one presentation box. Ideal for staff gifts, events and brand awareness for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
+    "description": "A 2-in-1 gift set that brings together pen and keyring in one presentation box. Ideal for staff gifts, events and brand awareness for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D139",
@@ -218,7 +218,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 238.jpg",
-    "description": "A 2-in-1 corporate gift set pairing pen and keyring, boxed and ready to hand over. Ideal for conferences, client gifts and staff welcome packs for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
+    "description": "A 2-in-1 corporate gift set pairing pen and keyring, boxed and ready to hand over. Ideal for conferences, client gifts and staff welcome packs for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D140",
@@ -311,7 +311,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 239.jpg",
-    "description": "A 2-in-1 gift set that brings together pen and keyring in one presentation box. A dependable choice for trade shows, onboarding packs and customer giveaways. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
+    "description": "A 2-in-1 gift set that brings together pen and keyring in one presentation box. A dependable choice for trade shows, onboarding packs and customer giveaways. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D141",
@@ -404,7 +404,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 240.jpg",
-    "description": "A 2-in-1 corporate gift set pairing pen and keyring, boxed and ready to hand over. A smart pick for events, trade shows and corporate giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing pen and keyring, boxed and ready to hand over. A smart pick for events, trade shows and corporate giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D145",
@@ -496,7 +496,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 241.jpg",
-    "description": "A smart gift set combining pen and keyring, presented in a gift box. A practical giveaway for events, trade shows and corporate giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
+    "description": "A smart gift set combining pen and keyring, presented in a gift box. A practical giveaway for events, trade shows and corporate giveaways for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D146",
@@ -589,7 +589,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 254.jpg",
-    "description": "A smart gift set combining pen and keyring, presented in a gift box. A dependable choice for exhibitions, office use and promotional giveaways for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
+    "description": "A smart gift set combining pen and keyring, presented in a gift box. A dependable choice for exhibitions, office use and promotional giveaways for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D159",
@@ -683,7 +683,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 242.jpg",
-    "description": "A 2-in-1 corporate gift set pairing pen and card holder, boxed and ready to hand over. Well suited to corporate gifting, events and everyday branding for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing pen and card holder, boxed and ready to hand over. Well suited to corporate gifting, events and everyday branding for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D160",
@@ -775,7 +775,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 247.jpg",
-    "description": "A 2-in-1 corporate gift set pairing pen and card holder, boxed and ready to hand over. A smart pick for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing pen and card holder, boxed and ready to hand over. A smart pick for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D161",
@@ -867,7 +867,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 248.jpg",
-    "description": "A 2-in-1 gift set that brings together pen and card holder in one presentation box. A dependable choice for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
+    "description": "A 2-in-1 gift set that brings together pen and card holder in one presentation box. A dependable choice for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D162",
@@ -961,7 +961,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 138.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Ideal for exhibitions, office use and promotional giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Ideal for exhibitions, office use and promotional giveaways for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D163",
@@ -1054,7 +1054,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 139.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Ideal for corporate gifting, events and everyday branding for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Ideal for corporate gifting, events and everyday branding for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D168",
@@ -1147,7 +1147,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 140.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Popular for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Popular for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D169",
@@ -1224,7 +1224,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 141.jpg",
-    "description": "A white 2-in-1 gift set that brings together an A5 diary and pen in one presentation box. Ideal for marketing campaigns, events and client thank-yous for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
+    "description": "A white 2-in-1 gift set that brings together an A5 diary and pen in one presentation box. Ideal for marketing campaigns, events and client thank-yous for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D176",
@@ -1302,7 +1302,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 267.jpg",
-    "description": "A smart white gift set combining an A5 diary and pen, presented in a gift box. A dependable choice for exhibitions, office use and promotional giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
+    "description": "A smart white gift set combining an A5 diary and pen, presented in a gift box. A dependable choice for exhibitions, office use and promotional giveaways for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D177",
@@ -1379,7 +1379,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 268.jpg",
-    "description": "A smart red gift set combining an A5 diary and pen, presented in a gift box. Ideal for corporate gifting, events and everyday branding for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
+    "description": "A smart red gift set combining an A5 diary and pen, presented in a gift box. Ideal for corporate gifting, events and everyday branding for businesses across the UK. One branding method, a free digital proof and no setup fees are all included. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D181",
@@ -1456,7 +1456,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 269.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Ideal for marketing campaigns, events and client thank-yous for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Ideal for marketing campaigns, events and client thank-yous for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D184",
@@ -1534,7 +1534,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 270.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for corporate gifting, events and everyday branding for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D185",
@@ -1612,7 +1612,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 145.jpg",
-    "description": "A smart black gift set combining an A5 diary and pen, presented in a gift box. A smart pick for corporate gifting, events and everyday branding for UK businesses. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
+    "description": "A smart black gift set combining an A5 diary and pen, presented in a gift box. A smart pick for corporate gifting, events and everyday branding for UK businesses. One branding method, a free digital proof and no setup fees are all included. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D191",
@@ -1690,7 +1690,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 146.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for staff gifts, events and brand awareness for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for staff gifts, events and brand awareness for UK businesses. Branding, a free digital proof and setup are all included in the price. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D192",
@@ -1768,7 +1768,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 217.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Popular for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Popular for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D194",
@@ -1846,7 +1846,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 218.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A practical giveaway for events, trade shows and corporate giveaways. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A practical giveaway for events, trade shows and corporate giveaways. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D195",
@@ -1924,7 +1924,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 219.jpg",
-    "description": "A 2-in-1 gift set that brings together an A5 diary and pen in one presentation box. Ideal for conferences, client gifts and staff welcome packs for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
+    "description": "A 2-in-1 gift set that brings together an A5 diary and pen in one presentation box. Ideal for conferences, client gifts and staff welcome packs for businesses across the UK. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D198",
@@ -2002,7 +2002,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 273.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Well suited to trade shows, onboarding packs and customer giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Well suited to trade shows, onboarding packs and customer giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D199",
@@ -2079,7 +2079,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 284.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Well suited to corporate gifting, events and everyday branding for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Well suited to corporate gifting, events and everyday branding for businesses across the UK. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D200",
@@ -2156,7 +2156,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 285.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for events, trade shows and corporate giveaways. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for events, trade shows and corporate giveaways. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D201",
@@ -2233,7 +2233,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 274.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Well suited to exhibitions, office use and promotional giveaways. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Well suited to exhibitions, office use and promotional giveaways. Branding, a free digital proof and setup are all included in the price. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D202",
@@ -2310,7 +2310,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 276.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A smart pick for staff gifts, events and brand awareness for UK businesses. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A smart pick for staff gifts, events and brand awareness for UK businesses. Branding, a free digital proof and setup are all included in the price. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D208",
@@ -2387,7 +2387,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 277.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A smart pick for marketing campaigns, events and client thank-yous for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Order from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A smart pick for marketing campaigns, events and client thank-yous for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D209",
@@ -2464,7 +2464,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 280.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for conferences, client gifts and staff welcome packs for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A dependable choice for conferences, client gifts and staff welcome packs for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D210",
@@ -2541,7 +2541,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 281.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A practical giveaway for trade shows, onboarding packs and customer giveaways. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A practical giveaway for trade shows, onboarding packs and customer giveaways. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "D220",
@@ -2603,7 +2603,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 299.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Ideal for trade shows, onboarding packs and customer giveaways for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. Ideal for trade shows, onboarding packs and customer giveaways for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "MP127",
@@ -2650,7 +2650,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 300.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Well suited to conferences, client gifts and staff welcome packs. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. Well suited to conferences, client gifts and staff welcome packs. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "MP140",
@@ -2698,7 +2698,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 303.jpg",
-    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A dependable choice for trade shows, onboarding packs and customer giveaways. We include one branding method and a free digital proof, with no hidden setup costs. Available from just 50 units."
+    "description": "A smart gift set combining an A5 diary and pen, presented in a gift box. A dependable choice for trade shows, onboarding packs and customer giveaways. We include one branding method and a free digital proof, with no hidden setup costs. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P2",
@@ -2747,7 +2747,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 304.jpg",
-    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A smart pick for conferences, client gifts and staff welcome packs for UK businesses. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units."
+    "description": "A 2-in-1 corporate gift set pairing an A5 diary and pen, boxed and ready to hand over. A smart pick for conferences, client gifts and staff welcome packs for UK businesses. One branding method, a free digital proof and no setup fees are all included. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P8",
@@ -2796,7 +2796,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 305.jpg",
-    "description": "A smart blue gift set combining an A5 diary and pen, presented in a gift box. Well suited to corporate gifting, events and everyday branding for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units."
+    "description": "A smart blue gift set combining an A5 diary and pen, presented in a gift box. Well suited to corporate gifting, events and everyday branding for UK businesses. Add your logo with one branding method included, plus a free digital proof and no setup fees. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P10",
@@ -2845,7 +2845,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 125.jpg",
-    "description": "A smart gift set combining pen, keyring and card holder, presented in a gift box. A practical giveaway for conferences, client gifts and staff welcome packs. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
+    "description": "A smart gift set combining pen, keyring and card holder, presented in a gift box. A practical giveaway for conferences, client gifts and staff welcome packs. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P21",
@@ -2896,7 +2896,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 126.jpg",
-    "description": "A 3-in-1 corporate gift set pairing pen, keyring and card holder, boxed and ready to hand over. A dependable choice for staff gifts, events and brand awareness for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
+    "description": "A 3-in-1 corporate gift set pairing pen, keyring and card holder, boxed and ready to hand over. A dependable choice for staff gifts, events and brand awareness for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P28",
@@ -2947,7 +2947,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 127.jpg",
-    "description": "A 3-in-1 gift set that brings together pen, keyring and card holder in one presentation box. A practical giveaway for conferences, client gifts and staff welcome packs for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
+    "description": "A 3-in-1 gift set that brings together pen, keyring and card holder in one presentation box. A practical giveaway for conferences, client gifts and staff welcome packs for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P30",
@@ -2998,7 +2998,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 158.jpg",
-    "description": "A smart black gift set combining an A5 diary, pen and keyring, presented in a gift box. A practical giveaway for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Available from just 50 units."
+    "description": "A smart black gift set combining an A5 diary, pen and keyring, presented in a gift box. A practical giveaway for conferences, client gifts and staff welcome packs for businesses across the UK. Branding, a free digital proof and setup are all included in the price. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P32",
@@ -3049,7 +3049,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 228.jpg",
-    "description": "A smart black gift set combining an A5 diary, pen and keyring, presented in a gift box. Well suited to exhibitions, office use and promotional giveaways. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units."
+    "description": "A smart black gift set combining an A5 diary, pen and keyring, presented in a gift box. Well suited to exhibitions, office use and promotional giveaways. One branding method, a free digital proof and no setup fees are all included. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P34",
@@ -3101,7 +3101,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 229.jpg",
-    "description": "A 3-in-1 gift set that brings together an A5 diary, pen and keyring in one presentation box. A practical giveaway for conferences, client gifts and staff welcome packs. Add your logo with one branding method included, plus a free digital proof and no setup fees. Order from 50 units."
+    "description": "A 3-in-1 gift set that brings together an A5 diary, pen and keyring in one presentation box. A practical giveaway for conferences, client gifts and staff welcome packs. Add your logo with one branding method included, plus a free digital proof and no setup fees. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P36",
@@ -3154,7 +3154,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 251.jpg",
-    "description": "A 3-in-1 gift set that brings together an A5 diary, pen and keyring in one presentation box. Popular for trade shows, onboarding packs and customer giveaways. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units."
+    "description": "A 3-in-1 gift set that brings together an A5 diary, pen and keyring in one presentation box. Popular for trade shows, onboarding packs and customer giveaways. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P38",
@@ -3207,7 +3207,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 252.jpg",
-    "description": "A smart gift set combining an A5 diary, pen and keyring, presented in a gift box. Well suited to corporate gifting, events and everyday branding for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units."
+    "description": "A smart gift set combining an A5 diary, pen and keyring, presented in a gift box. Well suited to corporate gifting, events and everyday branding for UK businesses. We include one branding method and a free digital proof, with no hidden setup costs. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P42",
@@ -3257,7 +3257,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 159.jpg",
-    "description": "A 4-in-1 corporate gift set pairing an A5 diary, pen, keyring and card holder, boxed and ready to hand over. Ideal for exhibitions, office use and promotional giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
+    "description": "A 4-in-1 corporate gift set pairing an A5 diary, pen, keyring and card holder, boxed and ready to hand over. Ideal for exhibitions, office use and promotional giveaways for businesses across the UK. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P44",
@@ -3304,7 +3304,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 161.jpg",
-    "description": "A 4-in-1 corporate gift set pairing an A5 diary, pen, keyring and card holder, boxed and ready to hand over. A practical giveaway for staff gifts, events and brand awareness for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units."
+    "description": "A 4-in-1 corporate gift set pairing an A5 diary, pen, keyring and card holder, boxed and ready to hand over. A practical giveaway for staff gifts, events and brand awareness for UK businesses. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P46",
@@ -3352,7 +3352,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 162.jpg",
-    "description": "A blue 4-in-1 gift set that brings together an A5 diary, pen, keyring and card holder in one presentation box. Popular for marketing campaigns, events and client thank-yous. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units."
+    "description": "A blue 4-in-1 gift set that brings together an A5 diary, pen, keyring and card holder in one presentation box. Popular for marketing campaigns, events and client thank-yous. Add your logo with one branding method included, plus a free digital proof and no setup fees. Low minimums, from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P52",
@@ -3401,7 +3401,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 230.jpg",
-    "description": "A smart gift set combining an A5 diary, pen, keyring and card holder, presented in a gift box. Well suited to conferences, client gifts and staff welcome packs for UK businesses. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
+    "description": "A smart gift set combining an A5 diary, pen, keyring and card holder, presented in a gift box. Well suited to conferences, client gifts and staff welcome packs for UK businesses. One branding method, a free digital proof and no setup fees are all included. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P55",
@@ -3452,7 +3452,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 231.jpg",
-    "description": "A 4-in-1 gift set that brings together an A5 diary, pen, keyring and card holder in one presentation box. Popular for conferences, client gifts and staff welcome packs. One branding method, a free digital proof and no setup fees are all included. Order from 50 units."
+    "description": "A 4-in-1 gift set that brings together an A5 diary, pen, keyring and card holder in one presentation box. Popular for conferences, client gifts and staff welcome packs. One branding method, a free digital proof and no setup fees are all included. Order from 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P57",
@@ -3504,7 +3504,7 @@ export const products = [
     },
     "moq": 50,
     "image": "/products/Sr 298.jpg",
-    "description": "A smart blue gift set combining an A5 diary, pen, keyring and card holder, presented in a gift box. A practical giveaway for events, trade shows and corporate giveaways. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units."
+    "description": "A smart blue gift set combining an A5 diary, pen, keyring and card holder, presented in a gift box. A practical giveaway for events, trade shows and corporate giveaways. Your logo is applied with one branding method as standard, with no setup fees and a free digital proof. Available from just 50 units. Psst, the price covers the goodies inside. The presentation box they sit in is a little extra on top."
   },
   {
     "id": "P59",
