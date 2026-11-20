@@ -1,5 +1,6 @@
 import HeroSlider from "../components/HeroSlider";
 import TrustStrip from "../components/TrustStrip";
+import NewArrivals from "../components/NewArrivals";
 import FeaturedProducts from "../components/FeaturedProducts";
 import CollectionShopStrip from "../components/CollectionShopStrip";
 import TrustIntro from "../components/TrustIntro";
@@ -32,6 +33,7 @@ export default function Home() {
     <main>
       <HeroSlider />
       <TrustStrip />
+      <NewArrivals />
       <FeaturedProducts />
       <CollectionShopStrip />
       <TrustIntro />

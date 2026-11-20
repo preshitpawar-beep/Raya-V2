@@ -1,3 +1,5 @@
+import { attributeKeywords } from "./productAttributes";
+
 // Shared product-search logic used by the products page and the header autocomplete.
 // Goals: word-order independent, synonym aware, typo tolerant, relevance ranked,
 // and tolerant of how people actually type product codes (spaces or not).
@@ -49,6 +51,16 @@ const SYNONYMS = {
   combo: ["set", "combo", "giftset"],
   bundle: ["set", "giftset"],
   metallic: ["metal"],
+  cardholder: ["cardholder", "card"],
+  cardholders: ["cardholder", "card"],
+  cardcase: ["cardholder", "card"],
+  organiser: ["organiser", "organizer"],
+  organisers: ["organiser", "organizer"],
+  organizer: ["organiser", "organizer"],
+  organizers: ["organiser", "organizer"],
+  planner: ["organiser", "planner"],
+  filofax: ["organiser"],
+  binder: ["organiser", "binder"],
 };
 
 // Friendly keywords appended to each product's searchable text, by category,
@@ -61,6 +73,7 @@ const CATEGORY_KEYWORDS = {
   Bags: "bag bags",
   "Combo Sets": "giftset gift set combo bundle",
   "Gift Boxes": "giftbox gift box presentation pouch",
+  "Card Holders & Organisers": "executive desk office",
 };
 
 const COLOURS = [
@@ -104,6 +117,15 @@ function deriveKeywords(p) {
     if (/spiral/.test(n)) out.push("spiral");
     if (/elastic/.test(n)) out.push("elastic");
     if (/bamboo|cork|recycl|kraft|eco/.test(n)) out.push("eco"); else out.push("pu", "leatherette");
+  } else if (cat === "Card Holders & Organisers") {
+    if (p.id && p.id.startsWith("OR")) {
+      out.push("organiser", "organizer", "planner", "binder", "refillable");
+    } else {
+      out.push("cardholder", "card holder", "business card", "card case");
+    }
+    if (/leather|\bpu\b/.test(n)) out.push("leather", "leatherette", "pu");
+    if (/steel|metal/.test(n)) out.push("metal", "steel");
+    if (/fabric|linen/.test(n)) out.push("fabric");
   } else if (cat === "Combo Sets") {
     if (n.includes("2-in-1")) out.push("2-in-1", "2 in 1");
     if (n.includes("3-in-1")) out.push("3-in-1", "3 in 1");
@@ -142,6 +164,7 @@ export function buildHaystack(p) {
     code.replace(/\s+/g, ""), // collapsed code, e.g. "jb02"
     CATEGORY_KEYWORDS[p.category] || "",
     deriveKeywords(p),
+    attributeKeywords(p),
   ];
   return parts.join(" ");
 }
@@ -216,7 +239,7 @@ export function searchMatches(haystack, query) {
 }
 
 const POPULAR = new Set([
-  "P77", "MP10", "MP03", "D184", "D200", "KC01", "Sr 159", "Sr 231", "JB 02",
+  "P77", "MP10", "MP03", "D200", "KC01", "Sr 159", "Sr 231", "JB 02",
 ]);
 
 // Relevance score so the best matches sort to the top when searching.

@@ -38,6 +38,7 @@ export default function Footer() {
                 { label: "Key Rings", href: "/products?category=Key+Ring" },
                 { label: "Combo Sets", href: "/products?category=Combo+Sets" },
                 { label: "Bags", href: "/products?category=Bags" },
+                { label: "Card Holders & Organisers", href: "/products?category=Card+Holders+%26+Organisers" },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <a

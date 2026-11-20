@@ -5,7 +5,11 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "./productsData"; // adjust path if needed
+import { isNewProduct } from "./productAttributes";
 import { searchMatches } from "./search";
+
+// Show the New in link only while there are new products.
+const HAS_NEW = products.some((p) => isNewProduct(p));
 
 /* Stable dropdown component (defined once, outside Header) so it is not
    remounted on every keystroke — remounting was dropping taps on mobile. */
@@ -80,6 +84,9 @@ export default function Header() {
       if (p.category === "Bags") set.add("Bags");
       if (p.category === "Combo Sets") set.add("Gift set");
       if (p.category === "Gift Boxes") set.add("Pen gift box");
+      if (p.category === "Card Holders & Organisers") {
+        set.add(p.id.startsWith("OR") ? "Organiser" : "Business card holder");
+      }
       if (/eco|bamboo|cork|jute/i.test(p.name)) set.add("Eco notebook");
     });
     return Array.from(set);
@@ -152,6 +159,12 @@ export default function Header() {
 
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center gap-8 font-medium">
+            {HAS_NEW && (
+              <Link href="/collections/new-products" className="flex items-center gap-1.5">
+                New in
+                <span className="bg-dark text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full leading-3">NEW</span>
+              </Link>
+            )}
             <Link href="/products">Products</Link>
             <Link href="/quote" className="bg-primary px-5 py-2 rounded-lg">
               Get a Quote
@@ -208,6 +221,7 @@ export default function Header() {
         <div className="md:hidden border-t bg-white">
           <nav className="flex flex-col px-6 py-4 gap-4 font-medium">
             <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+            {HAS_NEW && <Link href="/collections/new-products" onClick={() => setMenuOpen(false)}>New in</Link>}
             <Link href="/products" onClick={() => setMenuOpen(false)}>Products</Link>
             <Link
               href="/quote"

@@ -25,6 +25,8 @@ export const metadata = {
     "promotional products Tiverton",
     "promotional products Devon",
     "branded keyrings",
+    "branded business card holders",
+    "branded organisers",
     "business merchandise UK",
   ],
   // --- Authorship & ownership ---

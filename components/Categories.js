@@ -6,6 +6,7 @@ export default function Categories() {
     { label: "Bags", value: "Bags" },
     { label: "Gift Sets", value: "Combo Sets" },
     { label: "Pen Gift Boxes", value: "Gift Boxes" },
+    { label: "Card Holders & Organisers", value: "Card Holders & Organisers" },
   ];
 
   return (

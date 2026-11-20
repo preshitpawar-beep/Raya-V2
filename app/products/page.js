@@ -3,14 +3,14 @@ import ProductsGrid from "../../components/ProductsGrid";
 export const metadata = {
   title: "Branded Promotional Products",
   description:
-    "Browse our full range of custom branded promotional products for UK businesses. Pens, notebooks, bags, keyrings, gift sets and more — filter by category, colour and material. Prices include one standard branding method.",
+    "Browse our full range of custom branded promotional products for UK businesses. Pens, notebooks, bags, keyrings, card holders, organisers, gift sets and more — filter by category, colour and material. Prices include one standard branding method.",
   alternates: {
     canonical: "https://www.legacyimprint.co.uk/products",
   },
   openGraph: {
     title: "Branded Promotional Products | Legacy Imprint SW",
     description:
-      "Browse pens, notebooks, bags, keyrings and gift sets — all custom branded for UK businesses. Prices include one standard branding method.",
+      "Browse pens, notebooks, bags, keyrings, card holders and gift sets — all custom branded for UK businesses. Prices include one standard branding method.",
     url: "https://www.legacyimprint.co.uk/products",
   },
 };

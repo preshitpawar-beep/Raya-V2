@@ -7,20 +7,18 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { products } from "./productsData";
 import ProductImageModal from "./ProductImageModal";
 import { searchMatches, scoreProduct, buildHaystack } from "./search";
+import { COLOUR_OPTIONS, MATERIAL_OPTIONS, isNaturalMaterial, isNewProduct } from "./productAttributes";
 
 /* ---------------- CONFIG ---------------- */
 const ITEMS_PER_PAGE = 50;
-const CATEGORIES = ["All", "Pen", "Notebook", "Key Ring", "Combo Sets", "Bags", "Gift Boxes"];
-const COLORS = ["black", "blue", "red", "white", "grey", "gold", "brown", "green"];
-const MATERIALS = ["plastic", "metal", "jute", "cotton", "nylon", "paper", "leather"];
-const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
-const POPULAR_IDS = ["P77","MP10","MP03","D184","D200","KC01","Sr 159","Sr 231","JB 02"];
+const CATEGORIES = ["All", "Pen", "Notebook", "Key Ring", "Combo Sets", "Bags", "Gift Boxes", "Card Holders & Organisers"];
+const POPULAR_IDS = ["P77","MP10","MP03","D200","KC01","Sr 159","Sr 231","JB 02"];
 
-const MOQ_MAP = { Pen: 50, Notebook: 10, "Key Ring": 30, "Combo Sets": 10, Bags: 10, "Gift Boxes": 25 };
+const MOQ_MAP = { Pen: 50, Notebook: 10, "Key Ring": 30, "Combo Sets": 10, Bags: 10, "Gift Boxes": 25, "Card Holders & Organisers": 50 };
 
 const DEFAULT_FILTERS = {
   category: "All", colors: [], materials: [],
-  ecoOnly: false, popularOnly: false, setTypes: [],
+  ecoOnly: false, popularOnly: false, newOnly: false, setTypes: [],
   search: "", sort: "featured",
 };
 
@@ -37,29 +35,10 @@ const isMultiVariantProduct = (product) => {
   return MULTI_VARIANT_RANGES.some((r) => number >= r.from && number <= r.to);
 };
 
-const isEco = (p) => ECO_KEYWORDS.some((k) => p.name.toLowerCase().includes(k));
-const getColor = (p) => COLORS.find((c) => p.name.toLowerCase().includes(c));
-
-const getMaterial = (p) => {
-  const n = p.name.toLowerCase();
-  if (p.category === "Pen") {
-    if (/\bmetal\b|bullet|stylus|aluminium|brass|stainless/.test(n)) return "metal";
-    if (p.id.startsWith("MP")) return "metal";
-    return "plastic";
-  }
-  if (p.category === "Bags") {
-    if (/jute/.test(n)) return "jute";
-    if (/nylon/.test(n)) return "nylon";
-    if (/cotton|canvas/.test(n)) return "cotton";
-    if (/paper/.test(n)) return "paper";
-    return null;
-  }
-  if (p.category === "Key Ring") {
-    if (/leather/.test(n)) return "leather";
-    return "metal";
-  }
-  return null;
-};
+const isEco = isNaturalMaterial;
+// Colours and materials come from each product's own data (see productsData.js),
+// so a product can match more than one colour, e.g. a black pen with gold trim.
+const hasAny = (list, wanted) => wanted.some((w) => (list || []).includes(w));
 
 const getSetType = (p) => {
   if (p.category !== "Combo Sets") return null;
@@ -96,7 +75,8 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
     const colors = searchParams.get("colors") ? searchParams.get("colors").split(",") : [];
     const materials = searchParams.get("materials") ? searchParams.get("materials").split(",") : [];
     const page = parseInt(searchParams.get("page") || "1", 10);
-    return { filters: { ...DEFAULT_FILTERS, category: cat, search, colors, materials }, page };
+    const newOnly = searchParams.get("new") === "1";
+    return { filters: { ...DEFAULT_FILTERS, category: cat, search, colors, materials, newOnly }, page };
   };
 
   const { filters: initFilters, page: initPage } = getInitialFilters();
@@ -131,12 +111,14 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
       search: searchParams.get("search") || "",
       colors: searchParams.get("colors") ? searchParams.get("colors").split(",") : [],
       materials: searchParams.get("materials") ? searchParams.get("materials").split(",") : [],
+      newOnly: searchParams.get("new") === "1",
     };
     setFilters((prev) =>
       prev.category === next.category &&
       prev.search === next.search &&
       prev.colors.join(",") === next.colors.join(",") &&
-      prev.materials.join(",") === next.materials.join(",")
+      prev.materials.join(",") === next.materials.join(",") &&
+      prev.newOnly === next.newOnly
         ? prev
         : next
     );
@@ -148,6 +130,7 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
   // Sync filters + page to URL so back button restores state
   const syncToUrl = useCallback((newFilters, newPage) => {
     const params = new URLSearchParams();
+    if (newFilters.newOnly) params.set("new", "1");
     if (newFilters.category !== "All") params.set("category", newFilters.category);
     if (newFilters.search) params.set("search", newFilters.search);
     if (newFilters.colors.length) params.set("colors", newFilters.colors.join(","));
@@ -174,15 +157,31 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
     [filters]
   );
 
+  // Only offer colours / materials that exist in the current category, with counts,
+  // so shoppers never pick a filter that returns nothing.
+  const { colourOptions, materialOptions } = useMemo(() => {
+    const pool = products.filter(
+      (p) => (filters.category === "All" || p.category === filters.category) && (!filters.newOnly || isNewProduct(p))
+    );
+    const count = (field, key) => pool.filter((p) => (p[field] || []).includes(key)).length;
+    return {
+      colourOptions: COLOUR_OPTIONS.map((o) => ({ ...o, count: count("colours", o.key) }))
+        .filter((o) => o.count > 0 || filters.colors.includes(o.key)),
+      materialOptions: MATERIAL_OPTIONS.map((o) => ({ ...o, count: count("materials", o.key) }))
+        .filter((o) => o.count > 0 || filters.materials.includes(o.key)),
+    };
+  }, [filters.category, filters.colors, filters.materials, filters.newOnly]);
+
   const filteredProducts = useMemo(() => {
     const result = products.filter((p) => {
       if (filters.category !== "All" && p.category !== filters.category) return false;
       if (filters.search) {
         if (!searchMatches(buildHaystack(p), filters.search)) return false;
       }
-      if (filters.colors.length && !filters.colors.includes(getColor(p))) return false;
-      if (filters.materials.length && !filters.materials.includes(getMaterial(p))) return false;
+      if (filters.colors.length && !hasAny(p.colours, filters.colors)) return false;
+      if (filters.materials.length && !hasAny(p.materials, filters.materials)) return false;
       if (filters.ecoOnly && !isEco(p)) return false;
+      if (filters.newOnly && !isNewProduct(p)) return false;
       if (filters.popularOnly && !POPULAR_IDS.includes(p.id)) return false;
       if (filters.setTypes.length && !filters.setTypes.includes(getSetType(p))) return false;
       return true;
@@ -214,7 +213,10 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
     filters.colors.length +
     filters.materials.length +
     (filters.category !== "All" ? 1 : 0) +
+    (filters.newOnly ? 1 : 0) +
     (filters.search ? 1 : 0);
+
+  const newCount = useMemo(() => products.filter((p) => isNewProduct(p)).length, []);
 
   /* ---------------- FILTER PANEL UI ---------------- */
   const FiltersUI = (
@@ -231,6 +233,25 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
           onChange={(e) => updateFilters({ ...filters, search: e.target.value })}
         />
       </div>
+
+      {/* New in */}
+      {newCount > 0 && (
+        <button
+          onClick={() => updateFilters({ ...filters, newOnly: !filters.newOnly })}
+          aria-pressed={filters.newOnly}
+          className={`w-full flex items-center justify-between px-4 py-3 rounded-lg border text-sm font-semibold transition ${
+            filters.newOnly
+              ? "bg-dark text-white border-dark"
+              : "bg-white text-dark border-gray-200 hover:border-gray-400"
+          }`}
+        >
+          <span className="flex items-center gap-2">
+            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${filters.newOnly ? "bg-white text-dark" : "bg-dark text-white"}`}>NEW</span>
+            New in
+          </span>
+          <span className={filters.newOnly ? "text-white/70" : "text-gray-400"}>{newCount}</span>
+        </button>
+      )}
 
       {/* Category */}
       <div>
@@ -260,17 +281,28 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
           Colour
         </h4>
         <div className="flex flex-wrap gap-2">
-          {COLORS.map((c) => (
+          {colourOptions.map(({ key, label, swatch, count }) => (
             <button
-              key={c}
-              onClick={() => toggle("colors", c)}
-              className={`filter-chip px-3 py-1.5 rounded-full text-xs font-medium border capitalize transition ${
-                filters.colors.includes(c)
+              key={key}
+              onClick={() => toggle("colors", key)}
+              aria-pressed={filters.colors.includes(key)}
+              className={`filter-chip inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition ${
+                filters.colors.includes(key)
                   ? "bg-dark text-white border-dark"
                   : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
               }`}
             >
-              {c}
+              <span
+                aria-hidden="true"
+                className="inline-block w-3 h-3 rounded-full border border-gray-300"
+                style={
+                  swatch
+                    ? { background: swatch }
+                    : { background: "conic-gradient(#D7263D, #E8772E, #C9A23F, #2E7D4F, #2F6FD6, #8E6CC0, #D7263D)" }
+                }
+              />
+              {label}
+              <span className={filters.colors.includes(key) ? "text-white/70" : "text-gray-400"}>{count}</span>
             </button>
           ))}
         </div>
@@ -282,17 +314,18 @@ export default function ProductsGrid({ initialSearch = "", initialCategory = "Al
           Material
         </h4>
         <div className="flex flex-wrap gap-2">
-          {MATERIALS.map((m) => (
+          {materialOptions.map(({ key, label, count }) => (
             <button
-              key={m}
-              onClick={() => toggle("materials", m)}
-              className={`filter-chip px-3 py-1.5 rounded-full text-xs font-medium border capitalize transition ${
-                filters.materials.includes(m)
+              key={key}
+              onClick={() => toggle("materials", key)}
+              aria-pressed={filters.materials.includes(key)}
+              className={`filter-chip px-3 py-1.5 rounded-full text-xs font-medium border transition ${
+                filters.materials.includes(key)
                   ? "bg-dark text-white border-dark"
                   : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
               }`}
             >
-              {m}
+              {label} <span className={filters.materials.includes(key) ? "text-white/70" : "text-gray-400"}>{count}</span>
             </button>
           ))}
         </div>
@@ -526,7 +559,7 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const isMultiVariant = isMultiVariantProduct(product);
   const eco = isEco(product);
-  const popular = ["P77","MP10","MP03","D184","D200","KC01"].includes(product.id);
+  const popular = ["P77","MP10","MP03","D200","KC01"].includes(product.id);
   const moq = product.moq || 10;
 
   return (
@@ -536,7 +569,12 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
       onClick={onPageClick}
     >
       <div className="relative overflow-hidden bg-gray-50 h-32 md:h-36">
-        <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
+        <div className="absolute top-2 left-2 z-10 flex flex-col items-start gap-1">
+          {isNewProduct(product) && (
+            <span className="bg-primary text-dark text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">
+              New
+            </span>
+          )}
           {popular && (
             <span className="bg-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">
               Popular
@@ -544,7 +582,7 @@ function ProductCard({ product, index, onImageClick, onPageClick }) {
           )}
           {eco && (
             <span className="bg-green-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">
-              Eco
+              Natural material
             </span>
           )}
         </div>

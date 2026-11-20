@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "./productsData";
 import ProductImageModal from "./ProductImageModal";
+import { isNaturalMaterial, isNewProduct } from "./productAttributes";
 
 /* ─────────────────────────────────────────────
    MULTI VARIANT HELPER
@@ -21,9 +22,8 @@ const isMultiVariantProduct = (p) => {
   return MULTI_VARIANT_RANGES.some((r) => n >= r.from && n <= r.to);
 };
 
-const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
-const isEco = (p) => ECO_KEYWORDS.some((k) => p.name.toLowerCase().includes(k));
-const POPULAR_IDS = ["P77", "MP10", "MP03", "D184", "D200", "KC01"];
+const isEco = isNaturalMaterial;
+const POPULAR_IDS = ["P77", "MP10", "MP03", "D200", "KC01"];
 const PEN_COVER_IDS = ["B3", "B7", "B9", "B12", "B13", "B14", "B15", "B16", "B17"];
 
 /* ─────────────────────────────────────────────
@@ -243,15 +243,20 @@ function FeaturedCard({ product, onImageClick, onCardClick }) {
     >
       {/* Image */}
       <div className="relative h-[120px] md:h-[150px] bg-gray-50 overflow-hidden">
-        <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
+        <div className="absolute top-2 left-2 z-10 flex flex-col items-start gap-1">
           {popular && (
             <span className="bg-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">
               Popular
             </span>
           )}
+          {isNewProduct(product) && (
+            <span className="bg-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">
+              New
+            </span>
+          )}
           {eco && (
             <span className="bg-green-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-4">
-              Eco
+              Natural material
             </span>
           )}
         </div>

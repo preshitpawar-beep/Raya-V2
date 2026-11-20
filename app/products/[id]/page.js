@@ -4,10 +4,39 @@ import { notFound } from "next/navigation";
 import { products } from "../../../components/productsData";
 import ProductZoomButton from "./ProductZoomButton";
 import PricingSection from "./PricingSection";
+import { colourList, isNaturalMaterial, isNewProduct, CATEGORY_COLLECTION, categoryLabel } from "../../../components/productAttributes";
+import { COLLECTIONS } from "../../../components/collections";
 
 /* ── helpers ── */
-const ECO_KEYWORDS = ["eco", "bamboo", "cork", "jute", "cotton", "paper"];
-const isEco = (p) => ECO_KEYWORDS.some((k) => p.name.toLowerCase().includes(k));
+const isEco = isNaturalMaterial;
+const BASE_URL = "https://www.legacyimprint.co.uk";
+// Image paths contain spaces (e.g. "Sr 340.jpg"), so encode them for absolute URLs.
+const imageUrl = (p) => `${BASE_URL}${encodeURI(p.image)}`;
+const lowestOf = (p) => (p.pricing ? Math.min(...Object.values(p.pricing)) : p.price);
+const highestOf = (p) => (p.pricing ? Math.max(...Object.values(p.pricing)) : p.price);
+
+// Search-result length description (about 155 characters). Uses the first sentence of
+// the description when it fits; otherwise the first clause, then the product name.
+function metaDescription(p) {
+  const MAX = 158;
+  const tail = ` From £${lowestOf(p).toFixed(2)} per unit ex VAT, logo branding included. MOQ ${p.moq || 50}.`;
+  const first = (p.description || "").split(/(?<=\.)\s/)[0];
+  if ((first + tail).length <= MAX) return first + tail;
+  const room = MAX - tail.length;
+  const clause = first.slice(0, room).split(",").slice(0, -1).join(",");
+  if (clause.length >= 40) return `${clause}.${tail}`;
+  const named = `Custom branded ${p.name}.`;
+  return (named + tail).length <= MAX ? named + tail : `${named.slice(0, MAX - 1)}…`;
+}
+
+function pageTitle(p) {
+  const label = categoryLabel(p);
+  return p.name.toLowerCase().includes(label.toLowerCase())
+    ? `${p.name} | Custom Branded`
+    : `${p.name} | Custom Branded ${label}`;
+}
+
+const collectionFor = (p) => COLLECTIONS.find((c) => c.slug === CATEGORY_COLLECTION[p.category]);
 
 function getNameKeywords(name) {
   const stripped = name.replace(/^[\w\s]+ - /, "").toLowerCase();
@@ -43,20 +72,29 @@ export async function generateMetadata({ params }) {
   );
   if (!product) return { title: "Product Not Found" };
 
-  const lowestPrice = product.pricing
-    ? Math.min(...Object.values(product.pricing))
-    : product.price;
+  const canonical = `${BASE_URL}/products/${toSlug(product.id)}`;
+  const title = pageTitle(product);
+  const description = metaDescription(product);
+  const image = { url: imageUrl(product), alt: `${product.name} (${product.sku || product.id})` };
 
   return {
-    title: `${product.name} – Custom Branded ${product.category}`,
-    description: `${product.description} From £${lowestPrice.toFixed(2)} per unit excl. VAT.`.slice(0, 300),
-    alternates: {
-      canonical: `https://www.legacyimprint.co.uk/products/${toSlug(product.id)}`,
-    },
+    title,
+    description,
+    alternates: { canonical },
     openGraph: {
       title: `${product.name} | Legacy Imprint SW`,
-      description: `Custom branded ${product.category.toLowerCase()} from £${lowestPrice.toFixed(2)}. Branding included. Volume discounts at higher quantities.`,
-      images: [product.image],
+      description,
+      url: canonical,
+      siteName: "Legacy Imprint SW",
+      locale: "en_GB",
+      type: "website",
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} | Legacy Imprint SW`,
+      description,
+      images: [image.url],
     },
   };
 }
@@ -80,27 +118,50 @@ export default function ProductPage({ params }) {
   const eco = isEco(product);
   const BASE = "https://www.legacyimprint.co.uk";
   const lowestPrice = product.pricing ? Math.min(...Object.values(product.pricing)) : product.price;
+  const collection = collectionFor(product);
+  const pageUrl = `${BASE}/products/${toSlug(product.id)}`;
   const productLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     description: product.description,
     sku: product.sku || product.id,
-    image: `${BASE}${product.image}`,
-    category: product.category,
+    mpn: product.sku || product.id,
+    url: pageUrl,
+    image: imageUrl(product),
+    category: categoryLabel(product),
+    ...(colourList(product) ? { color: colourList(product) } : {}),
+    ...(product.material ? { material: product.material } : {}),
     brand: { "@type": "Brand", name: "Legacy Imprint SW" },
     offers: {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       priceCurrency: "GBP",
-      price: lowestPrice.toFixed(2),
+      lowPrice: lowestOf(product).toFixed(2),
+      highPrice: highestOf(product).toFixed(2),
+      offerCount: product.pricing ? Object.keys(product.pricing).length : 1,
       availability: "https://schema.org/InStock",
-      url: `${BASE}/products/${toSlug(product.id)}`,
+      itemCondition: "https://schema.org/NewCondition",
+      url: pageUrl,
+      seller: { "@type": "Organization", name: "Legacy Imprint SW", url: BASE },
     },
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+      { "@type": "ListItem", position: 2, name: "Products", item: `${BASE}/products` },
+      ...(collection
+        ? [{ "@type": "ListItem", position: 3, name: collection.title, item: `${BASE}/collections/${collection.slug}` }]
+        : []),
+      { "@type": "ListItem", position: collection ? 4 : 3, name: product.name, item: pageUrl },
+    ],
   };
 
   return (
     <main className="bg-[#F7F8FA] min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <div className="max-w-6xl mx-auto px-6 py-10 md:py-16">
 
         {/* Breadcrumb */}
@@ -109,6 +170,12 @@ export default function ProductPage({ params }) {
           <span>›</span>
           <Link href="/products" className="hover:text-dark transition">Products</Link>
           <span>›</span>
+          {collection && (
+            <>
+              <Link href={`/collections/${collection.slug}`} className="hover:text-dark transition">{collection.title}</Link>
+              <span>›</span>
+            </>
+          )}
           <span className="text-dark font-medium truncate max-w-[200px]">{product.name}</span>
         </nav>
 
@@ -119,7 +186,7 @@ export default function ProductPage({ params }) {
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex items-center justify-center p-8 min-h-[340px] relative group">
             {eco && (
               <span className="absolute top-4 left-4 bg-green-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full z-10">
-                Eco-Friendly
+                Natural material
               </span>
             )}
 
@@ -140,10 +207,17 @@ export default function ProductPage({ params }) {
           {/* ── Details ── */}
           <div className="flex flex-col">
 
-            {/* Category pill */}
-            <span className="inline-flex self-start text-xs font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full mb-3">
-              {product.category}
-            </span>
+            {/* Category pill (+ New) */}
+            <div className="flex items-center gap-2 mb-3">
+              <span className="inline-flex self-start text-xs font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                {product.category}
+              </span>
+              {isNewProduct(product) && (
+                <Link href="/collections/new-products" className="inline-flex text-xs font-bold text-white bg-dark px-3 py-1 rounded-full hover:opacity-90">
+                  New in
+                </Link>
+              )}
+            </div>
 
             <h1 className="text-2xl md:text-3xl font-bold text-dark leading-tight mb-4">
               {product.name}
@@ -196,22 +270,12 @@ export default function ProductPage({ params }) {
                   { label: "Product Code", value: product.id },
                   { label: "Category", value: product.category },
                   { label: "Min. Order", value: `${moq} units` },
-                  {
-                    label: "Material",
-                    value: product.id.startsWith("MP")
-                      ? "Metal"
-                      : product.category === "Bags"
-                      ? "Jute / Cotton"
-                      : product.category === "Key Ring"
-                      ? "Metal"
-                      : product.category === "Notebook"
-                      ? "PU / Paper"
-                      : "Plastic / Mixed",
-                  },
+                  { label: "Material", value: product.material || "Ask us for details" },
+                  ...(colourList(product) ? [{ label: "Colour", value: colourList(product) }] : []),
                 ].map(({ label, value }) => (
-                  <div key={label} className="flex justify-between text-sm border-b border-gray-50 pb-2">
-                    <dt className="text-gray-500">{label}</dt>
-                    <dd className="font-medium text-dark">{value}</dd>
+                  <div key={label} className="flex justify-between gap-4 text-sm border-b border-gray-50 pb-2">
+                    <dt className="text-gray-500 shrink-0">{label}</dt>
+                    <dd className="font-medium text-dark text-right">{value}</dd>
                   </div>
                 ))}
               </dl>
@@ -229,9 +293,9 @@ export default function ProductPage({ params }) {
                   { label: "Setup Fee", value: "None ✓" },
                   { label: "Visual Proof", value: "Free ✓" },
                 ].map(({ label, value }) => (
-                  <div key={label} className="flex justify-between text-sm border-b border-gray-50 pb-2">
-                    <dt className="text-gray-500">{label}</dt>
-                    <dd className="font-medium text-dark">{value}</dd>
+                  <div key={label} className="flex justify-between gap-4 text-sm border-b border-gray-50 pb-2">
+                    <dt className="text-gray-500 shrink-0">{label}</dt>
+                    <dd className="font-medium text-dark text-right">{value}</dd>
                   </div>
                 ))}
               </dl>
@@ -247,9 +311,9 @@ export default function ProductPage({ params }) {
                   { label: "Standard", value: "8–10 days after proof approval" },
                   { label: "Area", value: "UK Mainland" },
                 ].map(({ label, value }) => (
-                  <div key={label} className="flex justify-between text-sm border-b border-gray-50 pb-2">
-                    <dt className="text-gray-500">{label}</dt>
-                    <dd className="font-medium text-dark">{value}</dd>
+                  <div key={label} className="flex justify-between gap-4 text-sm border-b border-gray-50 pb-2">
+                    <dt className="text-gray-500 shrink-0">{label}</dt>
+                    <dd className="font-medium text-dark text-right">{value}</dd>
                   </div>
                 ))}
               </dl>
@@ -262,7 +326,7 @@ export default function ProductPage({ params }) {
         {related.length > 0 && (
           <div>
             <h2 className="text-lg font-bold text-dark mb-2">
-              Similar {product.category === "Combo Sets" ? "Combo Sets" : `${product.category}s`} You Might Like
+              Similar {/s$/.test(product.category) ? product.category : `${product.category}s`} You Might Like
             </h2>
             <p className="text-sm text-gray-400 mb-6">
               Other popular {product.category.toLowerCase()} with branding included
